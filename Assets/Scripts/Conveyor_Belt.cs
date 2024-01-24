@@ -51,3 +51,5 @@ public class Conveyor_Belt : MonoBehaviour
         onBelt.Remove(collision.gameObject);
     }
 }
+
+/*      SCRIPT CREDITS to Jayometric         */
