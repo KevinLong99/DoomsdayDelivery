@@ -4990,7 +4990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1717b681199144a498c992b2f218dd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 10
   tip: {fileID: 1769337598482281036}
 --- !u!54 &2721647727508466860
 Rigidbody:
@@ -5000,9 +5000,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769337597633466025}
   serializedVersion: 4
-  m_Mass: 0.75
+  m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.02
+  m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
