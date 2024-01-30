@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d0c255d07fd68f14b94e55d388e7e6bb
+guid: b6c38558987444240b3b3950e4450b77
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -27,10 +27,8 @@ ModelImporter:
     100042: hands:b_r_thumb2
     100044: hands:b_r_thumb3
     100046: hands:b_r_thumb_ignore
-    100048: hands:hands_geom
-    100050: hands:r_hand_world
-    100052: hands:Rhand
-    100054: //RootNode
+    100048: hands:r_hand_world
+    100050: //RootNode
     400000: hands:b_r_grip
     400002: hands:b_r_hand
     400004: hands:b_r_hand_ignore
@@ -55,23 +53,11 @@ ModelImporter:
     400042: hands:b_r_thumb2
     400044: hands:b_r_thumb3
     400046: hands:b_r_thumb_ignore
-    400048: hands:hands_geom
-    400050: hands:r_hand_world
-    400052: hands:Rhand
-    400054: //RootNode
-    2100000: default1
-    2100002: unnamed1
-    4300000: hands:Rhand
+    400048: hands:r_hand_world
+    400050: //RootNode
     7400000: Take 001
-    7400002: r_hand_skeletal_lowres
     9500000: //RootNode
-    13700000: hands:Rhand
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: unnamed1
-    second: {fileID: 2100000, guid: 3637b758ff163493f8bb8b6d7e96d7ae, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -124,7 +110,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 0
+    tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0
