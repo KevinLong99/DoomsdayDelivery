@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,19 +7,19 @@ public class Rotate_Me_Parent : MonoBehaviour
 {
     //ROTATE VALUES:    0   120 240 
 
-
     private bool rotating = false;
     public GameObject objectToRotate;
 
     //Station Rotation Values
-    private Quaternion rotation1 = Quaternion.Euler(new Vector3(0, 0, 0));
-    private Quaternion rotation2 = Quaternion.Euler(new Vector3(0, 120, 0));
-    private Quaternion rotation3 = Quaternion.Euler(new Vector3(0, 240, 0));
+    private Quaternion rotation1 = Quaternion.Euler(new Vector3(0, -60, 0));
+    private Quaternion rotation2 = Quaternion.Euler(new Vector3(0, -180, 0));
+    private Quaternion rotation3 = Quaternion.Euler(new Vector3(0, -300, 0));
 
     public int moveValue = 0;
 
     private void Update()
     {
+
         if (moveValue == 1)
         {
             StartCoroutine(rotateObject(objectToRotate, rotation1, 1f));
@@ -38,6 +39,20 @@ public class Rotate_Me_Parent : MonoBehaviour
     }
 
 
+    public void RotateToStationOne()
+    {
+        StartCoroutine(rotateObject(objectToRotate, rotation1, 1f));
+    }
+    public void RotateToStationTwo()
+    {
+        StartCoroutine(rotateObject(objectToRotate, rotation2, 1f));
+    }
+    public void RotateToStationThree()
+    {
+        StartCoroutine(rotateObject(objectToRotate, rotation3, 1f));
+    }
+
+
     IEnumerator rotateObject(GameObject gameObjectToMove, Quaternion newRot, float duration)
     {
         if (rotating)
@@ -47,6 +62,8 @@ public class Rotate_Me_Parent : MonoBehaviour
         rotating = true;
 
         Quaternion currentRot = gameObjectToMove.transform.rotation;
+
+        Debug.Log(currentRot);
 
         float counter = 0;
         while (counter < duration)
