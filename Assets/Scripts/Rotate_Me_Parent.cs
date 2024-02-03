@@ -41,7 +41,7 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     public void RotateToStationOne()
     {
-        StartCoroutine(rotateObject(objectToRotate, rotation1, 1f));
+        StartCoroutine(rotateObject(objectToRotate, rotation3, 1f));
     }
     public void RotateToStationTwo()
     {
@@ -49,7 +49,7 @@ public class Rotate_Me_Parent : MonoBehaviour
     }
     public void RotateToStationThree()
     {
-        StartCoroutine(rotateObject(objectToRotate, rotation3, 1f));
+        StartCoroutine(rotateObject(objectToRotate, rotation1, 1f));
     }
 
 
@@ -62,8 +62,6 @@ public class Rotate_Me_Parent : MonoBehaviour
         rotating = true;
 
         Quaternion currentRot = gameObjectToMove.transform.rotation;
-
-        Debug.Log(currentRot);
 
         float counter = 0;
         while (counter < duration)
