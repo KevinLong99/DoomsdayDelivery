@@ -12,6 +12,7 @@ public class Button_PressedDown : MonoBehaviour
     public bool isPressedDownFully = false;
 
     public Rotate_Me_Parent rotateMeParentScript;
+    public Haptic_Chair_Controller hapticChairControllerScript;
 
     void Start()
     {
@@ -22,6 +23,9 @@ public class Button_PressedDown : MonoBehaviour
 
     void Update()
     {
+        //hapticChairControllerScript.SwitchStationRight();
+        //if i want to implement haptics ^ i have to define if chair is moving left or right
+
         //rotate TO station 1
         if (buttonVisual.transform.position.y < buttonOutside.transform.position.y
             && isPressedDownFully == false
@@ -29,6 +33,13 @@ public class Button_PressedDown : MonoBehaviour
         {
             isPressedDownFully = true;
             rotateMeParentScript.RotateToStationOne();
+            if (buttonName.Contains("Right"))
+            {
+                hapticChairControllerScript.SwitchStationRight();
+            } else
+            {   //if not right, must be left
+                hapticChairControllerScript.SwitchStationLeft();
+            }
             isPressedDownFully = false;
         }
 
@@ -39,6 +50,14 @@ public class Button_PressedDown : MonoBehaviour
         {
             isPressedDownFully = true;
             rotateMeParentScript.RotateToStationTwo();
+            if (buttonName.Contains("Right"))
+            {
+                hapticChairControllerScript.SwitchStationRight();
+            }
+            else
+            {   //if not right, must be left
+                hapticChairControllerScript.SwitchStationLeft();
+            }
             isPressedDownFully = false;
         }
 
@@ -49,6 +68,14 @@ public class Button_PressedDown : MonoBehaviour
         {
             isPressedDownFully = true;
             rotateMeParentScript.RotateToStationThree();
+            if (buttonName.Contains("Right"))
+            {
+                hapticChairControllerScript.SwitchStationRight();
+            }
+            else
+            {   //if not right, must be left
+                hapticChairControllerScript.SwitchStationLeft();
+            }
             isPressedDownFully = false;
         }
 

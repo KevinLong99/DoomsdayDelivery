@@ -22,13 +22,24 @@ public class Haptic_Chair_Controller : MonoBehaviour
     private Vector3 forwardForce = new Vector3(0, 0, 0.5f);
 
     private Vector3 resetPoint = new Vector3(0, 0, 0);
+
+    public GameObject environmentSphere;
+
+    private float rotationSpeed = 10.0f;
+    private bool doRotateSphere = false;
     void Start()
     {
-        //StartCoroutine(JustWait());
+        //StartCoroutine(TestForces());
+
+        StartCoroutine(AlphaDemo());
     }
 
     void FixedUpdate()
     {
+        if (doRotateSphere == true)
+        {
+            environmentSphere.transform.Rotate(Vector3.left * (rotationSpeed * Time.deltaTime));
+        }
 
 
         if (Input.GetKey(KeyCode.UpArrow))
@@ -80,9 +91,22 @@ public class Haptic_Chair_Controller : MonoBehaviour
         this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
     }
 
-    
+    public void MoveShipForwardALPHA()
+    {
+        this.gameObject.GetComponent<Rigidbody>().AddForce(force4x, ForceMode.Impulse);
+        this.gameObject.GetComponent<Rigidbody>().velocity = forwardForce;
+        doRotateSphere = true;
+    }
 
-    IEnumerator JustWait()
+    public void StopMovingShipForwardALPHA()
+    {
+        this.gameObject.GetComponent<Rigidbody>().AddForce(force4x, ForceMode.Impulse);
+        doRotateSphere = false;
+    }
+
+
+
+    IEnumerator TestForces()
     {
         yield return new WaitForSeconds(5);
         this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
@@ -93,6 +117,15 @@ public class Haptic_Chair_Controller : MonoBehaviour
         yield return new WaitForSeconds(5);
         this.gameObject.GetComponent<Rigidbody>().AddForce(force4x, ForceMode.Impulse);
         yield return new WaitForSeconds(5);
+
+    }
+
+    IEnumerator AlphaDemo()
+    {
+        
+        MoveShipForwardALPHA();
+        yield return new WaitForSeconds(8);
+        StopMovingShipForwardALPHA();
 
     }
 }
