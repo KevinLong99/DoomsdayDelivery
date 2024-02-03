@@ -23,6 +23,6 @@ public class Instantiate_Thing : MonoBehaviour
     {
         //when lever is at max limit, spawn balls above the conveyor belt
 
-        Instantiate(thingToInstantiate, whereToInstantiate);
+        GameObject newBall = Instantiate(thingToInstantiate, whereToInstantiate);
     }
 }

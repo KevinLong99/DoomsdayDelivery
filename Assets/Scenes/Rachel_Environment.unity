@@ -1406,6 +1406,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 442713773}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &451926963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 451926964}
+  m_Layer: 0
+  m_Name: ZERO
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &451926964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451926963}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &487708040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,7 +1984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPressedDownFully: 0
   rotateMeParentScript: {fileID: 322111337}
-  hapticChairControllerScript: {fileID: 0}
+  hapticChairControllerScript: {fileID: 2016938301}
 --- !u!1001 &576291825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3283,6 +3314,37 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &963221597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 963221598}
+  m_Layer: 0
+  m_Name: Ball_Instantiate_Here
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &963221598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963221597}
+  serializedVersion: 2
+  m_LocalRotation: {x: -3.0283634e-10, y: 0.99917406, z: -0.040635638, w: 0.000000014898083}
+  m_LocalPosition: {x: -1.7784013, y: 308.1167, z: -109.5508}
+  m_LocalScale: {x: 0.20000006, y: 0.20000003, z: 0.20000012}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &999144929
 GameObject:
   m_ObjectHideFlags: 0
@@ -3332,7 +3394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPressedDownFully: 0
   rotateMeParentScript: {fileID: 322111337}
-  hapticChairControllerScript: {fileID: 0}
+  hapticChairControllerScript: {fileID: 2016938301}
 --- !u!1 &1051909446
 GameObject:
   m_ObjectHideFlags: 0
@@ -5374,6 +5436,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e73b5e6747f85fb4fb9e218ee9af4508, type: 3}
+--- !u!1 &1661613551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1661613552}
+  m_Layer: 0
+  m_Name: --OTHER--------------------------------------------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1661613552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661613551}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7784013, y: 308.1167, z: -109.5508}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1682264706
 GameObject:
   m_ObjectHideFlags: 0
@@ -5544,7 +5637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPressedDownFully: 0
   rotateMeParentScript: {fileID: 322111337}
-  hapticChairControllerScript: {fileID: 0}
+  hapticChairControllerScript: {fileID: 2016938301}
 --- !u!1001 &1814418200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6005,7 +6098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPressedDownFully: 0
   rotateMeParentScript: {fileID: 322111337}
-  hapticChairControllerScript: {fileID: 0}
+  hapticChairControllerScript: {fileID: 2016938301}
 --- !u!1001 &1990862665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6590,7 +6683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPressedDownFully: 0
   rotateMeParentScript: {fileID: 322111337}
-  hapticChairControllerScript: {fileID: 0}
+  hapticChairControllerScript: {fileID: 2016938301}
 --- !u!33 &16033760556773220
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6973,14 +7066,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538813648546856298}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.014370534, y: 0.7069608, z: -0.014370534, w: -0.7069608}
+  m_LocalRotation: {x: 0, y: 0, z: 0.020323003, w: 0.99979347}
   m_LocalPosition: {x: -0.339009, y: 1.0587745, z: -0.67984456}
   m_LocalScale: {x: 0.018555418, y: 0.17404877, z: 0.018555421}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6208533893277422310}
   m_Father: {fileID: 2058739803758113886}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.329}
 --- !u!4 &785121027787623110
 Transform:
   m_ObjectHideFlags: 0
@@ -10245,7 +10338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPressedDownFully: 0
   rotateMeParentScript: {fileID: 322111337}
-  hapticChairControllerScript: {fileID: 0}
+  hapticChairControllerScript: {fileID: 2016938301}
 --- !u!1 &6735377517204990397
 GameObject:
   m_ObjectHideFlags: 0
@@ -11324,8 +11417,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84960532ba02de1438b1b9f1a7b9c56f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thingToInstantiate: {fileID: 487708040}
-  whereToInstantiate: {fileID: 487708041}
+  thingToInstantiate: {fileID: 1432446623895684329, guid: 0b73ce3a8bf5ef9478c1f4619d6b5cf4,
+    type: 3}
+  whereToInstantiate: {fileID: 451926964}
 --- !u!1 &8161553374731841446
 GameObject:
   m_ObjectHideFlags: 0
@@ -12092,3 +12186,6 @@ SceneRoots:
   - {fileID: 503942627}
   - {fileID: 1245434207}
   - {fileID: 1682264707}
+  - {fileID: 1661613552}
+  - {fileID: 451926964}
+  - {fileID: 963221598}
