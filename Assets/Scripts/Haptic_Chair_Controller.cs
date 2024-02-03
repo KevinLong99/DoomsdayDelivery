@@ -14,21 +14,32 @@ public class Haptic_Chair_Controller : MonoBehaviour
     //ship flying, highest impulse upon stop (show that the ship is shoddy and old, use audio cues
     //      and VFX (like sparks) when ship comes to a halt to collaborate with the sudden stop of the ship.
 
+    public Actuate.ActuateAgent actuateAgent;
+
     private Vector3 force1x = new Vector3(0, 0, 1);		//
     private Vector3 force2x = new Vector3(0, 0, -2);	//
     private Vector3 force3x = new Vector3(-2, 0, 0);	//
     private Vector3 force4x = new Vector3(3, 0, 0);		//
 
-    private Vector3 forwardForce = new Vector3(0, 0, 0.5f);
+    private Vector3 forwardForce = new Vector3(0, 0, 5);
 
-    private Vector3 resetPoint = new Vector3(0, 0, 0);
+    private Vector3 targetPoint = new Vector3(300, 0, 300);
+    private Vector3 resetPoint = new Vector3(300, 0, 0);
 
     public GameObject environmentSphere;
 
     private float rotationSpeed = 10.0f;
     private bool doRotateSphere = false;
+
+    private float currentSpeed = 0;
+    private float accel = 0.5f;
+
+    private bool canHapticLeft = true;
+    private bool canHapticRight = true;
     void Start()
     {
+        actuateAgent.SetMotionSource(this.gameObject);
+
         //StartCoroutine(TestForces());
 
         StartCoroutine(AlphaDemo());
@@ -36,36 +47,20 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
     void FixedUpdate()
     {
+
         if (doRotateSphere == true)
         {
+            //this is the environment with the buildings. NOT the haptic chair ball
             environmentSphere.transform.Rotate(Vector3.left * (rotationSpeed * Time.deltaTime));
+
+            //make ball move at constant speed/acceleration
+            currentSpeed += Mathf.Min(accel * Time.deltaTime, 1);
+            Vector3 pos = Vector3.MoveTowards(this.transform.position, targetPoint, rotationSpeed * currentSpeed * Time.deltaTime);
+            GetComponent<Rigidbody>().MovePosition(pos);
+            //script credits to DuckType @ https://forum.unity.com/threads/object-moving-and-acceleration.582256/
         }
 
 
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            //add force to the rigidbody
-            this.gameObject.GetComponent<Rigidbody>().AddForce(forwardForce, ForceMode.VelocityChange);
-            Debug.Log("FORWARD");
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            this.gameObject.GetComponent<Rigidbody>().AddForce(force2x, ForceMode.Impulse);
-            Debug.Log("BACK");
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            this.gameObject.GetComponent<Rigidbody>().AddForce(force3x, ForceMode.Impulse);
-            Debug.Log("LEFT");
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            this.gameObject.GetComponent<Rigidbody>().AddForce(force4x, ForceMode.Impulse);
-            Debug.Log("RIGHT");
-        }
 
 
         if (this.gameObject.transform.position.z > 5000)    //this is an arbitrary point that we make for the ship to fly at a certain amount of time
@@ -82,25 +77,39 @@ public class Haptic_Chair_Controller : MonoBehaviour
     public void SwitchStationLeft()
     {
         //change force1x to proper force vector
-        this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
+        //this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
+
+        if (canHapticLeft == true)
+        {
+            canHapticLeft = false;
+            StartCoroutine(HapticLeft());
+        }
     }
 
     public void SwitchStationRight()
     {
         //change force1x to proper force vector
-        this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
+        //this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
+
+        if (canHapticRight == true)
+        {
+            canHapticRight = false;
+            StartCoroutine(HapticRight());
+        }
     }
 
     public void MoveShipForwardALPHA()
     {
-        this.gameObject.GetComponent<Rigidbody>().AddForce(force4x, ForceMode.Impulse);
-        this.gameObject.GetComponent<Rigidbody>().velocity = forwardForce;
+
         doRotateSphere = true;
     }
 
     public void StopMovingShipForwardALPHA()
     {
-        this.gameObject.GetComponent<Rigidbody>().AddForce(force4x, ForceMode.Impulse);
+
+        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        this.gameObject.transform.position = resetPoint;
         doRotateSphere = false;
     }
 
@@ -122,10 +131,24 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
     IEnumerator AlphaDemo()
     {
-        
+
         MoveShipForwardALPHA();
         yield return new WaitForSeconds(8);
         StopMovingShipForwardALPHA();
 
+    }
+
+    IEnumerator HapticLeft()
+    {
+        this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
+        yield return new WaitForSeconds(3);
+        canHapticLeft = true;
+    }
+
+    IEnumerator HapticRight()
+    {
+        this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
+        yield return new WaitForSeconds(3);
+        canHapticRight = true;
     }
 }

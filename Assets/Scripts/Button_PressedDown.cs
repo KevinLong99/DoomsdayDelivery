@@ -32,7 +32,8 @@ public class Button_PressedDown : MonoBehaviour
             && (buttonName == "Button_Stat2_Right" || buttonName == "Button_Stat3_Left"))
         {
             isPressedDownFully = true;
-            rotateMeParentScript.RotateToStationOne();
+
+            /*
             if (buttonName.Contains("Right"))
             {
                 hapticChairControllerScript.SwitchStationRight();
@@ -40,6 +41,10 @@ public class Button_PressedDown : MonoBehaviour
             {   //if not right, must be left
                 hapticChairControllerScript.SwitchStationLeft();
             }
+            */
+
+            rotateMeParentScript.RotateToStationOne();
+
             isPressedDownFully = false;
         }
 
@@ -49,7 +54,8 @@ public class Button_PressedDown : MonoBehaviour
             && (buttonName == "Button_Stat3_Right" || buttonName == "Button_Stat1_Left"))
         {
             isPressedDownFully = true;
-            rotateMeParentScript.RotateToStationTwo();
+
+            /*
             if (buttonName.Contains("Right"))
             {
                 hapticChairControllerScript.SwitchStationRight();
@@ -58,6 +64,10 @@ public class Button_PressedDown : MonoBehaviour
             {   //if not right, must be left
                 hapticChairControllerScript.SwitchStationLeft();
             }
+            */
+
+            rotateMeParentScript.RotateToStationTwo();
+
             isPressedDownFully = false;
         }
 
@@ -67,7 +77,8 @@ public class Button_PressedDown : MonoBehaviour
             && (buttonName == "Button_Stat1_Right" || buttonName == "Button_Stat2_Left"))
         {
             isPressedDownFully = true;
-            rotateMeParentScript.RotateToStationThree();
+
+            /*
             if (buttonName.Contains("Right"))
             {
                 hapticChairControllerScript.SwitchStationRight();
@@ -76,6 +87,10 @@ public class Button_PressedDown : MonoBehaviour
             {   //if not right, must be left
                 hapticChairControllerScript.SwitchStationLeft();
             }
+            */
+
+            rotateMeParentScript.RotateToStationThree();
+
             isPressedDownFully = false;
         }
 
