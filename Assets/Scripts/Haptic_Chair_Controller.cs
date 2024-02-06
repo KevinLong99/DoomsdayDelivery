@@ -79,6 +79,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
         //change force1x to proper force vector
         //this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
 
+
         if (canHapticLeft == true)
         {
             canHapticLeft = false;
@@ -90,6 +91,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
     {
         //change force1x to proper force vector
         //this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
+
 
         if (canHapticRight == true)
         {

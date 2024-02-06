@@ -17,6 +17,8 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     public int moveValue = 0;
 
+    public Haptic_Chair_Controller hapticChairContScript;
+
     private void Update()
     {
 
@@ -50,6 +52,7 @@ public class Rotate_Me_Parent : MonoBehaviour
     public void RotateToStationThree()
     {
         StartCoroutine(rotateObject(objectToRotate, rotation1, 1f));
+        hapticChairContScript.SwitchStationLeft();
     }
 
 
