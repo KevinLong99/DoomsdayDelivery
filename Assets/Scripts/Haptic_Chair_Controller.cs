@@ -35,6 +35,8 @@ public class Haptic_Chair_Controller : MonoBehaviour
     private float accel = 0.5f;
 
     private float lerpCounter, lerpDuration;
+
+    private bool tent1IsComplete = false, tent2IsComplete = false, tent3IsComplete = false;
     void Start()
     {
         actuateAgent.SetMotionSource(this.gameObject);
