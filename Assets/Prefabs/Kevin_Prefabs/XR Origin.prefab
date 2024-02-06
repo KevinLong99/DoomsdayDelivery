@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_TrackingStateInput:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Tracking State Input
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: b8f6f9f9-66af-4765-91e4-cfbc7696e5c9
@@ -1902,7 +1902,7 @@ Transform:
   m_GameObject: {fileID: 8147104310897601230}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1176, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2604,7 +2604,7 @@ Transform:
   m_GameObject: {fileID: 8970942449697465474}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.974, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2627,7 +2627,7 @@ MonoBehaviour:
   m_Camera: {fileID: 2696884839043033011}
   m_OriginBaseGameObject: {fileID: 8970942449697465474}
   m_CameraFloorOffsetObject: {fileID: 8147104310897601230}
-  m_RequestedTrackingOriginMode: 2
+  m_RequestedTrackingOriginMode: 1
   m_CameraYOffset: 1.1176
 --- !u!114 &607864985451283680
 MonoBehaviour:

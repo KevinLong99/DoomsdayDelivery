@@ -17,22 +17,29 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     public int moveValue = 0;
 
+    private bool nickRotate = false;
+
     public Haptic_Chair_Controller hapticChairContScript;
 
     private void Update()
     {
-
+        
         if (moveValue == 1)
         {
-            StartCoroutine(rotateObject(objectToRotate, rotation1, 1f));
+            if (nickRotate == false)
+            {
+                RotateToStationOne();
+                nickRotate = true;
+            }
+            
         }
         else if (moveValue == 2)
         {
-            StartCoroutine(rotateObject(objectToRotate, rotation2, 1f));
+            RotateToStationTwo();    
         }
         else if(moveValue == 3)
         {
-            StartCoroutine(rotateObject(objectToRotate, rotation3, 1f));
+            RotateToStationThree();
         }
         else
         {
@@ -43,7 +50,9 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     public void RotateToStationOne()
     {
-        StartCoroutine(rotateObject(objectToRotate, rotation3, 1f));
+        //StartCoroutine(rotateObject(objectToRotate, rotation3, 1f));
+        Debug.Log("ROTATE");
+        hapticChairContScript.SwitchStationRight();
     }
     public void RotateToStationTwo()
     {
@@ -52,7 +61,6 @@ public class Rotate_Me_Parent : MonoBehaviour
     public void RotateToStationThree()
     {
         StartCoroutine(rotateObject(objectToRotate, rotation1, 1f));
-        hapticChairContScript.SwitchStationLeft();
     }
 
 
