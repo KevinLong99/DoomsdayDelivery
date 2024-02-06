@@ -23,7 +23,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
     private Vector3 forwardForce = new Vector3(0, 0, 5);
 
-    private Vector3 targetPoint = new Vector3(350, 0, 300);
+    private Vector3 targetPoint = new Vector3(350, 0, 5000);
     private Vector3 resetPoint = new Vector3(350, 0.5f, 0);
 
     public GameObject environmentSphere;
@@ -41,9 +41,10 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
         //StartCoroutine(TestForces());
 
-        StartCoroutine(FlyForAmountOfSeconds(7));
+        FlyFunction(7);
     }
 
+    //fixedUpdate means Time.deltaTime is always constant
     void FixedUpdate()
     {
 
@@ -62,7 +63,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
 
 
-        if (this.gameObject.transform.position.z > 300)    //this is an arbitrary point that we make for the ship to fly at a certain amount of time
+        if (this.gameObject.transform.position.z > 5000)    //this is an arbitrary point that we make for the ship to fly at a certain amount of time
                                                             //and once they hit that length (if no ship error stops them) then they stop abruptly regardless once they get to the med tent
         {
             this.gameObject.transform.position = resetPoint;
@@ -83,6 +84,11 @@ public class Haptic_Chair_Controller : MonoBehaviour
     public void SwitchStationRight()
     {
         StartCoroutine(HapticRight());
+    }
+
+    public void FlyFunction(float secondsOfFlight)
+    {
+        StartCoroutine(FlyForAmountOfSeconds(secondsOfFlight));
     }
 
     IEnumerator TestForces()
@@ -139,6 +145,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
     IEnumerator FlyForAmountOfSeconds(float secondsToFly)
     {
+        
         doRotateSphere = true;
         yield return new WaitForSeconds(secondsToFly);
         doRotateSphere = false;
