@@ -23,7 +23,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
     private Vector3 forwardForce = new Vector3(0, 0, 5);
 
-    private Vector3 targetPoint = new Vector3(300, 0, 300);
+    private Vector3 targetPoint = new Vector3(350, 0, 300);
     private Vector3 resetPoint = new Vector3(350, 0.5f, 0);
 
     public GameObject environmentSphere;
@@ -119,11 +119,15 @@ public class Haptic_Chair_Controller : MonoBehaviour
         Vector3 startingVel = this.gameObject.GetComponent<Rigidbody>().velocity;
         Vector3 startingAngVel = this.gameObject.GetComponent<Rigidbody>().angularVelocity;
 
+        Quaternion startingRot = this.gameObject.transform.rotation;
+
         while (lerpCounter < lerpDuration)
         {
             lerpCounter += Time.deltaTime;
             this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.Lerp(startingVel, Vector3.zero, lerpCounter / lerpDuration);
             this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.Lerp(startingAngVel, Vector3.zero, lerpCounter / lerpDuration);
+
+            this.gameObject.transform.rotation = Quaternion.Lerp(startingRot, Quaternion.identity, lerpCounter / lerpDuration);
             yield return null;
         }
 
@@ -153,14 +157,11 @@ public class Haptic_Chair_Controller : MonoBehaviour
     3. ship encounters mid-flight issue and needs to stop
     4. ship continues flying after mid-flight issue is solved
 
-//have the ball lerp down to zero, NOT RESETTING POINT
+have the ball lerp down to zero, NOT RESETTING POINT
     1. on station switches
 
 If Zac answers, find a way to reset the chair to its level/starting point
     **do this after each station switch (so the player is level with each station after chair movement
-
-
-
 
 
 
