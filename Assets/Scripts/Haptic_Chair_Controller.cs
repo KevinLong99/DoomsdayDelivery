@@ -23,8 +23,8 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
     private Vector3 forwardForce = new Vector3(0, 0, 5);
 
-    private Vector3 targetPoint = new Vector3(300, 0, 300);
-    private Vector3 resetPoint = new Vector3(300, 0.5f, 0);
+    private Vector3 targetPoint = new Vector3(350, 0, 300);
+    private Vector3 resetPoint = new Vector3(350, 0.5f, 0);
 
     public GameObject environmentSphere;
 
@@ -41,7 +41,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
         //StartCoroutine(TestForces());
 
-        //StartCoroutine(AlphaDemo());
+        StartCoroutine(FlyForAmountOfSeconds(7));
     }
 
     void FixedUpdate()
@@ -62,7 +62,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
 
 
-        if (this.gameObject.transform.position.z > 5000)    //this is an arbitrary point that we make for the ship to fly at a certain amount of time
+        if (this.gameObject.transform.position.z > 300)    //this is an arbitrary point that we make for the ship to fly at a certain amount of time
                                                             //and once they hit that length (if no ship error stops them) then they stop abruptly regardless once they get to the med tent
         {
             this.gameObject.transform.position = resetPoint;
@@ -85,23 +85,6 @@ public class Haptic_Chair_Controller : MonoBehaviour
         StartCoroutine(HapticRight());
     }
 
-    public void MoveShipForwardALPHA()
-    {
-
-        doRotateSphere = true;
-    }
-
-    public void StopMovingShipForwardALPHA()
-    {
-
-        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        this.gameObject.transform.position = resetPoint;
-        doRotateSphere = false;
-    }
-
-
-
     IEnumerator TestForces()
     {
         yield return new WaitForSeconds(5);
@@ -116,14 +99,6 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
     }
 
-    IEnumerator AlphaDemo()
-    {
-
-        MoveShipForwardALPHA();
-        yield return new WaitForSeconds(8);
-        StopMovingShipForwardALPHA();
-
-    }
 
     IEnumerator HapticLeft()
     {
@@ -137,27 +112,57 @@ public class Haptic_Chair_Controller : MonoBehaviour
         this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
         yield return new WaitForSeconds(0.5f);
 
-        //utilize LERP to make the acceleration approach zero instead of violently resetting.
+        //utilize LERP to make the actuate acceleration approach zero instead of violently resetting.
 
         lerpCounter = 0;
-        lerpDuration = 0;
+        lerpDuration = 1f;
         Vector3 startingVel = this.gameObject.GetComponent<Rigidbody>().velocity;
         Vector3 startingAngVel = this.gameObject.GetComponent<Rigidbody>().angularVelocity;
+
+        Quaternion startingRot = this.gameObject.transform.rotation;
 
         while (lerpCounter < lerpDuration)
         {
             lerpCounter += Time.deltaTime;
             this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.Lerp(startingVel, Vector3.zero, lerpCounter / lerpDuration);
             this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.Lerp(startingAngVel, Vector3.zero, lerpCounter / lerpDuration);
+
+            this.gameObject.transform.rotation = Quaternion.Lerp(startingRot, Quaternion.identity, lerpCounter / lerpDuration);
             yield return null;
         }
 
         this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-
-        this.gameObject.transform.position = resetPoint;
-
+        this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;       
 
 
     }
+
+    IEnumerator FlyForAmountOfSeconds(float secondsToFly)
+    {
+        doRotateSphere = true;
+        yield return new WaitForSeconds(secondsToFly);
+        doRotateSphere = false;
+
+        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        this.gameObject.transform.position = resetPoint;
+    }
 }
+
+/* 
+
+//have the ball go to the reset point when:
+    1. ship starts flying to next tent
+    2. ship ends flying to next tent
+    3. ship encounters mid-flight issue and needs to stop
+    4. ship continues flying after mid-flight issue is solved
+
+have the ball lerp down to zero, NOT RESETTING POINT
+    1. on station switches
+
+If Zac answers, find a way to reset the chair to its level/starting point
+    **do this after each station switch (so the player is level with each station after chair movement
+
+
+
+ */

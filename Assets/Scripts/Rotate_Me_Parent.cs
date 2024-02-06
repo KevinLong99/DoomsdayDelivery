@@ -51,19 +51,16 @@ public class Rotate_Me_Parent : MonoBehaviour
     public void RotateToStationOne()
     {
         StartCoroutine(rotateObject(objectToRotate, rotation3, 1f));
-        Debug.Log("ROTATE to 1");
         hapticChairContScript.SwitchStationRight();
     }
     public void RotateToStationTwo()
     {
         StartCoroutine(rotateObject(objectToRotate, rotation2, 1f));
-        Debug.Log("ROTATE to 2");
         hapticChairContScript.SwitchStationRight();
     }
     public void RotateToStationThree()
     {
         StartCoroutine(rotateObject(objectToRotate, rotation1, 1f));
-        Debug.Log("ROTATE to 3");
         hapticChairContScript.SwitchStationRight();
     }
 
