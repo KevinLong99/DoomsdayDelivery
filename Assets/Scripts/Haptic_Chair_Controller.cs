@@ -23,8 +23,8 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
     private Vector3 forwardForce = new Vector3(0, 0, 5);
 
-    private Vector3 targetPoint = new Vector3(350, 0, 150);
-    private Vector3 resetPoint = new Vector3(350, 0.5f, 0);
+    private Vector3 targetPoint = new Vector3(300, 0, 300);
+    private Vector3 resetPoint = new Vector3(300, 0.5f, 0);
 
     public GameObject environmentSphere;
 
@@ -34,6 +34,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
     private float currentSpeed = 0;
     private float accel = 0.5f;
 
+    private float lerpCounter, lerpDuration;
     void Start()
     {
         actuateAgent.SetMotionSource(this.gameObject);
@@ -76,18 +77,12 @@ public class Haptic_Chair_Controller : MonoBehaviour
     {
         //change force1x to proper force vector
         //this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
-
         StartCoroutine(HapticLeft());
     }
 
     public void SwitchStationRight()
     {
-        //change force1x to proper force vector
-        //this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
-
-        
         StartCoroutine(HapticRight());
-
     }
 
     public void MoveShipForwardALPHA()
@@ -141,11 +136,27 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
         this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
         yield return new WaitForSeconds(0.5f);
-        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        this.gameObject.transform.position = resetPoint;
 
         //utilize LERP to make the acceleration approach zero instead of violently resetting.
+
+        lerpCounter = 0;
+        lerpDuration = 0;
+        Vector3 startingVel = this.gameObject.GetComponent<Rigidbody>().velocity;
+        Vector3 startingAngVel = this.gameObject.GetComponent<Rigidbody>().angularVelocity;
+
+        while (lerpCounter < lerpDuration)
+        {
+            lerpCounter += Time.deltaTime;
+            this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.Lerp(startingVel, Vector3.zero, lerpCounter / lerpDuration);
+            this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.Lerp(startingAngVel, Vector3.zero, lerpCounter / lerpDuration);
+            yield return null;
+        }
+
+        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+        this.gameObject.transform.position = resetPoint;
+
 
 
     }
