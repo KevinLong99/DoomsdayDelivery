@@ -1083,7 +1083,7 @@ PrefabInstance:
     - target: {fileID: 8970942449697465474, guid: baeef11bffb4db641ad7dfdda5eebe23,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9208366894771911372, guid: baeef11bffb4db641ad7dfdda5eebe23,
         type: 3}
@@ -1476,7 +1476,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: -0.43, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -2.1104336, y: 307.6143, z: -110.06796}
+  m_ConnectedAnchor: {x: -2.047868, y: 307.6929, z: -110.07009}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
@@ -2147,7 +2147,7 @@ PrefabInstance:
     - target: {fileID: 8970942449697465474, guid: baeef11bffb4db641ad7dfdda5eebe23,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9208366894771911372, guid: baeef11bffb4db641ad7dfdda5eebe23,
         type: 3}
@@ -2157,12 +2157,12 @@ PrefabInstance:
     - target: {fileID: 9208366894771911372, guid: baeef11bffb4db641ad7dfdda5eebe23,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 308.34006
+      value: 306.5
       objectReference: {fileID: 0}
     - target: {fileID: 9208366894771911372, guid: baeef11bffb4db641ad7dfdda5eebe23,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -111.1439
+      value: -111
       objectReference: {fileID: 0}
     - target: {fileID: 9208366894771911372, guid: baeef11bffb4db641ad7dfdda5eebe23,
         type: 3}
