@@ -23,8 +23,8 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
     private Vector3 forwardForce = new Vector3(0, 0, 5);
 
-    private Vector3 targetPoint = new Vector3(300, 0, 300);
-    private Vector3 resetPoint = new Vector3(300, 0.5f, 0);
+    private Vector3 targetPoint = new Vector3(350, 0, 150);
+    private Vector3 resetPoint = new Vector3(350, 0.5f, 0);
 
     public GameObject environmentSphere;
 
@@ -34,8 +34,6 @@ public class Haptic_Chair_Controller : MonoBehaviour
     private float currentSpeed = 0;
     private float accel = 0.5f;
 
-    private bool canHapticLeft = true;
-    private bool canHapticRight = true;
     void Start()
     {
         actuateAgent.SetMotionSource(this.gameObject);
@@ -79,12 +77,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
         //change force1x to proper force vector
         //this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
 
-
-        if (canHapticLeft == true)
-        {
-            canHapticLeft = false;
-            StartCoroutine(HapticLeft());
-        }
+        StartCoroutine(HapticLeft());
     }
 
     public void SwitchStationRight()
@@ -93,7 +86,6 @@ public class Haptic_Chair_Controller : MonoBehaviour
         //this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
 
         
-
         StartCoroutine(HapticRight());
 
     }
@@ -142,7 +134,6 @@ public class Haptic_Chair_Controller : MonoBehaviour
     {
         this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
         yield return new WaitForSeconds(3);
-        canHapticLeft = true;
     }
 
     IEnumerator HapticRight()
@@ -157,6 +148,5 @@ public class Haptic_Chair_Controller : MonoBehaviour
         //utilize LERP to make the acceleration approach zero instead of violently resetting.
 
 
-        canHapticRight = true;
     }
 }
