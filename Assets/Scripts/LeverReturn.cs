@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class LeverReturn : MonoBehaviour
 {
@@ -18,15 +19,19 @@ public class LeverReturn : MonoBehaviour
     {
         if (isReturning)
         {
-            // Use Rigidbody.MovePosition to move the lever back to the original position
+            // Calculate the new position using Lerp, moving only on the Y axis
             Vector3 newPosition = Vector3.Lerp(rb.position, originalPosition, returnSpeed * Time.fixedDeltaTime);
-            rb.MovePosition(new Vector3(rb.position.x, newPosition.y, rb.position.z));
 
-            // Optionally, stop the returning if it's "close enough" to the original position
-            if (Mathf.Abs(rb.position.y - originalPosition.y) < 0.01f) // Threshold value can be adjusted
+            // Apply the new position
+            rb.MovePosition(newPosition);
+
+            // Check if the lever is close enough to the original position to stop returning
+            if (Vector3.Distance(newPosition, originalPosition) < 0.01f)
             {
-                rb.MovePosition(new Vector3(rb.position.x, originalPosition.y, rb.position.z)); // Snap to the exact position
+                rb.MovePosition(originalPosition); // Snap to the exact original position
                 isReturning = false;
+                // Enable the interactable component so it can be grabbed again
+                GetComponent<XRGrabInteractable>().enabled = true;
             }
         }
     }
@@ -35,5 +40,7 @@ public class LeverReturn : MonoBehaviour
     public void ReleaseLever()
     {
         isReturning = true;
+        // Disable the interactable component to prevent grabbing while returning
+        GetComponent<XRGrabInteractable>().enabled = false;
     }
 }
