@@ -2453,7 +2453,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.9720314, y: 307.77103, z: -110.07036}
+  m_ConnectedAnchor: {x: -1.9720314, y: 307.38608, z: -110.07322}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -2556,6 +2556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnSpeed: 2
+  returnPosition: {fileID: 1491792898}
 --- !u!114 &1491792909
 MonoBehaviour:
   m_ObjectHideFlags: 0
