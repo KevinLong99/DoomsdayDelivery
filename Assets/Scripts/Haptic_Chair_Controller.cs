@@ -16,14 +16,16 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
     public Actuate.ActuateAgent actuateAgent;
 
-    private Vector3 force1x = new Vector3(0, 0, 1);		//
-    private Vector3 force2x = new Vector3(0, 0, -2);	//
-    private Vector3 force3x = new Vector3(-2, 0, 0);	//
-    private Vector3 force4x = new Vector3(3, 0, 0);		//
+    private Vector3 force1x = new Vector3(0, 0, 1);	
+    private Vector3 force2x = new Vector3(0, 0, -2);
+    private Vector3 force3x = new Vector3(-2, 0, 0);
+    private Vector3 force4x = new Vector3(3, 0, 0);	
+
+    private Vector3 stationRotateForce = new Vector3(0, 0, 0.25f);
 
     private Vector3 forwardForce = new Vector3(0, 0, 5);
 
-    private Vector3 targetPoint = new Vector3(350, 0, 5000);
+    private Vector3 targetPoint = new Vector3(350, 0.5f, 5000);
     private Vector3 resetPoint = new Vector3(350, 0.5f, 0);
 
     public GameObject environmentSphere;
@@ -32,37 +34,28 @@ public class Haptic_Chair_Controller : MonoBehaviour
     private bool doRotateSphere = false;
 
     private float currentSpeed = 0;
-    private float accel = 0.5f;
+    private float accel = 0.25f;
 
     private float lerpCounter, lerpDuration;
+    private float ballTravelTime = 0;
 
     private bool tent1IsComplete = false, tent2IsComplete = false, tent3IsComplete = false;
     void Start()
     {
         actuateAgent.SetMotionSource(this.gameObject);
 
-        //StartCoroutine(TestForces());
-
-        FlyFunction(7);
+        ballTravelTime = 10f;   
+        FlyFunction();
     }
 
     //fixedUpdate means Time.deltaTime is always constant
     void FixedUpdate()
     {
-
+        //this is the environment with the buildings. NOT the haptic chair ball
         if (doRotateSphere == true)
         {
-            //this is the environment with the buildings. NOT the haptic chair ball
             environmentSphere.transform.Rotate(Vector3.left * (rotationSpeed * Time.deltaTime));
-
-            //make ball move at constant speed/acceleration
-            currentSpeed += Mathf.Min(accel * Time.deltaTime, 1);
-            Vector3 pos = Vector3.MoveTowards(this.transform.position, targetPoint, rotationSpeed * currentSpeed * Time.deltaTime);
-            GetComponent<Rigidbody>().MovePosition(pos);
-            //script credits to DuckType @ https://forum.unity.com/threads/object-moving-and-acceleration.582256/
         }
-
-
 
 
         if (this.gameObject.transform.position.z > 5000)    //this is an arbitrary point that we make for the ship to fly at a certain amount of time
@@ -72,8 +65,6 @@ public class Haptic_Chair_Controller : MonoBehaviour
             //while flying, if ship encounters an error (at random or predetermined), stop and set position at 0
             //to jerk stop the player and issue an alert that something is broken
         }
-
-
     }
 
     public void SwitchStationLeft()
@@ -88,36 +79,21 @@ public class Haptic_Chair_Controller : MonoBehaviour
         StartCoroutine(HapticRight());
     }
 
-    public void FlyFunction(float secondsOfFlight)
+    public void FlyFunction()
     {
-        StartCoroutine(FlyForAmountOfSeconds(secondsOfFlight));
+        StartCoroutine(FlyForAmountOfSeconds(ballTravelTime));
     }
-
-    IEnumerator TestForces()
-    {
-        yield return new WaitForSeconds(5);
-        this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
-        yield return new WaitForSeconds(5);
-        this.gameObject.GetComponent<Rigidbody>().AddForce(force2x, ForceMode.Impulse);
-        yield return new WaitForSeconds(5);
-        this.gameObject.GetComponent<Rigidbody>().AddForce(force3x, ForceMode.Impulse);
-        yield return new WaitForSeconds(5);
-        this.gameObject.GetComponent<Rigidbody>().AddForce(force4x, ForceMode.Impulse);
-        yield return new WaitForSeconds(5);
-
-    }
-
 
     IEnumerator HapticLeft()
     {
-        this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
+        this.gameObject.GetComponent<Rigidbody>().AddForce(stationRotateForce, ForceMode.Impulse);
         yield return new WaitForSeconds(3);
     }
 
     IEnumerator HapticRight()
     {
 
-        this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
+        this.gameObject.GetComponent<Rigidbody>().AddForce(stationRotateForce, ForceMode.Impulse);
         yield return new WaitForSeconds(0.5f);
 
         //utilize LERP to make the actuate acceleration approach zero instead of violently resetting.
@@ -147,14 +123,51 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
     IEnumerator FlyForAmountOfSeconds(float secondsToFly)
     {
-        
         doRotateSphere = true;
-        yield return new WaitForSeconds(secondsToFly);
+
+        lerpDuration = 0;
+        Quaternion endRot = Quaternion.Euler(180, 0, 0);
+
+        while (lerpDuration < (ballTravelTime/2))
+        {
+            lerpDuration += Time.deltaTime;
+            this.gameObject.transform.rotation = Quaternion.Lerp(Quaternion.identity, endRot, (lerpDuration / (ballTravelTime/2)));
+            yield return null;
+        }
+
+        lerpDuration = 0;
+
+        while (lerpDuration < (ballTravelTime / 2))
+        {
+            lerpDuration += Time.deltaTime;
+            this.gameObject.transform.rotation = Quaternion.Lerp(endRot, Quaternion.identity, (lerpDuration / (ballTravelTime / 2)));
+            yield return null;
+        }
+
+
+        //yield return new WaitForSeconds(secondsToFly);
         doRotateSphere = false;
+
+        lerpCounter = 0;
+        lerpDuration = 1f;
+        Vector3 startingVel = this.gameObject.GetComponent<Rigidbody>().velocity;
+        Vector3 startingAngVel = this.gameObject.GetComponent<Rigidbody>().angularVelocity;
+
+        Quaternion startingRot = this.gameObject.transform.rotation;
+
+        while (lerpCounter < lerpDuration)
+        {
+            lerpCounter += Time.deltaTime;
+            this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.Lerp(startingVel, Vector3.zero, lerpCounter / lerpDuration);
+            this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.Lerp(startingAngVel, Vector3.zero, lerpCounter / lerpDuration);
+
+            this.gameObject.transform.rotation = Quaternion.Lerp(startingRot, Quaternion.identity, lerpCounter / lerpDuration);
+            yield return null;
+        }
 
         this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        this.gameObject.transform.position = resetPoint;
+        //this.gameObject.transform.position = resetPoint;
     }
 }
 
@@ -175,3 +188,5 @@ If Zac answers, find a way to reset the chair to its level/starting point
 
 
  */
+
+
