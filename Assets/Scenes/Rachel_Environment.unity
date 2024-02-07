@@ -2294,7 +2294,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 1491792898}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -2452,9 +2452,9 @@ ConfigurableJoint:
   m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 1, z: 0}
-  m_Axis: {x: 0, y: 0, z: -1}
+  m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.9720314, y: 307.38608, z: -110.07322}
+  m_ConnectedAnchor: {x: -1.9720314, y: 307.7753, z: -110.073235}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -2467,7 +2467,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 0.1
+    limit: 0.5
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -2503,7 +2503,7 @@ ConfigurableJoint:
   m_YDrive:
     serializedVersion: 4
     positionSpring: 0
-    positionDamper: 0.5
+    positionDamper: 2
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_ZDrive:
@@ -2556,7 +2556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df22e888c0305140bed9e732b03da59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnSpeed: 2
+  returnSpeed: 1
 --- !u!114 &1491792909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2596,7 +2596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd585515023710146a1fc13b518e7401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionThreshold: 0.01
+  positionThreshold: 1
   jointLimitState: 2
   OnLowerLimitReached:
     m_PersistentCalls:
