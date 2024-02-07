@@ -4,26 +4,28 @@ public class LeverReturn : MonoBehaviour
 {
     public float returnSpeed = 2.0f; // Speed of return, adjustable in the inspector
     private Quaternion originalRotation;
+    private Rigidbody rb;
     private bool isReturning = false;
 
     void Start()
     {
         // Store the original rotation of the lever
         originalRotation = transform.localRotation;
+        rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        // If the lever has been released, begin returning it to its original position
         if (isReturning)
         {
-            // Lerp the rotation back to the original rotation at the specified return speed
-            transform.localRotation = Quaternion.Lerp(transform.localRotation, originalRotation, Time.deltaTime * returnSpeed);
+            // Use Rigidbody.MoveRotation to move the lever back to the original rotation
+            Quaternion newRotation = Quaternion.Lerp(rb.rotation, originalRotation, returnSpeed * Time.fixedDeltaTime);
+            rb.MoveRotation(newRotation);
 
-            // Optionally, you can stop the returning if it's "close enough" to the original rotation
-            if (Quaternion.Angle(transform.localRotation, originalRotation) < 0.1f)
+            // Optionally, stop the returning if it's "close enough" to the original rotation
+            if (Quaternion.Angle(rb.rotation, originalRotation) < 0.1f)
             {
-                transform.localRotation = originalRotation;
+                rb.MoveRotation(originalRotation); // Snap to the exact rotation
                 isReturning = false;
             }
         }
