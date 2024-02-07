@@ -29390,7 +29390,7 @@ MonoBehaviour:
       - m_Target: {fileID: 820569440}
         m_TargetAssemblyTypeName: Haptic_Chair_Controller, Assembly-CSharp
         m_MethodName: FlyFunction
-        m_Mode: 4
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

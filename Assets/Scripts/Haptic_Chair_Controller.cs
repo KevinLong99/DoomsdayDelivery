@@ -44,7 +44,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
     {
         actuateAgent.SetMotionSource(this.gameObject);
 
-        ballTravelTime = 10f;   
+        ballTravelTime = 0f;   
         FlyFunction();
     }
 
