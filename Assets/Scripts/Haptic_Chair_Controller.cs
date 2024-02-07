@@ -21,7 +21,10 @@ public class Haptic_Chair_Controller : MonoBehaviour
     private Vector3 force3x = new Vector3(-2, 0, 0);
     private Vector3 force4x = new Vector3(3, 0, 0);	
 
-    private Vector3 stationRotateForce = new Vector3(0, 0, 0.25f);
+    private Vector3 stationRotateForce = new Vector3(0, 0, -0.25f);
+
+    private Vector3 statRotRight = new Vector3(-0.33f, 0, 0);
+    private Vector3 statRotLeft = new Vector3(0.33f, 0, 0);
 
     private Vector3 forwardForce = new Vector3(0, 0, 5);
 
@@ -44,7 +47,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
     {
         actuateAgent.SetMotionSource(this.gameObject);
 
-        ballTravelTime = 0f;   
+        ballTravelTime = 3f;   
         FlyFunction();
     }
 
@@ -58,7 +61,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
         }
 
 
-        if (this.gameObject.transform.position.z > 5000)    //this is an arbitrary point that we make for the ship to fly at a certain amount of time
+        if (this.gameObject.transform.position.z > 100)    //this is an arbitrary point that we make for the ship to fly at a certain amount of time
                                                             //and once they hit that length (if no ship error stops them) then they stop abruptly regardless once they get to the med tent
         {
             this.gameObject.transform.position = resetPoint;
@@ -69,14 +72,12 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
     public void SwitchStationLeft()
     {
-        //change force1x to proper force vector
-        //this.gameObject.GetComponent<Rigidbody>().AddForce(force1x, ForceMode.Impulse);
-        StartCoroutine(HapticLeft());
+        StartCoroutine(HapticRotation(statRotLeft));
     }
 
     public void SwitchStationRight()
     {
-        StartCoroutine(HapticRight());
+        StartCoroutine(HapticRotation(statRotRight));
     }
 
     public void FlyFunction()
@@ -84,75 +85,25 @@ public class Haptic_Chair_Controller : MonoBehaviour
         StartCoroutine(FlyForAmountOfSeconds(ballTravelTime));
     }
 
-    IEnumerator HapticLeft()
+    public void HardStopTheShip()
     {
-        this.gameObject.GetComponent<Rigidbody>().AddForce(stationRotateForce, ForceMode.Impulse);
-        yield return new WaitForSeconds(3);
+        StartCoroutine(FlyUntilMalfunction(5));
     }
 
-    IEnumerator HapticRight()
-    {
+    //---------------------------COROUTINES-----------------------------------\\
 
-        this.gameObject.GetComponent<Rigidbody>().AddForce(stationRotateForce, ForceMode.Impulse);
+    IEnumerator HapticRotation(Vector3 rotDirection)
+    {
+        //rotDirection tells which direction chair is moving for the stations rotating.
+        this.gameObject.GetComponent<Rigidbody>().AddForce(rotDirection, ForceMode.Impulse);
         yield return new WaitForSeconds(0.5f);
 
         //utilize LERP to make the actuate acceleration approach zero instead of violently resetting.
 
         lerpCounter = 0;
-        lerpDuration = 1f;
+        lerpDuration = .5f;
         Vector3 startingVel = this.gameObject.GetComponent<Rigidbody>().velocity;
         Vector3 startingAngVel = this.gameObject.GetComponent<Rigidbody>().angularVelocity;
-
-        Quaternion startingRot = this.gameObject.transform.rotation;
-
-        while (lerpCounter < lerpDuration)
-        {
-            lerpCounter += Time.deltaTime;
-            this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.Lerp(startingVel, Vector3.zero, lerpCounter / lerpDuration);
-            this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.Lerp(startingAngVel, Vector3.zero, lerpCounter / lerpDuration);
-
-            this.gameObject.transform.rotation = Quaternion.Lerp(startingRot, Quaternion.identity, lerpCounter / lerpDuration);
-            yield return null;
-        }
-
-        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;       
-
-
-    }
-
-    IEnumerator FlyForAmountOfSeconds(float secondsToFly)
-    {
-        doRotateSphere = true;
-
-        lerpDuration = 0;
-        Quaternion endRot = Quaternion.Euler(180, 0, 0);
-
-        while (lerpDuration < (ballTravelTime/2))
-        {
-            lerpDuration += Time.deltaTime;
-            this.gameObject.transform.rotation = Quaternion.Lerp(Quaternion.identity, endRot, (lerpDuration / (ballTravelTime/2)));
-            yield return null;
-        }
-
-        lerpDuration = 0;
-
-        while (lerpDuration < (ballTravelTime / 2))
-        {
-            lerpDuration += Time.deltaTime;
-            this.gameObject.transform.rotation = Quaternion.Lerp(endRot, Quaternion.identity, (lerpDuration / (ballTravelTime / 2)));
-            yield return null;
-        }
-
-
-        //yield return new WaitForSeconds(secondsToFly);
-        doRotateSphere = false;
-
-        lerpCounter = 0;
-        lerpDuration = 1f;
-        Vector3 startingVel = this.gameObject.GetComponent<Rigidbody>().velocity;
-        Vector3 startingAngVel = this.gameObject.GetComponent<Rigidbody>().angularVelocity;
-
         Quaternion startingRot = this.gameObject.transform.rotation;
 
         while (lerpCounter < lerpDuration)
@@ -167,7 +118,84 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
         this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        //this.gameObject.transform.position = resetPoint;
+    }
+
+    IEnumerator FlyForAmountOfSeconds(float secondsToFly)
+    {
+        //secondsToFly is what ballTravelTime is (that's the value that's passed in)
+        doRotateSphere = true;
+
+        lerpDuration = 0;
+        Quaternion endRot = Quaternion.Euler(180, 0, 0);
+        while (lerpDuration < (secondsToFly / 2))
+        {
+            lerpDuration += Time.deltaTime;
+            this.gameObject.transform.rotation = Quaternion.Lerp(Quaternion.identity, endRot, (lerpDuration / (ballTravelTime/2)));
+            yield return null;
+        }
+
+        lerpDuration = 0;
+        while (lerpDuration < (secondsToFly / 2))
+        {
+            lerpDuration += Time.deltaTime;
+            this.gameObject.transform.rotation = Quaternion.Lerp(endRot, Quaternion.identity, (lerpDuration / (ballTravelTime / 2)));
+            yield return null;
+        }
+
+        doRotateSphere = false;
+
+        lerpCounter = 0;
+        lerpDuration = 1f;
+        Vector3 startingVel = this.gameObject.GetComponent<Rigidbody>().velocity;
+        Vector3 startingAngVel = this.gameObject.GetComponent<Rigidbody>().angularVelocity;
+        Quaternion startingRot = this.gameObject.transform.rotation;
+        while (lerpCounter < lerpDuration)
+        {
+            lerpCounter += Time.deltaTime;
+            this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.Lerp(startingVel, Vector3.zero, lerpCounter / lerpDuration);
+            this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.Lerp(startingAngVel, Vector3.zero, lerpCounter / lerpDuration);
+
+            this.gameObject.transform.rotation = Quaternion.Lerp(startingRot, Quaternion.identity, lerpCounter / lerpDuration);
+            yield return null;
+        }
+
+        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+    }
+
+    IEnumerator FlyUntilMalfunction(float secondsToFly)
+    {
+        doRotateSphere = true;
+
+        lerpDuration = 0;
+        Quaternion endRot = Quaternion.Euler(180, 0, 0);
+        while (lerpDuration < (secondsToFly))
+        {
+            lerpDuration += Time.deltaTime;
+            this.gameObject.transform.rotation = Quaternion.Lerp(Quaternion.identity, endRot, (lerpDuration / (ballTravelTime / 2)));
+            yield return null;
+        }
+
+        lerpCounter = 0;
+        lerpDuration = 0.5f;
+        Vector3 startingVel = this.gameObject.GetComponent<Rigidbody>().velocity;
+        Vector3 startingAngVel = this.gameObject.GetComponent<Rigidbody>().angularVelocity;
+        Quaternion startingRot = this.gameObject.transform.rotation;
+        while (lerpCounter < lerpDuration)
+        {
+            lerpCounter += Time.deltaTime;
+            this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.Lerp(startingVel, Vector3.zero, lerpCounter / lerpDuration);
+            this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.Lerp(startingAngVel, Vector3.zero, lerpCounter / lerpDuration);
+
+            this.gameObject.transform.rotation = Quaternion.Lerp(startingRot, Quaternion.identity, lerpCounter / lerpDuration);
+            yield return null;
+        }
+
+        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        this.gameObject.transform.position = resetPoint;    // <--- key factor to a hard stop
+
+        doRotateSphere = false;
     }
 }
 

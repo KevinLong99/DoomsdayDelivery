@@ -19,8 +19,6 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     private bool nickRotate = false;
 
-    public Haptic_Chair_Controller hapticChairContScript;
-
     private void Update()
     {
         
@@ -51,17 +49,14 @@ public class Rotate_Me_Parent : MonoBehaviour
     public void RotateToStationOne()
     {
         StartCoroutine(rotateObject(objectToRotate, rotation3, 1f));
-        hapticChairContScript.SwitchStationRight();
     }
     public void RotateToStationTwo()
     {
         StartCoroutine(rotateObject(objectToRotate, rotation2, 1f));
-        hapticChairContScript.SwitchStationRight();
     }
     public void RotateToStationThree()
     {
         StartCoroutine(rotateObject(objectToRotate, rotation1, 1f));
-        hapticChairContScript.SwitchStationRight();
     }
 
 
