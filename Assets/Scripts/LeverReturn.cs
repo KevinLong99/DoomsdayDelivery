@@ -14,8 +14,6 @@ public class LeverReturn : MonoBehaviour
         originalPosition = transform.localPosition; // Ensure this is set when the lever is in the up position
         rb = GetComponent<Rigidbody>();
         grabInteractable = GetComponent<XRGrabInteractable>();
-
-        InvokeRepeating(nameof(LogOriginalPosition), 0f, 1f);
     }
 
     void FixedUpdate()
@@ -43,8 +41,5 @@ public class LeverReturn : MonoBehaviour
         //grabInteractable.enabled = false; // Disable interaction while the lever is returning
     }
 
-    private void LogOriginalPosition()
-    {
-        Debug.Log("Original Position: " + originalPosition);
-    }
+ 
 }
