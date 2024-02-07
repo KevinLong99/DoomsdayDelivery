@@ -3,34 +3,39 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class LeverReturn : MonoBehaviour
 {
-    public float returnSpeed = 2.0f; // Speed of return, adjustable in the inspector
+    public float returnSpeed = 0.1f; // Units per second, adjust as necessary
     private Vector3 originalPosition;
     private Rigidbody rb;
     private bool isReturning = false;
 
     void Start()
     {
-        // Store the original position of the lever
         originalPosition = transform.localPosition;
         rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        // Temporary input to test the movement
+        if (Input.GetKey(KeyCode.R))
+        {
+            TestMoveLever();
+        }
     }
 
     void FixedUpdate()
     {
         if (isReturning)
         {
-            // Calculate the new position using Lerp, moving only on the Y axis
-            Vector3 newPosition = Vector3.Lerp(rb.position, originalPosition, returnSpeed * Time.fixedDeltaTime);
+            // Move towards the original position at a constant speed
+            Vector3 nextPosition = Vector3.MoveTowards(rb.position, originalPosition, returnSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(nextPosition);
 
-            // Apply the new position
-            rb.MovePosition(newPosition);
-
-            // Check if the lever is close enough to the original position to stop returning
-            if (Vector3.Distance(newPosition, originalPosition) < 0.01f)
+            // Check if the lever has reached the original position
+            if (nextPosition == originalPosition)
             {
-                rb.MovePosition(originalPosition); // Snap to the exact original position
                 isReturning = false;
-                // Enable the interactable component so it can be grabbed again
+                // Enable interaction when the lever returns to the original position
                 GetComponent<XRGrabInteractable>().enabled = true;
             }
         }
@@ -40,7 +45,13 @@ public class LeverReturn : MonoBehaviour
     public void ReleaseLever()
     {
         isReturning = true;
-        // Disable the interactable component to prevent grabbing while returning
+        // Disable interaction while the lever is returning
         GetComponent<XRGrabInteractable>().enabled = false;
+    }
+
+    // Test movement method
+    private void TestMoveLever()
+    {
+        rb.MovePosition(rb.position + new Vector3(0, -0.01f, 0)); // Move down on Y axis
     }
 }
