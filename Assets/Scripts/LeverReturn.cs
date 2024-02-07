@@ -7,20 +7,13 @@ public class LeverReturn : MonoBehaviour
     private Vector3 originalPosition;
     private Rigidbody rb;
     private bool isReturning = false;
+    private XRGrabInteractable grabInteractable;
 
     void Start()
     {
-        originalPosition = transform.localPosition;
+        originalPosition = transform.localPosition; // Ensure this is set when the lever is in the up position
         rb = GetComponent<Rigidbody>();
-    }
-
-    void Update()
-    {
-        // Temporary input to test the movement
-        if (Input.GetKey(KeyCode.R))
-        {
-            TestMoveLever();
-        }
+        grabInteractable = GetComponent<XRGrabInteractable>();
     }
 
     void FixedUpdate()
@@ -32,11 +25,11 @@ public class LeverReturn : MonoBehaviour
             rb.MovePosition(nextPosition);
 
             // Check if the lever has reached the original position
-            if (nextPosition == originalPosition)
+            if (Vector3.Distance(rb.position, originalPosition) < 0.001f) // Small threshold to account for floating-point imprecision
             {
+                rb.MovePosition(originalPosition); // Snap to the exact original position
                 isReturning = false;
-                // Enable interaction when the lever returns to the original position
-                GetComponent<XRGrabInteractable>().enabled = true;
+                grabInteractable.enabled = true; // Re-enable the interactable component
             }
         }
     }
@@ -45,13 +38,6 @@ public class LeverReturn : MonoBehaviour
     public void ReleaseLever()
     {
         isReturning = true;
-        // Disable interaction while the lever is returning
-        GetComponent<XRGrabInteractable>().enabled = false;
-    }
-
-    // Test movement method
-    private void TestMoveLever()
-    {
-        rb.MovePosition(rb.position + new Vector3(0, -0.01f, 0)); // Move down on Y axis
+        grabInteractable.enabled = false; // Disable interaction while the lever is returning
     }
 }
