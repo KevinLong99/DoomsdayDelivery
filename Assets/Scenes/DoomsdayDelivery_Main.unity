@@ -2189,7 +2189,7 @@ Rigidbody:
   m_GameObject: {fileID: 1995191918}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 5
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -2202,10 +2202,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &1995191920
 BoxCollider:
@@ -31471,7 +31471,7 @@ PrefabInstance:
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: -0.79999995
       objectReference: {fileID: 0}
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
@@ -31481,22 +31481,22 @@ PrefabInstance:
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9719244
       objectReference: {fileID: 0}
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.23529325
       objectReference: {fileID: 0}
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
@@ -31506,7 +31506,7 @@ PrefabInstance:
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -27.218
       objectReference: {fileID: 0}
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
