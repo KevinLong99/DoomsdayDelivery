@@ -5,34 +5,42 @@ using TMPro;
 
 public class ObjectCounter : MonoBehaviour
 {
+    // List of tags to be counted
+    [SerializeField]
+    private List<string> tagsToCount;
+
     // Dictionary to keep track of counts of different tags
     private Dictionary<string, int> tagCounts = new Dictionary<string, int>();
 
-    // Reference to the UI Text component that displays the count
+    // Reference to the TextMeshPro component
     public TextMeshProUGUI countDisplay;
+
+    private void Start()
+    {
+        // Initialize the dictionary with the tags to count
+        foreach (string tag in tagsToCount)
+        {
+            tagCounts[tag] = 0;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the object has a tag
-        if (tagCounts.ContainsKey(other.tag))
+        // Check if the object has a tag you're interested in and count it
+        if (tagsToCount.Contains(other.tag))
         {
             // Increment the count for that tag
             tagCounts[other.tag]++;
-        }
-        else
-        {
-            // Add the new tag with a count of 1
-            tagCounts.Add(other.tag, 1);
-        }
 
-        // Update the UI
-        UpdateCountDisplay();
+            // Update the UI
+            UpdateCountDisplay();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         // Optional: Handle objects leaving the box if needed
-        if (tagCounts.ContainsKey(other.tag) && tagCounts[other.tag] > 0)
+        if (tagsToCount.Contains(other.tag) && tagCounts[other.tag] > 0)
         {
             // Decrement the count for that tag
             tagCounts[other.tag]--;
@@ -48,9 +56,12 @@ public class ObjectCounter : MonoBehaviour
         countDisplay.text = "";
 
         // Display counts for all tracked tags
-        foreach (var tagCount in tagCounts)
+        foreach (var tag in tagsToCount)
         {
-            countDisplay.text += $"{tagCount.Key}: {tagCount.Value}\n";
+            if (tagCounts.ContainsKey(tag))
+            {
+                countDisplay.text += $"{tag}: {tagCounts[tag]}\n";
+            }
         }
     }
 }
