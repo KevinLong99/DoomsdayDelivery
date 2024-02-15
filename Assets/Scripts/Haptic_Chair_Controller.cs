@@ -41,16 +41,11 @@ public class Haptic_Chair_Controller : MonoBehaviour
     private float accel = 0.25f;
 
     private float lerpCounter, lerpDuration;
-    private float ballTravelTime = 0;
 
-    //private bool tent1IsComplete = false, tent2IsComplete = false, tent3IsComplete = false;
     void Start()
     {
         actuateAgent.SetMotionSource(this.gameObject);
         actuateRb = this.gameObject.GetComponent<Rigidbody>();
-
-        ballTravelTime = 3f;   
-        FlyFunction();
     }
 
     //fixedUpdate means Time.deltaTime is always constant
@@ -82,14 +77,14 @@ public class Haptic_Chair_Controller : MonoBehaviour
         StartCoroutine(HapticRotation(statRotRight));
     }
 
-    public void FlyFunction()
+    public void FlyFunction(float flightTime)
     {
-        StartCoroutine(FlyForAmountOfSeconds(ballTravelTime));
+        StartCoroutine(FlyForAmountOfSeconds(flightTime));
     }
 
-    public void HardStopTheShip()
+    public void HardStopTheShip(float flightTimeMalf)
     {
-        StartCoroutine(FlyUntilMalfunction(5));
+        StartCoroutine(FlyUntilMalfunction(flightTimeMalf));
     }
 
     //---------------------------COROUTINES-----------------------------------\\
@@ -132,7 +127,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
         while (lerpDuration < (secondsToFly / 2))
         {
             lerpDuration += Time.deltaTime;
-            this.gameObject.transform.rotation = Quaternion.Lerp(Quaternion.identity, endRot, (lerpDuration / (ballTravelTime/2)));
+            this.gameObject.transform.rotation = Quaternion.Lerp(Quaternion.identity, endRot, (lerpDuration / (secondsToFly/2)));
             yield return null;
         }
 
@@ -140,7 +135,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
         while (lerpDuration < (secondsToFly / 2))
         {
             lerpDuration += Time.deltaTime;
-            this.gameObject.transform.rotation = Quaternion.Lerp(endRot, Quaternion.identity, (lerpDuration / (ballTravelTime / 2)));
+            this.gameObject.transform.rotation = Quaternion.Lerp(endRot, Quaternion.identity, (lerpDuration / (secondsToFly / 2)));
             yield return null;
         }
 
@@ -174,7 +169,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
         while (lerpDuration < (secondsToFly))
         {
             lerpDuration += Time.deltaTime;
-            this.gameObject.transform.rotation = Quaternion.Lerp(Quaternion.identity, endRot, (lerpDuration / (ballTravelTime / 2)));
+            this.gameObject.transform.rotation = Quaternion.Lerp(Quaternion.identity, endRot, (lerpDuration / (secondsToFly / 2)));
             yield return null;
         }
 
