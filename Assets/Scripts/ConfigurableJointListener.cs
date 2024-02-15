@@ -12,6 +12,10 @@ public class ConfigurableJointListener : MonoBehaviour
     public enum JointLimitState { Lower, Upper, None }
     private ConfigurableJoint configurableJoint;
 
+    //spawner
+
+    public Spawner mySpawner;
+
     void Start()
     {
         configurableJoint = GetComponent<ConfigurableJoint>();
@@ -56,5 +60,10 @@ public class ConfigurableJointListener : MonoBehaviour
     public void TriggerUpperLimitReached()
     {
         OnUpperLimitReached.Invoke();
+    }
+
+    public void spawnStuff()
+    {
+        mySpawner.spawn();
     }
 }

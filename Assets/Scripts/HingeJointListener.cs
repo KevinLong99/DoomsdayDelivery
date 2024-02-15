@@ -16,6 +16,10 @@ public class HingeJointListener : MonoBehaviour
     public enum HingeJointState { Min, Max, None }
     private HingeJoint hinge;
 
+    //Spawner
+
+    public Spawner mySpawner;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,5 +52,9 @@ public class HingeJointListener : MonoBehaviour
         {
             hingeJointState = HingeJointState.None;
         }
+    }
+    public void spawnStuff()
+    {
+        mySpawner.spawn();
     }
 }
