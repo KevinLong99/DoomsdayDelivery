@@ -4,7 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class LeverReturn : MonoBehaviour
 {
-    public float returnSpeed = 0.1f; // Units per second, adjust as necessary
+    public float returnSpeed; // Units per second, adjust as necessary
     private Vector3 originalPosition;
     private Rigidbody rb;
     private bool isReturning = false;
@@ -26,12 +26,6 @@ public class LeverReturn : MonoBehaviour
             rb.MovePosition(originalPosition);
 
             this.transform.position = originalPosition;
-
-
-            
-            
-            
-
         }
     }
 

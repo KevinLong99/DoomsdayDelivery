@@ -3,18 +3,15 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class HingeLeverReturn : MonoBehaviour
 {
-    public float returnSpeed = 5f; // Degrees per second, adjust as necessary
-    private float originalRotation;
+    public float returnSpeed; // Speed at which the lever returns, in degrees per second
     private HingeJoint hingeJoint;
     private bool isReturning = false;
-    private XRGrabInteractable grabInteractable;
+    private float originalAngle = 90f; // Original angle you want to return to
 
     void Start()
     {
         hingeJoint = GetComponent<HingeJoint>();
-        originalRotation = hingeJoint.transform.localEulerAngles.z; // Assuming the lever's rotation axis is Z
-        grabInteractable = GetComponent<XRGrabInteractable>();
-        grabInteractable.selectExited.AddListener(ReleaseLever); // Add listener for when the lever is released
+        // Optional: Set up the hinge joint limits here if needed
     }
 
     void FixedUpdate()
@@ -22,25 +19,25 @@ public class HingeLeverReturn : MonoBehaviour
         if (isReturning)
         {
             // Calculate the current angle and the desired return angle
-            float currentAngle = hingeJoint.transform.localEulerAngles.z;
-            float angleToReturn = Mathf.MoveTowardsAngle(currentAngle, originalRotation, returnSpeed * Time.deltaTime);
+            Vector3 currentRotation = hingeJoint.transform.localEulerAngles;
+            float currentAngle = currentRotation.x; // The axis the hinge is turning on!!!! Needs to be CORRECT!!!!!
+            float targetAngle = Mathf.MoveTowardsAngle(currentAngle, originalAngle, returnSpeed * Time.fixedDeltaTime);
 
             // Apply the new angle
-            hingeJoint.transform.localRotation = Quaternion.Euler(0, 0, angleToReturn);
+            hingeJoint.transform.localEulerAngles = new Vector3(currentRotation.x, currentRotation.y, targetAngle);
 
-            // Check if the lever has returned to its original position
-            if (Mathf.Abs(angleToReturn - originalRotation) < 0.01f)
+            // Stop returning if the target angle is reached
+            if (Mathf.Abs(targetAngle - originalAngle) < 1f)
             {
-                isReturning = false; // Stop returning when the original position is reached
-                //grabInteractable.enabled = true; // Optionally re-enable interactions
+                isReturning = false;
             }
         }
     }
 
-    // This method is called when the lever is released
-    public void ReleaseLever(SelectExitEventArgs arg)
+    // This method should be called by the XRGrabInteractable when the lever is released
+    public void ReleaseLever()
     {
         isReturning = true;
-        //grabInteractable.enabled = false; // Disable interaction while the lever is returning
+        Debug.Log("HingeReturns");
     }
 }
