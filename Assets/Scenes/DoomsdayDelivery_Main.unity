@@ -16010,6 +16010,7 @@ GameObject:
   - component: {fileID: 4672516830465910477}
   - component: {fileID: 6452661056011088678}
   - component: {fileID: 3160064745246217493}
+  - component: {fileID: 6452661056011088679}
   m_Layer: 11
   m_Name: GripLever_ForwardBack
   m_TagString: Untagged
@@ -23788,6 +23789,7 @@ GameObject:
   - component: {fileID: 1229786545660476255}
   - component: {fileID: 8485445229038233377}
   - component: {fileID: 2058197109462450778}
+  - component: {fileID: 8485445229038233378}
   m_Layer: 11
   m_Name: Kevin_Lever
   m_TagString: Untagged
@@ -30782,6 +30784,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   mySpawner: {fileID: 0}
+--- !u!114 &6452661056011088679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2956501833911096443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: badb94d14dcf1794c97c8fa2716933c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &6453577699603196576
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -35281,8 +35295,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4b1a405634ae743b78341d80265a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotating: 0
   objectToRotate: {fileID: 3159681515768687976}
   moveValue: 0
+  leverConnectedBodies:
+  - {fileID: 2956501833911096443}
+  - {fileID: 4753057421966063283}
 --- !u!4 &7453742598653827943
 Transform:
   m_ObjectHideFlags: 0
@@ -39406,6 +39424,18 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &8485445229038233378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4753057421966063283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: badb94d14dcf1794c97c8fa2716933c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8501567323075408019
 Transform:
   m_ObjectHideFlags: 0

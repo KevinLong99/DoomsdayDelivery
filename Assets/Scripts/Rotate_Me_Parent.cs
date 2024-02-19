@@ -7,7 +7,7 @@ public class Rotate_Me_Parent : MonoBehaviour
 {
     //ROTATE VALUES:    0   120 240 
 
-    private bool rotating = false;
+    public bool rotating = false;
     public GameObject objectToRotate;
 
     //Station Rotation Values
@@ -18,6 +18,9 @@ public class Rotate_Me_Parent : MonoBehaviour
     public int moveValue = 0;
 
     private bool nickRotate = false;
+
+    //list of levers that need ConnectedBodies to be modified
+    [SerializeField] GameObject[] leverConnectedBodies;
 
     private void Update()
     {
@@ -33,11 +36,19 @@ public class Rotate_Me_Parent : MonoBehaviour
         }
         else if (moveValue == 2)
         {
-            RotateToStationTwo();    
+            if (nickRotate == false)
+            {
+                RotateToStationTwo();
+                nickRotate = true;
+            }
         }
         else if(moveValue == 3)
         {
-            RotateToStationThree();
+            if (nickRotate == false)
+            {
+                RotateToStationThree();
+                nickRotate = true;
+            }
         }
         else
         {
@@ -45,17 +56,32 @@ public class Rotate_Me_Parent : MonoBehaviour
         }
     }
 
-
+    //RotateLever(objectToRotate, rotation3, 1f);
     public void RotateToStationOne()
     {
+        for (int i = 0; i < leverConnectedBodies.Length; i++)
+        {
+            leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
+            leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation3, 1f);
+        }
         StartCoroutine(rotateObject(objectToRotate, rotation3, 1f));
     }
     public void RotateToStationTwo()
     {
+        for (int i = 0; i < leverConnectedBodies.Length; i++)
+        {
+            leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
+            leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation2, 1f);
+        }
         StartCoroutine(rotateObject(objectToRotate, rotation2, 1f));
     }
     public void RotateToStationThree()
     {
+        for (int i = 0; i < leverConnectedBodies.Length; i++)
+        {
+            leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
+            leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation1, 1f);
+        }
         StartCoroutine(rotateObject(objectToRotate, rotation1, 1f));
     }
 
@@ -78,18 +104,12 @@ public class Rotate_Me_Parent : MonoBehaviour
             yield return null;
         }
         rotating = false;
+        for (int i = 0; i < leverConnectedBodies.Length; i++)
+        {
+            leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = true;
+        }
     }
 }
-
-
-
-/*
-this.transform.rotation = Quaternion.Slerp(from.rotation, Station2Quat, timeCount * 0.01f); // * 0.01f
-timeCount = (timeCount * 0.01f) + Time.deltaTime; 
-
-^this breaks^ with the 0.01f
-
-*/
 
 
 //Script Credits:
