@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,23 +18,30 @@ public class ConfigurableJointListener : MonoBehaviour
     public Spawner mySpawner;
 
     float currentPosition, lowerLimit, upperLimit;
+    //lowerLimit and upperLimit never change.
+
+    float startingPosition;
 
 
     void Start()
     {
         configurableJoint = GetComponent<ConfigurableJoint>();
-        currentPosition = configurableJoint.transform.localPosition.y;
+        startingPosition = configurableJoint.transform.localPosition.y;
         lowerLimit = configurableJoint.linearLimit.limit * -1; // Assuming symmetric limits
         upperLimit = configurableJoint.linearLimit.limit;
     }
 
     void FixedUpdate()
     {
+        currentPosition = configurableJoint.transform.localPosition.y;
+        
         // Assuming you're using the joint's linear limit for the y-axis
+        //Debug.Log(currentPosition + "\n" + lowerLimit + "\n" + upperLimit + "\n");
         
 
         // Reached Lower Limit
-        if (Mathf.Abs(currentPosition - lowerLimit) < positionThreshold)
+        //if (Mathf.Abs(currentPosition - lowerLimit) > positionThreshold)    //<--problem
+        if (currentPosition < (startingPosition + lowerLimit + 0.05f) && currentPosition > (startingPosition + lowerLimit - 0.05f))
         {
             if (jointLimitState != JointLimitState.Lower)
             {
@@ -46,7 +54,8 @@ public class ConfigurableJointListener : MonoBehaviour
             jointLimitState = JointLimitState.Lower;
         }
         // Reached Upper Limit
-        else if (Mathf.Abs(currentPosition - upperLimit) < positionThreshold)
+        //else if (Mathf.Abs(currentPosition - upperLimit) < positionThreshold)   //<--problem
+        if (currentPosition < (startingPosition + upperLimit + 0.05f) && currentPosition > (startingPosition + upperLimit - 0.05f))
         {
             if (jointLimitState != JointLimitState.Upper)
             {
@@ -58,7 +67,8 @@ public class ConfigurableJointListener : MonoBehaviour
             jointLimitState = JointLimitState.Upper;
         }
         // No Limit reached
-        else
+        //else
+        else if (currentPosition > (startingPosition - 0.05f) && currentPosition < (startingPosition + 0.05f))
         {
             jointLimitState = JointLimitState.None;
         }

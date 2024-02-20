@@ -1585,6 +1585,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7453619260443924955}
+        m_TargetAssemblyTypeName: Rotate_Me_Parent, Assembly-CSharp
+        m_MethodName: RotateRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnUpperLimitReached:
     m_PersistentCalls:
       m_Calls:
@@ -1654,7 +1666,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.12671842, y: 0.43120444, z: 0.7206813}
+  m_ConnectedAnchor: {x: 0.43373615, y: 0.43120444, z: 0.72003883}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 1
@@ -2004,7 +2016,7 @@ Transform:
   m_GameObject: {fileID: 1096201972}
   serializedVersion: 2
   m_LocalRotation: {x: 0.87885123, y: 0.025980694, z: 0.4762276, w: -0.012357178}
-  m_LocalPosition: {x: 0.384, y: 0.444, z: 0.72}
+  m_LocalPosition: {x: 0.433, y: 0.521, z: 0.72}
   m_LocalScale: {x: 0.01626843, y: 0.0128167765, z: 0.07464661}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24511,7 +24523,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.12671842, y: 0.43120444, z: 0.7206813}
+  m_ConnectedAnchor: {x: -0.1807184, y: 0.43120444, z: 0.7206813}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 1
@@ -28317,7 +28329,7 @@ Transform:
   m_GameObject: {fileID: 2102065831406751908}
   serializedVersion: 2
   m_LocalRotation: {x: 0.488935, y: 0.028565723, z: 0.87184566, w: 0.0034197967}
-  m_LocalPosition: {x: -0.127, y: 0.444, z: 0.72}
+  m_LocalPosition: {x: -0.181, y: 0.521, z: 0.72}
   m_LocalScale: {x: 0.01626843, y: 0.0128167765, z: 0.07464661}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32910,7 +32922,7 @@ PrefabInstance:
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9961947
       objectReference: {fileID: 0}
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
@@ -32920,7 +32932,7 @@ PrefabInstance:
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.08715578
       objectReference: {fileID: 0}
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
@@ -32935,7 +32947,7 @@ PrefabInstance:
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8740483124963035132, guid: b32d7f607e354e44887ae369771902b9,
         type: 3}
@@ -36732,7 +36744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotating: 0
   objectToRotate: {fileID: 3159681515768687976}
-  moveValue: 0
+  moveValue: 1
   leverConnectedBodies:
   - {fileID: 2956501833911096443}
   - {fileID: 4753057421966063283}
@@ -43796,6 +43808,18 @@ MonoBehaviour:
       - m_Target: {fileID: 9141961129965816788}
         m_TargetAssemblyTypeName: ConfigurableJointListener, Assembly-CSharp
         m_MethodName: spawnStuff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7453619260443924955}
+        m_TargetAssemblyTypeName: Rotate_Me_Parent, Assembly-CSharp
+        m_MethodName: RotateLeft
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

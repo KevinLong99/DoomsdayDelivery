@@ -37,9 +37,6 @@ public class Haptic_Chair_Controller : MonoBehaviour
     private float rotationSpeed = 10.0f;
     private bool doRotateSphere = false;
 
-    private float currentSpeed = 0;
-    private float accel = 0.25f;
-
     private float lerpCounter, lerpDuration;
 
     void Start()

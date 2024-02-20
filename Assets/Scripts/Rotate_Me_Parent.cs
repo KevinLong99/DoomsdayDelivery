@@ -15,16 +15,18 @@ public class Rotate_Me_Parent : MonoBehaviour
     private Quaternion rotation2 = Quaternion.Euler(new Vector3(0, -180, 0));
     private Quaternion rotation3 = Quaternion.Euler(new Vector3(0, -300, 0));
 
-    public int moveValue = 0;
+    [SerializeField] int moveValue = 1;
 
     private bool nickRotate = false;
+
 
     //list of levers that need ConnectedBodies to be modified
     [SerializeField] GameObject[] leverConnectedBodies;
 
     private void Update()
     {
-        
+        /*
+         * 
         if (moveValue == 1)
         {
             if (nickRotate == false)
@@ -53,6 +55,48 @@ public class Rotate_Me_Parent : MonoBehaviour
         else
         {
             //do nothing. Do not rotate
+        }
+
+        */
+    }
+
+    public void RotateLeft()
+    {
+        Debug.Log("rotate LEFT");
+        if (moveValue == 1)
+        {
+            RotateToStationTwo();
+            moveValue = 2;
+        }
+        else if (moveValue == 2)
+        {
+            RotateToStationThree();
+            moveValue = 3;
+        }
+        else if (moveValue == 3)
+        {
+            RotateToStationOne();
+            moveValue = 1;
+        }
+    }
+
+    public void RotateRight()
+    {
+        Debug.Log("rotate RIGHT");
+        if (moveValue == 1)
+        {
+            RotateToStationThree();
+            moveValue = 3;
+        }
+        else if (moveValue == 3)
+        {
+            RotateToStationTwo();
+            moveValue = 2;
+        }
+        else if (moveValue == 2)
+        {
+            RotateToStationOne();
+            moveValue = 1;
         }
     }
 
