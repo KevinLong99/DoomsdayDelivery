@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "com.srcnalt.openai-unity": {
-      "version": "file:C:/Users/nicholasreno/MiDAS/Spring24/Movement Media and Machines/OpenAI-Unity-master/OpenAI-Unity-master",
+      "version": "file:OpenAI-Unity-master",
       "depth": 0,
-      "source": "local",
+      "source": "embedded",
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.2.1"
       }
