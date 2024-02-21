@@ -23381,6 +23381,7 @@ MonoBehaviour:
   mySpawner: {fileID: 1901364987645606143}
   isPulled: 0
   rotateParentScript: {fileID: 7453619260443924955}
+  leverReturnScript: {fileID: 9206251186674056556}
 --- !u!114 &3965171474501653113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23442,6 +23443,7 @@ MonoBehaviour:
   mySpawner: {fileID: 1901364987645606143}
   isPulled: 0
   rotateParentScript: {fileID: 7453619260443924955}
+  leverReturnScript: {fileID: 9206251186916058629}
 --- !u!4 &3971788208142775770
 Transform:
   m_ObjectHideFlags: 0
@@ -49735,6 +49737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnSpeed: 1
+  isReturning: 0
   jointListener: {fileID: 3965171474191419664}
 --- !u!114 &9206251186916058629
 MonoBehaviour:
@@ -49749,6 +49752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnSpeed: 1
+  isReturning: 0
   jointListener: {fileID: 3965171474501653113}
 --- !u!4 &9216831479771321798
 Transform:

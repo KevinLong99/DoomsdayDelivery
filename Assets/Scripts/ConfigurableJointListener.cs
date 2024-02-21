@@ -25,31 +25,24 @@ public class ConfigurableJointListener : MonoBehaviour
     public bool isPulled;
 
     public Rotate_Me_Parent rotateParentScript;
+    public LeverReturn leverReturnScript;
 
     void Start()
     {
         configurableJoint = GetComponent<ConfigurableJoint>();
         startingPosition = configurableJoint.transform.localPosition.y;
         lowerLimit = configurableJoint.linearLimit.limit * -1; // Assuming symmetric limits
-        upperLimit = configurableJoint.linearLimit.limit;
+        upperLimit = configurableJoint.linearLimit.limit + 1;
     }
 
     void FixedUpdate()
     {
         currentPosition = configurableJoint.transform.localPosition.y;
 
-        // Assuming you're using the joint's linear limit for the y-axis
-        //Debug.Log(currentPosition + "\n" + lowerLimit + "\n" + upperLimit + "\n");
-
-
         // Reached Lower Limit
         //if (Mathf.Abs(currentPosition - lowerLimit) > positionThreshold)    //<--problem
-
-        //goes into this if statement on first pull, and doesnt meet the requirements again EVER, so it never re-enters
-        //THIS ISSUE ONLY HAPPENS FOR THE RIGHT SIDE LEVER!!!!
-        if (currentPosition < (startingPosition + lowerLimit + 0.075f) && currentPosition > (startingPosition + lowerLimit - 0.075f))
+        if (currentPosition < (startingPosition + lowerLimit + 0.05f) && currentPosition > (startingPosition + lowerLimit - 0.05f))
         {
-            
             if (jointLimitState != JointLimitState.Lower)
             {
                 if (isPulled == false && rotateParentScript.rotating == false)
@@ -57,34 +50,25 @@ public class ConfigurableJointListener : MonoBehaviour
                     Debug.Log("lowerlimitINVOKE");
                     OnLowerLimitReached.Invoke();
                     isPulled = true;
-                    
-                }
-                
-                
+                }  
             }
-                
-
             jointLimitState = JointLimitState.Lower;
-        }
-        // Reached Upper Limit
-        //else if (Mathf.Abs(currentPosition - upperLimit) < positionThreshold)   //<--problem
-        if (currentPosition < (startingPosition + upperLimit + 0.05f) && currentPosition > (startingPosition + upperLimit - 0.05f))
+        } else if (currentPosition > (startingPosition - 0.05f) && currentPosition < (startingPosition + 0.05f))
         {
             if (jointLimitState != JointLimitState.Upper)
             {
+                isPulled = false;
                 Debug.Log("upperlimitINVOKE");
                 OnUpperLimitReached.Invoke();
+                leverReturnScript.isReturning = false;
             }
-                
-
-            jointLimitState = JointLimitState.Upper;
-        }
-        // No Limit reached
-        //else
-        else if (currentPosition > (startingPosition - 0.05f) && currentPosition < (startingPosition + 0.05f))
+            jointLimitState= JointLimitState.Upper;
+        } else
         {
+
             jointLimitState = JointLimitState.None;
         }
+
     }
 
     // Call these methods if you want to manually trigger the events

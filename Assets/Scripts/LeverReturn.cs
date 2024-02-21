@@ -7,7 +7,7 @@ public class LeverReturn : MonoBehaviour
     public float returnSpeed; // Units per second, adjust as necessary
     private Vector3 originalPosition;
     private Rigidbody rb;
-    private bool isReturning = false;
+    public bool isReturning = false;
     private XRGrabInteractable grabInteractable;
 
     public ConfigurableJointListener jointListener;
@@ -25,7 +25,7 @@ public class LeverReturn : MonoBehaviour
         {
             // Move towards the original position at a constant speed
             Vector3 nextPosition = Vector3.MoveTowards(this.transform.position, originalPosition, returnSpeed * Time.deltaTime);
-            rb.MovePosition(originalPosition);
+            rb.MovePosition(nextPosition);
 
             this.transform.position = originalPosition;
         }
