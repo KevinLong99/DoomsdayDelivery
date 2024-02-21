@@ -29,7 +29,7 @@ public class Haptic_Chair_Controller : MonoBehaviour
 
     private Vector3 forwardForce = new Vector3(0, 0, 5);
 
-    private Vector3 targetPoint = new Vector3(350, 0.5f, 5000);
+    private Vector3 targetPoint = new Vector3(350, 0.5f, 90);
     private Vector3 resetPoint = new Vector3(350, 0.5f, 0);
 
     public GameObject environmentSphere;
@@ -190,6 +190,18 @@ public class Haptic_Chair_Controller : MonoBehaviour
         this.gameObject.transform.position = resetPoint;    // <--- key factor to a hard stop
 
         doRotateSphere = false;
+    }
+
+    public void HapticGameOver()
+    {
+        StartCoroutine(HapticGameOverCoroutine());
+    }
+
+    IEnumerator HapticGameOverCoroutine()
+    {
+        //jerk the chair to a stop
+        this.gameObject.transform.position = targetPoint;
+        yield return null;
     }
 }
 
