@@ -44,14 +44,12 @@ public class ConfigurableJointListener : MonoBehaviour
 
         // Reached Lower Limit
         //if (Mathf.Abs(currentPosition - lowerLimit) > positionThreshold)    //<--problem
-        
-        //Debug.Log("CURRENTPOS" + currentPosition);
+
         //goes into this if statement on first pull, and doesnt meet the requirements again EVER, so it never re-enters
         //THIS ISSUE ONLY HAPPENS FOR THE RIGHT SIDE LEVER!!!!
         if (currentPosition < (startingPosition + lowerLimit + 0.075f) && currentPosition > (startingPosition + lowerLimit - 0.075f))
         {
-
-            //Debug.Log("CURRENTPOS--INSIDE!!!!" + currentPosition);
+            
             if (jointLimitState != JointLimitState.Lower)
             {
                 if (isPulled == false && rotateParentScript.rotating == false)
@@ -59,6 +57,7 @@ public class ConfigurableJointListener : MonoBehaviour
                     Debug.Log("lowerlimitINVOKE");
                     OnLowerLimitReached.Invoke();
                     isPulled = true;
+                    
                 }
                 
                 
