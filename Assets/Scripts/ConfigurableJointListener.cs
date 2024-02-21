@@ -34,18 +34,23 @@ public class ConfigurableJointListener : MonoBehaviour
     void FixedUpdate()
     {
         currentPosition = configurableJoint.transform.localPosition.y;
-        
+
         // Assuming you're using the joint's linear limit for the y-axis
         //Debug.Log(currentPosition + "\n" + lowerLimit + "\n" + upperLimit + "\n");
-        
+
 
         // Reached Lower Limit
         //if (Mathf.Abs(currentPosition - lowerLimit) > positionThreshold)    //<--problem
-        if (currentPosition < (startingPosition + lowerLimit + 0.05f) && currentPosition > (startingPosition + lowerLimit - 0.05f))
+        
+        Debug.Log("CURRENTPOS" + currentPosition);
+        //goes into this if statement on first pull, and doesnt meet the requirements again EVER, so it never re-enters
+        //THIS ISSUE ONLY HAPPENS FOR THE RIGHT SIDE LEVER!!!!
+        if (currentPosition < (startingPosition + lowerLimit + 0.075f) && currentPosition > (startingPosition + lowerLimit - 0.075f))
         {
+
+            Debug.Log("CURRENTPOS--INSIDE!!!!" + currentPosition);
             if (jointLimitState != JointLimitState.Lower)
             {
-                //this happens upon start and ONLY on start.
                 Debug.Log("lowerlimitINVOKE");
                 OnLowerLimitReached.Invoke();
             }
