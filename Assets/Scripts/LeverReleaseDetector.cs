@@ -15,19 +15,19 @@ public class LeverReleaseDetector : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("enable");
+        //Debug.Log("enable");
         interactable.selectExited.AddListener(HandleSelectExited);
     }
 
     void OnDisable()
     {
-        Debug.Log("disable");
+        //Debug.Log("disable");
         interactable.selectExited.RemoveListener(HandleSelectExited);
     }
 
     private void HandleSelectExited(SelectExitEventArgs arg)
     {
-        Debug.Log("handleselectedexited");
+        
         onLeverRelease?.Invoke();
     }
 }

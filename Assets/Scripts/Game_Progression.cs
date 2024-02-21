@@ -26,7 +26,7 @@ public class Game_Progression : MonoBehaviour
     {
         fadeScreenDD = GameObject.Find("FaderScreen").GetComponent<FadeScreen_DD>(); ;
         hapticChairScript.FlyFunction(5);
-        timerIsRunning = true;
+        //timerIsRunning = true;
     }
 
     void Update()

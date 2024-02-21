@@ -10,6 +10,8 @@ public class LeverReturn : MonoBehaviour
     private bool isReturning = false;
     private XRGrabInteractable grabInteractable;
 
+    public ConfigurableJointListener jointListener;
+
     void Start()
     {
         originalPosition = transform.position; // Ensure this is set when the lever is in the up position
@@ -33,6 +35,9 @@ public class LeverReturn : MonoBehaviour
     public void ReleaseLever()
     {
         isReturning = true;
+        jointListener.isPulled = false;
+        Debug.Log("jointlistener is false");
+
         //grabInteractable.enabled = false; // Disable interaction while the lever is returning
     }
 

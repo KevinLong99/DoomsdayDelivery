@@ -62,19 +62,22 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     public void RotateLeft()
     {
-        Debug.Log("rotate LEFT");
+        
         if (moveValue == 1)
         {
+            Debug.Log("rotate LEFT to 2");
             RotateToStationTwo();
             moveValue = 2;
         }
         else if (moveValue == 2)
         {
+            Debug.Log("rotate LEFT to 3");
             RotateToStationThree();
             moveValue = 3;
         }
         else if (moveValue == 3)
         {
+            Debug.Log("rotate LEFT to 1");
             RotateToStationOne();
             moveValue = 1;
         }
@@ -82,19 +85,22 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     public void RotateRight()
     {
-        Debug.Log("rotate RIGHT");
+        
         if (moveValue == 1)
         {
+            Debug.Log("rotate RIGHT to 3");
             RotateToStationThree();
             moveValue = 3;
         }
         else if (moveValue == 3)
         {
+            Debug.Log("rotate RIGHT to 2");
             RotateToStationTwo();
             moveValue = 2;
         }
         else if (moveValue == 2)
         {
+            Debug.Log("rotate RIGHT to 1");
             RotateToStationOne();
             moveValue = 1;
         }
@@ -105,6 +111,7 @@ public class Rotate_Me_Parent : MonoBehaviour
     {
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
+            Debug.Log("in for loop 1");
             leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
             leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation3, 1f);
         }
@@ -114,6 +121,7 @@ public class Rotate_Me_Parent : MonoBehaviour
     {
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
+            Debug.Log("in for loop2 ");
             leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
             leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation2, 1f);
         }
