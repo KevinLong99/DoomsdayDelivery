@@ -43,7 +43,7 @@ public class Button_PressedDown : MonoBehaviour
             }
             */
 
-            rotateMeParentScript.RotateToStationOne();
+            //rotateMeParentScript.RotateToStationOne();
 
             isPressedDownFully = false;
         }
@@ -66,7 +66,7 @@ public class Button_PressedDown : MonoBehaviour
             }
             */
 
-            rotateMeParentScript.RotateToStationTwo();
+            //rotateMeParentScript.RotateToStationTwo();
 
             isPressedDownFully = false;
         }
@@ -89,7 +89,7 @@ public class Button_PressedDown : MonoBehaviour
             }
             */
 
-            rotateMeParentScript.RotateToStationThree();
+            //rotateMeParentScript.RotateToStationThree();
 
             isPressedDownFully = false;
         }

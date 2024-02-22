@@ -11,7 +11,7 @@ public class Game_Progression : MonoBehaviour
     public bool playerMayFly = true;
     public bool somethingIsBroken = false;
 
-    private float timeRemaining = 5;    //time limit
+    private float timeRemaining = 60;    //time limit
     private bool timerIsRunning = false;
     float minutes, seconds;
     public Text timeText;
@@ -26,7 +26,7 @@ public class Game_Progression : MonoBehaviour
     {
         fadeScreenDD = GameObject.Find("FaderScreen").GetComponent<FadeScreen_DD>(); ;
         hapticChairScript.FlyFunction(5);
-        //timerIsRunning = true;
+        timerIsRunning = true;
     }
 
     void Update()
