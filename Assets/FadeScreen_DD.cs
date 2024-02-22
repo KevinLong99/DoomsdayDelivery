@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FadeScreen_DD : MonoBehaviour
 {
-    [SerializeField] private bool fadeOnStart = true;
+    private bool fadeOnStart = true;
 
     public float fadeDuration = 1.5f;  //time it takes to fade out of scene
     //total time to fade out AND in between scenes is fadeDuration * 2
