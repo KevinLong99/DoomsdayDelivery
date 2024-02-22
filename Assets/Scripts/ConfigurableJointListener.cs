@@ -41,7 +41,8 @@ public class ConfigurableJointListener : MonoBehaviour
 
         // Reached Lower Limit
         //if (Mathf.Abs(currentPosition - lowerLimit) > positionThreshold)    //<--problem
-        if (currentPosition < (startingPosition + lowerLimit + 0.05f) && currentPosition > (startingPosition + lowerLimit - 0.05f))
+        //if (currentPosition < (startingPosition + lowerLimit + 0.05f) && currentPosition > (startingPosition + lowerLimit - 0.05f))
+        if (currentPosition < (startingPosition - 0.2f))
         {
             if (jointLimitState != JointLimitState.Lower)
             {

@@ -8,6 +8,7 @@ public class LeverGrabListener : XRGrabInteractable
     protected override void OnEnable()
     {
         base.OnEnable();
+        Debug.Log("LeverGrabListener override ENABLE");
         leverReturnScript = GetComponent<LeverReturn>();
         selectExited.AddListener(OnLeverReleased);
     }
@@ -15,6 +16,7 @@ public class LeverGrabListener : XRGrabInteractable
     protected override void OnDisable()
     {
         base.OnDisable();
+        Debug.Log("LeverGrabListener override DISABLE");
         selectExited.RemoveListener(OnLeverReleased);
     }
 

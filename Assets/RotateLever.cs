@@ -24,7 +24,6 @@ public class RotateLever : MonoBehaviour
     {
 
         hinge.connectedBody = rbHingeConnectedBody;
-        Debug.Log("attach");
     }
 
     public void RotateLeverCall(GameObject gameObjectToMove, Quaternion newRot, float duration)
