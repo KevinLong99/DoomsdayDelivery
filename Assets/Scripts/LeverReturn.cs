@@ -48,7 +48,6 @@ public class LeverReturn : MonoBehaviour
     {
         isReturning = true;
         jointListener.isPulled = false;
-        Debug.Log("jointlistener is false");
 
         //grabInteractable.enabled = false; // Disable interaction while the lever is returning
     }

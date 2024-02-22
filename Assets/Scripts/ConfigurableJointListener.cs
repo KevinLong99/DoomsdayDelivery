@@ -48,7 +48,6 @@ public class ConfigurableJointListener : MonoBehaviour
             {
                 if (isPulled == false && rotateParentScript.rotating == false)
                 {
-                    Debug.Log("lowerlimitINVOKE");
                     OnLowerLimitReached.Invoke();
                     isPulled = true;
                 }  
@@ -59,7 +58,6 @@ public class ConfigurableJointListener : MonoBehaviour
             if (jointLimitState != JointLimitState.Upper)
             {
                 isPulled = false;
-                Debug.Log("upperlimitINVOKE");
                 OnUpperLimitReached.Invoke();
                 leverReturnScript.isReturning = false;
             }
