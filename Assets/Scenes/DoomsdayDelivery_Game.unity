@@ -485,12 +485,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271184325}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30070576, y: 0, z: 0, w: 0.953717}
-  m_LocalPosition: {x: 0, y: 10.89, z: -2.89}
-  m_LocalScale: {x: 1, y: 6.935775, z: 1}
+  m_LocalRotation: {x: 0.30070576, y: -0, z: -0, w: 0.953717}
+  m_LocalPosition: {x: 0, y: 0.27, z: 2.31}
+  m_LocalScale: {x: 1, y: 2.9528098, z: 0.71844393}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1995191923}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 35, y: 0, z: 0}
 --- !u!1 &374116584
 GameObject:
@@ -1973,9 +1973,6 @@ MonoBehaviour:
   playerMayFly: 1
   somethingIsBroken: 0
   timeText: {fileID: 2001305735}
-  gameOver_outOfFuel: 0
-  gameOver_shipMalfunction: 0
-  gameOver_win: 0
   gameOver_textMessage: {fileID: 0}
 --- !u!82 &1848070715
 AudioSource:
@@ -2358,8 +2355,7 @@ Transform:
   m_LocalPosition: {x: -13.122185, y: -2.4389825, z: 16.77}
   m_LocalScale: {x: 1, y: 0.14418, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 271184329}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1995191924
@@ -43087,6 +43083,8 @@ SceneRoots:
   - {fileID: 2458988192127823567}
   - {fileID: 5670926854914019776}
   - {fileID: 480036377093316617}
+  - {fileID: 3297921790915375063}
+  - {fileID: 1336638277}
   - {fileID: 951458602}
   - {fileID: 1636172532}
   - {fileID: 1169337775}
@@ -43094,9 +43092,8 @@ SceneRoots:
   - {fileID: 1865798369}
   - {fileID: 652554022}
   - {fileID: 217170916}
+  - {fileID: 271184329}
   - {fileID: 121587704142930602}
   - {fileID: 197978541}
   - {fileID: 1995191923}
   - {fileID: 81192442677326829}
-  - {fileID: 3297921790915375063}
-  - {fileID: 1336638277}

@@ -17,48 +17,9 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     [SerializeField] int moveValue = 1;
 
-    private bool nickRotate = false;
-
-
     //list of levers that need ConnectedBodies to be modified
     [SerializeField] GameObject[] leverConnectedBodies;
 
-    private void Update()
-    {
-        /*
-         * 
-        if (moveValue == 1)
-        {
-            if (nickRotate == false)
-            {
-                RotateToStationOne();
-                nickRotate = true;
-            }
-            
-        }
-        else if (moveValue == 2)
-        {
-            if (nickRotate == false)
-            {
-                RotateToStationTwo();
-                nickRotate = true;
-            }
-        }
-        else if(moveValue == 3)
-        {
-            if (nickRotate == false)
-            {
-                RotateToStationThree();
-                nickRotate = true;
-            }
-        }
-        else
-        {
-            //do nothing. Do not rotate
-        }
-
-        */
-    }
 
     public void RotateLeft()
     {
@@ -100,7 +61,6 @@ public class Rotate_Me_Parent : MonoBehaviour
         }
     }
 
-    //RotateLever(objectToRotate, rotation3, 1f);
     private void RotateToStationOne()
     {
         for (int i = 0; i < leverConnectedBodies.Length; i++)

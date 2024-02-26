@@ -12,7 +12,7 @@ public class Game_Progression : MonoBehaviour
     public bool playerMayFly = true;
     public bool somethingIsBroken = false;
 
-    private float timeRemaining = 30;    //time limit
+    private float timeRemaining = 15;    //time limit
     private bool timerIsRunning = false;
     float minutes, seconds;
     public Text timeText;
@@ -41,9 +41,10 @@ public class Game_Progression : MonoBehaviour
             }
             else
             {
-                GameOver();
+                gameOver_outOfFuel = true;
                 timeRemaining = 0;
                 timerIsRunning= false;
+                GameOver();
             }
         }
         
@@ -99,19 +100,25 @@ public class Game_Progression : MonoBehaviour
         GameOverMessage();
     }
 
-    private void GameOverMessage()
+    IEnumerator GameOverMessage()
     {
+        yield return new WaitForSeconds(3);
 
         if (gameOver_win == true)
         {
             Scene_Manager_DD.mainScreenTextOption = 1;
-        } else if (gameOver_outOfFuel == true)
+        } 
+        else if (gameOver_outOfFuel == true)
         {
             Scene_Manager_DD.mainScreenTextOption = 2;
-        } else if (gameOver_shipMalfunction == true)
+        } 
+        else if (gameOver_shipMalfunction == true)
         {
             Scene_Manager_DD.mainScreenTextOption = 3;
         }
-        SceneManager.LoadScene("DoomsdayDeliver_Menu");
+
+        Debug.Log("before scene switch");
+        string gameScene = "DoomsdayDelivery_Menu";
+        SceneManager.LoadScene(gameScene);
     }
 }

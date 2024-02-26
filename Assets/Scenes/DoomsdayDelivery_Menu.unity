@@ -3514,9 +3514,9 @@ MonoBehaviour:
   OnMaxLimitReached:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 749458116}
-        m_TargetAssemblyTypeName: Scene_Manager_DD, Assembly-CSharp
-        m_MethodName: BeginGame
+      - m_Target: {fileID: 8810621021768351876}
+        m_TargetAssemblyTypeName: FadeScreen_DD, Assembly-CSharp
+        m_MethodName: FadeOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3526,9 +3526,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8810621021768351876}
-        m_TargetAssemblyTypeName: FadeScreen_DD, Assembly-CSharp
-        m_MethodName: FadeOut
+      - m_Target: {fileID: 749458116}
+        m_TargetAssemblyTypeName: Scene_Manager_DD, Assembly-CSharp
+        m_MethodName: BeginGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

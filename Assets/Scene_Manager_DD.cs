@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,14 +14,15 @@ public class Scene_Manager_DD : MonoBehaviour
     [SerializeField] private Text timeFailText;
     [SerializeField] private Text fuelFailText;
 
-    public void BeginGame()
+    private void Awake()
     {
-         SceneManager.LoadScene("DoomsdayDelivery_Game");
-    }
-
-    public void ToMainMenu()
-    {
-        if (mainScreenTextOption == 1)
+        if (mainScreenTextOption == 0)
+        {
+            successText.gameObject.SetActive(false);
+            timeFailText.gameObject.SetActive(false);
+            fuelFailText.gameObject.SetActive(false);
+        }
+        else if (mainScreenTextOption == 1)
         {
             successText.gameObject.SetActive(true);
 
@@ -41,7 +43,22 @@ public class Scene_Manager_DD : MonoBehaviour
             successText.gameObject.SetActive(false);
             timeFailText.gameObject.SetActive(false);
         }
-        
     }
 
+    public void BeginGame()
+    {
+        StartCoroutine(BeginGameCoroutine());
+    }
+
+    IEnumerator BeginGameCoroutine()
+    {
+        yield return new WaitForSeconds(3);
+        string menuScene = "DoomsdayDelivery_Game";
+        SceneManager.LoadScene(menuScene);
+    }
+
+    void RuntimeInitializeOnLoadMethodAttribute()
+    {
+
+    }
 }
