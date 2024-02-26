@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Game_Progression : MonoBehaviour
@@ -11,13 +12,13 @@ public class Game_Progression : MonoBehaviour
     public bool playerMayFly = true;
     public bool somethingIsBroken = false;
 
-    private float timeRemaining = 60;    //time limit
+    private float timeRemaining = 30;    //time limit
     private bool timerIsRunning = false;
     float minutes, seconds;
     public Text timeText;
 
     private FadeScreen_DD fadeScreenDD;
-    public bool gameOver_outOfFuel = false, gameOver_shipMalfunction = false, gameOver_win = false;
+    public static bool gameOver_outOfFuel = false, gameOver_shipMalfunction = false, gameOver_win = false;
     public Text gameOver_textMessage;
 
     //private bool tent1IsComplete = false, tent2IsComplete = false, tent3IsComplete = false;
@@ -37,7 +38,6 @@ public class Game_Progression : MonoBehaviour
             {
                 timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
-
             }
             else
             {
@@ -94,35 +94,24 @@ public class Game_Progression : MonoBehaviour
 
     public void GameOver()
     {
-        //jerk the chair to a stop
         hapticChairScript.HapticGameOver();
-        //fade screen to black as the chair jerks
         fadeScreenDD.FadeOut();
-        //"game over"... with
-        // "you ran out of fuel!" or "you failed to fix the ship in time!"
-        StartCoroutine(GameOverMessage());
+        GameOverMessage();
     }
 
-    IEnumerator GameOverMessage()
+    private void GameOverMessage()
     {
-        yield return new WaitForSeconds(3);
-        //3 seconds because that's the amount of time it takes for screen to fade to black
-        string gameOverText = "GAME OVER! \n (no message...nothing was turned to true)";
 
         if (gameOver_win == true)
         {
-            gameOverText = "Congratulations! You successfully delivered all the supplies!";
+            Scene_Manager_DD.mainScreenTextOption = 1;
         } else if (gameOver_outOfFuel == true)
         {
-            gameOverText = "GAME OVER! \n You ran out of fuel!";
+            Scene_Manager_DD.mainScreenTextOption = 2;
         } else if (gameOver_shipMalfunction == true)
         {
-            gameOverText = "GAME OVER! \n You failed to fix the ship in time!";
+            Scene_Manager_DD.mainScreenTextOption = 3;
         }
-        gameOver_textMessage.gameObject.SetActive(true);
-        gameOver_textMessage.text = gameOverText;
-
+        SceneManager.LoadScene("DoomsdayDeliver_Menu");
     }
-
-
 }
