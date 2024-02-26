@@ -57,8 +57,4 @@ public class Scene_Manager_DD : MonoBehaviour
         SceneManager.LoadScene(menuScene);
     }
 
-    void RuntimeInitializeOnLoadMethodAttribute()
-    {
-
-    }
 }

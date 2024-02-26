@@ -19,7 +19,6 @@ public class Game_Progression : MonoBehaviour
 
     private FadeScreen_DD fadeScreenDD;
     public static bool gameOver_outOfFuel = false, gameOver_shipMalfunction = false, gameOver_win = false;
-    public Text gameOver_textMessage;
 
     //private bool tent1IsComplete = false, tent2IsComplete = false, tent3IsComplete = false;
 
@@ -97,7 +96,7 @@ public class Game_Progression : MonoBehaviour
     {
         hapticChairScript.HapticGameOver();
         fadeScreenDD.FadeOut();
-        GameOverMessage();
+        StartCoroutine(GameOverMessage());
     }
 
     IEnumerator GameOverMessage()
@@ -117,7 +116,6 @@ public class Game_Progression : MonoBehaviour
             Scene_Manager_DD.mainScreenTextOption = 3;
         }
 
-        Debug.Log("before scene switch");
         string gameScene = "DoomsdayDelivery_Menu";
         SceneManager.LoadScene(gameScene);
     }
