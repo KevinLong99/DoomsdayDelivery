@@ -16,33 +16,37 @@ public class Scene_Manager_DD : MonoBehaviour
 
     private void Awake()
     {
-        if (mainScreenTextOption == 0)
+        if (SceneManager.GetActiveScene().name == "DoomsdayDelivery_Menu")
         {
-            successText.gameObject.SetActive(false);
-            timeFailText.gameObject.SetActive(false);
-            fuelFailText.gameObject.SetActive(false);
-        }
-        else if (mainScreenTextOption == 1)
-        {
-            successText.gameObject.SetActive(true);
+            if (mainScreenTextOption == 0)
+            {
+                successText.gameObject.SetActive(false);
+                timeFailText.gameObject.SetActive(false);
+                fuelFailText.gameObject.SetActive(false);
+            }
+            else if (mainScreenTextOption == 1)
+            {
+                successText.gameObject.SetActive(true);
 
-            timeFailText.gameObject.SetActive(false);
-            fuelFailText.gameObject.SetActive(false);
-        }
-        else if (mainScreenTextOption == 2)
-        {
-            timeFailText.gameObject.SetActive(true);
+                timeFailText.gameObject.SetActive(false);
+                fuelFailText.gameObject.SetActive(false);
+            }
+            else if (mainScreenTextOption == 2)
+            {
+                timeFailText.gameObject.SetActive(true);
 
-            successText.gameObject.SetActive(false);
-            fuelFailText.gameObject.SetActive(false);
-        }
-        else if (mainScreenTextOption == 3)
-        {
-            fuelFailText.gameObject.SetActive(true);
+                successText.gameObject.SetActive(false);
+                fuelFailText.gameObject.SetActive(false);
+            }
+            else if (mainScreenTextOption == 3)
+            {
+                fuelFailText.gameObject.SetActive(true);
 
-            successText.gameObject.SetActive(false);
-            timeFailText.gameObject.SetActive(false);
+                successText.gameObject.SetActive(false);
+                timeFailText.gameObject.SetActive(false);
+            }
         }
+        
     }
 
     public void BeginGame()

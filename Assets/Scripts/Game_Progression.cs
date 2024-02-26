@@ -12,7 +12,7 @@ public class Game_Progression : MonoBehaviour
     public bool playerMayFly = true;
     public bool somethingIsBroken = false;
 
-    private float timeRemaining = 15;    //time limit
+    private float timeRemaining = 60;    //time limit
     private bool timerIsRunning = false;
     float minutes, seconds;
     public Text timeText;

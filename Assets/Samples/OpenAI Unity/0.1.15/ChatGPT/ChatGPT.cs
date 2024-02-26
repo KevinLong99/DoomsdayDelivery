@@ -6,10 +6,7 @@ namespace OpenAI
 {
     public class ChatGPT : MonoBehaviour
     {
-        [SerializeField] private InputField inputField;
-        [SerializeField] private Button button;
         [SerializeField] private ScrollRect scroll;
-        
         [SerializeField] private RectTransform sent;
         [SerializeField] private RectTransform received;
 
@@ -17,12 +14,7 @@ namespace OpenAI
         private OpenAIApi openai = new OpenAIApi("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");
 
         private List<ChatMessage> messages = new List<ChatMessage>();
-        private string prompt = "Act as a random stranger in a chat room and reply to the questions. Don't break character. Don't ever mention that you are an AI model.";
-
-        private void Start()
-        {
-            button.onClick.AddListener(SendReply);
-        }
+        private string prompt = "Give instructions in a paragraph, not a list, on how to make a pizza in different styles.";
 
         private void AppendMessage(ChatMessage message)
         {
@@ -37,23 +29,22 @@ namespace OpenAI
             scroll.verticalNormalizedPosition = 0;
         }
 
-        private async void SendReply()
+        public async void SendReply()
         {
+            string alwaysAnswer = "How do I make a pizza?";
+
             var newMessage = new ChatMessage()
             {
                 Role = "user",
-                Content = inputField.text
+                //Content = alwaysAnswer
             };
             
             AppendMessage(newMessage);
 
-            if (messages.Count == 0) newMessage.Content = prompt + "\n" + inputField.text; 
-            
+            newMessage.Content = prompt + "\n" + alwaysAnswer;
+
             messages.Add(newMessage);
-            
-            button.enabled = false;
-            inputField.text = "";
-            inputField.enabled = false;
+
             
             // Complete the instruction
             var completionResponse = await openai.CreateChatCompletion(new CreateChatCompletionRequest()
@@ -69,14 +60,15 @@ namespace OpenAI
                 
                 messages.Add(message);
                 AppendMessage(message);
+
+                string aiResponse = message.Content;
+                Debug.Log(aiResponse);
+
             }
             else
             {
                 Debug.LogWarning("No text was generated from this prompt.");
             }
-
-            button.enabled = true;
-            inputField.enabled = true;
         }
     }
 }
