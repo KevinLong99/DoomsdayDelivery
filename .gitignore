@@ -72,6 +72,3 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-#Other files causing issues in committing
-*.renderTexture
-*.renderTexture.meta
