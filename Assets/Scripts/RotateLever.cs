@@ -28,7 +28,7 @@ public class RotateLever : MonoBehaviour
 
     public void RotateLeverCall(GameObject gameObjectToMove, Quaternion newRot, float duration)
     {
-        AttachHingeConnectedBody();
+        //AttachHingeConnectedBody();
         StartCoroutine(RotateLeverCoroutine(gameObjectToMove, newRot, duration));
     }
 
@@ -50,6 +50,6 @@ public class RotateLever : MonoBehaviour
             yield return null;
         }
         rotatingHinge = false;
-        RemoveHingeConnectedBody();
+        //RemoveHingeConnectedBody();
     }
 }

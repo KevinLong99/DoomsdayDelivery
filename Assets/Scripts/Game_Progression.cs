@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,7 +16,7 @@ public class Game_Progression : MonoBehaviour
     private float timeRemaining = 60;    //time limit
     private bool timerIsRunning = false;
     float minutes, seconds;
-    public Text timeText;
+    public TextMeshProUGUI timeText;
 
     private FadeScreen_DD fadeScreenDD;
     public static bool gameOver_outOfFuel = false, gameOver_shipMalfunction = false, gameOver_win = false;
@@ -109,11 +110,11 @@ public class Game_Progression : MonoBehaviour
         } 
         else if (gameOver_outOfFuel == true)
         {
-            Scene_Manager_DD.mainScreenTextOption = 2;
+            Scene_Manager_DD.mainScreenTextOption = 3;
         } 
         else if (gameOver_shipMalfunction == true)
         {
-            Scene_Manager_DD.mainScreenTextOption = 3;
+            Scene_Manager_DD.mainScreenTextOption = 2;
         }
 
         string gameScene = "DoomsdayDelivery_Menu";

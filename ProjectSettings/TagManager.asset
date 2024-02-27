@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Teleport
   - Box_Collectable
+  - Medtent
+  - Drone
   layers:
   - Default
   - TransparentFX

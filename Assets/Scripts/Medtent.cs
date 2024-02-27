@@ -46,22 +46,25 @@ public class Medtent : MonoBehaviour
             //do math to determine if the supplies and time delivered were enough
             int successVal = 0;
 
+            //get these values from the drone package that arrives
             int receivedViles = 0;
             int receivedSyringes = 0;
             int receivedBandages = 0;
             int receivedOintment = 0;
 
-            if ((receivedViles * .8f) >= numViles) successVal++;
-            if ((receivedSyringes * .8f) >= numViles) successVal++;
-            if ((receivedBandages * .8f) >= numViles) successVal++;
-            if ((receivedOintment * .8f) >= numViles) successVal++;
+            if ((receivedViles / numViles) >= 0.7f) successVal++;
+            if ((receivedSyringes / numSyringes) >= 0.7f) successVal++;
+            if ((receivedBandages / numBandages) >= 0.7f) successVal++;
+            if ((receivedOintment / numOintment) >= 0.7f) successVal++;
 
             if (successVal > 1)
             {
                 //success response
+                Debug.Log("You delivered enough supplies!");
             } else
             {
                 //fail response
+                Debug.Log("You failed to deliver enough supplies! \nPeople will die because of your failure!");
             }
         }
     }

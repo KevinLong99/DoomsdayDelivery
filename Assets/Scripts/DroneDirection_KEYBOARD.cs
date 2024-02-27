@@ -38,22 +38,18 @@ public class DroneDirection_KEYBOARD : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                //rb.AddForce(force3x, ForceMode.Impulse);
                 this.transform.position += moveZaxis;
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                //rb.AddForce(force4x, ForceMode.Impulse);
                 this.transform.position -= moveZaxis;
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                //rb.AddForce(force2x, ForceMode.Impulse);
                 this.transform.position -= moveXaxis;
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                //rb.AddForce(force1x, ForceMode.Impulse);
                 this.transform.position += moveXaxis;
             }
         }
@@ -71,7 +67,6 @@ public class DroneDirection_KEYBOARD : MonoBehaviour
             Debug.Log("DRONE HAS ENTERED THE MED TENT RANGE");
         }
     }
-
 
     IEnumerator randomFlightEvent()
     {

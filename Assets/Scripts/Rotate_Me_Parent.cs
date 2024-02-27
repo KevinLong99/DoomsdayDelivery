@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Rotate_Me_Parent : MonoBehaviour
 {
-    //ROTATE VALUES:    0   120 240 
-
     public bool rotating = false;
     public GameObject objectToRotate;
 
@@ -20,10 +18,8 @@ public class Rotate_Me_Parent : MonoBehaviour
     //list of levers that need ConnectedBodies to be modified
     [SerializeField] GameObject[] leverConnectedBodies;
 
-
     public void RotateLeft()
     {
-        
         if (moveValue == 1)
         {
             RotateToStationTwo();
@@ -65,7 +61,7 @@ public class Rotate_Me_Parent : MonoBehaviour
     {
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
-            leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
+            //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
             leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation3, 1f);
         }
         StartCoroutine(rotateObject(objectToRotate, rotation1, 1f));
@@ -74,7 +70,7 @@ public class Rotate_Me_Parent : MonoBehaviour
     {
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
-            leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
+            //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
             leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation2, 1f);
         }
         StartCoroutine(rotateObject(objectToRotate, rotation2, 1f));
@@ -83,7 +79,7 @@ public class Rotate_Me_Parent : MonoBehaviour
     {
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
-            leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
+            //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
             leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation1, 1f);
         }
         StartCoroutine(rotateObject(objectToRotate, rotation3, 1f));
