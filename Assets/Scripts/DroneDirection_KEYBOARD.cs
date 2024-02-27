@@ -64,6 +64,14 @@ public class DroneDirection_KEYBOARD : MonoBehaviour
         isFalling = false;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Medtent")
+        {
+            Debug.Log("DRONE HAS ENTERED THE MED TENT RANGE");
+        }
+    }
+
 
     IEnumerator randomFlightEvent()
     {
