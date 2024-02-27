@@ -64,7 +64,7 @@ namespace OpenAI
                 AppendMessage(message);
 
                 string aiResponse = message.Content;
-                Debug.Log(aiResponse);
+                //Debug.Log(aiResponse);
 
                 typewriter.StartTypewriterView(aiResponse);
 
