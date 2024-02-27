@@ -20,6 +20,14 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     public void RotateLeft()
     {
+        //deal with levers first
+        for (int i = 0; i < leverConnectedBodies.Length; i++)
+        {
+            //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
+            // leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation3, 1f);
+            leverConnectedBodies[i].GetComponent<RotateLever>().AttachHingeConnectedBody();
+        }
+
         if (moveValue == 1)
         {
             RotateToStationTwo();
@@ -39,7 +47,14 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     public void RotateRight()
     {
-        
+        //deal with levers first
+        for (int i = 0; i < leverConnectedBodies.Length; i++)
+        {
+            //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
+            // leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation3, 1f);
+            leverConnectedBodies[i].GetComponent<RotateLever>().AttachHingeConnectedBody();
+        }
+
         if (moveValue == 1)
         {
             RotateToStationThree();
@@ -59,29 +74,14 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     private void RotateToStationOne()
     {
-        for (int i = 0; i < leverConnectedBodies.Length; i++)
-        {
-            //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
-            leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation3, 1f);
-        }
         StartCoroutine(rotateObject(objectToRotate, rotation1, 1f));
     }
     private void RotateToStationTwo()
     {
-        for (int i = 0; i < leverConnectedBodies.Length; i++)
-        {
-            //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
-            leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation2, 1f);
-        }
         StartCoroutine(rotateObject(objectToRotate, rotation2, 1f));
     }
     private void RotateToStationThree()
     {
-        for (int i = 0; i < leverConnectedBodies.Length; i++)
-        {
-            //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
-            leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation1, 1f);
-        }
         StartCoroutine(rotateObject(objectToRotate, rotation3, 1f));
     }
 
@@ -107,6 +107,12 @@ public class Rotate_Me_Parent : MonoBehaviour
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
             leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = true;
+        }
+
+        //end with levers
+        for (int i = 0; i < leverConnectedBodies.Length; i++)
+        {
+            leverConnectedBodies[i].GetComponent<RotateLever>().RemoveHingeConnectedBody();
         }
     }
 }
