@@ -10,6 +10,8 @@ namespace OpenAI
         [SerializeField] private RectTransform sent;
         [SerializeField] private RectTransform received;
 
+        public Typewriter_UI typewriter;
+
         private float height;
         private OpenAIApi openai = new OpenAIApi("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");
 
@@ -39,7 +41,7 @@ namespace OpenAI
                 //Content = alwaysAnswer
             };
             
-            AppendMessage(newMessage);
+            //AppendMessage(newMessage);
 
             newMessage.Content = prompt + "\n" + alwaysAnswer;
 
@@ -63,6 +65,8 @@ namespace OpenAI
 
                 string aiResponse = message.Content;
                 Debug.Log(aiResponse);
+
+                typewriter.StartTypewriterView(aiResponse);
 
             }
             else
