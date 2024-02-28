@@ -20,7 +20,7 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     public void RotateLeft()
     {
-        //deal with levers first
+        //deal with levers first...attach them to rigidbody so they can move with the station
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
             //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
@@ -47,7 +47,7 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     public void RotateRight()
     {
-        //deal with levers first
+        //deal with levers first...attach them to rigidbody so they can move with the station
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
             //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
@@ -121,3 +121,15 @@ public class Rotate_Me_Parent : MonoBehaviour
 //Script Credits:
 //  Rotate GameObject over time
 //  https://stackoverflow.com/questions/37586407/rotate-gameobject-over-time
+
+
+/*
+ 
+original lever for-loop
+for (int i = 0; i < leverConnectedBodies.Length; i++)
+    {
+        leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
+        leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation#, 1f);
+    }
+ 
+ */

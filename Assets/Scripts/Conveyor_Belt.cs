@@ -50,6 +50,11 @@ public class Conveyor_Belt : MonoBehaviour
     {
         onBelt.Remove(collision.gameObject);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("ball enter");
+    }
 }
 
 /*      SCRIPT CREDITS to Jayometric         */

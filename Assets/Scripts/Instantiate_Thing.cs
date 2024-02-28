@@ -4,25 +4,13 @@ using UnityEngine;
 
 public class Instantiate_Thing : MonoBehaviour
 {
-    public GameObject thingToInstantiate;
-    public Transform whereToInstantiate;
+    [SerializeField] private GameObject thingToInstantiate;
+    [SerializeField] private Transform whereToInstantiate;
 
-    // Start is called before the first frame update
-    void Start()
+    public void InstantiateRespectiveItem()
     {
-        
-    }
+        //when lever is at max limit (or when button is presesd), spawn item above the conveyor belt
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void InstantiateBalls()
-    {
-        //when lever is at max limit, spawn balls above the conveyor belt
-
-        GameObject newBall = Instantiate(thingToInstantiate, whereToInstantiate);
+        GameObject newItem = Instantiate(thingToInstantiate, whereToInstantiate);
     }
 }
