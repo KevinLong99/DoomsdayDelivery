@@ -47,7 +47,6 @@ public class Scene_Manager_DD : MonoBehaviour
                 timeFailText.gameObject.SetActive(false);
             }
         }
-        
     }
 
     public void BeginGame()

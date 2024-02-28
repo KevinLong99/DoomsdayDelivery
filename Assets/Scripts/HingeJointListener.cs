@@ -17,11 +17,6 @@ public class HingeJointListener : MonoBehaviour
     public enum HingeJointState { Min, Max, None }
     private HingeJoint hinge;
 
-    //Spawner
-
-    public Spawner mySpawner;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -56,13 +51,4 @@ public class HingeJointListener : MonoBehaviour
         }
 
     }
-    public void spawnStuff()
-    {
-        mySpawner.spawn();
-    }
 }
-
-//todo
-
-//OVERWRITE the function where when you let go of the handle, it snaps (or slowly returns) back
-//to its original position/rotation orientation

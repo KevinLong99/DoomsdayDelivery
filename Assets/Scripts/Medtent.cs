@@ -14,6 +14,8 @@ public class Medtent : MonoBehaviour
     private int medtentNum;
     private char numChar;
 
+    public Typewriter_UI typewriter_script;
+
     void Start()
     {
         //for this to work, the name of the medtent must be in format: Medtent# (with # being a single digit number)
@@ -34,6 +36,19 @@ public class Medtent : MonoBehaviour
         numOintment = medtentNum * Random.Range(2, 5);
 
 
+    }
+
+    public void SendSupplyRequestToMothership()
+    {
+        string toMothershipMessage = 
+            "INCOMING TRANSMISSION FROM SURVIVORS... \n \n " +
+            "Requesting following relief supplies: \n" +
+            numViles + " viles, \n" +
+            numSyringes + " syringes, \n" +
+            numBandages + " bandages, \n" +
+            numOintment + " ointment packets.";
+
+        typewriter_script.StartTypewriterView(toMothershipMessage);
     }
 
 

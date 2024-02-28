@@ -13,7 +13,7 @@ public class Game_Progression : MonoBehaviour
     public bool playerMayFly = true;
     public bool somethingIsBroken = false;
 
-    private float timeRemaining = 60;    //time limit
+    private float timeRemaining = 120;   //time limit
     private bool timerIsRunning = false;
     float minutes, seconds;
     public TextMeshProUGUI timeText;
@@ -22,11 +22,12 @@ public class Game_Progression : MonoBehaviour
     public static bool gameOver_outOfFuel = false, gameOver_shipMalfunction = false, gameOver_win = false;
 
     //private bool tent1IsComplete = false, tent2IsComplete = false, tent3IsComplete = false;
+    public Medtent medtentObject_Script;
 
     void Start()
     {
         fadeScreenDD = GameObject.Find("FaderScreen").GetComponent<FadeScreen_DD>(); ;
-        hapticChairScript.FlyFunction(5);
+        //hapticChairScript.FlyFunction(5);
         timerIsRunning = true;
     }
 
@@ -65,7 +66,6 @@ public class Game_Progression : MonoBehaviour
         somethingIsBroken = value;
     }
 
-
     public void TentAppears()
     {
         //tent spawns on sphere environment and rotates to a visible point to the Mothership 
@@ -88,9 +88,20 @@ public class Game_Progression : MonoBehaviour
             }
             else
             {
-                hapticChairScript.FlyFunction(4);
+                //player flies to next tent
+                hapticChairScript.FlyFunction(6);
+                //wait six seconds, send supply request
+                StartCoroutine(CallMedTent());
+
             }
         }
+    }
+
+    IEnumerator CallMedTent()
+    {
+        //make sure seconds wait is same amount (or one less) time than it takes for ship to fly
+        yield return new WaitForSeconds(5);
+        medtentObject_Script.SendSupplyRequestToMothership();
     }
 
     public void GameOver()
@@ -120,4 +131,5 @@ public class Game_Progression : MonoBehaviour
         string gameScene = "DoomsdayDelivery_Menu";
         SceneManager.LoadScene(gameScene);
     }
+
 }
