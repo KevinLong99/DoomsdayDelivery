@@ -27,6 +27,6 @@ public class LeverReleaseDetector_Stations : MonoBehaviour
 
     private void HandleSelectExited(SelectExitEventArgs arg)
     {
-        leverRetStation_Script.ReleaseLever();
+        leverRetStation_Script.ResetLever();
     }
 }

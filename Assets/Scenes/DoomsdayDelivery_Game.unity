@@ -5031,7 +5031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thingToInstantiate: {fileID: 1432446623895684329, guid: 0b73ce3a8bf5ef9478c1f4619d6b5cf4,
     type: 3}
-  whereToInstantiate: {fileID: 4087728715682218237}
+  whereToInstantiate: {fileID: 5340619932569662922}
 --- !u!4 &1848070713
 Transform:
   m_ObjectHideFlags: 0
@@ -5063,6 +5063,7 @@ MonoBehaviour:
   playerMayFly: 1
   somethingIsBroken: 0
   timeText: {fileID: 1215635412}
+  medtentObject_Script: {fileID: 0}
 --- !u!82 &1848070715
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27829,7 +27830,6 @@ MonoBehaviour:
   objectToRotate: {fileID: 43330315241600970}
   moveValue: 1
   leverConnectedBodies:
-  - {fileID: 5604122015380449887}
   - {fileID: 4962887619336281703}
   - {fileID: 1071981796640749472}
 --- !u!4 &4758391524776180713
@@ -46664,6 +46664,7 @@ MonoBehaviour:
   numSyringes: 0
   numBandages: 0
   numOintment: 0
+  typewriter_script: {fileID: 0}
 --- !u!23 &9057475516142231964
 MeshRenderer:
   m_ObjectHideFlags: 0

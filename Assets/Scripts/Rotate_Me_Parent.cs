@@ -43,6 +43,8 @@ public class Rotate_Me_Parent : MonoBehaviour
             RotateToStationOne();
             moveValue = 1;
         }
+
+
     }
 
     public void RotateRight()
@@ -117,7 +119,7 @@ public class Rotate_Me_Parent : MonoBehaviour
             leverConnectedBodies[i].GetComponent<RotateLever>().RemoveHingeConnectedBody();
             if (leverConnectedBodies[i].GetComponent<LeverReturn_Stations>())
             {
-                leverConnectedBodies[i].GetComponent<LeverReturn_Stations>().ReleaseLever();
+                leverConnectedBodies[i].GetComponent<LeverReturn_Stations>().ResetLever();
             }
             
         }
