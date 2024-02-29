@@ -8,6 +8,8 @@ TagManager:
   - Box_Collectable
   - Medtent
   - Drone
+  - Character
+  - SpawnStuff1
   layers:
   - Default
   - TransparentFX
