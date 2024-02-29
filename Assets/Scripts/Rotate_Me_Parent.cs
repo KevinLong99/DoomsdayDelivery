@@ -116,11 +116,9 @@ public class Rotate_Me_Parent : MonoBehaviour
         //end with levers
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
+            leverConnectedBodies[i].GetComponent<LeverReturn_Stations>().ResetLever();
             leverConnectedBodies[i].GetComponent<RotateLever>().RemoveHingeConnectedBody();
-            if (leverConnectedBodies[i].GetComponent<LeverReturn_Stations>())
-            {
-                leverConnectedBodies[i].GetComponent<LeverReturn_Stations>().ResetLever();
-            }
+            
             
         }
     }
