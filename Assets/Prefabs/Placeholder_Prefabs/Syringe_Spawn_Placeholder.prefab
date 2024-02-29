@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1002277418080906162}
   m_Layer: 0
   m_Name: Syringe_Spawn_Placeholder
-  m_TagString: Untagged
+  m_TagString: SpawnStuff1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

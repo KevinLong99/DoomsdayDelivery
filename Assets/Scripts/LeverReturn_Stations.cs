@@ -11,7 +11,7 @@ public class LeverReturn_Stations : MonoBehaviour
     private Quaternion startRot;
     void Start()
     {
-        startingPos = this.transform.localPosition;
+        startingPos = this.transform.position;
         startRot = this.transform.rotation;
     }
 
@@ -31,7 +31,7 @@ public class LeverReturn_Stations : MonoBehaviour
         }
         isReturning = true;
 
-        Vector3 curPos = this.transform.localPosition;
+        Vector3 curPos = this.transform.position;
         Quaternion currentRot = this.transform.rotation;
 
         float counter = 0;
@@ -39,7 +39,7 @@ public class LeverReturn_Stations : MonoBehaviour
         {
             counter += Time.deltaTime;
             this.transform.rotation = Quaternion.Lerp(currentRot, startRot, counter / duration);
-            this.transform.localPosition = Vector3.Lerp(curPos, startingPos, counter / duration);
+            this.transform.position = Vector3.Lerp(curPos, startingPos, counter / duration);
             yield return null;
         }
         isReturning = false;
