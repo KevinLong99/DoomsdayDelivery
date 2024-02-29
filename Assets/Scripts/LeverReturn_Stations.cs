@@ -46,3 +46,6 @@ public class LeverReturn_Stations : MonoBehaviour
     }
 
 }
+
+//dealing with rotation (instead of local rotation) makes the lever look ugly while resetting
+//try using localrotation in the future

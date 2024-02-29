@@ -51,4 +51,10 @@ public class HingeJointListener : MonoBehaviour
         }
 
     }
+
+
+    public void RetrieveHingeJoint()
+    {
+        hinge = GetComponent<HingeJoint>();
+    }
 }

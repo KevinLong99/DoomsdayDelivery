@@ -25,7 +25,8 @@ public class Rotate_Me_Parent : MonoBehaviour
         {
             //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
             // leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation3, 1f);
-            leverConnectedBodies[i].GetComponent<RotateLever>().AttachHingeConnectedBody();
+            //leverConnectedBodies[i].GetComponent<RotateLever>().AttachHingeConnectedBody();
+            leverConnectedBodies[i].GetComponent<RotateLever>().DestroyHingeAndRigidbody();
         }
 
         if (moveValue == 1)
@@ -54,7 +55,8 @@ public class Rotate_Me_Parent : MonoBehaviour
         {
             //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
             // leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation3, 1f);
-            leverConnectedBodies[i].GetComponent<RotateLever>().AttachHingeConnectedBody();
+            //leverConnectedBodies[i].GetComponent<RotateLever>().AttachHingeConnectedBody();
+            leverConnectedBodies[i].GetComponent<RotateLever>().DestroyHingeAndRigidbody();
         }
 
         if (moveValue == 1)
@@ -117,9 +119,10 @@ public class Rotate_Me_Parent : MonoBehaviour
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
             leverConnectedBodies[i].GetComponent<LeverReturn_Stations>().ResetLever();
-            leverConnectedBodies[i].GetComponent<RotateLever>().RemoveHingeConnectedBody();
-            
-            
+            //leverConnectedBodies[i].GetComponent<RotateLever>().RemoveHingeConnectedBody();
+            yield return new WaitForSeconds(0.75f);
+            leverConnectedBodies[i].GetComponent<RotateLever>().AddHingeAndRigidbody();
+
         }
     }
 }
