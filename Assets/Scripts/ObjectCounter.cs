@@ -9,11 +9,16 @@ public class ObjectCounter : MonoBehaviour
     [SerializeField]
     private List<string> tagsToCount;
 
+    public int numTotalItems = 0;
+
     // Dictionary to keep track of counts of different tags
     private Dictionary<string, int> tagCounts = new Dictionary<string, int>();
 
     // Reference to the TextMeshPro component
     public TextMeshProUGUI countDisplay;
+
+    public Rotate_Me_Parent rotateParentScript;
+    private Animator medBoxAnimator;
 
     private void Start()
     {
@@ -22,6 +27,8 @@ public class ObjectCounter : MonoBehaviour
         {
             tagCounts[tag] = 0;
         }
+
+        medBoxAnimator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -62,6 +69,30 @@ public class ObjectCounter : MonoBehaviour
             {
                 countDisplay.text += $"{tag}: {tagCounts[tag]}\n";
             }
+        }
+    }
+
+    public int GetNumTotalItems()
+    {
+        return numTotalItems;
+    }
+
+    public void PlayStation2EnterAnimation()
+    {
+        if (rotateParentScript.medKitisCompleted == true)
+        {
+            //play animation
+            medBoxAnimator.Play("Base Layer.Box_Fall", 0, 1f);
+        }
+    }
+
+    public void PlayStation2ExitAnimation()
+    {
+        //play animation when turned to station 3 if medkit is completed
+        if (rotateParentScript.medKitisCompleted == true)
+        {
+            //play animation
+            medBoxAnimator.Play("Base Layer.Closing", 0, 1f);
         }
     }
 }

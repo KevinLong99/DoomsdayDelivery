@@ -1375,15 +1375,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418889568}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.97197187, z: -0, w: 0.2350974}
-  m_LocalPosition: {x: -0.5702, y: 0.8289, z: 0.8931}
+  m_LocalRotation: {x: -0, y: 0.9672968, z: -0, w: 0.25364742}
+  m_LocalPosition: {x: -0.5874, y: 0.8289, z: 0.8844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1685977571}
   - {fileID: 428402084}
   m_Father: {fileID: 4605145056197672473}
-  m_LocalEulerAnglesHint: {x: 0, y: 152.805, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 150.613, z: 0}
 --- !u!114 &418889570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1510,7 +1510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7718dc824e1754f9d223fe4acc4171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num: 2
+  rotateParentScript: {fileID: 4749200299554207812}
+  objectCounterMedbox: {fileID: 1551794189}
 --- !u!82 &418889572
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3219,6 +3220,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &824441082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824441083}
+  m_Layer: 0
+  m_Name: MedBoxSpawnLoc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &824441083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824441082}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.86746436, z: -0, w: 0.49749938}
+  m_LocalPosition: {x: -0.847, y: 0.78, z: 1.357}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5670926854914019776}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &825320423
 GameObject:
   m_ObjectHideFlags: 0
@@ -5468,17 +5500,22 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 4605145056197672473}
+    m_TransformParent: {fileID: 5670926854914019776}
     m_Modifications:
     - target: {fileID: 307220294810449221, guid: 2647cd6406ac1db4b97d694bb0e96930,
         type: 3}
       propertyPath: m_Name
       value: MedBox
       objectReference: {fileID: 0}
+    - target: {fileID: 307220294810449221, guid: 2647cd6406ac1db4b97d694bb0e96930,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1083299974701641727, guid: 2647cd6406ac1db4b97d694bb0e96930,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.80584425
+      value: -0.847
       objectReference: {fileID: 0}
     - target: {fileID: 1083299974701641727, guid: 2647cd6406ac1db4b97d694bb0e96930,
         type: 3}
@@ -5488,7 +5525,7 @@ PrefabInstance:
     - target: {fileID: 1083299974701641727, guid: 2647cd6406ac1db4b97d694bb0e96930,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.4802363
+      value: 1.357
       objectReference: {fileID: 0}
     - target: {fileID: 1083299974701641727, guid: 2647cd6406ac1db4b97d694bb0e96930,
         type: 3}
@@ -5565,6 +5602,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2647cd6406ac1db4b97d694bb0e96930, type: 3}
+--- !u!114 &1551794189 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5440819752665480500, guid: 2647cd6406ac1db4b97d694bb0e96930,
+    type: 3}
+  m_PrefabInstance: {fileID: 1551794188}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8003c15483c54c84994a5051e5fa4273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1552098252
 GameObject:
   m_ObjectHideFlags: 0
@@ -6267,7 +6316,7 @@ PrefabInstance:
     - target: {fileID: 596844330559587535, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5272339
+      value: 0.848
       objectReference: {fileID: 0}
     - target: {fileID: 596844330559587535, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
@@ -6307,6 +6356,21 @@ PrefabInstance:
     - target: {fileID: 596844330559587535, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979119758343088473, guid: 0335cdc3d09703143af46ffa2a2b24a7,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979119758343088473, guid: 0335cdc3d09703143af46ffa2a2b24a7,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979119758343088473, guid: 0335cdc3d09703143af46ffa2a2b24a7,
+        type: 3}
+      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4513403938289266580, guid: 0335cdc3d09703143af46ffa2a2b24a7,
@@ -6516,6 +6580,9 @@ MonoBehaviour:
   somethingIsBroken: 0
   timeText: {fileID: 1215635412}
   medtentObject_Script: {fileID: 9057418474172742257}
+  medBoxToSpawn: {fileID: 307220294810449221, guid: 2647cd6406ac1db4b97d694bb0e96930,
+    type: 3}
+  medBoxSpawnLoc: {fileID: 824441083}
 --- !u!82 &1848070715
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6626,13 +6693,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nineSecondShipFly: {fileID: 8300000, guid: f24059fafbe87c045818b38ca47c9761, type: 3}
   aoogahError: {fileID: 8300000, guid: 54e641b07cfe40b48a317210507813e4, type: 3}
-  backInTheDay: {fileID: 0}
+  backInTheDay: {fileID: 8300000, guid: a8133e8c92079fc408dd41b4e2a7fdd6, type: 3}
   boingPoing: {fileID: 8300000, guid: 8a6605248d7ea8f429ca1024cc617ee0, type: 3}
   droneArriving: {fileID: 8300000, guid: b40160a09d73feb4fb6b9386863d3ce2, type: 3}
-  fnaf1: {fileID: 0}
-  minecraftCave1: {fileID: 0}
+  fnaf1: {fileID: 8300000, guid: 1ddcb4f46975a134da75bcfbf5b8121f, type: 3}
+  minecraftCave1: {fileID: 8300000, guid: df46cabdaf2c4eb43b4dff75ab8f7900, type: 3}
   shipError3Buzz: {fileID: 8300000, guid: 769cff61f4176ec4881a151a5596b4c4, type: 3}
-  tacoBellGong: {fileID: 0}
+  tacoBellGong: {fileID: 8300000, guid: 7995415c71a4cc04bb24899a71b6a55d, type: 3}
   thunder: {fileID: 8300000, guid: 3ee8f988cd1c83d4a85b93b14c916935, type: 3}
   thunk: {fileID: 8300000, guid: c3dcfb399d1a4e94ebdeaf478d755ce6, type: 3}
 --- !u!114 &1848070717
@@ -28693,7 +28760,6 @@ Transform:
   - {fileID: 56463890}
   - {fileID: 936441077}
   - {fileID: 707076808981210592}
-  - {fileID: 1209517368}
   m_Father: {fileID: 1567639642467275264}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4617803511316672724
@@ -29368,6 +29434,7 @@ MonoBehaviour:
   - {fileID: 4962887619336281703}
   - {fileID: 1071981796640749472}
   medKitisCompleted: 0
+  gameProgScript: {fileID: 1848070714}
 --- !u!4 &4758391524776180713
 Transform:
   m_ObjectHideFlags: 0
@@ -33053,6 +33120,8 @@ Transform:
   - {fileID: 4529730125776717555}
   - {fileID: 2071919097931035672}
   - {fileID: 5915545387486055520}
+  - {fileID: 824441083}
+  - {fileID: 1209517368}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &5672262751617822719
@@ -35462,7 +35531,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1848070716}
         m_TargetAssemblyTypeName: PlaySounds, Assembly-CSharp
-        m_MethodName: PlayShipError3Buzz
+        m_MethodName: PlayThunk
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -48201,6 +48270,7 @@ MonoBehaviour:
   numSyringes: 0
   numBandages: 0
   numOintment: 0
+  rotateParentScript: {fileID: 4749200299554207812}
   typewriter_script: {fileID: 600841384}
 --- !u!23 &9057475516142231964
 MeshRenderer:

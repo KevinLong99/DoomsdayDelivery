@@ -24,9 +24,13 @@ public class Game_Progression : MonoBehaviour
     //private bool tent1IsComplete = false, tent2IsComplete = false, tent3IsComplete = false;
     public Medtent medtentObject_Script;
 
+    private bool medboxExists = false;
+    public GameObject medBoxToSpawn;
+    public Transform medBoxSpawnLoc;
+
     void Start()
     {
-        fadeScreenDD = GameObject.Find("FaderScreen").GetComponent<FadeScreen_DD>(); ;
+        fadeScreenDD = GameObject.Find("FaderScreen").GetComponent<FadeScreen_DD>();
         //hapticChairScript.FlyFunction(5);
         timerIsRunning = true;
         this.gameObject.GetComponent<PlaySounds>().PlayNineSecondsShipFly();
@@ -131,6 +135,19 @@ public class Game_Progression : MonoBehaviour
 
         string gameScene = "DoomsdayDelivery_Menu";
         SceneManager.LoadScene(gameScene);
+    }
+
+    public void InstantiateNewMedbox()
+    {
+        //upon turn to station 2, if no medbox is present, instantiate a medbox
+        if (medboxExists == false)
+        {
+            //instantiate a medbox
+            GameObject spawnMedbox = Instantiate(medBoxToSpawn, medBoxSpawnLoc);
+            spawnMedbox.GetComponent<ObjectCounter>().PlayStation2EnterAnimation();
+            
+        }
+
     }
 
 }

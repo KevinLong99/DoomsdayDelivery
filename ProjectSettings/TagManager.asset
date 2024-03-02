@@ -3,18 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Teleport
-  - Box_Collectable
-  - Medtent
-  - Drone
-  - Character
-  - SpawnStuff1
-<<<<<<< Updated upstream
-  - Medbox
-=======
-  - Building
->>>>>>> Stashed changes
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -22,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Interactable
+  - 
   - 
   - 
   - 

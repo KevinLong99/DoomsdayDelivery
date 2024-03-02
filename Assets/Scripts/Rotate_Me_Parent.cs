@@ -20,6 +20,8 @@ public class Rotate_Me_Parent : MonoBehaviour
 
     public bool medKitisCompleted = false;
 
+    public Game_Progression gameProgScript;
+
     public void RotateLeft()
     {
         //deal with levers first...attach them to rigidbody so they can move with the station
@@ -32,6 +34,7 @@ public class Rotate_Me_Parent : MonoBehaviour
         {
             RotateToStationTwo();
             moveValue = 2;
+            gameProgScript.InstantiateNewMedbox();
         }
         else if (moveValue == 2)
         {
@@ -64,6 +67,7 @@ public class Rotate_Me_Parent : MonoBehaviour
         {
             RotateToStationTwo();
             moveValue = 2;
+            gameProgScript.InstantiateNewMedbox();
         }
         else if (moveValue == 2)
         {
@@ -109,7 +113,7 @@ public class Rotate_Me_Parent : MonoBehaviour
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
             leverConnectedBodies[i].GetComponent<LeverReturn_Stations>().ResetLever();
-            yield return new WaitForSeconds(0.75f);
+            //yield return new WaitForSeconds(0.75f);
             leverConnectedBodies[i].GetComponent<RotateLever>().AddHingeAndRigidbody();
 
         }

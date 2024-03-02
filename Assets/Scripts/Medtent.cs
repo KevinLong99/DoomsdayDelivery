@@ -14,6 +14,7 @@ public class Medtent : MonoBehaviour
     private int medtentNum;
     private char numChar;
 
+    public Rotate_Me_Parent rotateParentScript;
     public Typewriter_UI typewriter_script;
 
     void Start()
@@ -57,6 +58,8 @@ public class Medtent : MonoBehaviour
         //need to make a drone tag for drone object
         if (other.gameObject.tag == "Medbox")
         {
+            rotateParentScript.medKitisCompleted = false;
+
             //compare drone supplies that were delivered to the supplies that the tent needs.
             //do math to determine if the supplies and time delivered were enough
             int successVal = 0;
