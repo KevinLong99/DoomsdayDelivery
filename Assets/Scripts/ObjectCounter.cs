@@ -65,3 +65,5 @@ public class ObjectCounter : MonoBehaviour
         }
     }
 }
+
+//delete objects once box closes (so they don't move around in box

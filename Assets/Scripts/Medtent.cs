@@ -55,7 +55,7 @@ public class Medtent : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //need to make a drone tag for drone object
-        if (other.gameObject.tag == "Drone")
+        if (other.gameObject.tag == "Medbox")
         {
             //compare drone supplies that were delivered to the supplies that the tent needs.
             //do math to determine if the supplies and time delivered were enough
