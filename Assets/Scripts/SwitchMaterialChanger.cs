@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DroneSwitchMaterialChanger : MonoBehaviour
+public class SwitchMaterialChanger : MonoBehaviour
 {
     // Assign this in the inspector
     public Material newMaterial;
