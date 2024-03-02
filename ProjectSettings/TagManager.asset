@@ -10,7 +10,11 @@ TagManager:
   - Drone
   - Character
   - SpawnStuff1
+<<<<<<< Updated upstream
   - Medbox
+=======
+  - Building
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
