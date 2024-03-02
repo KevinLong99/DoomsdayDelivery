@@ -10,6 +10,7 @@ TagManager:
   - Drone
   - Character
   - SpawnStuff1
+  - Medbox
   layers:
   - Default
   - TransparentFX

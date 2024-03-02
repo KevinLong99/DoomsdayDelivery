@@ -18,14 +18,13 @@ public class Rotate_Me_Parent : MonoBehaviour
     //list of levers that need ConnectedBodies to be modified
     [SerializeField] GameObject[] leverConnectedBodies;
 
+    public bool medKitisCompleted = false;
+
     public void RotateLeft()
     {
         //deal with levers first...attach them to rigidbody so they can move with the station
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
-            //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
-            // leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation3, 1f);
-            //leverConnectedBodies[i].GetComponent<RotateLever>().AttachHingeConnectedBody();
             leverConnectedBodies[i].GetComponent<RotateLever>().DestroyHingeAndRigidbody();
         }
 
@@ -39,7 +38,7 @@ public class Rotate_Me_Parent : MonoBehaviour
             RotateToStationThree();
             moveValue = 3;
         }
-        else if (moveValue == 3)
+        else if (moveValue == 3 && medKitisCompleted == false)  //is medkit is completed, needs to be deployed before next station switch
         {
             RotateToStationOne();
             moveValue = 1;
@@ -53,9 +52,6 @@ public class Rotate_Me_Parent : MonoBehaviour
         //deal with levers first...attach them to rigidbody so they can move with the station
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
-            //leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = false;
-            // leverConnectedBodies[i].GetComponent<RotateLever>().RotateLeverCall(objectToRotate, rotation3, 1f);
-            //leverConnectedBodies[i].GetComponent<RotateLever>().AttachHingeConnectedBody();
             leverConnectedBodies[i].GetComponent<RotateLever>().DestroyHingeAndRigidbody();
         }
 
@@ -64,7 +60,7 @@ public class Rotate_Me_Parent : MonoBehaviour
             RotateToStationThree();
             moveValue = 3;
         }
-        else if (moveValue == 3)
+        else if (moveValue == 3 && medKitisCompleted == false)
         {
             RotateToStationTwo();
             moveValue = 2;
@@ -108,18 +104,11 @@ public class Rotate_Me_Parent : MonoBehaviour
             yield return null;
         }
         rotating = false;
-        /*
-        for (int i = 0; i < leverConnectedBodies.Length; i++)
-        {
-            leverConnectedBodies[i].GetComponent<HingeJointListener>().enabled = true;
-        }
-        */
 
         //end with levers
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
             leverConnectedBodies[i].GetComponent<LeverReturn_Stations>().ResetLever();
-            //leverConnectedBodies[i].GetComponent<RotateLever>().RemoveHingeConnectedBody();
             yield return new WaitForSeconds(0.75f);
             leverConnectedBodies[i].GetComponent<RotateLever>().AddHingeAndRigidbody();
 

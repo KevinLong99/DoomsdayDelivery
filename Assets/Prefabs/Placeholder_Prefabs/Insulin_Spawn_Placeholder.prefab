@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2953405983107681291}
   - component: {fileID: 1847084315995765126}
   m_Layer: 0
-  m_Name: Viles_Spawn_Placeholder
+  m_Name: Insulin_Spawn_Placeholder
   m_TagString: SpawnStuff1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

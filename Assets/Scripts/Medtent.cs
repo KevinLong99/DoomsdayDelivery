@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Medtent : MonoBehaviour
 {
-    public int numViles;
+    public int numInsulin;
     public int numSyringes;
     public int numBandages;
     public int numOintment;
@@ -30,7 +30,7 @@ public class Medtent : MonoBehaviour
     {
         //use the medtents number to help calculate the supplies needed. 
         //when doing calculations, floor the number to an int if is a decimal
-        numViles = medtentNum * Random.Range(2,5);
+        numInsulin = medtentNum * Random.Range(2,5);
         numSyringes = medtentNum * Random.Range(2, 5);
         numBandages = medtentNum * Random.Range(2, 5);
         numOintment = medtentNum * Random.Range(2, 5);
@@ -43,7 +43,7 @@ public class Medtent : MonoBehaviour
         string toMothershipMessage = 
             "INCOMING TRANSMISSION FROM SURVIVORS... \n \n " +
             "Requesting following relief supplies: \n" +
-            numViles + " viles, \n" +
+            numInsulin + " viles, \n" +
             numSyringes + " syringes, \n" +
             numBandages + " bandages, \n" +
             numOintment + " ointment packets.";
@@ -67,7 +67,7 @@ public class Medtent : MonoBehaviour
             int receivedBandages = 0;
             int receivedOintment = 0;
 
-            if ((receivedViles / numViles) >= 0.7f) successVal++;
+            if ((receivedViles / numInsulin) >= 0.7f) successVal++;
             if ((receivedSyringes / numSyringes) >= 0.7f) successVal++;
             if ((receivedBandages / numBandages) >= 0.7f) successVal++;
             if ((receivedOintment / numOintment) >= 0.7f) successVal++;
