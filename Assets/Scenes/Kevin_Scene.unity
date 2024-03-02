@@ -2461,46 +2461,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1217745572031289892, guid: baeef11bffb4db641ad7dfdda5eebe23,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1848573539885011157, guid: baeef11bffb4db641ad7dfdda5eebe23,
-        type: 3}
-      propertyPath: m_RequestedTrackingOriginMode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1916751313081498725, guid: baeef11bffb4db641ad7dfdda5eebe23,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3199210878108972172, guid: baeef11bffb4db641ad7dfdda5eebe23,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5432785606940370379, guid: baeef11bffb4db641ad7dfdda5eebe23,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6639571555226562289, guid: baeef11bffb4db641ad7dfdda5eebe23,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7447264220582852758, guid: baeef11bffb4db641ad7dfdda5eebe23,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8311300978642859944, guid: baeef11bffb4db641ad7dfdda5eebe23,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8970942449697465474, guid: baeef11bffb4db641ad7dfdda5eebe23,
         type: 3}
       propertyPath: m_Name
