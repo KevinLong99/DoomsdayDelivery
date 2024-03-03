@@ -433,7 +433,6 @@ GameObject:
   - component: {fileID: 2712426048277711842}
   - component: {fileID: 2018193376216305799}
   - component: {fileID: 5440819752665480500}
-  - component: {fileID: 7081989437609738526}
   m_Layer: 0
   m_Name: Object Detector
   m_TagString: Untagged
@@ -544,27 +543,6 @@ MonoBehaviour:
   numTotalItems: 0
   countDisplay: {fileID: 0}
   rotateParentScript: {fileID: 0}
---- !u!95 &7081989437609738526
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5606411522679398223}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9a4af7ecd27d2db4ba69e659ab2c519e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6037828850778306702
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,8 +758,39 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5270327047188698514}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 904d737450e02354ebf840496e960c00,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 322230045148617495}
   m_SourcePrefab: {fileID: 100100000, guid: 904d737450e02354ebf840496e960c00, type: 3}
+--- !u!1 &307220294810449221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 904d737450e02354ebf840496e960c00,
+    type: 3}
+  m_PrefabInstance: {fileID: 613086494478469140}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &322230045148617495
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307220294810449221}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a4af7ecd27d2db4ba69e659ab2c519e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1083299974701641727 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 904d737450e02354ebf840496e960c00,
