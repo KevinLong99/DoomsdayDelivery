@@ -11,6 +11,11 @@ public class Medtent : MonoBehaviour
     public int numBandages;
     public int numOintment;
 
+    //comparing with NewObjectCounter.cs
+    public int SpawnStuff1;
+    public int SpawnStuff2;
+    public int SpawnStuff3;
+
     private int medtentNum;
     private char numChar;
 
