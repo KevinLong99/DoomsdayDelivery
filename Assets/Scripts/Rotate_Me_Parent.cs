@@ -87,6 +87,12 @@ public class Rotate_Me_Parent : MonoBehaviour
     private void RotateToStationThree()
     {
         StartCoroutine(rotateObject(objectToRotate, rotation3, 1f));
+        if (medKitisCompleted == true)
+        {
+            //play animations for box leaving oven and drone attaching on top
+            //make drone the parent of the box
+            //player picks up controller Switch and deploys from there (press trigger to deploy)
+        }
     }
 
 

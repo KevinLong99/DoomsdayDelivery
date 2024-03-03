@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro; // Using TextMeshPro for UI elements.
 using System.Collections;
+using System.Runtime.CompilerServices;
 
 public class NewObjectCounter : MonoBehaviour
 {
@@ -46,8 +47,8 @@ public class NewObjectCounter : MonoBehaviour
 
     private void Awake()
     {
-        ovenLocation = GameObject.Find("MedBoxSpawnLoc").transform.position;
-        station3Loc = GameObject.Find("OvenPos").transform.position;
+        station3Loc = GameObject.Find("MedBoxSpawnLoc").transform.position;
+        ovenLocation = GameObject.Find("OvenPos").transform.position;
         medBoxAnimator = GetComponentInParent<Animator>();
         rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
     }
@@ -127,22 +128,30 @@ public class NewObjectCounter : MonoBehaviour
         //play animation when turned to station 3 if medkit is completed
         if (rotateParentScript.medKitisCompleted == true)
         {
-            //play animation
+            //play animation, time it with Pizza Paddle Launch
             medBoxAnimator.Play("Closing");
-            StartCoroutine(TranslateOven(station3Loc, ovenLocation));
+            StartCoroutine(BoxMoveSequence());
 
         }
     }
 
-    IEnumerator TranslateOven(Vector3 from, Vector3 to)
+    IEnumerator BoxMoveSequence()
     {
-        float duration = 1f;
+        Vector3 station2InAir = new Vector3(station3Loc.x, station3Loc.y + 0.15f, station3Loc.z);
+        StartCoroutine(TranslateOven(station3Loc, station2InAir, 0.5f));
+        yield return new WaitForSeconds(0.75f);
+        StartCoroutine(TranslateOven(station2InAir, ovenLocation, 0.5f));
+    }
+
+    IEnumerator TranslateOven(Vector3 from, Vector3 to, float time)
+    {
+        float duration = time;
 
         float counter = 0;
         while (counter < duration)
         {
             counter += Time.deltaTime;
-            this.transform.parent.transform.position = Vector3.Lerp(to, from, counter / duration);
+            this.transform.parent.transform.position = Vector3.Lerp(from, to, counter / duration);
             yield return null;
         }
     }

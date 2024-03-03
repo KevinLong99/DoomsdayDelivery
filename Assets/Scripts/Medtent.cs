@@ -27,7 +27,7 @@ public class Medtent : MonoBehaviour
         //for this to work, the name of the medtent must be in format: Medtent# (with # being a single digit number)
         numChar = this.gameObject.name[7];
         medtentNum = (int)char.GetNumericValue(numChar);
-        Debug.Log("Medtent " + medtentNum + " activated.");
+        //Debug.Log("Medtent " + medtentNum + " activated.");
 
         DetermineNeededSupplies();
     }
