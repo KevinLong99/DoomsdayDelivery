@@ -89,9 +89,8 @@ public class Rotate_Me_Parent : MonoBehaviour
         StartCoroutine(rotateObject(objectToRotate, rotation3, 1f));
         if (medKitisCompleted == true)
         {
-            //play animations for box leaving oven and drone attaching on top
-            //make drone the parent of the box
-            //player picks up controller Switch and deploys from there (press trigger to deploy)
+            NewObjectCounter objectCounterMedboxStat3 = GameObject.Find("Object Detector").GetComponent<NewObjectCounter>();
+            objectCounterMedboxStat3.PlayStation3EnterAnimation();
         }
     }
 
@@ -124,6 +123,7 @@ public class Rotate_Me_Parent : MonoBehaviour
 
         }
     }
+
 }
 
 

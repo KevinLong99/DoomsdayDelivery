@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro; // Using TextMeshPro for UI elements.
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 public class NewObjectCounter : MonoBehaviour
 {
@@ -21,7 +20,8 @@ public class NewObjectCounter : MonoBehaviour
     private Animator medBoxAnimator;
 
     private Vector3 ovenLocation;
-    private Vector3 station3Loc;
+    private Vector3 station2Loc;
+    private Vector3 station3Deploy;
 
     public int numTotalItems = 0;
 
@@ -47,8 +47,9 @@ public class NewObjectCounter : MonoBehaviour
 
     private void Awake()
     {
-        station3Loc = GameObject.Find("MedBoxSpawnLoc").transform.position;
+        station2Loc = GameObject.Find("MedBoxSpawnLoc").transform.position;
         ovenLocation = GameObject.Find("OvenPos").transform.position;
+        station3Deploy = GameObject.Find("PreDeploymentLoc").transform.position;
         medBoxAnimator = GetComponentInParent<Animator>();
         rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
     }
@@ -135,15 +136,20 @@ public class NewObjectCounter : MonoBehaviour
         }
     }
 
-    IEnumerator BoxMoveSequence()
+    public void PlayStation3EnterAnimation()
     {
-        Vector3 station2InAir = new Vector3(station3Loc.x, station3Loc.y + 0.15f, station3Loc.z);
-        StartCoroutine(TranslateOven(station3Loc, station2InAir, 0.5f));
-        yield return new WaitForSeconds(0.75f);
-        StartCoroutine(TranslateOven(station2InAir, ovenLocation, 0.5f));
+        StartCoroutine(Station3EnterCoroutine());
     }
 
-    IEnumerator TranslateOven(Vector3 from, Vector3 to, float time)
+    IEnumerator BoxMoveSequence()
+    {
+        Vector3 station2InAir = new Vector3(station2Loc.x, station2Loc.y + 0.15f, station2Loc.z);
+        StartCoroutine(TranslateLerp(station2Loc, station2InAir, 0.5f));
+        yield return new WaitForSeconds(0.75f);
+        StartCoroutine(TranslateLerp(station2InAir, ovenLocation, 0.5f));
+    }
+
+    IEnumerator TranslateLerp(Vector3 from, Vector3 to, float time)
     {
         float duration = time;
 
@@ -154,6 +160,19 @@ public class NewObjectCounter : MonoBehaviour
             this.transform.parent.transform.position = Vector3.Lerp(from, to, counter / duration);
             yield return null;
         }
+    }
+
+    IEnumerator Station3EnterCoroutine()
+    {
+        yield return null;
+
+        //play animations for box leaving oven and drone attaching on top
+        StartCoroutine(TranslateLerp(ovenLocation, station3Deploy, 0.5f));
+
+        //make drone the parent of the box
+        //player picks up controller Switch and deploys from there (press trigger to deploy)
+
+
     }
 
 
