@@ -28,10 +28,11 @@ public class HingeJointListener : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float angleWithMinLimit = Mathf.Abs(hinge.angle - hinge.limits.min);
-        float angleWithMaxLimit = Mathf.Abs(hinge.angle - hinge.limits.max);
-        try
+        if (hinge != null)
         {
+            float angleWithMinLimit = Mathf.Abs(hinge.angle - hinge.limits.min);
+            float angleWithMaxLimit = Mathf.Abs(hinge.angle - hinge.limits.max);
+
             //Reached Min
             if (angleWithMinLimit < angleBetweenThreshold)
             {
@@ -54,10 +55,7 @@ public class HingeJointListener : MonoBehaviour
                 hingeJointState = HingeJointState.None;
                 this.GetComponent<MeshRenderer>().material.color = unActivatedColor;
             }
-        } catch (System.Exception e)
-        {
-            Debug.Log("Trying to access hinge joint when rotating. Do not need this.");
-        }        
+        }       
 
     }
 

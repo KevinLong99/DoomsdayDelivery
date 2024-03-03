@@ -432,7 +432,6 @@ GameObject:
   - component: {fileID: 1816431744654670658}
   - component: {fileID: 2712426048277711842}
   - component: {fileID: 2018193376216305799}
-  - component: {fileID: 5440819752665480500}
   - component: {fileID: 4035620614059384956}
   m_Layer: 0
   m_Name: Object Detector
@@ -527,25 +526,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5440819752665480500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5606411522679398223}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8003c15483c54c84994a5051e5fa4273, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagsToCount:
-  - SpawnStuff1
-  - SpawnStuff2
-  - SpawnStuff3
-  numTotalItems: 0
-  countDisplay: {fileID: 0}
-  rotateParentScript: {fileID: 0}
 --- !u!114 &4035620614059384956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,7 +545,8 @@ MonoBehaviour:
   SpawnStuff1: 1
   SpawnStuff2: 1
   SpawnStuff3: 1
-  countDisplay: {fileID: 0}
+  rotateParentScript: {fileID: 0}
+  numTotalItems: 0
 --- !u!1 &6037828850778306702
 GameObject:
   m_ObjectHideFlags: 0
