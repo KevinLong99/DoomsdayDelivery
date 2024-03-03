@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro; // Using TextMeshPro for UI elements.
+using System.Collections;
 
 public class NewObjectCounter : MonoBehaviour
 {
@@ -15,7 +16,13 @@ public class NewObjectCounter : MonoBehaviour
     public int SpawnStuff3;
     // Add more public int variables here for each tag you plan to count.
 
-    public TextMeshProUGUI countDisplay; // Reference to UI element to display counts.
+    public Rotate_Me_Parent rotateParentScript;
+    private Animator medBoxAnimator;
+
+    private Vector3 ovenLocation;
+    private Vector3 station3Loc;
+
+    public int numTotalItems = 0;
 
     private void Start()
     {
@@ -25,13 +32,20 @@ public class NewObjectCounter : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        ovenLocation = GameObject.Find("MedBoxSpawnLoc").transform.position;
+        station3Loc = GameObject.Find("OvenPos").transform.position;
+        medBoxAnimator = GetComponentInParent<Animator>();
+        rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (tagsToCount.Contains(other.tag)) // Check if the object's tag is in the list of tags to count.
         {
             tagCounts[other.tag]++; // Increment count for the tag.
             UpdateTagCounts(); // Update public int variables.
-            UpdateCountDisplay(); // Update the UI display.
         }
 
 
@@ -88,7 +102,6 @@ public class NewObjectCounter : MonoBehaviour
         {
             tagCounts[other.tag]--; // Decrement count for the tag.
             UpdateTagCounts(); // Update public int variables.
-            UpdateCountDisplay(); // Update the UI display.
         }
     }
 
@@ -101,19 +114,6 @@ public class NewObjectCounter : MonoBehaviour
         // Repeat for additional tags.
     }
 
-    private void UpdateCountDisplay()
-    {
-        countDisplay.text = ""; // Clear current display.
-        foreach (var tag in tagsToCount)
-        {
-            if (tagCounts.ContainsKey(tag))
-            {
-                // Update display with current count for each tag.
-                countDisplay.text += $"{tag}: {tagCounts[tag]}\n";
-            }
-        }
-    }
-
     // Comparing to MedTent
     public int GetCountForTag(string tag)
     {
@@ -122,6 +122,45 @@ public class NewObjectCounter : MonoBehaviour
             return tagCounts[tag];
         }
         return 0; // Return 0 if the tag is not found
+    }
+
+    public int GetNumTotalItems()
+    {
+        return numTotalItems;
+    }
+
+    public void PlayStation2EnterAnimation()
+    {
+
+        if (rotateParentScript.medKitisCompleted == false)
+        {
+            medBoxAnimator.Play("Box_Fall");
+        }
+    }
+
+    public void PlayStation2ExitAnimation()
+    {
+        //play animation when turned to station 3 if medkit is completed
+        if (rotateParentScript.medKitisCompleted == true)
+        {
+            //play animation
+            medBoxAnimator.Play("Closing");
+            StartCoroutine(TranslateOven(station3Loc, ovenLocation));
+
+        }
+    }
+
+    IEnumerator TranslateOven(Vector3 from, Vector3 to)
+    {
+        float duration = 1f;
+
+        float counter = 0;
+        while (counter < duration)
+        {
+            counter += Time.deltaTime;
+            this.transform.parent.transform.position = Vector3.Lerp(to, from, counter / duration);
+            yield return null;
+        }
     }
 
 

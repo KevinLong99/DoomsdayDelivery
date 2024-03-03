@@ -17,38 +17,47 @@ public class HingeJointListener : MonoBehaviour
     public enum HingeJointState { Min, Max, None }
     private HingeJoint hinge;
 
+    private Color unActivatedColor;
+
     // Start is called before the first frame update
     void Start()
     {
         hinge = GetComponent<HingeJoint>();
+        unActivatedColor = this.GetComponent<MeshRenderer>().material.color;
     }
 
     private void FixedUpdate()
     {
         float angleWithMinLimit = Mathf.Abs(hinge.angle - hinge.limits.min);
         float angleWithMaxLimit = Mathf.Abs(hinge.angle - hinge.limits.max);
-
-        //Reached Min
-        if (angleWithMinLimit < angleBetweenThreshold)
+        try
         {
-            if (hingeJointState != HingeJointState.Min)
-                OnMinLimitReached.Invoke();
+            //Reached Min
+            if (angleWithMinLimit < angleBetweenThreshold)
+            {
+                if (hingeJointState != HingeJointState.Min)
+                    OnMinLimitReached.Invoke();
 
-            hingeJointState = HingeJointState.Min;
-        }
-        //Reached Max
-        else if (angleWithMaxLimit < angleBetweenThreshold)
-        {
-            if (hingeJointState != HingeJointState.Max)
-                OnMaxLimitReached.Invoke();
+                hingeJointState = HingeJointState.Min;
+            }
+            //Reached Max
+            else if (angleWithMaxLimit < angleBetweenThreshold)
+            {
+                if (hingeJointState != HingeJointState.Max)
+                    OnMaxLimitReached.Invoke();
 
-            hingeJointState = HingeJointState.Max;
-        }
-        //No Limit reached
-        else
+                hingeJointState = HingeJointState.Max;
+            }
+            //No Limit reached
+            else
+            {
+                hingeJointState = HingeJointState.None;
+                this.GetComponent<MeshRenderer>().material.color = unActivatedColor;
+            }
+        } catch (System.Exception e)
         {
-            hingeJointState = HingeJointState.None;
-        }
+            Debug.Log("Trying to access hinge joint when rotating. Do not need this.");
+        }        
 
     }
 

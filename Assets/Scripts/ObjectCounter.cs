@@ -39,6 +39,7 @@ public class ObjectCounter : MonoBehaviour
     {
         ovenLocation = GameObject.Find("MedBoxSpawnLoc").transform.position;
         station3Loc = GameObject.Find("OvenPos").transform.position;
+        rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -7,10 +7,10 @@ public class MedkitComplete : MonoBehaviour
 {
 
     public Rotate_Me_Parent rotateParentScript;
-    public ObjectCounter objectCounterMedbox;
+    public NewObjectCounter objectCounterMedbox;
     public void Placeholder()
     {
-        objectCounterMedbox = GameObject.Find("Object Detector").GetComponent<ObjectCounter>();
+        objectCounterMedbox = GameObject.Find("Object Detector").GetComponent<NewObjectCounter>();
 
         rotateParentScript.medKitisCompleted = true;
         objectCounterMedbox.PlayStation2ExitAnimation();
