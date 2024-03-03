@@ -10525,6 +10525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9137949664267550050}
+  - component: {fileID: 9137949664267550051}
   m_Layer: 0
   m_Name: pizza_paddle_machine
   m_TagString: Untagged
@@ -12744,6 +12745,7 @@ GameObject:
   - component: {fileID: 3726467969675203928}
   - component: {fileID: 634568032546717393}
   - component: {fileID: 3131591681282192786}
+  - component: {fileID: 3726467969675203929}
   m_Layer: 0
   m_Name: oven_door
   m_TagString: Untagged
@@ -12863,6 +12865,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 610832668592745419}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3726467969675203929
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3401240263511340726}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e00025d6ea661584eb38b47bf583180f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3746162195671709113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14310,6 +14333,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7886597356685345681}
+  - component: {fileID: 7886597356685345682}
   m_Layer: 0
   m_Name: Drone_Shoot_door
   m_TagString: Untagged
@@ -18678,6 +18702,27 @@ Transform:
   - {fileID: 6958441392990958188}
   m_Father: {fileID: 2419543466049743352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &7886597356685345682
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4741839158011818018}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4885216a34635a44099fc027361bac70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7888278035498688255
 GameObject:
   m_ObjectHideFlags: 0
@@ -20017,6 +20062,27 @@ Transform:
   - {fileID: 4199486400550165559}
   m_Father: {fileID: 4605145056197672473}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &9137949664267550051
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076718800791023409}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cf7046e939c0b1b4bac3bdef90c782fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &9148758758873620311
 Transform:
   m_ObjectHideFlags: 0
