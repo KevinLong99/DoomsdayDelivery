@@ -10,7 +10,12 @@ public class MedkitComplete : MonoBehaviour
     public ObjectCounter objectCounterMedbox;
     public void Placeholder()
     {
-        if (GameObject.Find("Object Detector").GetComponent<ObjectCounter>().GetNumTotalItems() > 0)
+        objectCounterMedbox = GameObject.Find("Object Detector").GetComponent<ObjectCounter>();
+
+        rotateParentScript.medKitisCompleted = true;
+        objectCounterMedbox.PlayStation2ExitAnimation();
+
+        if (objectCounterMedbox.GetNumTotalItems() > 0)
         {
             //if there is stuff in the medkit, then button can be activated and box is pushed into oven
             rotateParentScript.medKitisCompleted = true;

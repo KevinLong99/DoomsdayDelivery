@@ -28,7 +28,7 @@ public class ObjectCounter : MonoBehaviour
             tagCounts[tag] = 0;
         }
 
-        medBoxAnimator = GetComponent<Animator>();
+        medBoxAnimator = GetComponentInParent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -79,10 +79,10 @@ public class ObjectCounter : MonoBehaviour
 
     public void PlayStation2EnterAnimation()
     {
-        if (rotateParentScript.medKitisCompleted == true)
+        
+        if (rotateParentScript.medKitisCompleted == false)
         {
-            //play animation
-            medBoxAnimator.Play("Base Layer.Box_Fall", 0, 1f);
+            medBoxAnimator.Play("Box_Fall");
         }
     }
 
@@ -92,7 +92,7 @@ public class ObjectCounter : MonoBehaviour
         if (rotateParentScript.medKitisCompleted == true)
         {
             //play animation
-            medBoxAnimator.Play("Base Layer.Closing", 0, 1f);
+            medBoxAnimator.Play("Closing");
         }
     }
 }

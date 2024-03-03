@@ -9,7 +9,6 @@ public class BuildingRenderClip : MonoBehaviour
     {
         if (other.tag == "Building")
         {
-            Debug.Log(other.tag);
             Transform[] allChildren = other.GetComponentsInChildren<Transform>(true);
             foreach (Transform child in allChildren)
             {
