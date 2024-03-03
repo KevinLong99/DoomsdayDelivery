@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class ObjectCounter : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class ObjectCounter : MonoBehaviour
     public Rotate_Me_Parent rotateParentScript;
     private Animator medBoxAnimator;
 
+    private Vector3 ovenLocation;
+    private Vector3 station3Loc;
+
     private void Start()
     {
         // Initialize the dictionary with the tags to count
@@ -29,6 +33,12 @@ public class ObjectCounter : MonoBehaviour
         }
 
         medBoxAnimator = GetComponentInParent<Animator>();
+    }
+
+    private void Awake()
+    {
+        ovenLocation = GameObject.Find("MedBoxSpawnLoc").transform.position;
+        station3Loc = GameObject.Find("OvenPos").transform.position;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -93,8 +103,25 @@ public class ObjectCounter : MonoBehaviour
         {
             //play animation
             medBoxAnimator.Play("Closing");
+            StartCoroutine(TranslateOven(station3Loc, ovenLocation));
+
         }
     }
+
+    IEnumerator TranslateOven(Vector3 from, Vector3 to)
+    {
+        float duration = 1f;
+
+        float counter = 0;
+        while (counter < duration)
+        {
+            counter += Time.deltaTime;
+            this.transform.parent.transform.position = Vector3.Lerp(to, from, counter / duration);
+            yield return null;
+        }
+    }
+
+
 }
 
 //delete objects once box closes (so they don't move around in box
