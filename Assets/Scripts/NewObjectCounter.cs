@@ -24,8 +24,20 @@ public class NewObjectCounter : MonoBehaviour
 
     public int numTotalItems = 0;
 
+    public TextMeshProUGUI requirementText;
+
     private void Start()
     {
+        GameObject requirementUI = GameObject.Find("RequirementUI");
+        if (requirementUI != null)
+        {
+            requirementText = requirementUI.GetComponent<TextMeshProUGUI>();
+        }
+        else
+        {
+            Debug.LogError("RequirementUI GameObject not found in the scene. Please make sure it exists and is named correctly.");
+        }
+
         foreach (string tag in tagsToCount)
         {
             tagCounts[tag] = 0; // Initialize count for each tag to 0.
@@ -47,52 +59,15 @@ public class NewObjectCounter : MonoBehaviour
             tagCounts[other.tag]++; // Increment count for the tag.
             UpdateTagCounts(); // Update public int variables.
         }
-
-
-        // Comparing to MedTent
-
-        if (other.gameObject.CompareTag("Medtent")) // Assuming "Medtent" is the tag used for the Medtent object
+        else if (other.gameObject.CompareTag("Medtent"))
         {
             Medtent medtentScript = other.gameObject.GetComponent<Medtent>();
             if (medtentScript != null)
             {
-                // Compare Object1
-                if (SpawnStuff1 == medtentScript.SpawnStuff1)
-                {
-                    // Trigger function for matching count
-                    Debug.Log("Amount Mached G1");
-                }
-                else
-                {
-                    // Trigger function for non-matching count
-                    Debug.Log("Amount do not match G1");
-                }
-
-                //Compare Object2
-                if (SpawnStuff2 == medtentScript.SpawnStuff2)
-                {
-                    // Trigger function for matching count
-                    Debug.Log("Amount Mached G2");
-                }
-                else
-                {
-                    // Trigger function for non-matching count
-                    Debug.Log("Amount do not match G2");
-                }
-
-                //Compare Object3
-                if (SpawnStuff3 == medtentScript.SpawnStuff3)
-                {
-                    // Trigger function for matching count
-                    Debug.Log("Amount Mached G3");
-                }
-                else
-                {
-                    // Trigger function for non-matching count
-                    Debug.Log("Amount do not match G3");
-                }
+                CheckRequirements(medtentScript); // Check if requirements are met.
             }
         }
+
 
     }
 
@@ -112,6 +87,15 @@ public class NewObjectCounter : MonoBehaviour
         SpawnStuff2 = tagCounts.ContainsKey("SpawnStuff2") ? tagCounts["SpawnStuff2"] : 0;
         SpawnStuff3 = tagCounts.ContainsKey("SpawnStuff3") ? tagCounts["SpawnStuff3"] : 0;
         // Repeat for additional tags.
+    }
+
+    private void CheckRequirements(Medtent medtentScript)
+    {
+        // Check requirements for each SpawnStuff and update UI text
+        requirementText.text =
+            (SpawnStuff1 >= medtentScript.SpawnStuff1 ? "Requirement met for obj1" : "Requirement not met  for obj1") + "\n" +
+            (SpawnStuff2 >= medtentScript.SpawnStuff2 ? "Requirement met  for obj2" : "Requirement not met  for obj2") + "\n" +
+            (SpawnStuff3 >= medtentScript.SpawnStuff3 ? "Requirement met  for obj3" : "Requirement not met  for obj3");
     }
 
     // Comparing to MedTent
