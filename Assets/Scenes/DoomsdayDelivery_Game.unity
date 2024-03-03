@@ -6682,7 +6682,7 @@ MonoBehaviour:
   playerMayFly: 1
   somethingIsBroken: 0
   timeText: {fileID: 1215635412}
-  medtentObject_Script: {fileID: 0}
+  medtentObject_Script: {fileID: 1068184134}
   medBoxToSpawn: {fileID: 307220294810449221, guid: 2647cd6406ac1db4b97d694bb0e96930,
     type: 3}
   medBoxSpawnLoc: {fileID: 824441083}
