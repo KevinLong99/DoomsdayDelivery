@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6323915976824494899}
   - component: {fileID: 4513403938289266580}
   - component: {fileID: 5375156919559503326}
+  - component: {fileID: 4329122400066968294}
   m_Layer: 0
   m_Name: Drone [Remote]
   m_TagString: Untagged
@@ -212,6 +213,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 5279532953768009681}
+        m_TargetAssemblyTypeName: DroneSwitchMaterialChanger, Assembly-CSharp
+        m_MethodName: ChangeMaterial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -219,6 +232,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4329122400066968294}
+        m_TargetAssemblyTypeName: SwitchReturn, Assembly-CSharp
+        m_MethodName: TrySetPositionToTarget
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -325,6 +350,19 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &4329122400066968294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6541848160703999911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441cc3a870f223545a39d202c05d3c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTransform: {fileID: 0}
 --- !u!1 &8862704152559902396
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +374,7 @@ GameObject:
   - component: {fileID: 6017482944366546488}
   - component: {fileID: 1383210611493165532}
   - component: {fileID: 4322856170670003905}
+  - component: {fileID: 5279532953768009681}
   m_Layer: 0
   m_Name: Screen
   m_TagString: Untagged
@@ -386,7 +425,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05c8212cd10f2444493159fcc65002a3, type: 2}
+  - {fileID: 2100000, guid: 62bc7be8d4f13c5418f8a020e0a7f150, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -408,3 +447,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5279532953768009681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862704152559902396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecffa83411ee8a34ea382df7ecc7e3db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMaterial: {fileID: 2100000, guid: 05c8212cd10f2444493159fcc65002a3, type: 2}

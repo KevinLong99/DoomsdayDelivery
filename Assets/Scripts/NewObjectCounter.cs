@@ -43,7 +43,7 @@ public class NewObjectCounter : MonoBehaviour
             if (medtentScript != null)
             {
                 // Compare Object1
-                if (GetCountForTag("SpawnStuff1") == medtentScript.SpawnStuff1)
+                if (SpawnStuff1 == medtentScript.SpawnStuff1)
                 {
                     // Trigger function for matching count
                     Debug.Log("Amount Mached G1");
@@ -55,7 +55,7 @@ public class NewObjectCounter : MonoBehaviour
                 }
 
                 //Compare Object2
-                if (GetCountForTag("SpawnStuff2") == medtentScript.SpawnStuff2)
+                if (SpawnStuff2 == medtentScript.SpawnStuff2)
                 {
                     // Trigger function for matching count
                     Debug.Log("Amount Mached G2");
@@ -67,7 +67,7 @@ public class NewObjectCounter : MonoBehaviour
                 }
 
                 //Compare Object3
-                if (GetCountForTag("SpawnStuff3") == medtentScript.SpawnStuff3)
+                if (SpawnStuff3 == medtentScript.SpawnStuff3)
                 {
                     // Trigger function for matching count
                     Debug.Log("Amount Mached G3");
