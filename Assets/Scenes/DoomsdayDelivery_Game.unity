@@ -14615,7 +14615,7 @@ GameObject:
   - component: {fileID: 7886597356685345681}
   - component: {fileID: 7886597356685345682}
   m_Layer: 0
-  m_Name: Drone_Shoot_door
+  m_Name: Drone_chute_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15640,7 +15640,7 @@ GameObject:
   - component: {fileID: 7208091569378788433}
   - component: {fileID: 6821386813554717207}
   m_Layer: 0
-  m_Name: drone_shoot_door1
+  m_Name: drone_chute_door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15810,7 +15810,7 @@ GameObject:
   - component: {fileID: 5130561113843339470}
   - component: {fileID: 7391903906487178110}
   m_Layer: 0
-  m_Name: drone_shoot_door
+  m_Name: drone_chute_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
