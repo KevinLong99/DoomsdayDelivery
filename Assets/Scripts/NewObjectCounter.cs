@@ -21,7 +21,7 @@ public class NewObjectCounter : MonoBehaviour
 
     private Vector3 ovenLocation;
     private Vector3 station2Loc;
-    private Vector3 station3Deploy;
+    private Transform station3Deploy;
 
     public int numTotalItems = 0;
 
@@ -29,6 +29,7 @@ public class NewObjectCounter : MonoBehaviour
 
     private GameObject droneToBeDropped;
     private Animator chuteAnimator;
+    private Animator ovenAnimator;
 
     private void Start()
     {
@@ -52,12 +53,13 @@ public class NewObjectCounter : MonoBehaviour
     {
         station2Loc = GameObject.Find("MedBoxSpawnLoc").transform.position;
         ovenLocation = GameObject.Find("OvenPos").transform.position;
-        station3Deploy = GameObject.Find("PreDeploymentLoc").transform.position;
+        station3Deploy = GameObject.Find("PreDeploymentLoc").transform;
         medBoxAnimator = GetComponentInParent<Animator>();
         rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
         droneToBeDropped = GameObject.Find("Drone_ToBeDropped");
         this.gameObject.transform.parent.transform.parent = GameObject.Find("STATIONS_MOVABLE").transform;
-        chuteAnimator = GameObject.Find("Drone_Shoot_door").GetComponent<Animator>();
+        chuteAnimator = GameObject.Find("Drone_chute_door").GetComponent<Animator>();
+        ovenAnimator = GameObject.Find("oven_door").GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -168,22 +170,45 @@ public class NewObjectCounter : MonoBehaviour
         }
     }
 
+    IEnumerator RotateLerp(Quaternion from, Quaternion to, float time)
+    {
+        float duration = time;
+
+        float counter = 0;
+        while (counter < duration)
+        {
+            counter += Time.deltaTime;
+            this.transform.parent.transform.rotation = Quaternion.Lerp(from, to, counter / duration);
+            yield return null;
+        }
+    }
+
     IEnumerator Station3EnterCoroutine()
     {
+        ovenAnimator.Play("Oven_Door_Open");
         yield return new WaitForSeconds(1);
+
         //play animations for box leaving oven 
-        StartCoroutine(TranslateLerp(ovenLocation, station3Deploy, 0.5f));
+        StartCoroutine(TranslateLerp(ovenLocation, station3Deploy.position, 0.5f));
+        StartCoroutine(RotateLerp(this.transform.rotation, station3Deploy.rotation, 0.5f));
         yield return new WaitForSeconds(0.5f);
+
         //and drone falling and attaching on top
         droneToBeDropped.GetComponent<Drone_InsideShip>().DropInStation3();
         yield return new WaitForSeconds(1);
+
         //make drone the parent of the box
         this.gameObject.transform.parent.transform.parent = droneToBeDropped.transform;
+
         //player picks up controller Switch and deploys from there (press trigger to deploy)
         yield return new WaitForSeconds(2);       //remove this
-        chuteAnimator.Play("Drone_shoot_open");
-        droneToBeDropped.GetComponent<Drone_InsideShip>().DroneDeploy(); 
+        ovenAnimator.Play("Oven_Door_Close");
+        chuteAnimator.Play("Drone_chute_open");
+        droneToBeDropped.GetComponent<Drone_InsideShip>().DroneDeploy();
+
         //call this function upon trigger select when picked up drone controller
+        yield return new WaitForSeconds(0.75f);
+        chuteAnimator.Play("Drone_chute_close");
 
 
     }
