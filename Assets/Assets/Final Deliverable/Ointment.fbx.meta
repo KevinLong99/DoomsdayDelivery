@@ -3,7 +3,12 @@ guid: 80c5f8cd62c9ac54cb653d393cf54c51
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: med_supplies_mat
+    second: {fileID: 2100000, guid: d2347902e5dbcdd4caa6e6402350f580, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
