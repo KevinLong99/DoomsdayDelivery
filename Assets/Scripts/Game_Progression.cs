@@ -143,12 +143,19 @@ public class Game_Progression : MonoBehaviour
         if (medboxExists == false)
         {
             //instantiate a medbox
-            GameObject spawnMedbox = Instantiate(medBoxToSpawn, medBoxSpawnLoc);
-            spawnMedbox.GetComponentInChildren<NewObjectCounter>().rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
-            spawnMedbox.GetComponentInChildren<NewObjectCounter>().PlayStation2EnterAnimation();
-            medboxExists = true;
+            StartCoroutine(WaitForRotation());
+            
         }
 
+    }
+
+    IEnumerator WaitForRotation()
+    {
+        yield return new WaitForSeconds(1);
+        GameObject spawnMedbox = Instantiate(medBoxToSpawn, medBoxSpawnLoc);
+        spawnMedbox.GetComponentInChildren<NewObjectCounter>().rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
+        spawnMedbox.GetComponentInChildren<NewObjectCounter>().PlayStation2EnterAnimation();
+        medboxExists = true;
     }
 
 }

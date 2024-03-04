@@ -15,7 +15,7 @@ public class MedkitComplete : MonoBehaviour
     {
         objectCounterMedbox = GameObject.Find("Object Detector").GetComponent<NewObjectCounter>();
 
-        if (objectCounterMedbox.GetNumTotalItems() > -1)        //change to zero
+        if (objectCounterMedbox.GetNumTotalItems() > -1 && rotateParentScript.medKitisCompleted == false)        //change to zero
         {
             //if there is stuff in the medkit, then button can be activated and box is pushed into oven
             rotateParentScript.medKitisCompleted = true;

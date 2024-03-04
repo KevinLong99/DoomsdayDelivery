@@ -27,6 +27,9 @@ public class NewObjectCounter : MonoBehaviour
 
     public TextMeshProUGUI requirementText;
 
+    private GameObject droneToBeDropped;
+    private Animator chuteAnimator;
+
     private void Start()
     {
         GameObject requirementUI = GameObject.Find("RequirementUI");
@@ -52,6 +55,9 @@ public class NewObjectCounter : MonoBehaviour
         station3Deploy = GameObject.Find("PreDeploymentLoc").transform.position;
         medBoxAnimator = GetComponentInParent<Animator>();
         rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
+        droneToBeDropped = GameObject.Find("Drone_ToBeDropped");
+        this.gameObject.transform.parent.transform.parent = GameObject.Find("STATIONS_MOVABLE").transform;
+        chuteAnimator = GameObject.Find("Drone_Shoot_door").GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -164,13 +170,20 @@ public class NewObjectCounter : MonoBehaviour
 
     IEnumerator Station3EnterCoroutine()
     {
-        yield return null;
-
-        //play animations for box leaving oven and drone attaching on top
+        yield return new WaitForSeconds(1);
+        //play animations for box leaving oven 
         StartCoroutine(TranslateLerp(ovenLocation, station3Deploy, 0.5f));
-
+        yield return new WaitForSeconds(0.5f);
+        //and drone falling and attaching on top
+        droneToBeDropped.GetComponent<Drone_InsideShip>().DropInStation3();
+        yield return new WaitForSeconds(1);
         //make drone the parent of the box
+        this.gameObject.transform.parent.transform.parent = droneToBeDropped.transform;
         //player picks up controller Switch and deploys from there (press trigger to deploy)
+        yield return new WaitForSeconds(2);       //remove this
+        chuteAnimator.Play("Drone_shoot_open");
+        droneToBeDropped.GetComponent<Drone_InsideShip>().DroneDeploy(); 
+        //call this function upon trigger select when picked up drone controller
 
 
     }
