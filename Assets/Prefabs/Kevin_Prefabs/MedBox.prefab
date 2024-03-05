@@ -547,6 +547,9 @@ MonoBehaviour:
   SpawnStuff3: 1
   rotateParentScript: {fileID: 0}
   numTotalItems: 0
+  requirementText: {fileID: 0}
+  newBoxSpawnLocation: {fileID: 0}
+  medBoxPrefab: {fileID: 307220294810449221}
 --- !u!1 &6037828850778306702
 GameObject:
   m_ObjectHideFlags: 0

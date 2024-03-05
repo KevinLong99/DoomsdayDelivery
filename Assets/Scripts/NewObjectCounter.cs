@@ -31,6 +31,11 @@ public class NewObjectCounter : MonoBehaviour
     private Animator chuteAnimator;
     private Animator ovenAnimator;
 
+    // Delete and Spawn objects
+
+    public Transform newBoxSpawnLocation;
+    public GameObject medBoxPrefab;
+
     private void Start()
     {
         GameObject requirementUI = GameObject.Find("RequirementUI");
@@ -47,6 +52,20 @@ public class NewObjectCounter : MonoBehaviour
         {
             tagCounts[tag] = 0; // Initialize count for each tag to 0.
         }
+
+        //Spawn location initialization
+
+        // Assign newBoxSpawnLocation as the transform of the GameObject named "setBoxSpawnLocation" in the scene
+        GameObject setBoxSpawnLocation = GameObject.Find("setBoxSpawnLocation");
+        if (setBoxSpawnLocation != null)
+        {
+            newBoxSpawnLocation = setBoxSpawnLocation.transform;
+        }
+        else
+        {
+            Debug.LogError("setBoxSpawnLocation GameObject not found in the scene.");
+        }
+
     }
 
     private void Awake()
@@ -205,12 +224,39 @@ public class NewObjectCounter : MonoBehaviour
         ovenAnimator.Play("Oven_Door_Close");
         chuteAnimator.Play("Drone_chute_open");
         droneToBeDropped.GetComponent<Drone_InsideShip>().DroneDeploy();
+        yield return new WaitForSeconds(1);
+        //kevin drop delete
+        MedBoxDeleteAndSpawn();
 
         //call this function upon trigger select when picked up drone controller
         yield return new WaitForSeconds(0.75f);
         chuteAnimator.Play("Drone_chute_close");
 
 
+    }
+
+    //Delete and Spawn function
+    public void MedBoxDeleteAndSpawn()
+    {
+        // Delete the existing "MedBox"
+        GameObject medBox = GameObject.Find("MedBox");
+        if (medBox != null)
+        {
+            Destroy(medBox);
+        }
+
+        // Spawn the medBoxPrefab at newBoxSpawnLocation
+        GameObject newMedBox = Instantiate(medBoxPrefab, newBoxSpawnLocation.position, newBoxSpawnLocation.rotation);
+        newMedBox.transform.SetParent(GameObject.Find("_Drone [BumbleBee]").transform, false);
+
+        // Copy the values of SpawnStuff1, SpawnStuff2, and SpawnStuff3 to the new medBoxPrefab
+        NewObjectCounter newMedBoxCounter = newMedBox.GetComponent<NewObjectCounter>();
+        if (newMedBoxCounter != null)
+        {
+            newMedBoxCounter.SpawnStuff1 = this.SpawnStuff1;
+            newMedBoxCounter.SpawnStuff2 = this.SpawnStuff2;
+            newMedBoxCounter.SpawnStuff3 = this.SpawnStuff3;
+        }
     }
 
 

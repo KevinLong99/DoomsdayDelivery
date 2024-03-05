@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScreenChangerAndBoxDelete : MonoBehaviour
+public class ScreenChanger : MonoBehaviour
 {
     // Textures to switch between
     public Texture blankTexture;
@@ -22,8 +22,6 @@ public class ScreenChangerAndBoxDelete : MonoBehaviour
             Debug.LogError("RawImage component not found on the GameObject.");
         }
     }
-
-    
 
     // Call this function to toggle the texture between blank and normal
     public void ChangeTexture()
