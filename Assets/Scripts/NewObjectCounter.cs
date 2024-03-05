@@ -102,11 +102,13 @@ public class NewObjectCounter : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        /*
         if (tagsToCount.Contains(other.tag) && tagCounts[other.tag] > 0) // Check if the object's tag is in the list and the count is greater than 0.
         {
             tagCounts[other.tag]--; // Decrement count for the tag.
             UpdateTagCounts(); // Update public int variables.
         }
+        */
     }
 
     private void UpdateTagCounts()
