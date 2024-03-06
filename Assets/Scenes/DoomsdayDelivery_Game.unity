@@ -97,8 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f02633e1aa7c35b4aa7838ecf3389d27,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: e1a2175dbf2bf8f4eb52b39d67d11306,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1613,6 +1615,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone_ToBeDropped
       objectReference: {fileID: 0}
+    - target: {fileID: 5556740144354123401, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
         type: 3}
       propertyPath: m_Enabled
@@ -1683,7 +1690,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4566520667058501235, guid: af4eb83aacbd5184393636f286b674c6, type: 3}
+    - {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -11985,7 +11994,7 @@ Transform:
   m_GameObject: {fileID: 8732143871558591659}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.007, y: 0.248, z: 0.493}
+  m_LocalPosition: {x: 0.007, y: 0.2, z: 0.493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
