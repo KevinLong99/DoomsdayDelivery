@@ -29,7 +29,6 @@ public class Medtent : MonoBehaviour
         medtentNum = (int)char.GetNumericValue(numChar);
         //Debug.Log("Medtent " + medtentNum + " activated.");
 
-        DetermineNeededSupplies();
     }
 
     private void DetermineNeededSupplies()
@@ -46,6 +45,8 @@ public class Medtent : MonoBehaviour
 
     public void SendSupplyRequestToMothership()
     {
+        DetermineNeededSupplies();
+
         string toMothershipMessage = 
             "INCOMING TRANSMISSION FROM SURVIVORS... \n \n " +
             "Requesting following relief supplies: \n" +
