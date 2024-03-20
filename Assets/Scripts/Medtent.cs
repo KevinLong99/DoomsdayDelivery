@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class Medtent : MonoBehaviour

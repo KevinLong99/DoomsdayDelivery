@@ -24,7 +24,7 @@ public class Game_Progression : MonoBehaviour
     //private bool tent1IsComplete = false, tent2IsComplete = false, tent3IsComplete = false;
     public Medtent medtentObject_Script;
 
-    private bool medboxExists = false;
+    public bool medboxExists = false;
     public GameObject medBoxToSpawn;
     public Transform medBoxSpawnLoc;
 

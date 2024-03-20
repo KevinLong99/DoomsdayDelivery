@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro; // Using TextMeshPro for UI elements.
 using System.Collections;
+using Unity.VisualScripting;
 
 public class NewObjectCounter : MonoBehaviour
 {
@@ -35,6 +36,9 @@ public class NewObjectCounter : MonoBehaviour
 
     public Transform newBoxSpawnLocation;
     public GameObject medBoxPrefab;
+
+    private SwitchReturn switchReturn_Script;
+    private Game_Progression gameProg_Script;
 
     private void Start()
     {
@@ -79,6 +83,8 @@ public class NewObjectCounter : MonoBehaviour
         this.gameObject.transform.parent.transform.parent = GameObject.Find("STATIONS_MOVABLE").transform;
         chuteAnimator = GameObject.Find("Drone_chute_door").GetComponent<Animator>();
         ovenAnimator = GameObject.Find("oven_door").GetComponent<Animator>();
+        switchReturn_Script = GameObject.Find("Drone [Remote]").GetComponent<SwitchReturn>();
+        gameProg_Script = GameObject.Find("Game_Manager").GetComponent<Game_Progression>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -127,6 +133,21 @@ public class NewObjectCounter : MonoBehaviour
             (SpawnStuff1 >= medtentScript.SpawnStuff1 ? "Requirement met for obj1" : "Requirement not met  for obj1") + "\n" +
             (SpawnStuff2 >= medtentScript.SpawnStuff2 ? "Requirement met  for obj2" : "Requirement not met  for obj2") + "\n" +
             (SpawnStuff3 >= medtentScript.SpawnStuff3 ? "Requirement met  for obj3" : "Requirement not met  for obj3");
+
+        //switchReturn_Script.TrySetPositionToTarget();
+        //!!! LET GO OF THE CONTROLLER ONCE YOU DELIVER SUPPLIES!!!
+        StartCoroutine(ReturnScreenToPos());
+
+
+    }
+
+    IEnumerator ReturnScreenToPos()
+    {
+        yield return new WaitForSeconds(5);
+        switchReturn_Script.TrySetPositionToTarget();
+        rotateParentScript.medKitisCompleted = false;
+        gameProg_Script.medboxExists = false;
+        Destroy(this.gameObject.transform.parent.gameObject);
     }
 
     // Comparing to MedTent
@@ -241,7 +262,7 @@ public class NewObjectCounter : MonoBehaviour
     public void MedBoxDeleteAndSpawn()
     {
         // Delete the existing "MedBox"
-        GameObject medBox = GameObject.Find("MedBox");
+        GameObject medBox = GameObject.FindGameObjectWithTag("Medbox");
         if (medBox != null)
         {
             Destroy(medBox);
