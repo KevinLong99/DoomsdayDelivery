@@ -14,8 +14,9 @@ public class TutorialManager : MonoBehaviour
     {
         if (number >= 0 && number < Steps.Count)
         {
-            Destroy(Steps[number]);
-            Steps.RemoveAt(number);
+            Steps[number].SetActive(false);
+            //Destroy(Steps[number]);
+            //Steps.RemoveAt(number);
         }
         else
         {
