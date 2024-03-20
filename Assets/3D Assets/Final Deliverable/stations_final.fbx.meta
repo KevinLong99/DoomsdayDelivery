@@ -3,7 +3,27 @@ guid: 2081c99e5ec2c9d4c8a6f4ffd88f20e3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stations_MAT
+    second: {fileID: 2100000, guid: 1bba574e8ddbd7e4c866091c4edf9def, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tracks_MAT
+    second: {fileID: 2100000, guid: f44017c04eeff134a9162541a0dc7a1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallDecorMAT
+    second: {fileID: 2100000, guid: 22c3b2a199ef7314e8218b115718b801, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls_MAT
+    second: {fileID: 2100000, guid: fb9318fbb130d39459fc1909ce9004db, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
