@@ -44,6 +44,7 @@ public class NewObjectCounter : MonoBehaviour
     public GameObject DronePrefab;
     public Transform newDroneLocation;
 
+
     private void Start()
     {
         GameObject requirementUI = GameObject.Find("RequirementUI");
@@ -153,11 +154,13 @@ public class NewObjectCounter : MonoBehaviour
         switchReturn_Script.TrySetPositionToTarget();
         rotateParentScript.medKitisCompleted = false;
         gameProg_Script.medboxExists = false;
-        Instantiate(DronePrefab, newDroneLocation.position, newDroneLocation.rotation);
+        gameProg_Script.SpawnNewDrone();
+        //Instantiate(DronePrefab, newDroneLocation.position, newDroneLocation.rotation);
+        Debug.Log("New Drone Spawned");
         //Destroy(this.gameObject.transform.parent.gameObject.transform.parent);
         foreach (var gameObject in GameObject.FindGameObjectsWithTag("Drone"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
     }

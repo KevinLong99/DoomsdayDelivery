@@ -28,6 +28,13 @@ public class Game_Progression : MonoBehaviour
     public GameObject medBoxToSpawn;
     public Transform medBoxSpawnLoc;
 
+    //Drone Stuff
+    public GameObject theDrone;
+    public GameObject DronePrefab;
+    public Transform newDroneLocation;
+
+    public SwitchMaterialChanger screenChanger;
+
     void Start()
     {
         fadeScreenDD = GameObject.Find("FaderScreen").GetComponent<FadeScreen_DD>();
@@ -146,6 +153,15 @@ public class Game_Progression : MonoBehaviour
             StartCoroutine(WaitForRotation());
             
         }
+
+    }
+
+    //Function to spawn new drone
+    public void SpawnNewDrone()
+    {
+        theDrone.transform.position = newDroneLocation.position;
+        screenChanger.ChangeMaterialToBlank();
+        //GameObject newDrone = Instantiate(DronePrefab, newDroneLocation);
 
     }
 
