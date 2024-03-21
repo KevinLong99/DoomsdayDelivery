@@ -157,11 +157,7 @@ public class NewObjectCounter : MonoBehaviour
         gameProg_Script.SpawnNewDrone();
         //Instantiate(DronePrefab, newDroneLocation.position, newDroneLocation.rotation);
         Debug.Log("New Drone Spawned");
-        //Destroy(this.gameObject.transform.parent.gameObject.transform.parent);
-        foreach (var gameObject in GameObject.FindGameObjectsWithTag("Drone"))
-        {
-            //Destroy(gameObject);
-        }
+        Destroy(this.gameObject.transform.parent.gameObject);
 
     }
 
