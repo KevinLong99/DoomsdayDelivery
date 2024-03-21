@@ -40,6 +40,10 @@ public class NewObjectCounter : MonoBehaviour
     private SwitchReturn switchReturn_Script;
     private Game_Progression gameProg_Script;
 
+    //Drone Stuff
+    public GameObject DronePrefab;
+    public Transform newDroneLocation;
+
     private void Start()
     {
         GameObject requirementUI = GameObject.Find("RequirementUI");
@@ -69,6 +73,9 @@ public class NewObjectCounter : MonoBehaviour
         {
             Debug.LogError("setBoxSpawnLocation GameObject not found in the scene.");
         }
+
+        GameObject myDroneLocation = GameObject.Find("newDroneLocation");
+        newDroneLocation = myDroneLocation.transform;
 
     }
 
@@ -102,8 +109,6 @@ public class NewObjectCounter : MonoBehaviour
                 CheckRequirements(medtentScript); // Check if requirements are met.
             }
         }
-
-
     }
 
     private void OnTriggerExit(Collider other)
@@ -143,11 +148,18 @@ public class NewObjectCounter : MonoBehaviour
 
     IEnumerator ReturnScreenToPos()
     {
+        Debug.Log("in returnscreentopos");
         yield return new WaitForSeconds(5);
         switchReturn_Script.TrySetPositionToTarget();
         rotateParentScript.medKitisCompleted = false;
         gameProg_Script.medboxExists = false;
-        Destroy(this.gameObject.transform.parent.gameObject);
+        Instantiate(DronePrefab, newDroneLocation.position, newDroneLocation.rotation);
+        //Destroy(this.gameObject.transform.parent.gameObject.transform.parent);
+        foreach (var gameObject in GameObject.FindGameObjectsWithTag("Drone"))
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     // Comparing to MedTent

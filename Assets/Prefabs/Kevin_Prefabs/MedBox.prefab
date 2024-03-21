@@ -550,6 +550,10 @@ MonoBehaviour:
   requirementText: {fileID: 0}
   newBoxSpawnLocation: {fileID: 0}
   medBoxPrefab: {fileID: 307220294810449221}
+  Drone: _Drone [BumbleBee]
+  DronePrefab: {fileID: 1165740686982719177, guid: 9938a292ff15a9743ba9187c38b8366f,
+    type: 3}
+  newDroneLocation: {fileID: 0}
 --- !u!1 &6037828850778306702
 GameObject:
   m_ObjectHideFlags: 0
