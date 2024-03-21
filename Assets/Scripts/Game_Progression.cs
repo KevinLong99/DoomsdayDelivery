@@ -96,7 +96,9 @@ public class Game_Progression : MonoBehaviour
             if (somethingIsBroken == true)
             {
                 playerMayFly = false;
-                hapticChairScript.HardStopTheShip(6);
+                hapticChairScript.HardStopTheShip(3);
+                //do malfunction here
+                //upon pressing button, it will fix the malfunction
             }
             else
             {
