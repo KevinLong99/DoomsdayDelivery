@@ -4,6 +4,7 @@ using System.Net.Mail;
 using System.Text.RegularExpressions;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Medtent : MonoBehaviour
 {
@@ -91,6 +92,14 @@ public class Medtent : MonoBehaviour
                 //fail response
                 Debug.Log("You failed to deliver enough supplies! \nPeople will die because of your failure!");
             }
+
+            if (other.gameObject.tag == "Drone")
+            {
+                Debug.Log("Drone Detected");
+                
+            }
+
+
         }
     }
 }

@@ -24,6 +24,7 @@ public class ObjectCounter : MonoBehaviour
     private Vector3 ovenLocation;
     private Vector3 station3Loc;
 
+
     private void Start()
     {
         // Initialize the dictionary with the tags to count
