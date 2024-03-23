@@ -27,6 +27,7 @@ public class SwitchReturn : MonoBehaviour
         yield return new WaitForSeconds(0.5f); // Wait for half a second
 
         transform.position = targetTransform.position;
+        transform.rotation = targetTransform.rotation;
 
         // Check if the GameObject has moved in the last second
         if (transform.position == lastPosition)

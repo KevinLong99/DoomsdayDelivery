@@ -7,10 +7,12 @@ TagManager:
   - Medbox
   - Drone
   - Medtent
-  - SpawnStuff1
   - Box_Collectable
-  - SpawnStuff2
-  - SpawnStuff3
+  - Building
+  - BandageTag
+  - OintmentTag
+  - SyringeTag
+  - InsulinTag
   layers:
   - Default
   - TransparentFX

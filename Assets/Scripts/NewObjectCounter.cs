@@ -152,14 +152,12 @@ public class NewObjectCounter : MonoBehaviour
 
     IEnumerator ReturnScreenToPos()
     {
-        Debug.Log("in returnscreentopos");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         switchReturn_Script.TrySetPositionToTarget();
         rotateParentScript.medKitisCompleted = false;
         gameProg_Script.medboxExists = false;
         gameProg_Script.SpawnNewDrone();
         //Instantiate(DronePrefab, newDroneLocation.position, newDroneLocation.rotation);
-        Debug.Log("New Drone Spawned");
         Destroy(this.gameObject.transform.parent.gameObject);
 
     }
