@@ -13,7 +13,7 @@ public class Rotate_Me_Parent : MonoBehaviour
     private Quaternion rotation2 = Quaternion.Euler(new Vector3(0, 0, 0));
     private Quaternion rotation3 = Quaternion.Euler(new Vector3(0, -240, 0));
 
-    [SerializeField] int moveValue = 1;
+    public int moveValue = 1;
 
     //list of levers that need ConnectedBodies to be modified
     [SerializeField] GameObject[] leverConnectedBodies;

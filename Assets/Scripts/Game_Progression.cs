@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Game_Progression : MonoBehaviour
 {
     public Haptic_Chair_Controller hapticChairScript;
+    public Rotate_Me_Parent rotateParent_Script;
 
     public bool playerMayFly = true;
     public bool somethingIsBroken = false;
@@ -78,6 +79,11 @@ public class Game_Progression : MonoBehaviour
         somethingIsBroken = value;
     }
 
+    public void SetPlayerMayFly(bool value)
+    {
+        playerMayFly = value;
+    }
+
     public void TentAppears()
     {
         //tent spawns on sphere environment and rotates to a visible point to the Mothership 
@@ -91,7 +97,7 @@ public class Game_Progression : MonoBehaviour
 
     public void LeverPilotStation()
     {
-        if (playerMayFly == true)
+        if (playerMayFly == true && rotateParent_Script.moveValue == 1)
         {
             if (somethingIsBroken == true)
             {
@@ -113,8 +119,8 @@ public class Game_Progression : MonoBehaviour
 
     IEnumerator CallMedTent()
     {
-        //make sure seconds wait is same amount (or one less) time than it takes for ship to fly
-        yield return new WaitForSeconds(5);
+        //make sure seconds wait is less time than it takes for ship to fly
+        yield return new WaitForSeconds(3);
         medtentObject_Script.SendSupplyRequestToMothership();
     }
 
