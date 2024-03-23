@@ -17,6 +17,8 @@ public class RotateLever : MonoBehaviour
     private Vector3 axisOrientation;
     private float springDamper;
 
+    private Vector3 worldRotationOrientation = new Vector3(28.271f, 178.674f, -0.746f);
+
     void Start()
     {
         hinge = GetComponent<HingeJoint>();
@@ -49,8 +51,9 @@ public class RotateLever : MonoBehaviour
         JointLimits secondJointLims = hinge.limits;
         JointSpring twoJointSpring = hinge.spring;
 
-        secondJointLims.min = -45;
-        secondJointLims.max = 42;
+        secondJointLims.min = 0;        //THIS IS HARDCODED! If this is not zero, after each time 
+                                    //the rigidbody resets, it will lower the lever
+        secondJointLims.max = 42;       //THIS IS HARDCODED
         secondJointLims.bounceMinVelocity = 0.5f;
 
         twoJointSpring.damper = springDamper;
@@ -68,6 +71,8 @@ public class RotateLever : MonoBehaviour
 
         this.gameObject.GetComponent<HingeJointListener>().RetrieveHingeJoint();
 
+        this.gameObject.transform.localRotation = Quaternion.identity;
+
     }
 
     public void RemoveHingeConnectedBody()
@@ -78,8 +83,9 @@ public class RotateLever : MonoBehaviour
 
     public void AttachHingeConnectedBody()
     {
-
         hinge.connectedBody = rbHingeConnectedBody;
+        this.gameObject.transform.localRotation = Quaternion.identity;
+
     }
 
     public void RotateLeverCall(GameObject gameObjectToMove, Quaternion newRot, float duration)

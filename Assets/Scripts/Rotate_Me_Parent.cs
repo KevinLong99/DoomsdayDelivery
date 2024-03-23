@@ -117,7 +117,7 @@ public class Rotate_Me_Parent : MonoBehaviour
         //end with levers
         for (int i = 0; i < leverConnectedBodies.Length; i++)
         {
-            leverConnectedBodies[i].GetComponent<LeverReturn_Stations>().ResetLever();
+            //leverConnectedBodies[i].GetComponent<LeverReturn_Stations>().ResetLever();
             //yield return new WaitForSeconds(0.75f);
             leverConnectedBodies[i].GetComponent<RotateLever>().AddHingeAndRigidbody();
 
