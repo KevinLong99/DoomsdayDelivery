@@ -96,7 +96,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5415232a87f943d40a591ea1f491cf42,
         type: 3}
       propertyPath: m_TagString
-      value: SpawnStuff3
+      value: SyringeTag
       objectReference: {fileID: 0}
     - target: {fileID: 5165950284321796745, guid: 5415232a87f943d40a591ea1f491cf42,
         type: 3}
@@ -158,7 +158,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!136 &520331253823469255
 CapsuleCollider:
   m_ObjectHideFlags: 0

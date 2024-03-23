@@ -12,9 +12,10 @@ public class NewObjectCounter : MonoBehaviour
     private Dictionary<string, int> tagCounts = new Dictionary<string, int>(); // Dictionary to keep track of object counts for each tag.
 
     // Public integers for each tag to access the counts from other scripts.
-    public int SpawnStuff1;
-    public int SpawnStuff2;
-    public int SpawnStuff3;
+    public int BandageTag;
+    public int OintmentTag;
+    public int SyringeTag;
+    public int InsulinTag;
     // Add more public int variables here for each tag you plan to count.
 
     public Rotate_Me_Parent rotateParentScript;
@@ -126,9 +127,10 @@ public class NewObjectCounter : MonoBehaviour
     private void UpdateTagCounts()
     {
         // Update the public int variables based on the current counts in tagCounts.
-        SpawnStuff1 = tagCounts.ContainsKey("SpawnStuff1") ? tagCounts["SpawnStuff1"] : 0;
-        SpawnStuff2 = tagCounts.ContainsKey("SpawnStuff2") ? tagCounts["SpawnStuff2"] : 0;
-        SpawnStuff3 = tagCounts.ContainsKey("SpawnStuff3") ? tagCounts["SpawnStuff3"] : 0;
+        BandageTag = tagCounts.ContainsKey("BandageTag") ? tagCounts["BandageTag"] : 0;
+        OintmentTag = tagCounts.ContainsKey("OintmentTag") ? tagCounts["OintmentTag"] : 0;
+        SyringeTag = tagCounts.ContainsKey("SyringeTag") ? tagCounts["SyringeTag"] : 0;
+        InsulinTag = tagCounts.ContainsKey("InsulinTag") ? tagCounts["InsulinTag"] : 0;
         // Repeat for additional tags.
     }
 
@@ -136,9 +138,10 @@ public class NewObjectCounter : MonoBehaviour
     {
         // Check requirements for each SpawnStuff and update UI text
         requirementText.text =
-            (SpawnStuff1 >= medtentScript.SpawnStuff1 ? "Requirement met for obj1" : "Requirement not met  for obj1") + "\n" +
-            (SpawnStuff2 >= medtentScript.SpawnStuff2 ? "Requirement met  for obj2" : "Requirement not met  for obj2") + "\n" +
-            (SpawnStuff3 >= medtentScript.SpawnStuff3 ? "Requirement met  for obj3" : "Requirement not met  for obj3");
+            (BandageTag >= medtentScript.BandageTag ? "Requirement met for Bandage" : "Requirement not met for Bandage") + "\n" +
+            (OintmentTag >= medtentScript.OintmentTag ? "Requirement met for Ointment" : "Requirement not met for Ointment") + "\n" +
+            (SyringeTag >= medtentScript.SyringeTag ? "Requirement met for Syringe" : "Requirement not met for Syringe") + "\n" +
+            (InsulinTag >= medtentScript.InsulinTag ? "Requirement met for Insulin" : "Requirement not met for Insulin");
 
         //switchReturn_Script.TrySetPositionToTarget();
         //!!! LET GO OF THE CONTROLLER ONCE YOU DELIVER SUPPLIES!!!
@@ -287,9 +290,10 @@ public class NewObjectCounter : MonoBehaviour
         NewObjectCounter newMedBoxCounter = newMedBox.GetComponent<NewObjectCounter>();
         if (newMedBoxCounter != null)
         {
-            newMedBoxCounter.SpawnStuff1 = this.SpawnStuff1;
-            newMedBoxCounter.SpawnStuff2 = this.SpawnStuff2;
-            newMedBoxCounter.SpawnStuff3 = this.SpawnStuff3;
+            newMedBoxCounter.BandageTag = this.BandageTag;
+            newMedBoxCounter.OintmentTag = this.OintmentTag;
+            newMedBoxCounter.SyringeTag = this.SyringeTag;
+            newMedBoxCounter.InsulinTag = this.InsulinTag;
         }
     }
 

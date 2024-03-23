@@ -9,9 +9,10 @@ public class MedkitComplete : MonoBehaviour
     public NewObjectCounter objectCounterMedbox;
     [SerializeField] private Animator pizzaPaddleAnimator;
     [SerializeField] private Animator ovenDoorAnimator;
+    [SerializeField] private GameObject[] conveyorColliders;
 
 
-    public void Placeholder()
+    public void SendMedkitToOven()
     {
         objectCounterMedbox = GameObject.Find("Object Detector").GetComponent<NewObjectCounter>();
 
@@ -22,6 +23,13 @@ public class MedkitComplete : MonoBehaviour
             //play box going into oven animation
             pizzaPaddleAnimator.Play("paddle_launch");
             ovenDoorAnimator.Play("Oven_Door_Open");
+
+            //deactivate colliders
+            for (int i = 0; i < conveyorColliders.Length; i++)
+            {
+                conveyorColliders[i].gameObject.SetActive(false);
+            }
+
 
             objectCounterMedbox.PlayStation2ExitAnimation();
             StartCoroutine(WaitForBoxToEnterOven());
@@ -36,6 +44,12 @@ public class MedkitComplete : MonoBehaviour
     {
         yield return new WaitForSeconds(1.75f);
         ovenDoorAnimator.Play("Oven_Door_Close");
+
+        //activate colliders
+        for (int j = 0; j < conveyorColliders.Length; j++)
+        {
+            conveyorColliders[j].gameObject.SetActive(true);
+        }
     }
 
 }
