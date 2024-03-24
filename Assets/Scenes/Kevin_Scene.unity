@@ -3856,9 +3856,10 @@ MonoBehaviour:
   numSyringes: 1
   numBandages: 1
   numOintment: 1
-  SpawnStuff1: 1
-  SpawnStuff2: 2
-  SpawnStuff3: 1
+  BandageTag: 0
+  OintmentTag: 0
+  SyringeTag: 0
+  InsulinTag: 0
   rotateParentScript: {fileID: 0}
   typewriter_script: {fileID: 0}
 --- !u!135 &1752998856
@@ -4862,7 +4863,7 @@ PrefabInstance:
     - target: {fileID: 6488840549059875396, guid: ab70e9ab32c240942a316f8f953bbf37,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2178766
+      value: 1.176
       objectReference: {fileID: 0}
     - target: {fileID: 6488840549059875396, guid: ab70e9ab32c240942a316f8f953bbf37,
         type: 3}
