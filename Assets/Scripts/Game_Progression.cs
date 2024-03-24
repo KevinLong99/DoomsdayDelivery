@@ -22,7 +22,7 @@ public class Game_Progression : MonoBehaviour
     private FadeScreen_DD fadeScreenDD;
     public static bool gameOver_outOfFuel = false, gameOver_shipMalfunction = false, gameOver_win = false;
 
-    //private bool tent1IsComplete = false, tent2IsComplete = false, tent3IsComplete = false;
+    private bool tent1IsComplete = false, tent2IsComplete = false, tent3IsComplete = false;
     public Medtent medtentObject_Script;
 
     public bool medboxExists = false;
@@ -36,12 +36,17 @@ public class Game_Progression : MonoBehaviour
 
     public SwitchMaterialChanger screenChanger;
 
+    public Typewriter_UI typewriter_Script;
+    private PlaySounds playSounds_Script;
+    private string errorMessage = "ERROR! ERROR! SHIP MALFUNCTION! \n" +
+        "Press the big red button to fix the malfunction, and push lever " +
+        "forward to continue flying.";
+
     void Start()
     {
         fadeScreenDD = GameObject.Find("FaderScreen").GetComponent<FadeScreen_DD>();
-        //hapticChairScript.FlyFunction(5);
         timerIsRunning = true;
-        //this.gameObject.GetComponent<PlaySounds>().PlayNineSecondsShipFly();
+        playSounds_Script = this.gameObject.GetComponent<PlaySounds>();
     }
 
     void Update()
@@ -105,11 +110,17 @@ public class Game_Progression : MonoBehaviour
                 hapticChairScript.HardStopTheShip(3);
                 //do malfunction here
                 //upon pressing button, it will fix the malfunction
+
+                //send message to screen saying "error, press button to fix ship and 
+                //  push lever to continue to next tent
+                typewriter_Script.StartTypewriterView(errorMessage);
+                playSounds_Script.PlayShipError3Buzz();
             }
             else
             {
                 //player flies to next tent
                 hapticChairScript.FlyFunction(6);
+                playerMayFly = false;
                 //wait six seconds, send supply request
                 StartCoroutine(CallMedTent());
 
@@ -171,6 +182,33 @@ public class Game_Progression : MonoBehaviour
         screenChanger.ChangeMaterialToBlank();
         //GameObject newDrone = Instantiate(DronePrefab, newDroneLocation);
 
+        //set up the next tents or end the game
+        TentManager();
+    }
+
+    private void TentManager()
+    {
+        if(!tent3IsComplete && tent2IsComplete)
+        {
+            gameOver_win = true;
+            GameOver();
+        }
+
+        if (!tent2IsComplete && tent1IsComplete)
+        {
+            tent2IsComplete = true;
+            playerMayFly = true;
+            somethingIsBroken = true;
+        }
+
+        if (!tent1IsComplete)
+        {
+            tent1IsComplete = true;
+            playerMayFly = true;
+            somethingIsBroken = true;
+        }
+
+        
     }
 
     IEnumerator WaitForRotation()

@@ -102,6 +102,7 @@ public class NewObjectCounter : MonoBehaviour
         {
             tagCounts[other.tag]++; // Increment count for the tag.
             UpdateTagCounts(); // Update public int variables.
+            numTotalItems++;
         }
         else if (other.gameObject.CompareTag("Medtent"))
         {
@@ -255,7 +256,7 @@ public class NewObjectCounter : MonoBehaviour
         this.gameObject.transform.parent.transform.parent = droneToBeDropped.transform;
 
         //player picks up controller Switch and deploys from there (press trigger to deploy)
-        yield return new WaitForSeconds(2);       //remove this
+        yield return new WaitForSeconds(0.25f);       //remove this
         ovenAnimator.Play("Oven_Door_Close");
         chuteAnimator.Play("Drone_chute_open");
         droneToBeDropped.GetComponent<Drone_InsideShip>().DroneDeploy();

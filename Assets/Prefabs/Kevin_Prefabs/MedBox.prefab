@@ -539,18 +539,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagsToCount:
-  - SpawnStuff1
-  - SpawnStuff2
-  - SpawnStuff3
-  SpawnStuff1: 1
-  SpawnStuff2: 1
-  SpawnStuff3: 1
+  - BandageTag
+  - OintmentTag
+  - SyringeTag
+  - InsulinTag
+  BandageTag: 0
+  OintmentTag: 0
+  SyringeTag: 0
+  InsulinTag: 0
   rotateParentScript: {fileID: 0}
   numTotalItems: 0
   requirementText: {fileID: 0}
   newBoxSpawnLocation: {fileID: 0}
   medBoxPrefab: {fileID: 307220294810449221}
-  Drone: _Drone [BumbleBee]
   DronePrefab: {fileID: 1165740686982719177, guid: 9938a292ff15a9743ba9187c38b8366f,
     type: 3}
   newDroneLocation: {fileID: 0}

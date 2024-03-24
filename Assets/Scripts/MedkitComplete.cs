@@ -11,13 +11,19 @@ public class MedkitComplete : MonoBehaviour
     [SerializeField] private Animator ovenDoorAnimator;
     [SerializeField] private GameObject[] conveyorColliders;
 
+    public Typewriter_UI typewriter_script_medkit;
+
 
     public void SendMedkitToOven()
     {
         objectCounterMedbox = GameObject.Find("Object Detector").GetComponent<NewObjectCounter>();
 
-        if (objectCounterMedbox.GetNumTotalItems() > -1 && rotateParentScript.medKitisCompleted == false)        //change to zero
+        if (objectCounterMedbox.GetNumTotalItems() > 0 && rotateParentScript.medKitisCompleted == false)        //change to zero
         {
+            //TODO!!!!!!!
+            //Record all the stuff in the medkit, save the data values,
+            //      and send to the NewObjectCounter to be compared to the medtent request.
+
             //if there is stuff in the medkit, then button can be activated and box is pushed into oven
             rotateParentScript.medKitisCompleted = true;
             //play box going into oven animation
@@ -36,7 +42,7 @@ public class MedkitComplete : MonoBehaviour
 
         } else
         {
-            Debug.Log("ERROR! No supplies are in the medkit!");
+            typewriter_script_medkit.StartTypewriterView("ERROR! No supplies are in the medkit!");
         }
     }
 
