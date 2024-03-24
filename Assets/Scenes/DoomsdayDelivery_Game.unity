@@ -1014,7 +1014,7 @@ HingeJoint:
   m_GameObject: {fileID: 1833234079}
   m_ConnectedBody: {fileID: 1833234080}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: -7, z: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
@@ -1033,8 +1033,8 @@ HingeJoint:
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: -48.213337
-    max: 24.443237
+    min: 0
+    max: 45
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -1219,7 +1219,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -9140,7 +9140,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -11196,52 +11196,52 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8a8e85e9ddcf9c5408212f4f17563a93,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7618
+      value: 0.7682475
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8a8e85e9ddcf9c5408212f4f17563a93,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0135
+      value: 0.97155917
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8a8e85e9ddcf9c5408212f4f17563a93,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.8032
+      value: -0.8053949
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8a8e85e9ddcf9c5408212f4f17563a93,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.40999
+      value: 0.3492071
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8a8e85e9ddcf9c5408212f4f17563a93,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.12235896
+      value: -0.19896755
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8a8e85e9ddcf9c5408212f4f17563a93,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8735176
+      value: 0.7901381
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8a8e85e9ddcf9c5408212f4f17563a93,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.23217112
+      value: 0.4627614
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8a8e85e9ddcf9c5408212f4f17563a93,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -30.394
+      value: -60.488
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8a8e85e9ddcf9c5408212f4f17563a93,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 130.136
+      value: 131.718
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8a8e85e9ddcf9c5408212f4f17563a93,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -1.554
+      value: 1.021
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8a8e85e9ddcf9c5408212f4f17563a93,
         type: 3}
@@ -11459,8 +11459,8 @@ HingeJoint:
   m_GameObject: {fileID: 1833234078}
   m_ConnectedBody: {fileID: 1833234080}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 24.50103, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   serializedVersion: 2
@@ -11478,8 +11478,8 @@ HingeJoint:
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: 0
-    max: 180
+    min: -15
+    max: 45
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -11664,7 +11664,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0

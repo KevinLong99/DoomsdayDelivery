@@ -42,6 +42,7 @@ public class LeverReturn_Stations : MonoBehaviour
             //this.transform.position = Vector3.Lerp(curPos, startingPos, counter / duration);
             yield return null;
         }
+        this.transform.rotation = startRot;
         isReturning = false;
     }
 
