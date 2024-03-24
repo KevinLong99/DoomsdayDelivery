@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RotateLever : MonoBehaviour
 {
+    private Vector3 originalPosition;
+
     private HingeJoint hinge;
     private Rigidbody rbHingeConnectedBody;
     private bool rotatingHinge = false;
@@ -17,10 +19,14 @@ public class RotateLever : MonoBehaviour
     private Vector3 axisOrientation;
     private float springDamper;
 
+    private float secondJointsMin, secondJointsMax;
+
     private Vector3 worldRotationOrientation = new Vector3(28.271f, 178.674f, -0.746f);
 
     void Start()
     {
+        originalPosition = transform.position;
+
         hinge = GetComponent<HingeJoint>();
         rbHingeConnectedBody = hinge.connectedBody;
         RemoveHingeConnectedBody();
@@ -36,7 +42,9 @@ public class RotateLever : MonoBehaviour
 
         oldJointLimits = hinge.limits;
 
-
+        JointLimits getJointLims = hinge.limits;
+        secondJointsMin = getJointLims.min;
+        secondJointsMax = getJointLims.max;
     }
 
     public void DestroyHingeAndRigidbody()
@@ -47,31 +55,34 @@ public class RotateLever : MonoBehaviour
 
     public void AddHingeAndRigidbody()
     {
+        //this.gameObject.transform.localPosition = originalPosition;
+        this.gameObject.transform.localRotation = Quaternion.identity;
+
         hinge = this.gameObject.AddComponent<HingeJoint>();
         JointLimits secondJointLims = hinge.limits;
         JointSpring twoJointSpring = hinge.spring;
 
-        secondJointLims.min = 0;        //THIS IS HARDCODED! If this is not zero, after each time 
-                                    //the rigidbody resets, it will lower the lever
-        secondJointLims.max = 42;       //THIS IS HARDCODED
-        secondJointLims.bounceMinVelocity = 0.5f;
+        this.gameObject.GetComponent<HingeJoint>().anchor = anchorYValue;
+        this.gameObject.GetComponent<HingeJoint>().axis = axisOrientation;
+        this.gameObject.GetComponent<HingeJoint>().connectedAnchor = conAnchor;
+        this.gameObject.GetComponent<HingeJoint>().useLimits = true;
+        this.gameObject.GetComponent<HingeJoint>().useSpring = true;
+
+        secondJointLims.min = secondJointsMin;
+        secondJointLims.max = secondJointsMax;
+
+        secondJointLims.bounceMinVelocity = 0.2f;
 
         twoJointSpring.damper = springDamper;
 
         hinge.limits = secondJointLims;
         hinge.spring = twoJointSpring;
 
-        this.gameObject.GetComponent<HingeJoint>().anchor = anchorYValue;
-        this.gameObject.GetComponent<HingeJoint>().connectedAnchor = conAnchor;
-        this.gameObject.GetComponent<HingeJoint>().useLimits = true;
-        this.gameObject.GetComponent<HingeJoint>().useSpring = true;
-        this.gameObject.GetComponent<HingeJoint>().axis = axisOrientation;
-
         leverRb.isKinematic = false;
 
         this.gameObject.GetComponent<HingeJointListener>().RetrieveHingeJoint();
 
-        this.gameObject.transform.localRotation = Quaternion.identity;
+        
 
     }
 
