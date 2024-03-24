@@ -14,7 +14,7 @@ public class Game_Progression : MonoBehaviour
     public bool playerMayFly = true;
     public bool somethingIsBroken = false;
 
-    private float timeRemaining = 900;   //time limit
+    private float timeRemaining = 600;   //time limit
     private bool timerIsRunning = false;
     float minutes, seconds;
     public TextMeshProUGUI timeText;
