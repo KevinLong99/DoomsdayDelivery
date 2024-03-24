@@ -13,10 +13,6 @@ public class ConfigurableJointListener : MonoBehaviour
     public enum JointLimitState { Lower, Upper, None }
     private ConfigurableJoint configurableJoint;
 
-    //spawner
-
-    public Spawner mySpawner;
-
     float currentPosition, lowerLimit, upperLimit;
     //lowerLimit and upperLimit never change.
 
@@ -26,6 +22,8 @@ public class ConfigurableJointListener : MonoBehaviour
 
     public Rotate_Me_Parent rotateParentScript;
     public LeverReturn leverReturnScript;
+
+    public Haptic_Chair_Controller hapChair_Script;
 
     void Start()
     {
@@ -46,7 +44,7 @@ public class ConfigurableJointListener : MonoBehaviour
         {
             if (jointLimitState != JointLimitState.Lower)
             {
-                if (isPulled == false && rotateParentScript.rotating == false)
+                if (isPulled == false && rotateParentScript.rotating == false && hapChair_Script.doRotateSphere == false)
                 {
                     OnLowerLimitReached.Invoke();
                     isPulled = true;
@@ -81,10 +79,5 @@ public class ConfigurableJointListener : MonoBehaviour
     {
         Debug.Log("upper");
         OnUpperLimitReached.Invoke();
-    }
-
-    public void spawnStuff()
-    {
-        mySpawner.spawn();
     }
 }

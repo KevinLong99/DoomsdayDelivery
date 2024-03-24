@@ -42,11 +42,22 @@ public class Game_Progression : MonoBehaviour
         "Press the big red button to fix the malfunction, and push lever " +
         "forward to continue flying.";
 
+    private GameObject medtent1, medtent2, medtent3;
+
     void Start()
     {
         fadeScreenDD = GameObject.Find("FaderScreen").GetComponent<FadeScreen_DD>();
         timerIsRunning = true;
         playSounds_Script = this.gameObject.GetComponent<PlaySounds>();
+
+        medtent1 = GameObject.Find("MedTent1");
+        medtent2 = GameObject.Find("MedTent2");
+        medtent3 = GameObject.Find("MedTent3");
+
+        medtent1.SetActive(false);
+        medtent2.SetActive(false);
+        medtent3.SetActive(false);
+
     }
 
     void Update()
@@ -89,17 +100,6 @@ public class Game_Progression : MonoBehaviour
         playerMayFly = value;
     }
 
-    public void TentAppears()
-    {
-        //tent spawns on sphere environment and rotates to a visible point to the Mothership 
-        //  GameObject newTent = Instantiate(tentPrefab, whereToInstantiate, parent_environmentSphere);
-        //requested medical items are transmitted to the ship's screen
-        //(different based on the tent number)      ...randomized each game?
-        //
-
-
-    }
-
     public void LeverPilotStation()
     {
         if (playerMayFly == true && rotateParent_Script.moveValue == 1)
@@ -118,6 +118,12 @@ public class Game_Progression : MonoBehaviour
             }
             else
             {
+                if(tent1IsComplete == false)
+                {
+                    //do this only once
+                    medtent1.SetActive(true);
+                }
+
                 //player flies to next tent
                 hapticChairScript.FlyFunction(6);
                 playerMayFly = false;
@@ -170,9 +176,7 @@ public class Game_Progression : MonoBehaviour
         {
             //instantiate a medbox
             StartCoroutine(WaitForRotation());
-            
         }
-
     }
 
     //Function to spawn new drone
@@ -197,6 +201,8 @@ public class Game_Progression : MonoBehaviour
         if (!tent2IsComplete && tent1IsComplete)
         {
             tent2IsComplete = true;
+            medtent3.SetActive(true);
+            medtent2.SetActive(false);
             playerMayFly = true;
             somethingIsBroken = true;
         }
@@ -204,6 +210,8 @@ public class Game_Progression : MonoBehaviour
         if (!tent1IsComplete)
         {
             tent1IsComplete = true;
+            medtent2.SetActive(true);
+            medtent1.SetActive(false);
             playerMayFly = true;
             somethingIsBroken = true;
         }
