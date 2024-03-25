@@ -295,6 +295,22 @@ public class NewObjectCounter : MonoBehaviour
             newMedBoxCounter.InsulinTag = this.InsulinTag;
         }
     }
+    public void DeleteAllSupply()
+    {
+        // Array of tags to check for deletion
+        string[] tagsToDelete = { "BandageTag", "OintmentTag", "SyringeTag", "InsulinTag" };
+
+        // Iterate through each tag and delete all GameObjects with that tag
+        foreach (var tag in tagsToDelete)
+        {
+            GameObject[] objectsToDelete = GameObject.FindGameObjectsWithTag(tag);
+            foreach (var obj in objectsToDelete)
+            {
+                Destroy(obj);
+                Debug.Log($"Destroyed object with tag {tag}.");
+            }
+        }
+    }
 
 
 }
