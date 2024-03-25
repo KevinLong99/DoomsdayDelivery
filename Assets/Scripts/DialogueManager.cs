@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour
         if (DisplayDialogue != null)
         {
             Debug.Log("TutorialTextManager: Deleting Dialogue GameObject.");
-            Destroy(DisplayDialogue);
+            DisplayDialogue.SetActive(false);
         }
         else
         {

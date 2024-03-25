@@ -21,7 +21,7 @@ public class TutorialManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Index out of range: " + number);
+            //Debug.LogError("Index out of range: " + number);
         }
     }
 
@@ -45,7 +45,7 @@ public class TutorialManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Index out of range: " + number);
+            //Debug.LogError("Index out of range: " + number);
         }
     }
     public void DeleteTutorial()
