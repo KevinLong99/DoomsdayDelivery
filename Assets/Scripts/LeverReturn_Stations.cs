@@ -7,12 +7,10 @@ public class LeverReturn_Stations : MonoBehaviour
 {
     public bool isReturning = false;
 
-    private Vector3 startingPos;
     private Quaternion startRot;
     void Start()
     {
-        startingPos = this.transform.position;
-        startRot = this.transform.rotation;
+        startRot = this.transform.localRotation;
     }
 
     // Call this method when the lever is released
@@ -31,18 +29,16 @@ public class LeverReturn_Stations : MonoBehaviour
         }
         isReturning = true;
 
-        Vector3 curPos = this.transform.position ;
-        Quaternion currentRot = this.transform.rotation;
+        Quaternion currentRot = this.transform.localRotation;
 
         float counter = 0;
         while (counter < duration)
         {
             counter += Time.deltaTime;
-            this.transform.rotation = Quaternion.Lerp(currentRot, startRot, counter / duration);
-            //this.transform.position = Vector3.Lerp(curPos, startingPos, counter / duration);
+            this.transform.localRotation = Quaternion.Lerp(currentRot, startRot, counter / duration);
             yield return null;
         }
-        this.transform.rotation = startRot;
+        this.transform.localRotation = startRot;
         isReturning = false;
     }
 

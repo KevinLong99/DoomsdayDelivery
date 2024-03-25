@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
 public class HingeJointListener : MonoBehaviour
 {
@@ -17,13 +18,21 @@ public class HingeJointListener : MonoBehaviour
     public enum HingeJointState { Min, Max, None }
     private HingeJoint hinge;
 
-    private Color unActivatedColor;
+    private Material unActivatedMaterial;
 
     // Start is called before the first frame update
     void Start()
     {
         hinge = GetComponent<HingeJoint>();
-        unActivatedColor = this.GetComponent<MeshRenderer>().material.color;
+        try 
+        { 
+            unActivatedMaterial = this.GetComponent<MeshRenderer>().material; 
+        } catch (Exception ex)
+        {
+            Debug.LogException(ex, this);
+        }
+
+        
     }
 
     private void FixedUpdate()
@@ -53,7 +62,7 @@ public class HingeJointListener : MonoBehaviour
             else
             {
                 hingeJointState = HingeJointState.None;
-                this.GetComponent<MeshRenderer>().material.color = unActivatedColor;
+                this.GetComponent<MeshRenderer>().material = unActivatedMaterial;
             }
         }       
 
