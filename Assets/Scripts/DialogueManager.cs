@@ -27,4 +27,16 @@ public class DialogueManager : MonoBehaviour
             Debug.LogError("TutorialTextManager: Index out of range when calling ChangeText.");
         }
     }
+    public void DeleteText()
+    {
+        if (DisplayDialogue != null)
+        {
+            Debug.Log("TutorialTextManager: Deleting Dialogue GameObject.");
+            Destroy(DisplayDialogue);
+        }
+        else
+        {
+            Debug.LogError("TutorialTextManager: No DisplayDialogue GameObject to delete.");
+        }
+    }
 }
