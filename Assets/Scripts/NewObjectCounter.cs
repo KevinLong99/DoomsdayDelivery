@@ -147,7 +147,7 @@ public class NewObjectCounter : MonoBehaviour
             (SyringeTag >= medtentScript.SyringeTag ? "Requirement met for Syringe" : "Requirement not met for Syringe") + "\n" +
             (InsulinTag >= medtentScript.InsulinTag ? "Requirement met for Insulin" : "Requirement not met for Insulin");
 
-        string newMess = "Oh thank god, this arrived just in time. I’m not sure if some of the patients could last another day"
+        string newMess = "Oh thank god, this arrived just in time. I’m not sure if some of the patients could last another day";
 
 
         typewriteScript_NOC.StartTypewriterView(newMess);
