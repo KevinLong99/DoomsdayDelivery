@@ -8,8 +8,6 @@ public class PlaySounds : MonoBehaviour
 
     [SerializeField] private AudioClip ambientPizzaMusic1;
     [SerializeField] private AudioClip ambientPizzaMusic2;
-    [SerializeField] private AudioClip aoogahError;
-    [SerializeField] private AudioClip backInTheDay;
     [SerializeField] private AudioClip boingPoing;
     [SerializeField] private AudioClip boxSound;
     [SerializeField] private AudioClip buttonClick;
@@ -27,7 +25,6 @@ public class PlaySounds : MonoBehaviour
     [SerializeField] private AudioClip systemRebootNoises2;
     [SerializeField] private AudioClip tacoBellGong;
     [SerializeField] private AudioClip thunder;
-    [SerializeField] private AudioClip thunk;
     [SerializeField] private AudioClip timeGasNotification;
     [SerializeField] private AudioClip tutorialNotification;
 
@@ -41,36 +38,8 @@ public class PlaySounds : MonoBehaviour
         soundPlayer.PlayOneShot(chosenAudioClip);
     }
 
-
-
-
-
-    public void PlayAoogahError()
+    public void PlayRandomBeeping()
     {
-        soundPlayer.PlayOneShot(aoogahError);
-    }
-    public void PlayBackInTheDay()
-    {
-        soundPlayer.PlayOneShot(backInTheDay);
-    }
-    public void PlayBoingPoing()
-    {
-        soundPlayer.PlayOneShot(boingPoing);
-    }
-    public void PlayDroneArriving()
-    {
-        soundPlayer.PlayOneShot(droneArriving);
-    }
-    public void PlayTacoBellGong()
-    {
-        soundPlayer.PlayOneShot(tacoBellGong);
-    }
-    public void PlayThunder()
-    {
-        soundPlayer.PlayOneShot(thunder);
-    }
-    public void PlayThunk()
-    {
-        soundPlayer.PlayOneShot(thunk);
+        soundPlayer.PlayOneShot(randomBeepingNoises);
     }
 }

@@ -254,17 +254,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02d99283b2db6c4a9a53c716144f90e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nineSecondShipFly: {fileID: 8300000, guid: f24059fafbe87c045818b38ca47c9761, type: 3}
+  ambientPizzaMusic1: {fileID: 0}
+  ambientPizzaMusic2: {fileID: 0}
   aoogahError: {fileID: 8300000, guid: 54e641b07cfe40b48a317210507813e4, type: 3}
   backInTheDay: {fileID: 8300000, guid: a8133e8c92079fc408dd41b4e2a7fdd6, type: 3}
   boingPoing: {fileID: 8300000, guid: 8a6605248d7ea8f429ca1024cc617ee0, type: 3}
+  boxSound: {fileID: 0}
+  buttonClick: {fileID: 0}
+  communicationNoises: {fileID: 0}
+  deliveryFailureNotification: {fileID: 0}
+  droneDeployment1: {fileID: 0}
+  droneDeployment2: {fileID: 0}
   droneArriving: {fileID: 8300000, guid: b40160a09d73feb4fb6b9386863d3ce2, type: 3}
-  fnaf1: {fileID: 8300000, guid: 1ddcb4f46975a134da75bcfbf5b8121f, type: 3}
-  minecraftCave1: {fileID: 8300000, guid: df46cabdaf2c4eb43b4dff75ab8f7900, type: 3}
-  shipError3Buzz: {fileID: 8300000, guid: 769cff61f4176ec4881a151a5596b4c4, type: 3}
+  medkitPacked: {fileID: 0}
+  newOrderNotification: {fileID: 0}
+  pickUpDroneNavigator: {fileID: 0}
+  randomBeepingNoises: {fileID: 0}
+  spaceshipThruster: {fileID: 0}
+  stationChange: {fileID: 0}
+  systemRebootNoises2: {fileID: 0}
   tacoBellGong: {fileID: 8300000, guid: 7995415c71a4cc04bb24899a71b6a55d, type: 3}
   thunder: {fileID: 8300000, guid: 3ee8f988cd1c83d4a85b93b14c916935, type: 3}
   thunk: {fileID: 8300000, guid: c3dcfb399d1a4e94ebdeaf478d755ce6, type: 3}
+  timeGasNotification: {fileID: 0}
+  tutorialNotification: {fileID: 0}
 --- !u!82 &749458119
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6355,11 +6368,12 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 749458118}
         m_TargetAssemblyTypeName: PlaySounds, Assembly-CSharp
-        m_MethodName: PlayNineSecondsShipFly
-        m_Mode: 1
+        m_MethodName: PlayChosenAudioClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: c339db69051b6244cbaa7d8b5899980a,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

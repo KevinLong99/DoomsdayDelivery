@@ -138,6 +138,7 @@ public class Game_Progression : MonoBehaviour
         //make sure seconds wait is less time than it takes for ship to fly
         yield return new WaitForSeconds(3);
         medtentObject_Script.SendSupplyRequestToMothership();
+        playSounds_Script.PlayRandomBeeping();
     }
 
     public void GameOver()
