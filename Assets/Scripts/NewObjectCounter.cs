@@ -48,7 +48,7 @@ public class NewObjectCounter : MonoBehaviour
 
     private void Start()
     {
-        GameObject requirementUI = GameObject.Find("RequirementUI");
+        GameObject requirementUI = GameObject.Find("Requirement UI");
         if (requirementUI != null)
         {
             requirementText = requirementUI.GetComponent<TextMeshProUGUI>();
