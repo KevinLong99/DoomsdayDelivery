@@ -13,9 +13,7 @@ public class ConfigurableJointListener : MonoBehaviour
     public enum JointLimitState { Lower, Upper, None }
     private ConfigurableJoint configurableJoint;
 
-    float currentPosition, lowerLimit, upperLimit;
-    //lowerLimit and upperLimit never change.
-
+    float currentPosition;
     float startingPosition;
 
     public bool isPulled;
@@ -29,8 +27,6 @@ public class ConfigurableJointListener : MonoBehaviour
     {
         configurableJoint = GetComponent<ConfigurableJoint>();
         startingPosition = configurableJoint.transform.localPosition.y;
-        lowerLimit = configurableJoint.linearLimit.limit * -1; // Assuming symmetric limits
-        upperLimit = configurableJoint.linearLimit.limit + 1;
     }
 
     void FixedUpdate()
@@ -38,8 +34,6 @@ public class ConfigurableJointListener : MonoBehaviour
         currentPosition = configurableJoint.transform.localPosition.y;
 
         // Reached Lower Limit
-        //if (Mathf.Abs(currentPosition - lowerLimit) > positionThreshold)    //<--problem
-        //if (currentPosition < (startingPosition + lowerLimit + 0.05f) && currentPosition > (startingPosition + lowerLimit - 0.05f))
         if (currentPosition < (startingPosition - 0.2f))
         {
             if (jointLimitState != JointLimitState.Lower)
