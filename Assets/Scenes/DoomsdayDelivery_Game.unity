@@ -5995,12 +5995,14 @@ MonoBehaviour:
   numSyringes: 0
   numBandages: 0
   numOintment: 0
-  BandageTag: 0
-  OintmentTag: 0
-  SyringeTag: 0
-  InsulinTag: 0
+  BandageTag: 3
+  OintmentTag: 3
+  SyringeTag: 3
+  InsulinTag: 3
   rotateParentScript: {fileID: 1949706194}
   typewriter_script: {fileID: 600841384}
+  tentNum: 3
+  thresholdPercentage: 0.8
 --- !u!135 &994493828
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8509,6 +8511,8 @@ MonoBehaviour:
   InsulinTag: 1
   rotateParentScript: {fileID: 1949706194}
   typewriter_script: {fileID: 600841384}
+  tentNum: 1
+  thresholdPercentage: 0.8
 --- !u!135 &1531931769
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9296,12 +9300,14 @@ MonoBehaviour:
   numSyringes: 0
   numBandages: 0
   numOintment: 0
-  BandageTag: 0
-  OintmentTag: 0
-  SyringeTag: 0
-  InsulinTag: 0
+  BandageTag: 2
+  OintmentTag: 2
+  SyringeTag: 2
+  InsulinTag: 2
   rotateParentScript: {fileID: 1949706194}
   typewriter_script: {fileID: 600841384}
+  tentNum: 2
+  thresholdPercentage: 0.8
 --- !u!135 &1701433375
 SphereCollider:
   m_ObjectHideFlags: 0

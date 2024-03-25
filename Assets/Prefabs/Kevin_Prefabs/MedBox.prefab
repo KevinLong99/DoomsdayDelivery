@@ -555,6 +555,20 @@ MonoBehaviour:
   DronePrefab: {fileID: 1165740686982719177, guid: 9938a292ff15a9743ba9187c38b8366f,
     type: 3}
   newDroneLocation: {fileID: 0}
+  typewriteScript_NOC: {fileID: 0}
+  Tent1YesMsg: "Oh thank god, this arrived just in time. I\u2019m not sure if some
+    of the patients could last another day"
+  Tent1NoMsg: "Is this it? I guess we\u2019ll have to make do, nothing we\u2019re
+    not used to in these times."
+  Tent2YesMsg: "Thank you so much. My son has been in bad shape these days, but at
+    least now I know he\u2019ll still be with me tomorrow"
+  Tent2NoMsg: "It looks like we\u2019re short again. We might have to pick and choose
+    who will make it through the night."
+  Tent3YesMsg: "*sigh* If only this came a little sooner, Sam would\u2019ve still
+    been with us. Sorry, that\u2019s not your fault. Thank you for the delivery,
+    it\u2019s exactly what we needed"
+  Tent3NoMsg: "*sigh* I\u2019m not sure if this is usable for what we needed. First
+    the food rations and now this\u2026 at what point do we just kick the bucket?"
 --- !u!1 &6037828850778306702
 GameObject:
   m_ObjectHideFlags: 0

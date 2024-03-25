@@ -47,6 +47,17 @@ public class NewObjectCounter : MonoBehaviour
 
     public Typewriter_UI typewriteScript_NOC;
 
+    // Requirement dialogue
+    public new string Tent1YesMsg;
+    public new string Tent1NoMsg;
+    public new string Tent2YesMsg;
+    public new string Tent2NoMsg;
+    public new string Tent3YesMsg;
+    public new string Tent3NoMsg;
+
+    private Medtent medtentScript;
+
+    private float thresholdPercentage;
 
     private void Start()
     {
@@ -109,7 +120,8 @@ public class NewObjectCounter : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Medtent"))
         {
-            Medtent medtentScript = other.gameObject.GetComponent<Medtent>();
+            medtentScript = other.gameObject.GetComponent<Medtent>();
+            thresholdPercentage = medtentScript.thresholdPercentage;
             if (medtentScript != null)
             {
                 CheckRequirements(medtentScript); // Check if requirements are met.
@@ -140,19 +152,53 @@ public class NewObjectCounter : MonoBehaviour
 
     private void CheckRequirements(Medtent medtentScript)
     {
-        // Check requirements for each SpawnStuff and update UI text
+        int totalCurrentSupplies = BandageTag + OintmentTag + SyringeTag + InsulinTag;
+        int totalRequiredSupplies = medtentScript.BandageTag + medtentScript.OintmentTag + medtentScript.SyringeTag + medtentScript.InsulinTag;
+
+        // Calculate the percentage of requirements met
+        float requirementsMetPercentage = (float)totalCurrentSupplies / totalRequiredSupplies;
+
+        // Check if the total supply count meets the threshold percentage of the requirement
+        if (requirementsMetPercentage >= thresholdPercentage)
+        {
+            // Code for when the requirements are met
+            if (medtentScript.tentNum == 1)
+            {
+                typewriteScript_NOC.StartTypewriterView(Tent1YesMsg);
+            }
+            else if (medtentScript.tentNum == 2)
+            {
+                typewriteScript_NOC.StartTypewriterView(Tent2YesMsg);
+            }
+            else if (medtentScript.tentNum == 3)
+            {
+                typewriteScript_NOC.StartTypewriterView(Tent3YesMsg);
+            }
+        }
+        else
+        {
+            // Code for when the requirements are not met
+            if (medtentScript.tentNum == 1)
+            {
+                typewriteScript_NOC.StartTypewriterView(Tent1NoMsg);
+            }
+            else if (medtentScript.tentNum == 2)
+            {
+                typewriteScript_NOC.StartTypewriterView(Tent2NoMsg);
+            }
+            else if (medtentScript.tentNum == 3)
+            {
+                typewriteScript_NOC.StartTypewriterView(Tent3NoMsg);
+            }
+        }
+        /*
         requirementText.text =
             (BandageTag >= medtentScript.BandageTag ? "Requirement met for Bandage" : "Requirement not met for Bandage") + "\n" +
             (OintmentTag >= medtentScript.OintmentTag ? "Requirement met for Ointment" : "Requirement not met for Ointment") + "\n" +
             (SyringeTag >= medtentScript.SyringeTag ? "Requirement met for Syringe" : "Requirement not met for Syringe") + "\n" +
             (InsulinTag >= medtentScript.InsulinTag ? "Requirement met for Insulin" : "Requirement not met for Insulin");
-
-        string newMess = "Oh thank god, this arrived just in time. I’m not sure if some of the patients could last another day";
-
-
-        typewriteScript_NOC.StartTypewriterView(newMess);
-
-        StartCoroutine(ReturnScreenToPos());
+        */
+            StartCoroutine(ReturnScreenToPos());
 
 
     }
@@ -313,7 +359,7 @@ public class NewObjectCounter : MonoBehaviour
             foreach (var obj in objectsToDelete)
             {
                 Destroy(obj);
-                Debug.Log($"Destroyed object with tag {tag}.");
+                Debug.Log("DeleteAllSupply is called");
             }
         }
     }

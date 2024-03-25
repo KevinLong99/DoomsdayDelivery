@@ -25,6 +25,9 @@ public class Medtent : MonoBehaviour
     public Rotate_Me_Parent rotateParentScript;
     public Typewriter_UI typewriter_script;
 
+    public int tentNum;
+    public float thresholdPercentage;
+
     void Start()
     {
         //for this to work, the name of the medtent must be in format: Medtent# (with # being a single digit number)
