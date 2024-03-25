@@ -45,6 +45,8 @@ public class NewObjectCounter : MonoBehaviour
     public GameObject DronePrefab;
     public Transform newDroneLocation;
 
+    public Typewriter_UI typewriteScript_NOC;
+
 
     private void Start()
     {
@@ -94,6 +96,7 @@ public class NewObjectCounter : MonoBehaviour
         ovenAnimator = GameObject.Find("oven_door").GetComponent<Animator>();
         switchReturn_Script = GameObject.Find("Drone [Remote]").GetComponent<SwitchReturn>();
         gameProg_Script = GameObject.Find("Game_Manager").GetComponent<Game_Progression>();
+        typewriteScript_NOC = GameObject.Find("Text_Typewriter").GetComponent<Typewriter_UI>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -144,8 +147,11 @@ public class NewObjectCounter : MonoBehaviour
             (SyringeTag >= medtentScript.SyringeTag ? "Requirement met for Syringe" : "Requirement not met for Syringe") + "\n" +
             (InsulinTag >= medtentScript.InsulinTag ? "Requirement met for Insulin" : "Requirement not met for Insulin");
 
-        //switchReturn_Script.TrySetPositionToTarget();
-        //!!! LET GO OF THE CONTROLLER ONCE YOU DELIVER SUPPLIES!!!
+        string newMess = "Oh thank god, this arrived just in time. I’m not sure if some of the patients could last another day"
+
+
+        typewriteScript_NOC.StartTypewriterView(newMess);
+
         StartCoroutine(ReturnScreenToPos());
 
 
