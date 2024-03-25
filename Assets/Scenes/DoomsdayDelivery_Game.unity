@@ -6109,7 +6109,7 @@ Transform:
   m_GameObject: {fileID: 1002685186}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.27078474, z: -0, w: 0.9626399}
-  m_LocalPosition: {x: -1.283, y: 1.76, z: 1.017}
+  m_LocalPosition: {x: 0, y: 4.321, z: 0}
   m_LocalScale: {x: 0.10441873, y: 0.10441873, z: 0.10441873}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11448,17 +11448,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02d99283b2db6c4a9a53c716144f90e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nineSecondShipFly: {fileID: 8300000, guid: f24059fafbe87c045818b38ca47c9761, type: 3}
+  ambientPizzaMusic1: {fileID: 8300000, guid: a836157553d0b5c4388330d99d4559c9, type: 3}
+  ambientPizzaMusic2: {fileID: 8300000, guid: 60e0f1b92bc14e145a9490cab85f58b8, type: 3}
   aoogahError: {fileID: 8300000, guid: 54e641b07cfe40b48a317210507813e4, type: 3}
   backInTheDay: {fileID: 8300000, guid: a8133e8c92079fc408dd41b4e2a7fdd6, type: 3}
   boingPoing: {fileID: 8300000, guid: 8a6605248d7ea8f429ca1024cc617ee0, type: 3}
+  boxSound: {fileID: 8300000, guid: ed978abb55acf4d4495adcf1169ef1a1, type: 3}
+  buttonClick: {fileID: 8300000, guid: 4bab6b4772d26224787d60bf69c2fe01, type: 3}
+  communicationNoises: {fileID: 8300000, guid: a63ec464701b4f8469a4dbd280ccbb5e, type: 3}
+  deliveryFailureNotification: {fileID: 8300000, guid: b5637af9a6c24a6498d08742b233383e,
+    type: 3}
+  droneDeployment1: {fileID: 8300000, guid: 58b16c34435c18a4bab32469b382938a, type: 3}
+  droneDeployment2: {fileID: 8300000, guid: 35796d0c690f61b42ac08ca5f3c5ba64, type: 3}
   droneArriving: {fileID: 8300000, guid: b40160a09d73feb4fb6b9386863d3ce2, type: 3}
-  fnaf1: {fileID: 8300000, guid: 1ddcb4f46975a134da75bcfbf5b8121f, type: 3}
-  minecraftCave1: {fileID: 8300000, guid: df46cabdaf2c4eb43b4dff75ab8f7900, type: 3}
-  shipError3Buzz: {fileID: 8300000, guid: 769cff61f4176ec4881a151a5596b4c4, type: 3}
+  medkitPacked: {fileID: 8300000, guid: 0034ccc36a86ad540ac9dde8923ca92f, type: 3}
+  newOrderNotification: {fileID: 8300000, guid: 950e26920d15b6740a79a9af08b48444,
+    type: 3}
+  pickUpDroneNavigator: {fileID: 8300000, guid: 15a44b629f5ec3348a3a0e11b3f7edcb,
+    type: 3}
+  randomBeepingNoises: {fileID: 8300000, guid: cc9ac6cf16416bf4f86200083bfcb846, type: 3}
+  spaceshipThruster: {fileID: 8300000, guid: c339db69051b6244cbaa7d8b5899980a, type: 3}
+  stationChange: {fileID: 8300000, guid: f807ba9b210d2e448a4583c7663bac09, type: 3}
+  systemRebootNoises2: {fileID: 8300000, guid: 86f7916143ad9234fbd28eb26044b7b2, type: 3}
   tacoBellGong: {fileID: 8300000, guid: 7995415c71a4cc04bb24899a71b6a55d, type: 3}
   thunder: {fileID: 8300000, guid: 3ee8f988cd1c83d4a85b93b14c916935, type: 3}
   thunk: {fileID: 8300000, guid: c3dcfb399d1a4e94ebdeaf478d755ce6, type: 3}
+  timeGasNotification: {fileID: 8300000, guid: c77f79efc3425eb40a63a4836a777664, type: 3}
+  tutorialNotification: {fileID: 8300000, guid: 649662ce29e65c341af46739bd7996ab,
+    type: 3}
 --- !u!114 &1848070717
 MonoBehaviour:
   m_ObjectHideFlags: 0

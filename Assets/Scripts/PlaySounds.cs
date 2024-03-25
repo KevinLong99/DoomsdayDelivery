@@ -6,32 +6,49 @@ public class PlaySounds : MonoBehaviour
 {
     AudioSource soundPlayer;
 
-    [SerializeField] private AudioClip nineSecondShipFly;
+    [SerializeField] private AudioClip ambientPizzaMusic1;
+    [SerializeField] private AudioClip ambientPizzaMusic2;
     [SerializeField] private AudioClip aoogahError;
     [SerializeField] private AudioClip backInTheDay;
     [SerializeField] private AudioClip boingPoing;
+    [SerializeField] private AudioClip boxSound;
+    [SerializeField] private AudioClip buttonClick;
+    [SerializeField] private AudioClip communicationNoises;
+    [SerializeField] private AudioClip deliveryFailureNotification;
+    [SerializeField] private AudioClip droneDeployment1;
+    [SerializeField] private AudioClip droneDeployment2;
     [SerializeField] private AudioClip droneArriving;
-    [SerializeField] private AudioClip fnaf1;
-    [SerializeField] private AudioClip minecraftCave1;
-    [SerializeField] private AudioClip shipError3Buzz;
+    [SerializeField] private AudioClip medkitPacked;
+    [SerializeField] private AudioClip newOrderNotification;
+    [SerializeField] private AudioClip pickUpDroneNavigator;
+    [SerializeField] private AudioClip randomBeepingNoises;
+    [SerializeField] private AudioClip spaceshipThruster;
+    [SerializeField] private AudioClip stationChange;
+    [SerializeField] private AudioClip systemRebootNoises2;
     [SerializeField] private AudioClip tacoBellGong;
     [SerializeField] private AudioClip thunder;
     [SerializeField] private AudioClip thunk;
+    [SerializeField] private AudioClip timeGasNotification;
+    [SerializeField] private AudioClip tutorialNotification;
 
     void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
     }
 
-    public void PlayNineSecondsShipFly()
+    public void PlayChosenAudioClip(AudioClip chosenAudioClip)
     {
-        soundPlayer.PlayOneShot(nineSecondShipFly);
+        soundPlayer.PlayOneShot(chosenAudioClip);
     }
+
+
+
+
+
     public void PlayAoogahError()
     {
         soundPlayer.PlayOneShot(aoogahError);
     }
-
     public void PlayBackInTheDay()
     {
         soundPlayer.PlayOneShot(backInTheDay);
@@ -43,18 +60,6 @@ public class PlaySounds : MonoBehaviour
     public void PlayDroneArriving()
     {
         soundPlayer.PlayOneShot(droneArriving);
-    }
-    public void PlayFNAF1()
-    {
-        soundPlayer.PlayOneShot(fnaf1);
-    }
-    public void PlayMinecraftCave1()
-    {
-        soundPlayer.PlayOneShot(minecraftCave1);
-    }
-    public void PlayShipError3Buzz()
-    {
-        soundPlayer.PlayOneShot(shipError3Buzz);
     }
     public void PlayTacoBellGong()
     {

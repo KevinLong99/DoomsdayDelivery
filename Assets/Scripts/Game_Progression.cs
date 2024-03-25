@@ -114,7 +114,6 @@ public class Game_Progression : MonoBehaviour
                 //send message to screen saying "error, press button to fix ship and 
                 //  push lever to continue to next tent
                 typewriter_Script.StartTypewriterView(errorMessage);
-                playSounds_Script.PlayShipError3Buzz();
             }
             else
             {
