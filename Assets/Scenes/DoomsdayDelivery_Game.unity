@@ -3775,7 +3775,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561627960}
   m_LocalRotation: {x: -0, y: -0.022467673, z: -0, w: 0.99974763}
-  m_LocalPosition: {x: 0, y: 0, z: 15.1}
+  m_LocalPosition: {x: 0, y: 0, z: 14.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3783,7 +3783,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -2.575, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65.5, y: -30.8}
+  m_AnchoredPosition: {x: -86.3, y: -38.3}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &561627962
@@ -3806,11 +3806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Powered by:
-
-    (Unity, OpenAI, Git)
-
-    get images for these'
+  m_text: 'Powered by: Unity, OpenAI, Git'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3873,7 +3869,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 14.793217, z: 62.402134, w: 23.730238}
+  m_margin: {x: 0, y: 14.793217, z: 42.9554, w: 23.730238}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -11176,8 +11172,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ambientPizzaMusic1: {fileID: 8300000, guid: a836157553d0b5c4388330d99d4559c9, type: 3}
   ambientPizzaMusic2: {fileID: 8300000, guid: 60e0f1b92bc14e145a9490cab85f58b8, type: 3}
-  aoogahError: {fileID: 8300000, guid: 54e641b07cfe40b48a317210507813e4, type: 3}
-  backInTheDay: {fileID: 8300000, guid: a8133e8c92079fc408dd41b4e2a7fdd6, type: 3}
   boingPoing: {fileID: 8300000, guid: 8a6605248d7ea8f429ca1024cc617ee0, type: 3}
   boxSound: {fileID: 8300000, guid: ed978abb55acf4d4495adcf1169ef1a1, type: 3}
   buttonClick: {fileID: 8300000, guid: 4bab6b4772d26224787d60bf69c2fe01, type: 3}
@@ -11198,7 +11192,6 @@ MonoBehaviour:
   systemRebootNoises2: {fileID: 8300000, guid: 86f7916143ad9234fbd28eb26044b7b2, type: 3}
   tacoBellGong: {fileID: 8300000, guid: 7995415c71a4cc04bb24899a71b6a55d, type: 3}
   thunder: {fileID: 8300000, guid: 3ee8f988cd1c83d4a85b93b14c916935, type: 3}
-  thunk: {fileID: 8300000, guid: c3dcfb399d1a4e94ebdeaf478d755ce6, type: 3}
   timeGasNotification: {fileID: 8300000, guid: c77f79efc3425eb40a63a4836a777664, type: 3}
   tutorialNotification: {fileID: 8300000, guid: 649662ce29e65c341af46739bd7996ab,
     type: 3}
