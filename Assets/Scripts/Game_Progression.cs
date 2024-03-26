@@ -39,13 +39,16 @@ public class Game_Progression : MonoBehaviour
     public Typewriter_UI typewriter_Script;
     private PlaySounds playSounds_Script;
     private string errorMessage = "ERROR! ERROR! SHIP MALFUNCTION! \n" +
-        "Press the big red button to fix the malfunction, and push lever " +
+        "Press the big red button to fix the malfunction, and push thruster " +
         "forward to continue flying.";
+    private string errorResolvedMessage = "You fixed the ship! Resume flying by pushing" +
+        " the thruster forward.";
 
 
     private GameObject medtent1, medtent2, medtent3;
     public bool deliveryMessageActive = false;
     public bool arrivedAtTent = false;
+    private bool needToFixShip = false;
 
     void Start()
     {
@@ -93,14 +96,16 @@ public class Game_Progression : MonoBehaviour
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    public void SetSomethingIsBroken(bool value)
+    public void FixMalfunction()
     {
-        somethingIsBroken = value;
-    }
+        if (somethingIsBroken == true && needToFixShip == true)
+        {
+            playerMayFly = true;
+            somethingIsBroken = false;
+            needToFixShip = false;
 
-    public void SetPlayerMayFly(bool value)
-    {
-        playerMayFly = value;
+            typewriter_Script.StartTypewriterView(errorResolvedMessage);
+        } 
     }
 
     public void LeverPilotStation()
@@ -111,6 +116,7 @@ public class Game_Progression : MonoBehaviour
             {
                 playerMayFly = false;
                 hapticChairScript.HardStopTheShip(3);
+                needToFixShip= true;
                 //do malfunction here
                 //upon pressing button, it will fix the malfunction
 
@@ -130,8 +136,6 @@ public class Game_Progression : MonoBehaviour
                 hapticChairScript.FlyFunction(6);
                 playerMayFly = false;
                 arrivedAtTent = true;
-
-                
 
             }
         }
@@ -174,7 +178,7 @@ public class Game_Progression : MonoBehaviour
     public void InstantiateNewMedbox()
     {
         //upon turn to station 2, if no medbox is present, instantiate a medbox
-        if (medboxExists == false)
+        if (medboxExists == false && arrivedAtTent == true)
         {
             //instantiate a medbox
             StartCoroutine(WaitForRotation());

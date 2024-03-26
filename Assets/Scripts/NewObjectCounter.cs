@@ -61,15 +61,6 @@ public class NewObjectCounter : MonoBehaviour
 
     private void Start()
     {
-        GameObject requirementUI = GameObject.Find("Requirement UI");
-        if (requirementUI != null)
-        {
-            requirementText = requirementUI.GetComponent<TextMeshProUGUI>();
-        }
-        else
-        {
-            Debug.LogError("RequirementUI GameObject not found in the scene. Please make sure it exists and is named correctly.");
-        }
 
         foreach (string tag in tagsToCount)
         {
@@ -318,14 +309,7 @@ public class NewObjectCounter : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         chuteAnimator.Play("Drone_chute_close");
 
-        //kevin drop delete
         MedBoxDeleteAndSpawn();
-
-        //call this function upon trigger select when picked up drone controller
-        yield return new WaitForSeconds(0.75f);
-        
-
-
     }
 
     //Delete and Spawn function
