@@ -152,16 +152,23 @@ public class NewObjectCounter : MonoBehaviour
 
     private void CheckRequirements(Medtent medtentScript)
     {
-        int totalCurrentSupplies = BandageTag + OintmentTag + SyringeTag + InsulinTag;
-        int totalRequiredSupplies = medtentScript.BandageTag + medtentScript.OintmentTag + medtentScript.SyringeTag + medtentScript.InsulinTag;
+        // Individual supply and requirement checks
+        bool bandageMet = (float)BandageTag / medtentScript.BandageTag >= thresholdPercentage;
+        bool ointmentMet = (float)OintmentTag / medtentScript.OintmentTag >= thresholdPercentage;
+        bool syringeMet = (float)SyringeTag / medtentScript.SyringeTag >= thresholdPercentage;
+        bool insulinMet = (float)InsulinTag / medtentScript.InsulinTag >= thresholdPercentage;
 
-        // Calculate the percentage of requirements met
-        float requirementsMetPercentage = (float)totalCurrentSupplies / totalRequiredSupplies;
+        // Count how many supplies have met the required threshold
+        int suppliesAtThresholdCount = 0;
+        if (bandageMet) suppliesAtThresholdCount++;
+        if (ointmentMet) suppliesAtThresholdCount++;
+        if (syringeMet) suppliesAtThresholdCount++;
+        if (insulinMet) suppliesAtThresholdCount++;
 
-        // Check if the total supply count meets the threshold percentage of the requirement
-        if (requirementsMetPercentage >= thresholdPercentage)
+        // Perform actions based on the number of supplies that meet the threshold
+        if (suppliesAtThresholdCount >= 3)
         {
-            // Code for when the requirements are met
+            // Code to execute if at least three tags reached the threshold
             if (medtentScript.tentNum == 1)
             {
                 typewriteScript_NOC.StartTypewriterView(Tent1YesMsg);
@@ -177,7 +184,7 @@ public class NewObjectCounter : MonoBehaviour
         }
         else
         {
-            // Code for when the requirements are not met
+            // Code to execute if fewer than three tags reached the threshold
             if (medtentScript.tentNum == 1)
             {
                 typewriteScript_NOC.StartTypewriterView(Tent1NoMsg);
@@ -191,13 +198,6 @@ public class NewObjectCounter : MonoBehaviour
                 typewriteScript_NOC.StartTypewriterView(Tent3NoMsg);
             }
         }
-        /*
-        requirementText.text =
-            (BandageTag >= medtentScript.BandageTag ? "Requirement met for Bandage" : "Requirement not met for Bandage") + "\n" +
-            (OintmentTag >= medtentScript.OintmentTag ? "Requirement met for Ointment" : "Requirement not met for Ointment") + "\n" +
-            (SyringeTag >= medtentScript.SyringeTag ? "Requirement met for Syringe" : "Requirement not met for Syringe") + "\n" +
-            (InsulinTag >= medtentScript.InsulinTag ? "Requirement met for Insulin" : "Requirement not met for Insulin");
-        */
             StartCoroutine(ReturnScreenToPos());
 
 
