@@ -19,7 +19,6 @@ public class SuppplyDelete : MonoBehaviour
             NewObjectCounter newObjectCounter = objectDetector.GetComponent<NewObjectCounter>();
             if (newObjectCounter != null)
             {
-                Debug.Log("Check and Delete is called");
                 newObjectCounter.DeleteAllSupply();
             }
             else

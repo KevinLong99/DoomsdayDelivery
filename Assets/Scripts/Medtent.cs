@@ -19,7 +19,6 @@ public class Medtent : MonoBehaviour
     public int SyringeTag;
     public int InsulinTag;
 
-    private int medtentNum;
     private char numChar;
 
     public Rotate_Me_Parent rotateParentScript;
@@ -32,8 +31,7 @@ public class Medtent : MonoBehaviour
     {
         //for this to work, the name of the medtent must be in format: Medtent# (with # being a single digit number)
         numChar = this.gameObject.name[7];
-        medtentNum = (int)char.GetNumericValue(numChar);
-        //Debug.Log("Medtent " + medtentNum + " activated.");
+        tentNum = (int)char.GetNumericValue(numChar);
 
     }
 
@@ -41,10 +39,10 @@ public class Medtent : MonoBehaviour
     {
         //use the medtents number to help calculate the supplies needed. 
         //when doing calculations, floor the number to an int if is a decimal
-        numInsulin = medtentNum * Random.Range(2,5);
-        numSyringes = medtentNum * Random.Range(2, 5);
-        numBandages = medtentNum * Random.Range(2, 5);
-        numOintment = medtentNum * Random.Range(2, 5);
+        numInsulin =  Random.Range(2,5);
+        numSyringes = Random.Range(2,5);
+        numBandages = Random.Range(2,5);
+        numOintment = Random.Range(2,5);
 
 
     }
@@ -56,7 +54,7 @@ public class Medtent : MonoBehaviour
         string toMothershipMessage = 
             "INCOMING TRANSMISSION FROM SURVIVORS... \n \n " +
             "Requesting following relief supplies: \n" +
-            numInsulin + " viles, \n" +
+            numInsulin + " insulin, \n" +
             numSyringes + " syringes, \n" +
             numBandages + " bandages, \n" +
             numOintment + " ointment packets.";
@@ -67,6 +65,8 @@ public class Medtent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+
         //need to make a drone tag for drone object
         if (other.gameObject.tag == "Medbox")
         {

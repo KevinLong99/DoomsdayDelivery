@@ -12,7 +12,6 @@ public class SwitchReturn : MonoBehaviour
     // This function starts the movement check coroutine
     public void TrySetPositionToTarget()
     {
-        Debug.Log("function called man.");
         if (!isCheckingMovement)
         {
             StartCoroutine(CheckMovementAndSetPosition());
@@ -36,12 +35,12 @@ public class SwitchReturn : MonoBehaviour
             if (targetTransform != null)
             {
                 transform.position = targetTransform.position;
-                Debug.Log("Transform is changed bro");
+                //Debug.Log("Transform is changed bro");
             }
             else
             {
                 //Debug.LogError("Target Transform is not assigned.");
-                Debug.Log("position no change bro.");
+                //Debug.Log("position no change bro.");
             }
         }
         // If the GameObject has moved, do nothing

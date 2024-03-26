@@ -35,7 +35,13 @@ public class Conveyor_Belt : MonoBehaviour
         // For every item on the belt, add force to it in the direction given
         for (int i = 0; i <= onBelt.Count - 1; i++)
         {
-            onBelt[i].GetComponent<Rigidbody>().AddForce(speed * direction);
+            try
+            {
+                onBelt[i].GetComponent<Rigidbody>().AddForce(speed * direction);
+            } catch { 
+                onBelt.RemoveAt(i);
+            }
+            
         }
     }
 

@@ -20,10 +20,6 @@ public class MedkitComplete : MonoBehaviour
 
         if (objectCounterMedbox.GetNumTotalItems() > 0 && rotateParentScript.medKitisCompleted == false)        //change to zero
         {
-            //TODO!!!!!!!
-            //Record all the stuff in the medkit, save the data values,
-            //      and send to the NewObjectCounter to be compared to the medtent request.
-
             //if there is stuff in the medkit, then button can be activated and box is pushed into oven
             rotateParentScript.medKitisCompleted = true;
             //play box going into oven animation

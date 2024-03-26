@@ -298,9 +298,11 @@ public class NewObjectCounter : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         //play animations for box leaving oven 
+        chuteAnimator.Play("Drone_chute_open");
         StartCoroutine(TranslateLerp(ovenLocation, station3Deploy.position, 0.5f));
-        StartCoroutine(RotateLerp(this.transform.rotation, station3Deploy.rotation, 0.5f));
+        StartCoroutine(RotateLerp(this.transform.parent.transform.rotation, station3Deploy.rotation, 0.5f));
         yield return new WaitForSeconds(0.5f);
+        //StartCoroutine(TranslateLerp(station3Deploy.position, station3Deploy.position - 0.5f, 0.25f));
 
         //and drone falling and attaching on top
         droneToBeDropped.GetComponent<Drone_InsideShip>().DropInStation3();
@@ -312,21 +314,22 @@ public class NewObjectCounter : MonoBehaviour
         //player picks up controller Switch and deploys from there (press trigger to deploy)
         yield return new WaitForSeconds(0.25f);       //remove this
         ovenAnimator.Play("Oven_Door_Close");
-        chuteAnimator.Play("Drone_chute_open");
         droneToBeDropped.GetComponent<Drone_InsideShip>().DroneDeploy();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
+        chuteAnimator.Play("Drone_chute_close");
+
         //kevin drop delete
         MedBoxDeleteAndSpawn();
 
         //call this function upon trigger select when picked up drone controller
         yield return new WaitForSeconds(0.75f);
-        chuteAnimator.Play("Drone_chute_close");
+        
 
 
     }
 
     //Delete and Spawn function
-    public void MedBoxDeleteAndSpawn()
+    private void MedBoxDeleteAndSpawn()
     {
         // Delete the existing "MedBox"
         GameObject medBox = GameObject.FindGameObjectWithTag("Medbox");
@@ -361,7 +364,6 @@ public class NewObjectCounter : MonoBehaviour
             foreach (var obj in objectsToDelete)
             {
                 Destroy(obj);
-                Debug.Log("DeleteAllSupply is called");
             }
         }
     }
