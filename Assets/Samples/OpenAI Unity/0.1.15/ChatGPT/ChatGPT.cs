@@ -16,8 +16,9 @@ namespace OpenAI
         private OpenAIApi openai = new OpenAIApi("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");
 
         private List<ChatMessage> messages = new List<ChatMessage>();
-        private string prompt = "Give instructions in a paragraph, not a list, on how to make a pizza in different styles. Between each sentences, abruptly insert phrases similar to '\n~~~ERROR! ERROR! SHIP FLIGHT MALFUNCTION~~~\n' and other phrases of the sort.";
+        //private string prompt = "Give 3 pizza facts in paragraph style. Between each sentences, abruptly insert the phrase '\n~~~ERROR! ERROR! FLIGHT MALFUNCTION! PRESS BIG RED BUTTON!~~~\n'.";
         //private string prompt = "Give instructions in a paragraph, not a list, on how to make a pizza in different styles. End the paragraph abruptly at 300 characters, finishing with one - character.";
+        private string prompt = "Insert the phrase '~~~ERROR! ERROR! FLIGHT MALFUNCTION! PRESS BIG RED BUTTON!~~~' or a phrase similar to that.";
 
         private void AppendMessage(ChatMessage message)
         {
@@ -34,7 +35,8 @@ namespace OpenAI
 
         public async void SendReply()
         {
-            string alwaysAnswer = "How do I make a pizza?";
+            //string alwaysAnswer = "How do I make a pizza?";
+            string alwaysAnswer = "ship malfunction";
 
             var newMessage = new ChatMessage()
             {

@@ -118,6 +118,9 @@ public class Game_Progression : MonoBehaviour
         {
             if (somethingIsBroken == true)
             {
+                typewriter_Script.StartTypewriterView("LOADING.....");
+                chatGptScript.SendReply();
+
                 playerMayFly = false;
                 hapticChairScript.HardStopTheShip(3);
                 needToFixShip= true;
@@ -126,8 +129,7 @@ public class Game_Progression : MonoBehaviour
 
                 //send message to screen saying "error, press button to fix ship and 
                 //  push lever to continue to next tent
-                chatGptScript.SendReply();
-                //typewriter_Script.StartTypewriterView(errorMessage);
+
             }
             else
             {

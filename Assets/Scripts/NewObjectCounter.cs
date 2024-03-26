@@ -24,6 +24,7 @@ public class NewObjectCounter : MonoBehaviour
     private Vector3 ovenLocation;
     private Vector3 station2Loc;
     private Transform station3Deploy;
+    private Transform station3DeployLoaded;
 
     public int numTotalItems = 0;
 
@@ -107,7 +108,8 @@ public class NewObjectCounter : MonoBehaviour
     {
         station2Loc = GameObject.Find("MedBoxSpawnLoc").transform.position;
         ovenLocation = GameObject.Find("OvenPos").transform.position;
-        station3Deploy = GameObject.Find("PreDeploymentLoc").transform;
+        station3Deploy = GameObject.Find("PreDeploymentLoc_High").transform;
+        station3DeployLoaded = GameObject.Find("PreDeploymentLoaded").transform;
         medBoxAnimator = GetComponentInParent<Animator>();
         rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
         droneToBeDropped = GameObject.Find("Drone_ToBeDropped");
@@ -312,6 +314,7 @@ public class NewObjectCounter : MonoBehaviour
 
     IEnumerator Station3EnterCoroutine()
     {
+        StartCoroutine(TranslateLerp(this.gameObject.transform.position, ovenLocation, 1f));
         ovenAnimator.Play("Oven_Door_Open");
         yield return new WaitForSeconds(1);
 
@@ -320,7 +323,7 @@ public class NewObjectCounter : MonoBehaviour
         StartCoroutine(TranslateLerp(ovenLocation, station3Deploy.position, 0.5f));
         StartCoroutine(RotateLerp(this.transform.parent.transform.rotation, station3Deploy.rotation, 0.5f));
         yield return new WaitForSeconds(0.5f);
-        //StartCoroutine(TranslateLerp(station3Deploy.position, station3Deploy.position - 0.5f, 0.25f));
+        StartCoroutine(TranslateLerp(station3Deploy.position, station3DeployLoaded.position, 0.25f));
 
         //and drone falling and attaching on top
         droneToBeDropped.GetComponent<Drone_InsideShip>().DropInStation3();
