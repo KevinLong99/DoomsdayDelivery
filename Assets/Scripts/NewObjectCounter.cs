@@ -65,7 +65,7 @@ public class NewObjectCounter : MonoBehaviour
 
     //Progress Manager
     public ProgressManager myProgressManager;
-    private void Start()
+    private void Start()    
     {
 
         //Initialize the progress manager
@@ -77,6 +77,8 @@ public class NewObjectCounter : MonoBehaviour
         }
 
         // Initialize the SupplyCountUI list
+        //when you switch to the med assembly station, the text you are trying to find below 
+        //      needs to become ACTIVE, then these can be found.    --rachel
         SupplyCountText = new List<TextMeshPro>
     {
         GameObject.Find("Bandage_Count").GetComponent<TextMeshPro>(),
@@ -118,7 +120,7 @@ public class NewObjectCounter : MonoBehaviour
         ovenAnimator = GameObject.Find("oven_door").GetComponent<Animator>();
         switchReturn_Script = GameObject.Find("Drone [Remote]").GetComponent<SwitchReturn>();
         gameProg_Script = GameObject.Find("Game_Manager").GetComponent<Game_Progression>();
-        typewriteScript_NOC = GameObject.Find("Text_Typewriter").GetComponent<Typewriter_UI>();
+        typewriteScript_NOC = GameObject.Find("Dialogue_Text").GetComponent<Typewriter_UI>();
     }
 
     private void OnTriggerEnter(Collider other)
