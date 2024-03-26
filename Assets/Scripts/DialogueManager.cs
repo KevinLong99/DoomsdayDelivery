@@ -6,6 +6,7 @@ public class DialogueManager : MonoBehaviour
 {
     public GameObject DisplayDialogue; // The GameObject that will display the sprite
     public List<string> Dialogues; // List of dialogue sprites
+    public int LeverValue = 0; // Public integer LeverValue with default 0
 
     // Call this function to change the displayed sprite to the specified one in the list
     public void ChangeText(int num)
@@ -16,7 +17,36 @@ public class DialogueManager : MonoBehaviour
             TextMeshPro textMesh = DisplayDialogue.GetComponent<TextMeshPro>();
             if (textMesh != null)
             {
-                textMesh.text = Dialogues[num];
+                // Handling the special conditions for num == 3
+                if (num == 3)
+                {
+                    switch (LeverValue)
+                    {
+                        case 0:
+                            LeverValue = 1; // Increase LeverValue to 1
+                            textMesh.text = Dialogues[num];
+                            break;
+                        case 1:
+                            LeverValue = 2; // Increase LeverValue to 2
+                            // Treat it as if ChangeText(6) is called
+                            if (6 < Dialogues.Count) // Ensure index 6 exists
+                            {
+                                textMesh.text = Dialogues[6];
+                            }
+                            else
+                            {
+                                Debug.LogError("DialogueManager: Index 6 out of range.");
+                            }
+                            break;
+                        case 2:
+                            // Do nothing when LeverValue is 2
+                            break;
+                    }
+                }
+                else
+                {
+                    textMesh.text = Dialogues[num];
+                }
             }
             else
             {
@@ -28,26 +58,4 @@ public class DialogueManager : MonoBehaviour
             Debug.LogError("DialogueManager: Index out of range when calling ChangeText.");
         }
     }
-    /*
-    public void DeleteText()
-    {
-        if (DisplayDialogue != null)
-        {
-            TextMeshPro textMesh = DisplayDialogue.GetComponent<TextMeshPro>();
-            if (textMesh != null)
-            {
-                Debug.Log("DialogueManager: Clearing text.");
-                textMesh.text = "";
-            }
-            else
-            {
-                Debug.LogError("DialogueManager: No TextMeshPro component to clear text from.");
-            }
-        }
-        else
-        {
-            Debug.LogError("DialogueManager: No DisplayDialogue GameObject to delete text from.");
-        }
-    }
-    */
 }

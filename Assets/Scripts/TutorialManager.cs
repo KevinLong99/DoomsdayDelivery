@@ -1,14 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class TutorialManager : MonoBehaviour
 {
     // Public list visible in the inspector
     public List<GameObject> Steps;
-
-    //bool for lever so it's only triggered once
-    public bool leverIsPulled = false;
+    public int LeverValue = 0; // Added public integer LeverValue
 
     // Function to remove (delete) the game object at the specified index
     public void RemoveStep(int number)
@@ -16,12 +13,11 @@ public class TutorialManager : MonoBehaviour
         if (number >= 0 && number < Steps.Count)
         {
             Steps[number].SetActive(false);
-            //Destroy(Steps[number]);
-            //Steps.RemoveAt(number);
+            // Other removal logic can be added here if necessary
         }
         else
         {
-            //Debug.LogError("Index out of range: " + number);
+            // Debug.LogError("Index out of range: " + number);
         }
     }
 
@@ -30,24 +26,30 @@ public class TutorialManager : MonoBehaviour
     {
         if (number >= 0 && number < Steps.Count)
         {
-            if (number == 3 && leverIsPulled)
+            if (number == 3)
             {
-                // If leverIsPulled is true and AddStep(3) is called again, do nothing
-                return;
+                switch (LeverValue)
+                {
+                    case 0:
+                        LeverValue = 1; // Increment LeverValue to 1
+                        break;
+                    case 1:
+                        number = 6; // Treat it as if AddStep(6) is called
+                        LeverValue = 2; // Increment LeverValue to 2
+                        break;
+                    case 2:
+                        return; // Do nothing
+                }
             }
 
             Steps[number].SetActive(true);
-
-            if (number == 3)
-            {
-                leverIsPulled = true; // Set leverIsPulled to true after AddStep(3) is called
-            }
         }
         else
         {
-            //Debug.LogError("Index out of range: " + number);
+            // Debug.LogError("Index out of range: " + number);
         }
     }
+
     public void DeleteTutorial()
     {
         foreach (var step in Steps)
