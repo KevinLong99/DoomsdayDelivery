@@ -42,7 +42,10 @@ public class Game_Progression : MonoBehaviour
         "Press the big red button to fix the malfunction, and push lever " +
         "forward to continue flying.";
 
+
     private GameObject medtent1, medtent2, medtent3;
+    public bool deliveryMessageActive = false;
+    public bool arrivedAtTent = false;
 
     void Start()
     {
@@ -126,17 +129,16 @@ public class Game_Progression : MonoBehaviour
                 //player flies to next tent
                 hapticChairScript.FlyFunction(6);
                 playerMayFly = false;
-                //wait six seconds, send supply request
-                StartCoroutine(CallMedTent());
+                arrivedAtTent = true;
+
+                
 
             }
         }
     }
 
-    IEnumerator CallMedTent()
+    public void CallMedTent()
     {
-        //make sure seconds wait is less time than it takes for ship to fly
-        yield return new WaitForSeconds(3);
         medtentObject_Script.SendSupplyRequestToMothership();
         playSounds_Script.PlayRandomBeeping();
     }

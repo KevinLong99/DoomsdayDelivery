@@ -48,12 +48,12 @@ public class NewObjectCounter : MonoBehaviour
     public Typewriter_UI typewriteScript_NOC;
 
     // Requirement dialogue
-    public new string Tent1YesMsg;
-    public new string Tent1NoMsg;
-    public new string Tent2YesMsg;
-    public new string Tent2NoMsg;
-    public new string Tent3YesMsg;
-    public new string Tent3NoMsg;
+    public string Tent1YesMsg;
+    public string Tent1NoMsg;
+    public string Tent2YesMsg;
+    public string Tent2NoMsg;
+    public string Tent3YesMsg;
+    public string Tent3NoMsg;
 
     private Medtent medtentScript;
 
@@ -125,6 +125,8 @@ public class NewObjectCounter : MonoBehaviour
             if (medtentScript != null)
             {
                 CheckRequirements(medtentScript); // Check if requirements are met.
+                gameProg_Script.deliveryMessageActive = false;
+                gameProg_Script.arrivedAtTent = false;
             }
         }
     }

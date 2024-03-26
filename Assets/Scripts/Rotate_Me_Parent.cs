@@ -35,6 +35,12 @@ public class Rotate_Me_Parent : MonoBehaviour
             RotateToStationTwo();
             moveValue = 2;
             gameProgScript.InstantiateNewMedbox();
+
+            if (gameProgScript.deliveryMessageActive == false && gameProgScript.arrivedAtTent == true)
+            {
+                gameProgScript.CallMedTent();
+                gameProgScript.deliveryMessageActive = true;
+            }
         }
         else if (moveValue == 2)
         {
@@ -68,6 +74,12 @@ public class Rotate_Me_Parent : MonoBehaviour
             RotateToStationTwo();
             moveValue = 2;
             gameProgScript.InstantiateNewMedbox();
+
+            if (gameProgScript.deliveryMessageActive == false && gameProgScript.arrivedAtTent == true)
+            {
+                gameProgScript.CallMedTent();
+                gameProgScript.deliveryMessageActive = true;
+            }
         }
         else if (moveValue == 2)
         {
