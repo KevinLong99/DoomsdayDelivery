@@ -1,10 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     public GameObject DisplayDialogue; // The GameObject that will display the sprite
-    public List<Sprite> Dialogues; // List of dialogue sprites
+    public List<string> Dialogues; // List of dialogue sprites
 
     // Call this function to change the displayed sprite to the specified one in the list
     public void ChangeText(int num)
@@ -12,31 +13,41 @@ public class DialogueManager : MonoBehaviour
         // Check if the passed index is within the range of the Dialogues list
         if (num >= 0 && num < Dialogues.Count)
         {
-            SpriteRenderer spriteRenderer = DisplayDialogue.GetComponent<SpriteRenderer>();
-            if (spriteRenderer != null)
+            TextMeshPro textMesh = DisplayDialogue.GetComponent<TextMeshPro>();
+            if (textMesh != null)
             {
-                spriteRenderer.sprite = Dialogues[num];
+                textMesh.text = Dialogues[num];
             }
             else
             {
-                Debug.LogError("TutorialTextManager: The DisplayDialogue GameObject does not have a SpriteRenderer component.");
+                Debug.LogError("DialogueManager: The DisplayDialogue GameObject does not have a TextMeshPro component.");
             }
         }
         else
         {
-            Debug.LogError("TutorialTextManager: Index out of range when calling ChangeText.");
+            Debug.LogError("DialogueManager: Index out of range when calling ChangeText.");
         }
     }
+    /*
     public void DeleteText()
     {
         if (DisplayDialogue != null)
         {
-            Debug.Log("TutorialTextManager: Deleting Dialogue GameObject.");
-            DisplayDialogue.SetActive(false);
+            TextMeshPro textMesh = DisplayDialogue.GetComponent<TextMeshPro>();
+            if (textMesh != null)
+            {
+                Debug.Log("DialogueManager: Clearing text.");
+                textMesh.text = "";
+            }
+            else
+            {
+                Debug.LogError("DialogueManager: No TextMeshPro component to clear text from.");
+            }
         }
         else
         {
-            Debug.LogError("TutorialTextManager: No DisplayDialogue GameObject to delete.");
+            Debug.LogError("DialogueManager: No DisplayDialogue GameObject to delete text from.");
         }
     }
+    */
 }
