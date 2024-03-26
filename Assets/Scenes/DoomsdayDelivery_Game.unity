@@ -2857,7 +2857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &279676190
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7558,7 +7558,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: cf5d929ab33c3d345bde4829fe0e72db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11368,14 +11368,14 @@ RectTransform:
   m_GameObject: {fileID: 1215635410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.8045564, y: 4.8045564, z: 4.8045564}
+  m_LocalScale: {x: 4.592243, y: 4.592243, z: 4.592243}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1545699045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 493.5, y: 163.8}
+  m_AnchoredPosition: {x: 483, y: 163.8}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215635412
@@ -16297,7 +16297,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: c195354cf4b851944bbb4e0797242893, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -16354,8 +16354,123 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
         type: 3}
+      propertyPath: turn
+      value: OVR RightJoystick X
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: _turn
+      value: OVR RightJoystick X
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: inputType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: riseLower
+      value: OVR RightJoystick Y
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: _riseLower
+      value: OVR RightJoystick Y
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: cameraTurn
+      value: OVR LeftJoystick X
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: _cameraTurn
+      value: OVR LeftJoystick X
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: toggleMotor
+      value: OVR RightButton 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: _toggleMotor
+      value: OVR RightButton 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: cameraFreeLook
+      value: OVR RightTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: toggleHeadless
+      value: OVR RightGri
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: _cameraFreeLook
+      value: OVR RightTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: _toggleHeadless
+      value: OVR RightGrip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: forwardBackward
+      value: OVR LeftJoystick Y
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: strafeLeftRight
+      value: OVR LeftJoystick X
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: _forwardBackward
+      value: OVR LeftJoystick Y
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: _strafeLeftRight
+      value: OVR LeftJoystick X
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: toggleCameraGyro
+      value: G
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: toggleCameraMode
+      value: C
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: toggleFollowMode
+      value: F
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: _toggleCameraGyro
+      value: G
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: _toggleCameraMode
+      value: C
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800072488416143010, guid: af4eb83aacbd5184393636f286b674c6,
+        type: 3}
+      propertyPath: _toggleFollowMode
+      value: F
       objectReference: {fileID: 0}
     - target: {fileID: 7461895771878367474, guid: af4eb83aacbd5184393636f286b674c6,
         type: 3}
