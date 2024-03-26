@@ -59,13 +59,31 @@ public class NewObjectCounter : MonoBehaviour
 
     private float thresholdPercentage;
 
+    // Public list of TextMeshPro UI elements
+    public List<TextMeshPro> SupplyCountText;
+
+    //Progress Manager
+    public ProgressManager myProgressManager;
     private void Start()
     {
+
+        //Initialize the progress manager
+        myProgressManager = GameObject.Find("ProgressManager").GetComponent<ProgressManager>();
 
         foreach (string tag in tagsToCount)
         {
             tagCounts[tag] = 0; // Initialize count for each tag to 0.
         }
+
+        // Initialize the SupplyCountUI list
+        SupplyCountText = new List<TextMeshPro>
+    {
+        GameObject.Find("Bandage_Count").GetComponent<TextMeshPro>(),
+        GameObject.Find("Ointment_Count").GetComponent<TextMeshPro>(),
+        GameObject.Find("Syringe_Count").GetComponent<TextMeshPro>(),
+        GameObject.Find("Insulin_Count").GetComponent<TextMeshPro>()
+    };
+
 
         //Spawn location initialization
 
@@ -115,6 +133,7 @@ public class NewObjectCounter : MonoBehaviour
             thresholdPercentage = medtentScript.thresholdPercentage;
             if (medtentScript != null)
             {
+                myProgressManager.UpdateMedTent();
                 CheckRequirements(medtentScript); // Check if requirements are met.
                 gameProg_Script.deliveryMessageActive = false;
                 gameProg_Script.arrivedAtTent = false;
@@ -135,12 +154,20 @@ public class NewObjectCounter : MonoBehaviour
 
     private void UpdateTagCounts()
     {
-        // Update the public int variables based on the current counts in tagCounts.
+        //Assign tag counts to UI coutns
         BandageTag = tagCounts.ContainsKey("BandageTag") ? tagCounts["BandageTag"] : 0;
         OintmentTag = tagCounts.ContainsKey("OintmentTag") ? tagCounts["OintmentTag"] : 0;
         SyringeTag = tagCounts.ContainsKey("SyringeTag") ? tagCounts["SyringeTag"] : 0;
         InsulinTag = tagCounts.ContainsKey("InsulinTag") ? tagCounts["InsulinTag"] : 0;
-        // Repeat for additional tags.
+
+        // Update UI Texts
+        if (SupplyCountText.Count >= 4) // Ensure all text elements are assigned
+        {
+            SupplyCountText[0].text = BandageTag.ToString();
+            SupplyCountText[1].text = OintmentTag.ToString();
+            SupplyCountText[2].text = SyringeTag.ToString();
+            SupplyCountText[3].text = InsulinTag.ToString();
+        }
     }
 
     private void CheckRequirements(Medtent medtentScript)
