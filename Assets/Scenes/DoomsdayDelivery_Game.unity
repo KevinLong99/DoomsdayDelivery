@@ -27814,8 +27814,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
       propertyPath: OnMinLimitReached.m_PersistentCalls.m_Calls.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
@@ -27844,8 +27874,28 @@ PrefabInstance:
       objectReference: {fileID: 141150730}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 600841384}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2066452295}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
       propertyPath: OnMinLimitReached.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
@@ -27854,8 +27904,113 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LeverPilotStation
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: AddStep
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: RemoveStep
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: ChangeText
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: StartTypewriterView
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: SendReply
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlaySounds, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Game_Progression, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TutorialManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: Typewriter_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      value: OpenAI.ChatGPT, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_FloatArgument
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_FloatArgument
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
@@ -27864,8 +28019,48 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: c339db69051b6244cbaa7d8b5899980a, type: 3}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: c339db69051b6244cbaa7d8b5899980a, type: 3}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_StringArgument
+      value: LOADING....
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: c339db69051b6244cbaa7d8b5899980a, type: 3}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
+        type: 3}
+      propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

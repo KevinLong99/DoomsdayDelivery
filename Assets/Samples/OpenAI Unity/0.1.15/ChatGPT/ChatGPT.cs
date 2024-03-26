@@ -16,7 +16,8 @@ namespace OpenAI
         private OpenAIApi openai = new OpenAIApi("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");
 
         private List<ChatMessage> messages = new List<ChatMessage>();
-        private string prompt = "Give instructions in a paragraph, not a list, on how to make a pizza in different styles. End the paragraph abruptly at 300 characters, finishing with one - character.";
+        private string prompt = "Give instructions in a paragraph, not a list, on how to make a pizza in different styles. Between each sentences, abruptly insert phrases similar to '\n~~~ERROR! ERROR! SHIP FLIGHT MALFUNCTION~~~\n' and other phrases of the sort.";
+        //private string prompt = "Give instructions in a paragraph, not a list, on how to make a pizza in different styles. End the paragraph abruptly at 300 characters, finishing with one - character.";
 
         private void AppendMessage(ChatMessage message)
         {

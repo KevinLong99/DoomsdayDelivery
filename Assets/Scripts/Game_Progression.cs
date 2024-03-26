@@ -1,3 +1,4 @@
+using OpenAI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -50,11 +51,14 @@ public class Game_Progression : MonoBehaviour
     public bool arrivedAtTent = false;
     private bool needToFixShip = false;
 
+    private ChatGPT chatGptScript;
+
     void Start()
     {
         fadeScreenDD = GameObject.Find("FaderScreen").GetComponent<FadeScreen_DD>();
         timerIsRunning = true;
         playSounds_Script = this.gameObject.GetComponent<PlaySounds>();
+        chatGptScript = GameObject.Find("ChatGPT").GetComponent<ChatGPT>();
 
         medtent1 = GameObject.Find("MedTent1");
         medtent2 = GameObject.Find("MedTent2");
@@ -122,7 +126,8 @@ public class Game_Progression : MonoBehaviour
 
                 //send message to screen saying "error, press button to fix ship and 
                 //  push lever to continue to next tent
-                typewriter_Script.StartTypewriterView(errorMessage);
+                chatGptScript.SendReply();
+                //typewriter_Script.StartTypewriterView(errorMessage);
             }
             else
             {
