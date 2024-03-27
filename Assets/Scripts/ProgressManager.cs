@@ -7,6 +7,7 @@ public class ProgressManager : MonoBehaviour
     public int CurrentMedTent = 1;
     public List<TextMeshPro> SupplyRequirementList;
     public List<int> BandageReq, OintmentReq, SyringeReq, InsulinReq;
+    public List<GameObject> MedTents;
 
     public void UpdateMedTent()
     {
@@ -29,4 +30,31 @@ public class ProgressManager : MonoBehaviour
             }
         }
     }
+
+    public void CallRequestDialogue()
+    {
+        // Check if CurrentMedtent is within the valid range
+        if (CurrentMedTent > 0 && CurrentMedTent <= MedTents.Count)
+        {
+            // Arrays and lists are zero-indexed, so subtract 1 from CurrentMedtent
+            GameObject selectedTent = MedTents[CurrentMedTent - 1];
+
+            // Get the MedTent script from the selected GameObject
+            Medtent medTentScript = selectedTent.GetComponent<Medtent>();
+            if (medTentScript != null)
+            {
+                // Call the method on the MedTent script
+                medTentScript.SendSupplyRequestToMothership();
+            }
+            else
+            {
+                Debug.LogError("CallRequestDialogue: MedTent script not found on the selected GameObject.");
+            }
+        }
+        else
+        {
+            Debug.LogError("CallRequestDialogue: CurrentMedtent is out of range.");
+        }
+    }
+
 }

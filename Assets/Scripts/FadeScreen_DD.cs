@@ -6,7 +6,7 @@ public class FadeScreen_DD : MonoBehaviour
 {
     private bool fadeOnStart = true;
 
-    public float fadeDuration = 1.5f;  //time it takes to fade out of scene
+    public float fadeDuration = 5f;  //time it takes to fade out of scene
     //total time to fade out AND in between scenes is fadeDuration * 2
     public Color fadeColor;
     private Renderer rend;

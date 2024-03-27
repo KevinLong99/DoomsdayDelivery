@@ -256,8 +256,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ambientPizzaMusic1: {fileID: 0}
   ambientPizzaMusic2: {fileID: 0}
-  aoogahError: {fileID: 8300000, guid: 54e641b07cfe40b48a317210507813e4, type: 3}
-  backInTheDay: {fileID: 8300000, guid: a8133e8c92079fc408dd41b4e2a7fdd6, type: 3}
   boingPoing: {fileID: 8300000, guid: 8a6605248d7ea8f429ca1024cc617ee0, type: 3}
   boxSound: {fileID: 0}
   buttonClick: {fileID: 0}
@@ -275,7 +273,6 @@ MonoBehaviour:
   systemRebootNoises2: {fileID: 0}
   tacoBellGong: {fileID: 8300000, guid: 7995415c71a4cc04bb24899a71b6a55d, type: 3}
   thunder: {fileID: 8300000, guid: 3ee8f988cd1c83d4a85b93b14c916935, type: 3}
-  thunk: {fileID: 8300000, guid: c3dcfb399d1a4e94ebdeaf478d755ce6, type: 3}
   timeGasNotification: {fileID: 0}
   tutorialNotification: {fileID: 0}
 --- !u!82 &749458119
@@ -1222,7 +1219,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7640143004448212119, guid: b14798ec7952c06419fcad3679586750, type: 3}
+  - {fileID: 2100000, guid: e8663db3c9d32fa429723ab10ee23e49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2364,7 +2361,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7640143004448212119, guid: b14798ec7952c06419fcad3679586750, type: 3}
+  - {fileID: 2100000, guid: e8663db3c9d32fa429723ab10ee23e49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2705,7 +2702,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.008874622, y: -4.2253222, z: 1.8024946}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
@@ -2956,7 +2953,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8f263b980d7c2cf4cb8054300bd3c8c1, type: 2}
+  - {fileID: 2100000, guid: e8663db3c9d32fa429723ab10ee23e49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4154,7 +4151,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7640143004448212119, guid: b14798ec7952c06419fcad3679586750, type: 3}
+  - {fileID: 2100000, guid: e8663db3c9d32fa429723ab10ee23e49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

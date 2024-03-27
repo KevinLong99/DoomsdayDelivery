@@ -8,12 +8,14 @@ using UnityEngine.UI;
 
 public class Medtent : MonoBehaviour
 {
+    /*
     public int numInsulin;
     public int numSyringes;
     public int numBandages;
     public int numOintment;
+    */
 
-    //comparing with NewObjectCounter.cs
+    //Actual ints as the medtent's requirments
     public int BandageTag;
     public int OintmentTag;
     public int SyringeTag;
@@ -30,8 +32,8 @@ public class Medtent : MonoBehaviour
     void Start()
     {
         //for this to work, the name of the medtent must be in format: Medtent# (with # being a single digit number)
-        numChar = this.gameObject.name[7];
-        tentNum = (int)char.GetNumericValue(numChar);
+        //numChar = this.gameObject.name[7];
+        //tentNum = (int)char.GetNumericValue(numChar);
 
     }
 
@@ -39,30 +41,30 @@ public class Medtent : MonoBehaviour
     {
         //use the medtents number to help calculate the supplies needed. 
         //when doing calculations, floor the number to an int if is a decimal
-        numInsulin =  Random.Range(2,5);
-        numSyringes = Random.Range(2,5);
-        numBandages = Random.Range(2,5);
-        numOintment = Random.Range(2,5);
+        //numInsulin =  Random.Range(2,5);
+        //numSyringes = Random.Range(2,5);
+        //numBandages = Random.Range(2,5);
+        //numOintment = Random.Range(2,5);
 
 
     }
 
     public void SendSupplyRequestToMothership()
     {
-        DetermineNeededSupplies();
+        //DetermineNeededSupplies();
 
         string toMothershipMessage = 
             "INCOMING TRANSMISSION FROM SURVIVORS... \n \n " +
             "Requesting following relief supplies: \n" +
-            numInsulin + " insulin, \n" +
-            numSyringes + " syringes, \n" +
-            numBandages + " bandages, \n" +
-            numOintment + " ointment packets.";
+            BandageTag + " bandages, \n" +
+            OintmentTag + " oinment, \n" +
+            SyringeTag + " syringes, \n" +
+            InsulinTag + " insulin packets.";
 
         typewriter_script.StartTypewriterView(toMothershipMessage);
     }
 
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
 
@@ -82,6 +84,7 @@ public class Medtent : MonoBehaviour
             int receivedBandages = 0;
             int receivedOintment = 0;
 
+            
             if ((receivedViles / numInsulin) >= 0.7f) successVal++;
             if ((receivedSyringes / numSyringes) >= 0.7f) successVal++;
             if ((receivedBandages / numBandages) >= 0.7f) successVal++;
@@ -102,8 +105,11 @@ public class Medtent : MonoBehaviour
                 Debug.Log("Drone Detected");
                 
             }
+            
 
 
-        }
+}
+
     }
+    */
 }

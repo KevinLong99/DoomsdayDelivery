@@ -162,7 +162,7 @@ public class Game_Progression : MonoBehaviour
 
     public void CallMedTent()
     {
-        medtentObject_Script.SendSupplyRequestToMothership();
+        //medtentObject_Script.SendSupplyRequestToMothership();
         playSounds_Script.PlayRandomBeeping();
     }
 

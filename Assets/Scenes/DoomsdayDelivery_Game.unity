@@ -2119,6 +2119,11 @@ MonoBehaviour:
   OintmentReq: 01000000020000000300000004000000
   SyringeReq: 01000000020000000300000004000000
   InsulinReq: 01000000020000000300000004000000
+  MedTents:
+  - {fileID: 0}
+  - {fileID: 1531931765}
+  - {fileID: 1701433371}
+  - {fileID: 994493825}
 --- !u!1 &185222503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,6 +3168,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f7052a940133bb48a57aae79b8dc319, type: 3}
+--- !u!1 &307007641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 307007642}
+  - component: {fileID: 307007643}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &307007642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307007641}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1848070713}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &307007643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307007641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d105fc4e5720b01479ff60c638063c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueBox: {fileID: 1019216724}
+  OrderBox: {fileID: 1903188027}
+  TutorialBox: {fileID: 1076933548}
+  DeliveryResultBox: {fileID: 576884620}
 --- !u!1 &321508884
 GameObject:
   m_ObjectHideFlags: 0
@@ -9160,10 +9213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0231b018480404145a664d177afad588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numInsulin: 0
-  numSyringes: 0
-  numBandages: 0
-  numOintment: 0
   BandageTag: 3
   OintmentTag: 3
   SyringeTag: 3
@@ -11374,7 +11423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 483, y: 163.8}
+  m_AnchoredPosition: {x: 470, y: 163.8}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215635412
@@ -12337,10 +12386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0231b018480404145a664d177afad588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numInsulin: 1
-  numSyringes: 1
-  numBandages: 1
-  numOintment: 1
   BandageTag: 1
   OintmentTag: 1
   SyringeTag: 1
@@ -13560,10 +13605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0231b018480404145a664d177afad588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numInsulin: 0
-  numSyringes: 0
-  numBandages: 0
-  numOintment: 0
   BandageTag: 2
   OintmentTag: 2
   SyringeTag: 2
@@ -15179,6 +15220,7 @@ Transform:
   m_Children:
   - {fileID: 141150729}
   - {fileID: 183064238}
+  - {fileID: 307007642}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1848070714
@@ -15198,6 +15240,7 @@ MonoBehaviour:
   playerMayFly: 1
   somethingIsBroken: 0
   timeText: {fileID: 1215635412}
+  gasGauge: {fileID: 2017114422}
   medtentObject_Script: {fileID: 994493827}
   medboxExists: 0
   medBoxToSpawn: {fileID: 307220294810449221, guid: 2647cd6406ac1db4b97d694bb0e96930,
@@ -16047,7 +16090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1903188028
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16984,6 +17027,30 @@ MonoBehaviour:
   OnLowerLimitReached:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 307007643}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OrderBoxOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 307007643}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: DialogueBoxOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1949706194}
         m_TargetAssemblyTypeName: Rotate_Me_Parent, Assembly-CSharp
         m_MethodName: RotateLeft
@@ -17026,7 +17093,8 @@ MonoBehaviour:
         m_MethodName: AddStep
         m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 8300000, guid: f807ba9b210d2e448a4583c7663bac09,
+            type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
           m_FloatArgument: 0
@@ -17038,7 +17106,8 @@ MonoBehaviour:
         m_MethodName: RemoveStep
         m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 8300000, guid: f807ba9b210d2e448a4583c7663bac09,
+            type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
@@ -18697,7 +18766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073f022a845fbd24cbc46181dbdc009a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 3
+  fadeDuration: 5
   fadeColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &58516725524005007
 BoxCollider:
@@ -33166,7 +33235,7 @@ PrefabInstance:
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
@@ -33191,7 +33260,7 @@ PrefabInstance:
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
@@ -33232,12 +33301,12 @@ PrefabInstance:
         type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
-      objectReference: {fileID: 600841384}
+      objectReference: {fileID: 141150730}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
-      objectReference: {fileID: 2066452295}
+      objectReference: {fileID: 1531931768}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[7].m_Target
@@ -33291,12 +33360,12 @@ PrefabInstance:
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
-      value: StartTypewriterView
+      value: ChangeText
       objectReference: {fileID: 0}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
-      value: SendReply
+      value: SendSupplyRequestToMothership
       objectReference: {fileID: 0}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
@@ -33326,12 +33395,12 @@ PrefabInstance:
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
-      value: Typewriter_UI, Assembly-CSharp
+      value: DialogueManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
-      value: OpenAI.ChatGPT, Assembly-CSharp
+      value: Medtent, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
@@ -33421,13 +33490,13 @@ PrefabInstance:
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_StringArgument
-      value: LOADING....
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 8300000, guid: c339db69051b6244cbaa7d8b5899980a, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3875923839326963337, guid: 1d6032c3eeddd304f957d12f6a099358,
         type: 3}
       propertyPath: OnMaxLimitReached.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgument
