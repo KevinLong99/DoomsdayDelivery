@@ -201,6 +201,44 @@ public class NewObjectCounter : MonoBehaviour
         if (syringeMet) suppliesAtThresholdCount++;
         if (insulinMet) suppliesAtThresholdCount++;
 
+
+
+        if (suppliesAtThresholdCount >= 3)
+        {
+            myUIManager.ToSuccessDelivery();
+            if (!gameProg_Script.tent3IsComplete && gameProg_Script.tent2IsComplete)
+            {
+                typewriteScript_NOC.StartTypewriterView(Tent3YesMsg);
+            }
+            if (!gameProg_Script.tent2IsComplete && gameProg_Script.tent1IsComplete)
+            {
+                typewriteScript_NOC.StartTypewriterView(Tent2YesMsg);
+            } 
+            if (!gameProg_Script.tent1IsComplete)
+            {
+                typewriteScript_NOC.StartTypewriterView(Tent1YesMsg);
+            }
+        }
+        else
+        {
+            myUIManager.ToFailDelivery();
+            if (!gameProg_Script.tent3IsComplete && gameProg_Script.tent2IsComplete)
+            {
+                typewriteScript_NOC.StartTypewriterView(Tent3NoMsg);
+            }
+            if (!gameProg_Script.tent2IsComplete && gameProg_Script.tent1IsComplete)
+            {
+                typewriteScript_NOC.StartTypewriterView(Tent2NoMsg);
+            }
+            if (!gameProg_Script.tent1IsComplete)
+            {
+                typewriteScript_NOC.StartTypewriterView(Tent1NoMsg);
+            }
+        }
+
+
+
+        /*
         // Perform actions based on the number of supplies that meet the threshold
         if (suppliesAtThresholdCount >= 3)
         {
@@ -236,6 +274,8 @@ public class NewObjectCounter : MonoBehaviour
                 typewriteScript_NOC.StartTypewriterView(Tent3NoMsg);
             }
         }
+        */
+
         ResetCounts();
         myUIManager.ToResetDialogue();
         StartCoroutine(ReturnScreenToPos());
@@ -245,7 +285,7 @@ public class NewObjectCounter : MonoBehaviour
 
     IEnumerator ReturnScreenToPos()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         switchReturn_Script.TrySetPositionToTarget();
         rotateParentScript.medKitisCompleted = false;
         gameProg_Script.medboxExists = false;
@@ -382,6 +422,8 @@ public class NewObjectCounter : MonoBehaviour
             newMedBoxCounter.OintmentTag = this.OintmentTag;
             newMedBoxCounter.SyringeTag = this.SyringeTag;
             newMedBoxCounter.InsulinTag = this.InsulinTag;
+
+            //newMedBoxCounter.typewriteScript_NOC = this.typewriteScript_NOC;
         }
     }
     public void DeleteAllSupply()

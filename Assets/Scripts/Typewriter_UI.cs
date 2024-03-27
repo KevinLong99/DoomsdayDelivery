@@ -19,26 +19,28 @@ public class Typewriter_UI : MonoBehaviour
     {
         _tmpProText = GetComponent<TMP_Text>()!;
 
-        /*
+        
         if (_tmpProText != null)
         {
             writer = _tmpProText.text;
             _tmpProText.text = "";
 
-            StartCoroutine("TypeWriterTMP");
+            StartCoroutine(TypeWriterTMP(writer));
+            //writer = "";
         }
-        */
+        
     }
 
     public void StartTypewriterView(string AIOutput_Incoming)
     {
-        
+        StopAllCoroutines();
         StartCoroutine(TypeWriterTMP(AIOutput_Incoming));
     }
     
 
-    IEnumerator TypeWriterTMP(string AIOutput)
+    public IEnumerator TypeWriterTMP(string AIOutput)
     {
+        writer = "";
         writer = AIOutput;
         _tmpProText.text = leadingCharBeforeDelay ? leadingChar : "";
 

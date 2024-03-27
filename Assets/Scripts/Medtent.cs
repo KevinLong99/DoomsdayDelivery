@@ -30,6 +30,8 @@ public class Medtent : MonoBehaviour
     public int tentNum;
     public float thresholdPercentage;
 
+    public Game_Progression gameP_Script;
+
 
     void Start()
     {
@@ -37,6 +39,7 @@ public class Medtent : MonoBehaviour
         //numChar = this.gameObject.name[7];
         //tentNum = (int)char.GetNumericValue(numChar);
 
+        gameP_Script = GameObject.Find("Game_Manager").GetComponent<Game_Progression>();
     }
 
     private void DetermineNeededSupplies()
@@ -55,15 +58,27 @@ public class Medtent : MonoBehaviour
     {
         //DetermineNeededSupplies();
 
-        string toMothershipMessage = 
+        /*
+         *string toMothershipMessage = 
             "INCOMING TRANSMISSION FROM SURVIVORS... \n \n " +
             "Requesting following relief supplies: \n" +
             BandageTag + " bandages, \n" +
             OintmentTag + " oinment, \n" +
             SyringeTag + " syringes, \n" +
             InsulinTag + " insulin packets.";
+        */
 
-        typewriter_script.StartTypewriterView(toMothershipMessage);
+        if (gameP_Script.somethingIsBroken == false)
+        {
+            string toMothershipMessage =
+            "INCOMING TRANSMISSION FROM SURVIVORS... \n \n" +
+            "Requesting relief supplies! We need bandages, ointment, syringes," +
+            " and insulin viles down here now!";
+
+            typewriter_script.StartTypewriterView(toMothershipMessage);
+        }
+
+        
     }
 
     
@@ -112,7 +127,7 @@ public class Medtent : MonoBehaviour
 
 
 
-        }
+    }
 
-    }   
+}   
         }

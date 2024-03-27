@@ -69,6 +69,7 @@ namespace OpenAI
                 string aiResponse = message.Content;
                 //Debug.Log(aiResponse);
 
+                typewriter.StopAllCoroutines();
                 typewriter.StartTypewriterView(aiResponse);
 
             }

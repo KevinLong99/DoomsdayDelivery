@@ -80,7 +80,7 @@ public class UIManager : MonoBehaviour
     // New function to disable the Dialogue Box after a delay
     public void DialogueBoxDelayedOff()
     {
-        if (currentStationNum == 1)
+        if (currentStationNum == 1 )
         {
             StartCoroutine(DisableAfterDelay(DialogueBox, delayedTime));
         }

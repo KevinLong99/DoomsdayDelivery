@@ -2117,6 +2117,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &134009807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134009808}
+  m_Layer: 0
+  m_Name: FirstAttach
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &134009808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134009807}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1442963599}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &141150727
 GameObject:
   m_ObjectHideFlags: 0
@@ -3636,7 +3667,7 @@ MonoBehaviour:
   TutorialArea: {fileID: 1076933548}
   SuccessArea: {fileID: 576884620}
   FailArea: {fileID: 1287723794}
-  delayedTime: 1
+  delayedTime: 1.25
   tutorialBackDelayedTIme: 3
   EnableDropSwitchTip:
     m_PersistentCalls:
@@ -6773,6 +6804,37 @@ RectTransform:
   m_AnchoredPosition: {x: 57.9, y: -99.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &594586877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 594586878}
+  m_Layer: 0
+  m_Name: SecondAttach
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &594586878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594586877}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.345, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1442963599}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &600841380
 GameObject:
   m_ObjectHideFlags: 0
@@ -6831,15 +6893,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Welcome back to Vito Mothership III. You''re a valued employee here at
-    Vito''s Pizzeria! Now get out there and sell some pizzas!
+  m_text: 'Hey there volunteer! Welcome to Vito Mothership III. Thanks for offering
+    your help in this time of crisis. Now lets get out there and deliver some medical
+    supplies!
 
 
-    Vito is watching.
-
-
-    Get
-    to work.'
+    Better hurry. You have a limited amount of fuel, and gas isn''t
+    easy to come by nowadays.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acc52749920cad3459473249a2ae0975, type: 2}
   m_sharedMaterial: {fileID: 3653838672350126629, guid: acc52749920cad3459473249a2ae0975,
@@ -9912,6 +9972,7 @@ MonoBehaviour:
   typewriter_script: {fileID: 600841384}
   tentNum: 3
   thresholdPercentage: 0.8
+  gameP_Script: {fileID: 0}
 --- !u!135 &994493828
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13372,6 +13433,7 @@ MonoBehaviour:
   typewriter_script: {fileID: 600841384}
   tentNum: 1
   thresholdPercentage: 0.8
+  gameP_Script: {fileID: 0}
 --- !u!135 &1531931769
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14687,6 +14749,7 @@ MonoBehaviour:
   typewriter_script: {fileID: 600841384}
   tentNum: 2
   thresholdPercentage: 0.8
+  gameP_Script: {fileID: 0}
 --- !u!135 &1701433375
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15733,6 +15796,26 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 62bc7be8d4f13c5418f8a020e0a7f150, type: 2}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
+      propertyPath: m_SelectMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
+        type: 3}
+      propertyPath: m_AttachTransform
+      value: 
+      objectReference: {fileID: 134009808}
+    - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
+        type: 3}
+      propertyPath: m_UseDynamicAttach
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
+        type: 3}
+      propertyPath: m_SecondaryAttachTransform
+      value: 
+      objectReference: {fileID: 594586878}
+    - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
+        type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -16133,7 +16216,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 596844330559587535, guid: 0335cdc3d09703143af46ffa2a2b24a7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 134009808}
+    - targetCorrespondingSourceObject: {fileID: 596844330559587535, guid: 0335cdc3d09703143af46ffa2a2b24a7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 594586878}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0335cdc3d09703143af46ffa2a2b24a7, type: 3}
 --- !u!1 &1830707901
@@ -16368,6 +16459,9 @@ MonoBehaviour:
   somethingIsBroken: 0
   timeText: {fileID: 1215635412}
   gasGauge: {fileID: 2017114422}
+  tent1IsComplete: 0
+  tent2IsComplete: 0
+  tent3IsComplete: 0
   medtentObject_Script: {fileID: 994493827}
   medboxExists: 0
   medBoxToSpawn: {fileID: 307220294810449221, guid: 2647cd6406ac1db4b97d694bb0e96930,
@@ -19885,7 +19979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073f022a845fbd24cbc46181dbdc009a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 5
+  fadeDuration: 3
   fadeColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &58516725524005007
 BoxCollider:

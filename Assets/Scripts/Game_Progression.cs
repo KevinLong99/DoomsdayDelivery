@@ -25,7 +25,7 @@ public class Game_Progression : MonoBehaviour
     private FadeScreen_DD fadeScreenDD;
     public static bool gameOver_outOfFuel = false, gameOver_shipMalfunction = false, gameOver_win = false;
 
-    private bool tent1IsComplete = false, tent2IsComplete = false, tent3IsComplete = false;
+    public bool tent1IsComplete = false, tent2IsComplete = false, tent3IsComplete = false;
     public Medtent medtentObject_Script;
 
     public bool medboxExists = false;
@@ -246,7 +246,7 @@ public class Game_Progression : MonoBehaviour
 
     IEnumerator WaitForRotation()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         GameObject spawnMedbox = Instantiate(medBoxToSpawn, medBoxSpawnLoc);
         spawnMedbox.GetComponentInChildren<NewObjectCounter>().rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
         spawnMedbox.GetComponentInChildren<NewObjectCounter>().PlayStation2EnterAnimation();
