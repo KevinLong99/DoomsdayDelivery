@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.Events;
 using System.Net;
+using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
@@ -27,13 +28,28 @@ public class UIManager : MonoBehaviour
     public UnityEvent ResetDialogue;
 
     public bool isFirstRelease = false;
+
+    //Current station info
+    public int currentStationNum;
+    private Rotate_Me_Parent stationController;
     void Update()
     {
+        //Get newest current station number
+        if (stationController != null)
+        {
+            currentStationNum = stationController.moveValue;
+        }
     }
 
     // Codes for delay switching the bottom right screen to tutorial
     void Start()
     {
+        //Current Station
+        GameObject STATIONS_MOVABLE = GameObject.Find("STATIONS_MOVABLE");
+        if (STATIONS_MOVABLE != null)
+        {
+            stationController = STATIONS_MOVABLE.GetComponent<Rotate_Me_Parent>();
+        }
         // Assign the methods to the UnityEvents
         SuccessDeliver.AddListener(OnSuccessDelivery);
         FailDeliver.AddListener(OnFailDelivery);
@@ -64,7 +80,14 @@ public class UIManager : MonoBehaviour
     // New function to disable the Dialogue Box after a delay
     public void DialogueBoxDelayedOff()
     {
-        StartCoroutine(DisableAfterDelay(DialogueBox, delayedTime));
+        if (currentStationNum == 1)
+        {
+            StartCoroutine(DisableAfterDelay(DialogueBox, delayedTime));
+        }
+        else
+        {
+            Debug.Log("DialogueBoxDelayedOff called, but currentStationNum is not 1. Action not performed.");
+        }
     }
 
     private IEnumerator DisableAfterDelay(GameObject gameObject, float delay)
@@ -73,7 +96,17 @@ public class UIManager : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void OrderBoxOn() => OrderBox.SetActive(true);
+    public void OrderBoxOn()
+    {
+        if (currentStationNum == 1)
+        {
+            OrderBox.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("OrderBoxOn called, but currentStationNum is not 1. Action not performed.");
+        }
+    }
     public void OrderBoxOff() => OrderBox.SetActive(false);
 
     //public void TutorialBoxOn() => TutorialBox.SetActive(true);

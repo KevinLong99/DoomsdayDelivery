@@ -1729,37 +1729,37 @@ PrefabInstance:
     - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.802
+      value: 0.785
       objectReference: {fileID: 0}
     - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.724
+      value: 1.514
       objectReference: {fileID: 0}
     - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.332
+      value: -0.319
       objectReference: {fileID: 0}
     - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.6288241
+      value: -0.34641007
       objectReference: {fileID: 0}
     - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2804687
+      value: 0.59366566
       objectReference: {fileID: 0}
     - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6505864
+      value: -0.38663456
       objectReference: {fileID: 0}
     - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.32039824
+      value: 0.61487794
       objectReference: {fileID: 0}
     - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
         type: 3}
@@ -1774,7 +1774,7 @@ PrefabInstance:
     - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -50.306
+      value: -117.515
       objectReference: {fileID: 0}
     - target: {fileID: 6475932111071737060, guid: 2f7052a940133bb48a57aae79b8dc319,
         type: 3}
@@ -3798,6 +3798,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   isFirstRelease: 0
+  currentStationNum: 0
 --- !u!1 &321508884
 GameObject:
   m_ObjectHideFlags: 0
