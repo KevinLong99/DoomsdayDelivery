@@ -204,7 +204,8 @@ public class NewObjectCounter : MonoBehaviour
         // Perform actions based on the number of supplies that meet the threshold
         if (suppliesAtThresholdCount >= 3)
         {
-            // Code to execute if at least three tags reached the threshold
+            // Code to execute if at least three tags reached the threshold- Success
+            myUIManager.ToSuccessDelivery();
             if (medtentScript.tentNum == 1)
             {
                 typewriteScript_NOC.StartTypewriterView(Tent1YesMsg);
@@ -220,7 +221,8 @@ public class NewObjectCounter : MonoBehaviour
         }
         else
         {
-            // Code to execute if fewer than three tags reached the threshold
+            // Code to execute if fewer than three tags reached the threshold- Failed
+            myUIManager.ToFailDelivery();
             if (medtentScript.tentNum == 1)
             {
                 typewriteScript_NOC.StartTypewriterView(Tent1NoMsg);
