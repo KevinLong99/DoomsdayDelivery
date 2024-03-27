@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public GameObject FailArea;
 
     public float delayedTime; // Time in seconds to wait before disabling the Dialogue Box
+    public float tutorialBackDelayedTIme; //Time to wait before swtiching the tutorial screen back on
 
     public UnityEvent EnableDropSwitchTip;
 
@@ -27,6 +28,33 @@ public class UIManager : MonoBehaviour
     void Update()
     {
     }
+
+    // Codes for delay switching the bottom right screen to tutorial
+    void Start()
+    {
+        // Assign the methods to the UnityEvents
+        SuccessDeliver.AddListener(OnSuccessDelivery);
+        FailDeliver.AddListener(OnFailDelivery);
+    }
+
+    public void OnSuccessDelivery()
+    {
+        StartCoroutine(DelayedAreaManagement());
+    }
+
+    public void OnFailDelivery()
+    {
+        StartCoroutine(DelayedAreaManagement());
+    }
+
+    private IEnumerator DelayedAreaManagement()
+    {
+        yield return new WaitForSeconds(tutorialBackDelayedTIme);
+        TutorialAreaOn();
+        SuccessAreaOff();
+        FailAreaOff();
+    }
+
 
     public void DialogueBoxOn() => DialogueBox.SetActive(true);
     public void DialogueBoxOff() => DialogueBox.SetActive(false);
