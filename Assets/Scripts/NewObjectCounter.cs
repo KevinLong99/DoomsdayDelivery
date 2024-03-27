@@ -236,7 +236,9 @@ public class NewObjectCounter : MonoBehaviour
                 typewriteScript_NOC.StartTypewriterView(Tent3NoMsg);
             }
         }
-            StartCoroutine(ReturnScreenToPos());
+        ResetCounts();
+        myUIManager.ToResetDialogue();
+        StartCoroutine(ReturnScreenToPos());
 
 
     }
@@ -397,6 +399,10 @@ public class NewObjectCounter : MonoBehaviour
             }
         }
     }
-
-
+    //Reset the supply counts and their UI displays to zero
+    private void ResetCounts()
+    {
+        BandageTag = OintmentTag = SyringeTag = InsulinTag = 0;
+        UpdateTagCounts();
+    }
 }

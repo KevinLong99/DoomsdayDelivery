@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
     public UnityEvent SuccessDeliver;
     public UnityEvent FailDeliver;
 
+    public UnityEvent ResetDialogue;
+
     public bool isFirstRelease = false;
     void Update()
     {
@@ -49,7 +51,7 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator DelayedAreaManagement()
     {
-        yield return new WaitForSeconds(tutorialBackDelayedTIme);
+        yield return new WaitForSeconds(delayedTime);
         TutorialAreaOn();
         SuccessAreaOff();
         FailAreaOff();
@@ -119,4 +121,8 @@ public class UIManager : MonoBehaviour
         FailDeliver.Invoke();
     }
 
+    public void ToResetDialogue()
+    {
+        ResetDialogue.Invoke();
+    }
 }
