@@ -383,6 +383,159 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Renderer: {fileID: 1555248906}
   m_MaterialIndex: 0
+--- !u!1001 &34432857
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6532840454360484142}
+    m_Modifications:
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.094319694
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.094319716
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.094319716
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.935
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.628
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.561
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.07807496
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.4610068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.14760263
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.87154484
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 199.225
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -124.246
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475932111071737060, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_Name
+      value: T_Drone Release
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475932111071737060, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784875745841145500, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.029101595
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.002261091
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9997175
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000067160855
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0000000015966939
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.023769023
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -2.724
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_text
+      value: Fly bro
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2f7052a940133bb48a57aae79b8dc319, type: 3}
 --- !u!1 &34473733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,6 +1855,8 @@ MonoBehaviour:
   - {fileID: 242749778}
   - {fileID: 115183536}
   - {fileID: 1776599660}
+  - {fileID: 1660915165}
+  - {fileID: 1660915165}
   - {fileID: 0}
   LeverValue: 0
 --- !u!4 &141150729
@@ -3216,7 +3371,7 @@ MonoBehaviour:
   OrderBox: {fileID: 1903188027}
   TutorialBox: {fileID: 1076933548}
   DeliveryResultBox: {fileID: 576884620}
-  delayedTime: 3
+  delayedTime: 1
 --- !u!1 &321508884
 GameObject:
   m_ObjectHideFlags: 0
@@ -9222,6 +9377,33 @@ MonoBehaviour:
   typewriter_script: {fileID: 600841384}
   tentNum: 3
   thresholdPercentage: 0.8
+  CallTips:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 141150728}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: AddStep
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 141150730}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: ChangeText
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &994493828
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10187,7 +10369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1076933549
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12395,6 +12577,33 @@ MonoBehaviour:
   typewriter_script: {fileID: 600841384}
   tentNum: 1
   thresholdPercentage: 0.8
+  CallTips:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 141150728}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: AddStep
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 141150730}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: ChangeText
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &1531931769
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13185,6 +13394,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647061789}
   m_Mesh: {fileID: -8847045846954475538, guid: 7ab6f3b0fd1a6ba41b2a47766c16613f, type: 3}
+--- !u!1 &1660915165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6475932111071737060, guid: 2f7052a940133bb48a57aae79b8dc319,
+    type: 3}
+  m_PrefabInstance: {fileID: 34432857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1660915167 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+    type: 3}
+  m_PrefabInstance: {fileID: 34432857}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1671741735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13614,6 +13835,33 @@ MonoBehaviour:
   typewriter_script: {fileID: 600841384}
   tentNum: 2
   thresholdPercentage: 0.8
+  CallTips:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 141150728}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: AddStep
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 141150728}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: AddStep
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &1701433375
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14683,7 +14931,7 @@ PrefabInstance:
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
@@ -14733,12 +14981,12 @@ PrefabInstance:
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
@@ -14764,7 +15012,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 141150730}
+      objectReference: {fileID: 1442963600}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -14789,12 +15037,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1848070716}
+      objectReference: {fileID: 141150728}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 141150728}
+      objectReference: {fileID: 1848070716}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[5].m_Target
@@ -14848,7 +15096,7 @@ PrefabInstance:
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DeleteDialogue
+      value: TrySetPositionToTarget
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
@@ -14863,17 +15111,17 @@ PrefabInstance:
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: RemoveStep
+      value: AddStep
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: PlayChosenAudioClip
+      value: RemoveStep
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: DeleteTutorial
+      value: PlayChosenAudioClip
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
@@ -14898,7 +15146,7 @@ PrefabInstance:
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: DialogueManager, Assembly-CSharp
+      value: SwitchReturn, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
@@ -14913,12 +15161,12 @@ PrefabInstance:
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: PlaySounds, Assembly-CSharp
+      value: TutorialManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: TutorialManager, Assembly-CSharp
+      value: PlaySounds, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
@@ -14928,7 +15176,17 @@ PrefabInstance:
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
-      value: 5
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_IntArgument
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_IntArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
@@ -14959,6 +15217,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgument
+      value: 
       objectReference: {fileID: 8300000, guid: 15a44b629f5ec3348a3a0e11b3f7edcb, type: 3}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
@@ -14988,12 +15251,12 @@ PrefabInstance:
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.AudioClip, UnityEngine
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
@@ -17101,18 +17364,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 5
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 141150730}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: ChangeText
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -31263,6 +31514,7 @@ Transform:
   - {fileID: 8286385334451072650}
   - {fileID: 2706174663899451622}
   - {fileID: 8986947941342624357}
+  - {fileID: 1660915167}
   - {fileID: 1442963599}
   - {fileID: 234667993}
   m_Father: {fileID: 1949706193}

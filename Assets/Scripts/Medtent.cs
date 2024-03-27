@@ -4,6 +4,7 @@ using System.Net.Mail;
 using System.Text.RegularExpressions;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Medtent : MonoBehaviour
@@ -28,6 +29,8 @@ public class Medtent : MonoBehaviour
 
     public int tentNum;
     public float thresholdPercentage;
+
+    public UnityEvent CallTips;
 
     void Start()
     {
@@ -64,7 +67,7 @@ public class Medtent : MonoBehaviour
         typewriter_script.StartTypewriterView(toMothershipMessage);
     }
 
-    /*
+    
     private void OnTriggerEnter(Collider other)
     {
 
@@ -72,6 +75,8 @@ public class Medtent : MonoBehaviour
         //need to make a drone tag for drone object
         if (other.gameObject.tag == "Medbox")
         {
+            CallTips.Invoke();
+            /*
             rotateParentScript.medKitisCompleted = false;
 
             //compare drone supplies that were delivered to the supplies that the tent needs.
@@ -105,11 +110,11 @@ public class Medtent : MonoBehaviour
                 Debug.Log("Drone Detected");
                 
             }
-            
+        */
 
 
-}
 
-    }
-    */
-}
+        }
+
+    }   
+        }
