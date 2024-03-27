@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     public List<string> Dialogues; // List of dialogue sprites
     public int LeverValue = 0; // Public integer LeverValue with default 0
 
+    public GameObject TutorialArea;
     // Call this function to change the displayed sprite to the specified one in the list
     public void ChangeText(int num)
     {
@@ -39,7 +40,7 @@ public class DialogueManager : MonoBehaviour
                             }
                             break;
                         case 2:
-                            // Do nothing when LeverValue is 2
+                            DeleteTutorial();
                             break;
                     }
                 }
@@ -57,5 +58,15 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogError("DialogueManager: Index out of range when calling ChangeText.");
         }
+    }
+
+    public void DeleteTutorial()
+    {
+        if (TutorialArea != null)
+        {
+            TutorialArea.SetActive(false); // Delete the TutorialArea GameObject
+        }
+
+        Dialogues.Clear(); // Clear all items from the Dialogues list
     }
 }

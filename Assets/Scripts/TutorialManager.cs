@@ -38,6 +38,7 @@ public class TutorialManager : MonoBehaviour
                         LeverValue = 2; // Increment LeverValue to 2
                         break;
                     case 2:
+                        DeleteTutorial();
                         return; // Do nothing
                 }
             }

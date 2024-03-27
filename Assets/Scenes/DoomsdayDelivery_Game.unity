@@ -2202,6 +2202,7 @@ MonoBehaviour:
   - 'Return to the first station and fly to the next medtent! '
   - 
   LeverValue: 0
+  TutorialArea: {fileID: 1076933548}
 --- !u!1001 &141197947
 PrefabInstance:
   m_ObjectHideFlags: 0
