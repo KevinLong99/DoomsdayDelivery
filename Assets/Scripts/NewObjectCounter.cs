@@ -201,7 +201,8 @@ public class NewObjectCounter : MonoBehaviour
         if (syringeMet) suppliesAtThresholdCount++;
         if (insulinMet) suppliesAtThresholdCount++;
 
-
+        myUIManager.ToResetDialogue();
+        typewriteScript_NOC = GameObject.Find("Dialogue_Text").GetComponent<Typewriter_UI>();
 
         if (suppliesAtThresholdCount >= 3)
         {
@@ -277,7 +278,7 @@ public class NewObjectCounter : MonoBehaviour
         */
 
         ResetCounts();
-        myUIManager.ToResetDialogue();
+        
         StartCoroutine(ReturnScreenToPos());
 
 
