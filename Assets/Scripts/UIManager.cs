@@ -51,7 +51,7 @@ public class UIManager : MonoBehaviour
 
     public void ToEnableAfterDropTip()
     {
-        if(isFirstRelease = false)
+        if(isFirstRelease == false)
         {
             EnableAfterDropTip.Invoke();
             isFirstRelease = true;
