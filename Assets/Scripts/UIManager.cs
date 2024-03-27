@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class UIManager : MonoBehaviour
     public GameObject TutorialBox;
     public GameObject DeliveryResultBox;
 
-    private bool isFirstFrame = true;
+    public float delayedTime; // Time in seconds to wait before disabling the Dialogue Box
 
     void Update()
     {
@@ -15,6 +16,18 @@ public class UIManager : MonoBehaviour
 
     public void DialogueBoxOn() => DialogueBox.SetActive(true);
     public void DialogueBoxOff() => DialogueBox.SetActive(false);
+
+    // New function to disable the Dialogue Box after a delay
+    public void DialogueBoxDelayedOff()
+    {
+        StartCoroutine(DisableAfterDelay(DialogueBox, delayedTime));
+    }
+
+    private IEnumerator DisableAfterDelay(GameObject gameObject, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameObject.SetActive(false);
+    }
 
     public void OrderBoxOn() => OrderBox.SetActive(true);
     public void OrderBoxOff() => OrderBox.SetActive(false);
