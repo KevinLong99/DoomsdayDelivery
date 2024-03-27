@@ -19,6 +19,8 @@ public class Game_Progression : MonoBehaviour
     private bool timerIsRunning = false;
     float minutes, seconds;
     public TextMeshProUGUI timeText;
+    public Image gasGauge;
+    private float startingGasColor = 0;
 
     private FadeScreen_DD fadeScreenDD;
     public static bool gameOver_outOfFuel = false, gameOver_shipMalfunction = false, gameOver_win = false;
@@ -98,6 +100,16 @@ public class Game_Progression : MonoBehaviour
         seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        // Gas bar
+        if (gasGauge.fillAmount > 0)
+        {
+            gasGauge.fillAmount = timeToDisplay / 600;
+            startingGasColor = Mathf.Lerp(1, 127, timeToDisplay / 600);
+            gasGauge.color = Color.HSVToRGB(startingGasColor/255, 1, 1);
+        }
+        else
+            gasGauge.fillAmount = 0;
     }
 
     public void FixMalfunction()
