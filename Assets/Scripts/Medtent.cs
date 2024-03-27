@@ -30,7 +30,6 @@ public class Medtent : MonoBehaviour
     public int tentNum;
     public float thresholdPercentage;
 
-    public UnityEvent CallTips;
 
     void Start()
     {
@@ -75,7 +74,6 @@ public class Medtent : MonoBehaviour
         //need to make a drone tag for drone object
         if (other.gameObject.tag == "Medbox")
         {
-            CallTips.Invoke();
             /*
             rotateParentScript.medKitisCompleted = false;
 

@@ -65,11 +65,14 @@ public class NewObjectCounter : MonoBehaviour
 
     //Progress Manager
     public ProgressManager myProgressManager;
+    public UIManager myUIManager;
+    public bool isFirstLoop = false;
     private void Start()    
     {
 
         //Initialize the progress manager
         myProgressManager = GameObject.Find("ProgressManager").GetComponent<ProgressManager>();
+        myUIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
 
         foreach (string tag in tagsToCount)
         {
@@ -133,6 +136,15 @@ public class NewObjectCounter : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Medtent"))
         {
+            if(isFirstLoop == false)
+            {
+                myUIManager.ToEnableDropSwitchTip();
+                isFirstLoop = true;
+            }
+            else
+            {
+                return;
+            }
             medtentScript = other.gameObject.GetComponent<Medtent>();
             thresholdPercentage = medtentScript.thresholdPercentage;
             if (medtentScript != null)

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class UIManager : MonoBehaviour
 
     public float delayedTime; // Time in seconds to wait before disabling the Dialogue Box
 
+    public UnityEvent EnableDropSwitchTip;
+
+    public UnityEvent EnableAfterDropTip;
+
+    public bool isFirstRelease = false;
     void Update()
     {
     }
@@ -37,4 +43,23 @@ public class UIManager : MonoBehaviour
 
     public void DeliveryResultBoxOn() => DeliveryResultBox.SetActive(true);
     public void DeliveryResultBoxOff() => DeliveryResultBox.SetActive(false);
+
+    public void ToEnableDropSwitchTip()
+    {
+        EnableDropSwitchTip.Invoke();
+    }
+
+    public void ToEnableAfterDropTip()
+    {
+        if(isFirstRelease = false)
+        {
+            EnableAfterDropTip.Invoke();
+            isFirstRelease = true;
+        }
+        else
+        {
+            return ;
+        }
+    }
+
 }

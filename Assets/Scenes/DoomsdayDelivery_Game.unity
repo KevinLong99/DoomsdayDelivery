@@ -1026,6 +1026,171 @@ MonoBehaviour:
   thingToInstantiate: {fileID: 6532830421343264595, guid: 3cfe5f495041b4b46af2268b7df935d2,
     type: 3}
   whereToInstantiate: {fileID: 1121061124}
+--- !u!1001 &69943367
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6532840454360484142}
+    m_Modifications:
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.094319694
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.094319716
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.094319716
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.655
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.882
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.573
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.3216987
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.054024637
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.033186674
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.94471693
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 181.601
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -172.907
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -37.708984
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475932111071737060, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_Name
+      value: T_Switch Station 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475932111071737060, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784875745841145500, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.029101595
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.002261091
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9997175
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000067160855
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0000000015966939
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.023769023
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -2.724
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_text
+      value: Fly bro
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2f7052a940133bb48a57aae79b8dc319, type: 3}
+--- !u!4 &69943368 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+    type: 3}
+  m_PrefabInstance: {fileID: 69943367}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &69943369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6475932111071737060, guid: 2f7052a940133bb48a57aae79b8dc319,
+    type: 3}
+  m_PrefabInstance: {fileID: 69943367}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &88559416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1142,7 +1307,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 14.002552, y: -4.221533, z: 1.7977176}
+  m_ConnectedAnchor: {x: 14.002582, y: -4.2214966, z: 1.7977872}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
@@ -1856,8 +2021,8 @@ MonoBehaviour:
   - {fileID: 115183536}
   - {fileID: 1776599660}
   - {fileID: 1660915165}
-  - {fileID: 1660915165}
-  - {fileID: 0}
+  - {fileID: 1868214803}
+  - {fileID: 69943369}
   LeverValue: 0
 --- !u!4 &141150729
 Transform:
@@ -1896,8 +2061,8 @@ MonoBehaviour:
   - 'Yank the lever again to switch to the drone station! '
   - 'Pick up your drone navigation device (with your right hand only) and deliver
     the order! '
-  - 'While holding with your right hand, use left joystick to move up/down and your
-    right joystick for directions '
+  - While holding with both hands, use right joystick to move up/down and left joystick
+    for directions
   - 'Let go of the controller '
   - 'Return to the first station and fly to the next medtent! '
   - 
@@ -3372,6 +3537,85 @@ MonoBehaviour:
   TutorialBox: {fileID: 1076933548}
   DeliveryResultBox: {fileID: 576884620}
   delayedTime: 1
+  EnableDropSwitchTip:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 141150728}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: AddStep
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 141150728}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: RemoveStep
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 141150730}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: ChangeText
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAfterDropTip:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 141150728}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: AddStep
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 141150728}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: RemoveStep
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 141150730}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: ChangeText
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isFirstRelease: 0
 --- !u!1 &321508884
 GameObject:
   m_ObjectHideFlags: 0
@@ -5229,7 +5473,7 @@ PrefabInstance:
     - target: {fileID: 6475932111071737060, guid: 2f7052a940133bb48a57aae79b8dc319,
         type: 3}
       propertyPath: m_Name
-      value: T_Drone Switch
+      value: T_Drone Controls
       objectReference: {fileID: 0}
     - target: {fileID: 6475932111071737060, guid: 2f7052a940133bb48a57aae79b8dc319,
         type: 3}
@@ -9377,33 +9621,6 @@ MonoBehaviour:
   typewriter_script: {fileID: 600841384}
   tentNum: 3
   thresholdPercentage: 0.8
-  CallTips:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 141150728}
-        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-        m_MethodName: AddStep
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 141150730}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: ChangeText
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!135 &994493828
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10008,7 +10225,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -14.757449, y: -4.221513, z: 1.7977471}
+  m_ConnectedAnchor: {x: -14.757421, y: -4.2215147, z: 1.7977405}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
@@ -12577,33 +12794,6 @@ MonoBehaviour:
   typewriter_script: {fileID: 600841384}
   tentNum: 1
   thresholdPercentage: 0.8
-  CallTips:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 141150728}
-        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-        m_MethodName: AddStep
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 141150730}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: ChangeText
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!135 &1531931769
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13835,33 +14025,6 @@ MonoBehaviour:
   typewriter_script: {fileID: 600841384}
   tentNum: 2
   thresholdPercentage: 0.8
-  CallTips:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 141150728}
-        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-        m_MethodName: AddStep
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 141150728}
-        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-        m_MethodName: AddStep
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!135 &1701433375
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14931,7 +15094,7 @@ PrefabInstance:
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
@@ -15017,7 +15180,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1442963600}
+      objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -15101,7 +15264,7 @@ PrefabInstance:
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: TrySetPositionToTarget
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
@@ -15241,7 +15404,7 @@ PrefabInstance:
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5375156919559503326, guid: 0335cdc3d09703143af46ffa2a2b24a7,
         type: 3}
@@ -15866,6 +16029,166 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1241210773}
   m_LocalEulerAnglesHint: {x: 0, y: -126.089, z: 0}
+--- !u!1001 &1868214801
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2706174663899451622}
+    m_Modifications:
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.094319716
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.094319716
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.106965
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.292
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.5433136
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5804758
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -9.125589e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.8142776
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 7.526833e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 130.968
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475932111071737060, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_Name
+      value: T_Drone Switch Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475932111071737060, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784875745841145500, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.029101595
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.002261091
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9997175
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000067160855
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0000000015966939
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.023769023
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533672383957902794, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -2.724
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_text
+      value: Fly bro
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172897700018409965, guid: 2f7052a940133bb48a57aae79b8dc319,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2f7052a940133bb48a57aae79b8dc319, type: 3}
+--- !u!4 &1868214802 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5950646390325096030, guid: 2f7052a940133bb48a57aae79b8dc319,
+    type: 3}
+  m_PrefabInstance: {fileID: 1868214801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1868214803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6475932111071737060, guid: 2f7052a940133bb48a57aae79b8dc319,
+    type: 3}
+  m_PrefabInstance: {fileID: 1868214801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1883311823
 GameObject:
   m_ObjectHideFlags: 0
@@ -24780,6 +25103,7 @@ Transform:
   - {fileID: 6151623676208932229}
   - {fileID: 2069365590207388206}
   - {fileID: 1776599662}
+  - {fileID: 1868214802}
   - {fileID: 7808334936761726969}
   m_Father: {fileID: 6532840454360484142}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31505,7 +31829,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2576102873830949704}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.86602545, z: 0, w: 0.49999994}
   m_LocalPosition: {x: 0, y: 0.5497661, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31515,10 +31839,11 @@ Transform:
   - {fileID: 2706174663899451622}
   - {fileID: 8986947941342624357}
   - {fileID: 1660915167}
+  - {fileID: 69943368}
   - {fileID: 1442963599}
   - {fileID: 234667993}
   m_Father: {fileID: 1949706193}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -120, z: 0}
 --- !u!1 &6532874747956822487
 GameObject:
   m_ObjectHideFlags: 0
