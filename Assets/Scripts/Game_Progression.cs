@@ -51,7 +51,7 @@ public class Game_Progression : MonoBehaviour
     private GameObject medtent1, medtent2, medtent3;
     public bool deliveryMessageActive = false;
     public bool arrivedAtTent = false;
-    private bool needToFixShip = false;
+    public bool needToFixShip = false;
 
     private ChatGPT chatGptScript;
 
@@ -136,6 +136,7 @@ public class Game_Progression : MonoBehaviour
                 playerMayFly = false;
                 hapticChairScript.HardStopTheShip(3);
                 needToFixShip = true;
+                playSounds_Script.PlayErorr();
                 //do malfunction here
                 //upon pressing button, it will fix the malfunction
 

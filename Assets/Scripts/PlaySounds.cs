@@ -20,6 +20,7 @@ public class PlaySounds : MonoBehaviour
     [SerializeField] private AudioClip newOrderNotification;
     [SerializeField] private AudioClip pickUpDroneNavigator;
     [SerializeField] private AudioClip randomBeepingNoises;
+    [SerializeField] private AudioClip shipErrorBuzzThreeTimes;
     [SerializeField] private AudioClip spaceshipThruster;
     [SerializeField] private AudioClip stationChange;
     [SerializeField] private AudioClip systemRebootNoises2;
@@ -41,5 +42,10 @@ public class PlaySounds : MonoBehaviour
     public void PlayRandomBeeping()
     {
         soundPlayer.PlayOneShot(randomBeepingNoises);
+    }
+
+    public void PlayErorr()
+    {
+        soundPlayer.PlayOneShot(shipErrorBuzzThreeTimes);
     }
 }

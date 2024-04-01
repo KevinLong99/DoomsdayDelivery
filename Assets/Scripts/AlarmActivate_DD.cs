@@ -16,7 +16,7 @@ public class AlarmActivate_DD : MonoBehaviour
 
     private void Update()
     {
-        if (gameProg_Script.somethingIsBroken == true)
+        if (gameProg_Script.needToFixShip == true)
         {
             alarmAnimator.Play("Alarm_on");
         } else
