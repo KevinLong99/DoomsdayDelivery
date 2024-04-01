@@ -1353,7 +1353,7 @@ MonoBehaviour:
   - {fileID: 1598012021}
   - {fileID: 242749778}
   - {fileID: 1776599660}
-  leverIsPulled: 0
+  LeverValue: 0
 --- !u!4 &141150729
 Transform:
   m_ObjectHideFlags: 0
@@ -1383,12 +1383,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayDialogue: {fileID: 1528766930}
   Dialogues:
-  - {fileID: 0}
-  - {fileID: 21300000, guid: 9a4c9b1081b0a064894575b54d98532b, type: 3}
-  - {fileID: 21300000, guid: 3cc915eb82eb40f4c81b96c7668cf17d, type: 3}
-  - {fileID: 21300000, guid: 246dead4979d20249a29d54cca4599fb, type: 3}
-  - {fileID: 21300000, guid: 37e91e5a36046af4e96407fefd873439, type: 3}
-  - {fileID: 21300000, guid: 867acce511b34ec49b17e3c9969862f5, type: 3}
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  LeverValue: 0
+  TutorialArea: {fileID: 0}
 --- !u!1001 &141197947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1461,6 +1463,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 29.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163585611696944209, guid: 4de2823f731353f418e7b00529b74b04,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163585611696944209, guid: 4de2823f731353f418e7b00529b74b04,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163585611696944209, guid: 4de2823f731353f418e7b00529b74b04,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -29.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5991,16 +6008,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0231b018480404145a664d177afad588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numInsulin: 0
-  numSyringes: 0
-  numBandages: 0
-  numOintment: 0
   BandageTag: 0
   OintmentTag: 0
   SyringeTag: 0
   InsulinTag: 0
   rotateParentScript: {fileID: 1949706194}
   typewriter_script: {fileID: 600841384}
+  tentNum: 0
+  thresholdPercentage: 0
+  gameP_Script: {fileID: 0}
 --- !u!135 &994493828
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8433,16 +8449,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0231b018480404145a664d177afad588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numInsulin: 1
-  numSyringes: 1
-  numBandages: 1
-  numOintment: 1
   BandageTag: 1
   OintmentTag: 1
   SyringeTag: 1
   InsulinTag: 1
   rotateParentScript: {fileID: 1949706194}
   typewriter_script: {fileID: 600841384}
+  tentNum: 0
+  thresholdPercentage: 0
+  gameP_Script: {fileID: 0}
 --- !u!135 &1531931769
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9610,16 +9625,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0231b018480404145a664d177afad588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numInsulin: 0
-  numSyringes: 0
-  numBandages: 0
-  numOintment: 0
   BandageTag: 0
   OintmentTag: 0
   SyringeTag: 0
   InsulinTag: 0
   rotateParentScript: {fileID: 1949706194}
   typewriter_script: {fileID: 600841384}
+  tentNum: 0
+  thresholdPercentage: 0
+  gameP_Script: {fileID: 0}
 --- !u!135 &1701433375
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11342,6 +11356,10 @@ MonoBehaviour:
   playerMayFly: 1
   somethingIsBroken: 0
   timeText: {fileID: 1215635412}
+  gasGauge: {fileID: 0}
+  tent1IsComplete: 0
+  tent2IsComplete: 0
+  tent3IsComplete: 0
   medtentObject_Script: {fileID: 994493827}
   medboxExists: 0
   medBoxToSpawn: {fileID: 307220294810449221, guid: 2647cd6406ac1db4b97d694bb0e96930,
@@ -11353,6 +11371,8 @@ MonoBehaviour:
   newDroneLocation: {fileID: 947598144}
   screenChanger: {fileID: 1263760475}
   typewriter_Script: {fileID: 600841384}
+  deliveryMessageActive: 0
+  arrivedAtTent: 0
 --- !u!82 &1848070715
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11461,17 +11481,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02d99283b2db6c4a9a53c716144f90e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nineSecondShipFly: {fileID: 8300000, guid: f24059fafbe87c045818b38ca47c9761, type: 3}
-  aoogahError: {fileID: 8300000, guid: 54e641b07cfe40b48a317210507813e4, type: 3}
-  backInTheDay: {fileID: 8300000, guid: a8133e8c92079fc408dd41b4e2a7fdd6, type: 3}
+  ambientPizzaMusic1: {fileID: 0}
+  ambientPizzaMusic2: {fileID: 0}
   boingPoing: {fileID: 8300000, guid: 8a6605248d7ea8f429ca1024cc617ee0, type: 3}
+  boxSound: {fileID: 0}
+  buttonClick: {fileID: 0}
+  communicationNoises: {fileID: 0}
+  deliveryFailureNotification: {fileID: 0}
+  droneDeployment1: {fileID: 0}
+  droneDeployment2: {fileID: 0}
   droneArriving: {fileID: 8300000, guid: b40160a09d73feb4fb6b9386863d3ce2, type: 3}
-  fnaf1: {fileID: 8300000, guid: 1ddcb4f46975a134da75bcfbf5b8121f, type: 3}
-  minecraftCave1: {fileID: 8300000, guid: df46cabdaf2c4eb43b4dff75ab8f7900, type: 3}
-  shipError3Buzz: {fileID: 8300000, guid: 769cff61f4176ec4881a151a5596b4c4, type: 3}
+  medkitPacked: {fileID: 0}
+  newOrderNotification: {fileID: 0}
+  pickUpDroneNavigator: {fileID: 0}
+  randomBeepingNoises: {fileID: 0}
+  spaceshipThruster: {fileID: 0}
+  stationChange: {fileID: 0}
+  systemRebootNoises2: {fileID: 0}
   tacoBellGong: {fileID: 8300000, guid: 7995415c71a4cc04bb24899a71b6a55d, type: 3}
   thunder: {fileID: 8300000, guid: 3ee8f988cd1c83d4a85b93b14c916935, type: 3}
-  thunk: {fileID: 8300000, guid: c3dcfb399d1a4e94ebdeaf478d755ce6, type: 3}
+  timeGasNotification: {fileID: 0}
+  tutorialNotification: {fileID: 0}
 --- !u!114 &1848070717
 MonoBehaviour:
   m_ObjectHideFlags: 0
