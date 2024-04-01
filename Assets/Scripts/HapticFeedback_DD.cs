@@ -24,9 +24,9 @@ public class HapticFeedback_DD : MonoBehaviour
     }
 
     public void RightControllerHapticEvent(float intensity, float duration) { HapticEvent(rightController, intensity, duration); }
-    public void LefttControllerHapticEvent(float intensity, float duration) { HapticEvent(leftController, intensity, duration); }
+    public void LeftControllerHapticEvent(float intensity, float duration) { HapticEvent(leftController, intensity, duration); }
 
-    public void HapticEvent(XRBaseController controller, float intensity, float duration)
+    private void HapticEvent(XRBaseController controller, float intensity, float duration)
     {
         if (intensity > 0)
             controller.SendHapticImpulse(intensity, duration);
@@ -37,6 +37,7 @@ public class HapticFeedback_DD : MonoBehaviour
         rightController.SendHapticImpulse(1f, 1f);
         leftController.SendHapticImpulse(1f, 1f);
     }
+
 }
 
 //referenced from our team's old project: Fossil Finders
