@@ -14,6 +14,19 @@ public class ProgressManager : MonoBehaviour
         CurrentMedTent++;
     }
 
+    public UIManager MyUIManager;
+    //Score text color stuff
+    // Manually assign these in the Unity editor
+    public List<TextMeshPro> SupplyText;
+    public List<TextMeshPro> RequirementText;
+
+    // Serialized fields to visualize in the Inspector
+    [SerializeField]
+    private List<int> SupplyIntegers = new List<int>();
+    [SerializeField]
+    private List<int> RequirementIntegers = new List<int>();
+
+
     void Update()
     {
         if (CurrentMedTent >= 1 && CurrentMedTent <= 3)
@@ -27,6 +40,71 @@ public class ProgressManager : MonoBehaviour
                 SupplyRequirementList[1].text = OintmentReq[index].ToString();
                 SupplyRequirementList[2].text = SyringeReq[index].ToString();
                 SupplyRequirementList[3].text = InsulinReq[index].ToString();
+            }
+        }
+
+        //Score text color stuff
+        // Clear the lists to ensure they contain the latest values each frame
+        SupplyIntegers.Clear();
+        RequirementIntegers.Clear();
+
+        // Ensure both lists have the same count
+        if (SupplyText.Count != RequirementText.Count)
+        {
+            Debug.LogError("SupplyText and RequirementText lists do not have the same number of elements.");
+            return;
+        }
+
+        // Convert SupplyText and RequirementText to integers and add to respective lists
+        for (int i = 0; i < SupplyText.Count; i++)
+        {
+            if (int.TryParse(SupplyText[i].text, out int supplyInt))
+            {
+                SupplyIntegers.Add(supplyInt);
+            }
+            else
+            {
+                Debug.LogError($"Supply text at index {i} is not a valid integer: {SupplyText[i].text}");
+                // Optionally, add a zero or some default value to maintain list integrity
+                SupplyIntegers.Add(0);
+            }
+
+            if (int.TryParse(RequirementText[i].text, out int requirementInt))
+            {
+                RequirementIntegers.Add(requirementInt);
+            }
+            else
+            {
+                Debug.LogError($"Requirement text at index {i} is not a valid integer: {RequirementText[i].text}");
+                // Optionally, add a zero or some default value to maintain list integrity
+                RequirementIntegers.Add(0);
+            }
+        }
+
+        // Compare the integers in the lists and call the placeholder function if conditions are met
+        for (int i = 0; i < SupplyIntegers.Count; i++)
+        {
+            if (SupplyIntegers[i] >= RequirementIntegers[i])
+            {
+                // Based on the index, call the corresponding function from MyUIManager
+                switch (i)
+                {
+                    case 0:
+                        MyUIManager.ChangeScoreColorBandage(); // This method needs to exist in your MyUIManager script
+                        break;
+                    case 1:
+                        MyUIManager.ChangeScoreColorOintment(); // This method needs to exist in your MyUIManager script
+                        break;
+                    case 2:
+                        MyUIManager.ChangeScoreColorSyringe(); // This method needs to exist in your MyUIManager script
+                        break;
+                    case 3:
+                        MyUIManager.ChangeScoreColorInsulin(); // This method needs to exist in your MyUIManager script
+                        break;
+                    default:
+                        Debug.LogWarning("Index out of range for specific color change functions");
+                        break;
+                }
             }
         }
     }

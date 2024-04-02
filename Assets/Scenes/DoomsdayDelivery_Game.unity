@@ -2523,6 +2523,19 @@ MonoBehaviour:
   - {fileID: 1531931765}
   - {fileID: 1701433371}
   - {fileID: 994493825}
+  MyUIManager: {fileID: 307007643}
+  SupplyText:
+  - {fileID: 639217378}
+  - {fileID: 1719634926}
+  - {fileID: 562268008}
+  - {fileID: 797940310}
+  RequirementText:
+  - {fileID: 463249988}
+  - {fileID: 905046590}
+  - {fileID: 1589934924}
+  - {fileID: 2103256935}
+  SupplyIntegers: 
+  RequirementIntegers: 
 --- !u!1 &185222503
 GameObject:
   m_ObjectHideFlags: 0
@@ -4693,6 +4706,15 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   isFirstRelease: 0
+  scoreList:
+  - {fileID: 639217376}
+  - {fileID: 463249986}
+  - {fileID: 1719634924}
+  - {fileID: 905046588}
+  - {fileID: 562268006}
+  - {fileID: 1589934922}
+  - {fileID: 797940308}
+  - {fileID: 2103256933}
   currentStationNum: 0
 --- !u!4 &308175657 stripped
 Transform:

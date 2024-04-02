@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine.Events;
 using System.Net;
 using Unity.VisualScripting;
+using TMPro;
+using System.Collections.Generic;
 
 public class UIManager : MonoBehaviour
 {
@@ -32,6 +34,8 @@ public class UIManager : MonoBehaviour
     public UnityEvent ChangeSwitchScreenBack;
 
     public bool isFirstRelease = false;
+
+    public List<GameObject> scoreList = new List<GameObject>(); // Define the list of score number game objects
 
     //Current station info
     public int currentStationNum;
@@ -175,5 +179,60 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         ToChangeSwitchScreenBack();
+    }
+
+   
+
+    // Function to reset the color of all text objects in scoreList to white
+    public void ResetScoreColor()
+    {
+        foreach (GameObject scoreItem in scoreList)
+        {
+            TextMeshPro textMesh = scoreItem.GetComponent<TextMeshPro>();
+            if (textMesh != null)
+            {
+                textMesh.color = Color.white; // Change Vertex Color property to white
+            }
+        }
+    }
+
+    public void ChangeScoreColorBandage()
+    {
+        ChangeScoreColorRange(0, 1); // Change color for first and second GameObject
+    }
+
+    // Function to change the color of the third and fourth text objects in scoreList to green
+    public void ChangeScoreColorOintment()
+    {
+        ChangeScoreColorRange(2, 3); // Change color for third and fourth GameObject
+    }
+
+    // Function to change the color of the fifth and sixth text objects in scoreList to green
+    public void ChangeScoreColorSyringe()
+    {
+        ChangeScoreColorRange(4, 5); // Change color for fifth and sixth GameObject
+    }
+
+    // Function to change the color of the seventh and eighth text objects in scoreList to green
+    public void ChangeScoreColorInsulin()
+    {
+        ChangeScoreColorRange(6, 7); // Change color for seventh and eighth GameObject
+    }
+
+    // Helper function to change the color of TextMeshPro components in a range
+    private void ChangeScoreColorRange(int startIndex, int endIndex)
+    {
+        for (int i = startIndex; i <= endIndex; i++)
+        {
+            // Check if the index is within the bounds of the scoreList
+            if (i < scoreList.Count)
+            {
+                TextMeshPro textMesh = scoreList[i].GetComponent<TextMeshPro>();
+                if (textMesh != null)
+                {
+                    textMesh.color = Color.green; // Change Vertex Color property to green
+                }
+            }
+        }
     }
 }
