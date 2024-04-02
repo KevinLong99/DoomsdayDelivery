@@ -4491,7 +4491,8 @@ MonoBehaviour:
   TutorialArea: {fileID: 1076933548}
   SuccessArea: {fileID: 576884620}
   FailArea: {fileID: 1287723794}
-  delayedTime: 1.25
+  mySwitch: {fileID: 0}
+  delayedTime: 3
   tutorialBackDelayedTIme: 3
   EnableDropSwitchTip:
     m_PersistentCalls:
@@ -4598,6 +4599,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2790230075937545731}
+        m_TargetAssemblyTypeName: SwitchMaterialChanger, Assembly-CSharp
+        m_MethodName: ChangeMaterialToSuccess
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   FailDeliver:
     m_PersistentCalls:
       m_Calls:
@@ -4625,6 +4638,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2790230075937545731}
+        m_TargetAssemblyTypeName: SwitchMaterialChanger, Assembly-CSharp
+        m_MethodName: ChangeMaterialToFail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ResetDialogue:
     m_PersistentCalls:
       m_Calls:
@@ -4643,6 +4668,21 @@ MonoBehaviour:
       - m_Target: {fileID: 307007643}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: DialogueBoxOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ChangeSwitchScreenBack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2790230075937545731}
+        m_TargetAssemblyTypeName: SwitchMaterialChanger, Assembly-CSharp
+        m_MethodName: ChangeMaterialToBlank
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37102,7 +37142,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -14.757421, y: -4.2215147, z: 1.7977405}
+  m_ConnectedAnchor: {x: -14.75742, y: -4.2215137, z: 1.7977409}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
@@ -42362,6 +42402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMaterial: {fileID: 2100000, guid: 05c8212cd10f2444493159fcc65002a3, type: 2}
   blankMaterial: {fileID: 2100000, guid: 62bc7be8d4f13c5418f8a020e0a7f150, type: 2}
+  successMaterial: {fileID: 2100000, guid: 76a4f8c6e0a6b9240b33140d9541d123, type: 2}
+  failMaterial: {fileID: 2100000, guid: 40dbb1a8f9ad90945ad5b43e2e659cd6, type: 2}
 --- !u!4 &2808104088016688885
 Transform:
   m_ObjectHideFlags: 0
@@ -50998,7 +51040,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.20001905, y: -4.2122245, z: 1.8289672}
+  m_ConnectedAnchor: {x: -0.20001903, y: -4.2122235, z: 1.8289671}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
@@ -56733,7 +56775,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 14.002582, y: -4.2214966, z: 1.7977872}
+  m_ConnectedAnchor: {x: 14.002581, y: -4.2214956, z: 1.7977877}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:

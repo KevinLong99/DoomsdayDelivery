@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
     public GameObject SuccessArea;
     public GameObject FailArea;
 
+    public GameObject mySwitch;
+
     public float delayedTime; // Time in seconds to wait before disabling the Dialogue Box
     public float tutorialBackDelayedTIme; //Time to wait before swtiching the tutorial screen back on
 
@@ -26,6 +28,8 @@ public class UIManager : MonoBehaviour
     public UnityEvent FailDeliver;
 
     public UnityEvent ResetDialogue;
+
+    public UnityEvent ChangeSwitchScreenBack;
 
     public bool isFirstRelease = false;
 
@@ -147,15 +151,29 @@ public class UIManager : MonoBehaviour
     public void ToSuccessDelivery()
     {
         SuccessDeliver.Invoke();
+        StartCoroutine(WaitAndChangeScreen(3f));
     }
 
     public void ToFailDelivery()
     {
         FailDeliver.Invoke();
+        StartCoroutine(WaitAndChangeScreen(3f));
     }
 
     public void ToResetDialogue()
     {
         ResetDialogue.Invoke();
+    }
+
+
+    public void ToChangeSwitchScreenBack()
+    {
+        ChangeSwitchScreenBack.Invoke();
+    }
+
+    IEnumerator WaitAndChangeScreen(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        ToChangeSwitchScreenBack();
     }
 }

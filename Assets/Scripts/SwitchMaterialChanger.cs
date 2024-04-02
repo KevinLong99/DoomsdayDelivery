@@ -6,6 +6,10 @@ public class SwitchMaterialChanger : MonoBehaviour
     public Material newMaterial;
     public Material blankMaterial;
 
+    //Success/Fail screens
+    public Material successMaterial;
+    public Material failMaterial;
+
     // This function changes the material of the GameObject's MeshRenderer
     public void ChangeMaterial()
     {
@@ -38,6 +42,26 @@ public class SwitchMaterialChanger : MonoBehaviour
         else
         {
             Debug.LogError("Missing component: MeshRenderer or newMaterial not assigned.");
+        }
+    }
+
+    public void ChangeMaterialToSuccess()
+    {
+        MeshRenderer renderer = GetComponent<MeshRenderer>();
+        if (renderer != null && successMaterial != null)
+        {
+            // Change the material to the newMaterial
+            renderer.material = successMaterial;
+        }
+    }
+
+    public void ChangeMaterialToFail()
+    {
+        MeshRenderer renderer = GetComponent<MeshRenderer>();
+        if (renderer != null && failMaterial != null)
+        {
+            // Change the material to the newMaterial
+            renderer.material = failMaterial;
         }
     }
 }
