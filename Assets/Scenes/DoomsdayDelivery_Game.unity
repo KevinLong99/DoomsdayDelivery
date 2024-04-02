@@ -4709,12 +4709,16 @@ MonoBehaviour:
   scoreList:
   - {fileID: 639217376}
   - {fileID: 463249986}
+  - {fileID: 176807251}
   - {fileID: 1719634924}
   - {fileID: 905046588}
+  - {fileID: 512476966}
   - {fileID: 562268006}
   - {fileID: 1589934922}
+  - {fileID: 668001021}
   - {fileID: 797940308}
   - {fileID: 2103256933}
+  - {fileID: 836083682}
   currentStationNum: 0
 --- !u!4 &308175657 stripped
 Transform:

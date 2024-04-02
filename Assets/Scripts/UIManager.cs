@@ -198,25 +198,22 @@ public class UIManager : MonoBehaviour
 
     public void ChangeScoreColorBandage()
     {
-        ChangeScoreColorRange(0, 1); // Change color for first and second GameObject
+        ChangeScoreColorRange(0, 2); // Change color for first three GameObjects (0, 1, 2)
     }
 
-    // Function to change the color of the third and fourth text objects in scoreList to green
     public void ChangeScoreColorOintment()
     {
-        ChangeScoreColorRange(2, 3); // Change color for third and fourth GameObject
+        ChangeScoreColorRange(3, 5); // Change color for next three GameObjects (3, 4, 5)
     }
 
-    // Function to change the color of the fifth and sixth text objects in scoreList to green
     public void ChangeScoreColorSyringe()
     {
-        ChangeScoreColorRange(4, 5); // Change color for fifth and sixth GameObject
+        ChangeScoreColorRange(6, 8); // Change color for the next three GameObjects (6, 7, 8)
     }
 
-    // Function to change the color of the seventh and eighth text objects in scoreList to green
     public void ChangeScoreColorInsulin()
     {
-        ChangeScoreColorRange(6, 7); // Change color for seventh and eighth GameObject
+        ChangeScoreColorRange(9, 11); // Change color for the next three GameObjects (9, 10, 11)
     }
 
     // Helper function to change the color of TextMeshPro components in a range
