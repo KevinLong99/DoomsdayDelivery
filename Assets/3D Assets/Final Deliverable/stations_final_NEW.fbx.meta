@@ -3,7 +3,27 @@ guid: 113b708d9fa05574388fd704ed8314b7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stations_MAT
+    second: {fileID: 2100000, guid: 1bba574e8ddbd7e4c866091c4edf9def, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stations_MAT2
+    second: {fileID: 2100000, guid: 5aef44992ff0adc4fa6f6678f06718a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tracks_MAT
+    second: {fileID: 2100000, guid: b574f430e1faebb45b7f8a5a7a918466, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: conveyer_belt_MAT
+    second: {fileID: 2100000, guid: 622566c793fcd9546a76d56bf5a9ac6c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
