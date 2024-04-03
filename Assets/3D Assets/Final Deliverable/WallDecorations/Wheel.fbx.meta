@@ -3,7 +3,12 @@ guid: 521d629e05b33494ab0bfc5d54e6a712
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ship_malfuntions_mat
+    second: {fileID: 2100000, guid: d8f23f375399396409c09222dffef35d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
