@@ -13,6 +13,9 @@ TagManager:
   - OintmentTag
   - SyringeTag
   - InsulinTag
+  - SpawnStuff1
+  - Teleport
+  - Hands
   layers:
   - Default
   - TransparentFX

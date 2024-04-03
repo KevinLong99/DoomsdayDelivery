@@ -1,6 +1,7 @@
 using UnityEngine;
 
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class HandScanner : MonoBehaviour
@@ -10,6 +11,9 @@ public class HandScanner : MonoBehaviour
     private bool isHandInContact = false;
 
     public Slider progressSlider; // Reference to the UI slider
+
+    //Public event
+    public UnityEvent ExecuteHandScanComplete;
 
     private void Start()
     {
@@ -26,16 +30,15 @@ public class HandScanner : MonoBehaviour
 
     private void Update()
     {
-        if (isHandInContact)
+        if (isHandInContact && contactTime < HandTrackTime)
         {
             contactTime += Time.deltaTime;
             progressSlider.value = contactTime;
 
             if (contactTime >= HandTrackTime)
             {
-                TriggerFunction();
-                contactTime = 0; // Reset the contact time
-                progressSlider.value = 0; // Reset the slider
+                ToExecuteHandScanComplete();
+                // Removed resetting of contactTime and progressSlider.value here to keep the slider full
             }
         }
     }
@@ -54,14 +57,19 @@ public class HandScanner : MonoBehaviour
         if (other.CompareTag("Hands"))
         {
             isHandInContact = false;
-            contactTime = 0; // Reset the contact time on exit
-            progressSlider.value = 0; // Reset the slider
+            // Removed resetting of contactTime and progressSlider.value here to keep the slider full on exit
         }
     }
 
-    private void TriggerFunction()
+    public void ToExecuteHandScanComplete()
     {
-        // Placeholder function triggered when the slider is full
-        Debug.Log("Hand has been in contact for the required time.");
+        ExecuteHandScanComplete.Invoke();
+    }
+
+    public void ResetSlider()
+    {
+        contactTime = 0; // Reset the contact time
+        progressSlider.value = 0; // Reset the slider value
+        progressSlider.gameObject.SetActive(false); // Temporarily disable the slider UI GameObject
     }
 }
