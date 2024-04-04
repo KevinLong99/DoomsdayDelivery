@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 73a372ddc1842d84d91787c6d5e3e60a
+guid: 54b5a62c315a4a84f8c50e71de06a503
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: gauge_mat
-    second: {fileID: 2100000, guid: f1f5cd35da6dd304592834a7d6b217ff, type: 2}
+      name: lights_panels_mat
+    second: {fileID: 2100000, guid: 24ae9a4928885d84abe2f0bbf6509beb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
