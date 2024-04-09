@@ -11,7 +11,7 @@ public class Conveyor_Belt : MonoBehaviour
     [SerializeField]
     private List<GameObject> onBelt;
 
-    private Material material;
+    //private Material material;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class Conveyor_Belt : MonoBehaviour
         /* Create an instance of this texture
          * This should only be necessary if the belts are using the same material and are moving different speeds
          */
-        material = GetComponent<MeshRenderer>().material;
+        //material = GetComponent<MeshRenderer>().material;
     }
 
     // Update is called once per frame
