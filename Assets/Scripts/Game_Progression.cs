@@ -22,6 +22,7 @@ public class Game_Progression : MonoBehaviour
     public TextMeshProUGUI timeText;
     public Image gasGauge;
     private float startingGasColor = 0;
+    public GameObject gasNeedle;
 
     private FadeScreen_DD fadeScreenDD;
     public static bool gameOver_outOfFuel = false, gameOver_shipMalfunction = false, gameOver_win = false;
@@ -115,6 +116,9 @@ public class Game_Progression : MonoBehaviour
         }
         else
             gasGauge.fillAmount = 0;
+
+        // Gas Gauge
+        gasNeedle.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, (Mathf.Lerp(-100, 0, timeToDisplay / fullTime))));
     }
 
     public void FixMalfunction()
