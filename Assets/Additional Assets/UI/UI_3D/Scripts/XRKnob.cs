@@ -103,6 +103,11 @@ namespace UnityEngine.XR.Content.Interaction
 
         float m_BaseKnobRotation = 0.0f;
 
+        //Game Progression Reference
+        public Game_Progression myGameProgression;
+
+        //Wheel actual function referencec
+        public GameObject ActualWheel;
         public Transform handle
         {
             get => m_Handle;
@@ -144,6 +149,24 @@ namespace UnityEngine.XR.Content.Interaction
         }
 
         public ValueChangeEvent onValueChange => m_OnValueChange;
+
+        void Update()
+        {
+            if (myGameProgression != null && myGameProgression.needToFixShip && myGameProgression.malfunctionNum == 2)
+            {
+                progressSlider.gameObject.SetActive(true);
+                if (ActualWheel != null)
+                    ActualWheel.GetComponent<BoxCollider>().enabled = true;
+                // Other functionalities to be enabled
+            }
+            else
+            {
+                progressSlider.gameObject.SetActive(false);
+                if (ActualWheel != null)
+                    ActualWheel.GetComponent<BoxCollider>().enabled = false;
+                // Other functionalities to be disabled
+            }
+        }
 
         void Start()
         {

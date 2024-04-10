@@ -59,6 +59,9 @@ public class Game_Progression : MonoBehaviour
 
     //Fog game object
     public GameObject fog;
+    //Malfunction No,
+
+    public int malfunctionNum = 1;
 
     void Start()
     {
@@ -131,6 +134,18 @@ public class Game_Progression : MonoBehaviour
             fog.SetActive(false);
 
             typewriter_Script.StartTypewriterView(errorResolvedMessage);
+            //Update Malfunction num
+            if(malfunctionNum == 1)
+            {
+                malfunctionNum = 2;
+            }
+            else
+            {
+                if(malfunctionNum == 2)
+                {
+                    malfunctionNum = 3;
+                }
+            }
         } 
     }
 

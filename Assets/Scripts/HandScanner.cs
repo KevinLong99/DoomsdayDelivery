@@ -32,7 +32,7 @@ public class HandScanner : MonoBehaviour
     private void Update()
     {
         // Check the needToFixShip status
-        if (myGameProgression.needToFixShip)
+        if (myGameProgression.needToFixShip && myGameProgression.malfunctionNum == 1)
         {
             progressSlider.gameObject.SetActive(true);
 
@@ -68,6 +68,7 @@ public class HandScanner : MonoBehaviour
         if (other.CompareTag("Hands"))
         {
             isHandInContact = false;
+            ResetSlider();
         }
     }
 
