@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class SwitchMaterialChanger : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class SwitchMaterialChanger : MonoBehaviour
     public Material successMaterial;
     public Material failMaterial;
 
+    public int DelayedTime; //Delayed time in seconds
     // This function changes the material of the GameObject's MeshRenderer
     public void ChangeMaterial()
     {
@@ -62,6 +64,27 @@ public class SwitchMaterialChanger : MonoBehaviour
         {
             // Change the material to the newMaterial
             renderer.material = failMaterial;
+        }
+    }
+
+    public void DelayedChangeMaterialToBlank()
+    {
+        StartCoroutine(DelayedChange());
+    }
+
+    // Coroutine to delay the change of material
+    private IEnumerator DelayedChange()
+    {
+        yield return new WaitForSeconds(DelayedTime);
+
+        MeshRenderer renderer = GetComponent<MeshRenderer>();
+        if (renderer != null && blankMaterial != null)
+        {
+            renderer.material = blankMaterial;
+        }
+        else
+        {
+            Debug.LogError("Missing component: MeshRenderer or blankMaterial not assigned.");
         }
     }
 }
