@@ -5345,7 +5345,7 @@ MonoBehaviour:
   SuccessArea: {fileID: 576884620}
   FailArea: {fileID: 1287723794}
   mySwitch: {fileID: 0}
-  delayedTime: 3
+  delayedTime: 1
   tutorialBackDelayedTIme: 3
   EnableDropSwitchTip:
     m_PersistentCalls:
@@ -5464,6 +5464,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 307007643}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ToEnableAfterDropTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   FailDeliver:
     m_PersistentCalls:
       m_Calls:
@@ -5494,6 +5506,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2790230075937545731}
         m_TargetAssemblyTypeName: SwitchMaterialChanger, Assembly-CSharp
         m_MethodName: ChangeMaterialToFail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 307007643}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ToEnableAfterDropTip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49367,9 +49391,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 307007643}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ToEnableAfterDropTip
+      - m_Target: {fileID: 2790230075937545731}
+        m_TargetAssemblyTypeName: SwitchMaterialChanger, Assembly-CSharp
+        m_MethodName: DelayedChangeMaterialToBlank
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49957,6 +49981,7 @@ MonoBehaviour:
   blankMaterial: {fileID: 2100000, guid: 62bc7be8d4f13c5418f8a020e0a7f150, type: 2}
   successMaterial: {fileID: 2100000, guid: 76a4f8c6e0a6b9240b33140d9541d123, type: 2}
   failMaterial: {fileID: 2100000, guid: 40dbb1a8f9ad90945ad5b43e2e659cd6, type: 2}
+  DelayedTime: 3
 --- !u!4 &2808104088016688885
 Transform:
   m_ObjectHideFlags: 0
