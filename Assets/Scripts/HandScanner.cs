@@ -73,6 +73,7 @@ public class HandScanner : MonoBehaviour
 
     public void ToExecuteHandScanComplete()
     {
+        ResetSlider();
         ExecuteHandScanComplete.Invoke();
     }
 
