@@ -15,7 +15,8 @@ public class Game_Progression : MonoBehaviour
     public bool playerMayFly = true;
     public bool somethingIsBroken = false;
 
-    private float timeRemaining = 420;   //time limit
+    private float fullTime = 420;   //time limit
+    private float timeRemaining;
     private bool timerIsRunning = false;
     float minutes, seconds;
     public TextMeshProUGUI timeText;
@@ -73,6 +74,7 @@ public class Game_Progression : MonoBehaviour
         medtent2.SetActive(false);
         medtent3.SetActive(false);
 
+        timeRemaining = fullTime;
     }
 
     void Update()
@@ -107,8 +109,8 @@ public class Game_Progression : MonoBehaviour
         // Gas bar
         if (gasGauge.fillAmount > 0)
         {
-            gasGauge.fillAmount = timeToDisplay / 600;
-            startingGasColor = Mathf.Lerp(1, 127, timeToDisplay / 600);
+            gasGauge.fillAmount = timeToDisplay / fullTime;
+            startingGasColor = Mathf.Lerp(1, 127, timeToDisplay / fullTime);
             gasGauge.color = Color.HSVToRGB(startingGasColor/255, 1, 1);
         }
         else
