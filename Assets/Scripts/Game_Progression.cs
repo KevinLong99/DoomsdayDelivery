@@ -55,6 +55,9 @@ public class Game_Progression : MonoBehaviour
 
     private ChatGPT chatGptScript;
 
+    //Fog game object
+    public GameObject fog;
+
     void Start()
     {
         fadeScreenDD = GameObject.Find("FaderScreen").GetComponent<FadeScreen_DD>();
@@ -119,6 +122,7 @@ public class Game_Progression : MonoBehaviour
             playerMayFly = true;
             somethingIsBroken = false;
             needToFixShip = false;
+            fog.SetActive(false);
 
             typewriter_Script.StartTypewriterView(errorResolvedMessage);
         } 
@@ -136,6 +140,7 @@ public class Game_Progression : MonoBehaviour
                 playerMayFly = false;
                 hapticChairScript.HardStopTheShip(3);
                 needToFixShip = true;
+                fog.SetActive(true);
                 playSounds_Script.PlayErorr();
                 //do malfunction here
                 //upon pressing button, it will fix the malfunction
