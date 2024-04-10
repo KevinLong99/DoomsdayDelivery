@@ -3,7 +3,12 @@ guid: 28570daba2ecc30429410288784f11c0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: landingpad_mat
+    second: {fileID: 2100000, guid: 852418200649fe24b82cac569c3757a1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
