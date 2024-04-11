@@ -6,6 +6,8 @@ public class TutorialManager : MonoBehaviour
     // Public list visible in the inspector
     public List<GameObject> Steps;
     public int LeverValue = 0; // Added public integer LeverValue
+    //To tell if the tutorial is passed
+    public bool tutorialPassed = false;
 
     // Function to remove (delete) the game object at the specified index
     public void RemoveStep(int number)
@@ -26,24 +28,35 @@ public class TutorialManager : MonoBehaviour
     {
         if (number >= 0 && number < Steps.Count)
         {
-            if (number == 3)
+            //Tutorial part arrow tips, would not trigger after tutorial is passed
+            if(number < 10 && tutorialPassed == false)
             {
-                switch (LeverValue)
+                if (number == 3)
                 {
-                    case 0:
-                        LeverValue = 1; // Increment LeverValue to 1
-                        break;
-                    case 1:
-                        number = 6; // Treat it as if AddStep(6) is called
-                        LeverValue = 2; // Increment LeverValue to 2
-                        break;
-                    case 2:
-                        DeleteTutorial();
-                        return; // Do nothing
+                    switch (LeverValue)
+                    {
+                        case 0:
+                            LeverValue = 1; // Increment LeverValue to 1
+                            break;
+                        case 1:
+                            number = 6; // Treat it as if AddStep(6) is called
+                            LeverValue = 2; // Increment LeverValue to 2
+                            break;
+                        case 2:
+                            //DeleteTutorial();
+                            tutorialPassed = true;
+                            return; // Do nothing
+                    }
                 }
+
+                Steps[number].SetActive(true);
             }
 
-            Steps[number].SetActive(true);
+            //Malfunction part arrow tips, trigger any time malfunctions happen
+            if (number >= 10)
+            {
+                Steps[number].SetActive(true);
+            }
         }
         else
         {

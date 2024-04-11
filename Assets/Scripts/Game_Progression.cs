@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -59,9 +60,22 @@ public class Game_Progression : MonoBehaviour
 
     //Fog game object
     public GameObject fog;
-    //Malfunction No,
+    //Malfunction related initializations
 
     public int malfunctionNum = 1;
+    public UnityEvent MalfunctionTutorial1;
+    public UnityEvent MalfunctionTutorial2;
+
+    //Initializations for malfunction tutorials
+    public void ToMalfunctionTutorial1()
+    {
+        MalfunctionTutorial1.Invoke();
+    }
+
+    public void ToMalfunctionTutorial2()
+    {
+        MalfunctionTutorial2.Invoke();
+    }
 
     void Start()
     {
@@ -163,6 +177,15 @@ public class Game_Progression : MonoBehaviour
                 needToFixShip = true;
                 fog.SetActive(true);
                 playSounds_Script.PlayErorr();
+
+                //Trigger malfunction tutorials tips
+                if(malfunctionNum == 1)
+                {
+                    ToMalfunctionTutorial1();
+                } else if (malfunctionNum == 2)
+                {
+                    ToMalfunctionTutorial2();
+                }
                 //do malfunction here
                 //upon pressing button, it will fix the malfunction
 

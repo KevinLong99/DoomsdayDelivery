@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -9,64 +11,88 @@ public class DialogueManager : MonoBehaviour
     public int LeverValue = 0; // Public integer LeverValue with default 0
 
     public GameObject TutorialArea;
+
+    //To tell if the tutorial is passed
+    public bool tutorialPassed = false;
+
     // Call this function to change the displayed sprite to the specified one in the list
+
+    //Change text to blank
+    public void ChangeTextToBlank()
+    {
+        TextMeshPro textMesh = DisplayDialogue.GetComponent<TextMeshPro>();
+        textMesh.text = "";
+    }
     public void ChangeText(int num)
     {
         // Check if the passed index is within the range of the Dialogues list
         if (num >= 0 && num < Dialogues.Count)
         {
             TextMeshPro textMesh = DisplayDialogue.GetComponent<TextMeshPro>();
-            if (textMesh != null)
+            //Tutorial part dialogue, would not trigger after tutorial is passed
+            if (num < 10 && tutorialPassed == false)
             {
-                // Handling the special conditions for num == 3
-                if (num == 3)
+                if (textMesh != null)
                 {
-                    switch (LeverValue)
+                    // Handling the special conditions for num == 3
+                    if (num == 3)
                     {
-                        case 0:
-                            LeverValue = 1; // Increase LeverValue to 1
-                            textMesh.text = Dialogues[num];
-                            break;
-                        case 1:
-                            LeverValue = 2; // Increase LeverValue to 2
-                            // Treat it as if ChangeText(6) is called
-                            if (6 < Dialogues.Count) // Ensure index 6 exists
-                            {
-                                textMesh.text = Dialogues[6];
-                            }
-                            else
-                            {
-                                Debug.LogError("DialogueManager: Index 6 out of range.");
-                            }
-                            break;
-                        case 2:
-                            DeleteTutorial();
-                            break;
+                        switch (LeverValue)
+                        {
+                            case 0:
+                                LeverValue = 1; // Increase LeverValue to 1
+                                textMesh.text = Dialogues[num];
+                                break;
+                            case 1:
+                                LeverValue = 2; // Increase LeverValue to 2
+                                                // Treat it as if ChangeText(6) is called
+                                if (6 < Dialogues.Count) // Ensure index 6 exists
+                                {
+                                    textMesh.text = Dialogues[6];
+                                }
+                                else
+                                {
+                                    Debug.LogError("DialogueManager: Index 6 out of range.");
+                                }
+                                break;
+                            case 2:
+                                DeleteTutorial();
+                                tutorialPassed = true;
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        textMesh.text = Dialogues[num];
                     }
                 }
                 else
                 {
-                    textMesh.text = Dialogues[num];
+                    Debug.LogError("DialogueManager: The DisplayDialogue GameObject does not have a TextMeshPro component.");
                 }
             }
             else
             {
-                Debug.LogError("DialogueManager: The DisplayDialogue GameObject does not have a TextMeshPro component.");
+                Debug.LogError("DialogueManager: Index out of range when calling ChangeText.");
+            }
+
+            //Malfunction part arrow tips, trigger any time malfunctions happen
+            if (num >= 10)
+            {
+                textMesh.text = Dialogues[num];
             }
         }
-        else
-        {
-            Debug.LogError("DialogueManager: Index out of range when calling ChangeText.");
-        }
+
+            
     }
 
     public void DeleteTutorial()
     {
         if (TutorialArea != null)
         {
-            TutorialArea.SetActive(false); // Delete the TutorialArea GameObject
+            TutorialArea.SetActive(false); // Disable the tutorial UI game object
         }
 
-        Dialogues.Clear(); // Clear all items from the Dialogues list
+        //Dialogues.Clear(); // Clear all items from the Dialogues list
     }
 }
