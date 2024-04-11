@@ -19,7 +19,7 @@ public class IntroToGame_DD : MonoBehaviour
 
     void Start()
     {
-        
+        SwitchSceneToGame();
     }
 
     public void SwitchSceneToGame()
@@ -40,11 +40,15 @@ public class IntroToGame_DD : MonoBehaviour
 
         //ship takes off, revealing the skyline
         float counter = 0;
-        float timeDur = 50f;
+        float timeDur = 5;
+
+        Vector3 posStart = cameraToMove.transform.position;
         while (counter < timeDur)
         {
+            
+            cameraToMove.transform.position = Vector3.MoveTowards(posStart, camEndPos, counter / timeDur);
             counter += Time.deltaTime;
-            cameraToMove.transform.position = Vector3.Lerp(cameraToMove.transform.position, camEndPos, counter / timeDur);
+            Debug.Log(counter);
             yield return null;
         }
         cameraToMove.transform.position = camEndPos;
