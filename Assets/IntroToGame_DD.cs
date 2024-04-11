@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,8 +10,11 @@ public class IntroToGame_DD : MonoBehaviour
     public FadeScreen_DD fadeScreenScript;
 
     public GameObject cameraScreen;
-    private Vector3 camStartPos = new Vector3(0, -150f, 2f);
+    public GameObject cameraToMove;
+    public GameObject startGameText;
+
     private Vector3 camEndPos = new Vector3(0, -10f, 2f);
+
 
     void Start()
     {
@@ -30,11 +34,20 @@ public class IntroToGame_DD : MonoBehaviour
 
         //main screen turns on showing outside camera view
         cameraScreen.SetActive(true);
+        startGameText.SetActive(false);
         yield return new WaitForSeconds(1);
 
         //ship takes off, revealing the skyline
+        float counter = 0;
+        float timeDur = 50f;
+        while (counter < timeDur)
+        {
+            counter += Time.deltaTime;
+            cameraToMove.transform.position = Vector3.Lerp(cameraToMove.transform.position, camEndPos, counter / timeDur);
+            yield return null;
+        }
+        cameraToMove.transform.position = camEndPos;
         yield return new WaitForSeconds(1);
-        StartCoroutine(CameraRise());
 
         //fade to black
         yield return new WaitForSeconds(1);
@@ -49,19 +62,8 @@ public class IntroToGame_DD : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         //switch to game scene 
-        sceneManagerScript.BeginGame();
-        fadeScreenScript.FadeOut();
-    }
-
-    private IEnumerator CameraRise()
-    {
-        float counter = 0;
-        while (counter < 5)
-        {
-            counter += Time.deltaTime;
-            cameraScreen.transform.position = Vector3.Lerp(camStartPos, camEndPos, counter / 5);
-            yield return null;
-        }
+        //sceneManagerScript.BeginGame();
+        //fadeScreenScript.FadeOut();
     }
      
 }
