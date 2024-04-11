@@ -3,7 +3,12 @@ guid: bf1fb0c7c6c95a44aa6c506a7134cbe0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: radio_MAT
+    second: {fileID: 2100000, guid: 61c1f92e7d7f11843a92d377218709bc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
