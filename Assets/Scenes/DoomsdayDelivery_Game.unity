@@ -5716,6 +5716,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 307007643}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ResetScoreColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   FailDeliver:
     m_PersistentCalls:
       m_Calls:
@@ -5782,6 +5794,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2790230075937545731}
         m_TargetAssemblyTypeName: SwitchMaterialChanger, Assembly-CSharp
         m_MethodName: CanNotTurnOnAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 307007643}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ResetScoreColor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51367,6 +51391,7 @@ MonoBehaviour:
   failMaterial: {fileID: 2100000, guid: 40dbb1a8f9ad90945ad5b43e2e659cd6, type: 2}
   DelayedTime: 5
   canTurnOnAgain: 0
+  myDroneInput: {fileID: 1215512380}
 --- !u!4 &2808104088016688885
 Transform:
   m_ObjectHideFlags: 0
