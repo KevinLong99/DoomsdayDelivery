@@ -169,6 +169,16 @@ public class Game_Progression : MonoBehaviour
         {
             if (somethingIsBroken == true)
             {
+
+                //Trigger different effects for 1st and 2nd malfunctions
+                if(malfunctionNum == 1)
+                {
+
+                } else if (malfunctionNum == 2)
+                {
+
+                }
+
                 typewriter_Script.StartTypewriterView("LOADING.....");
                 chatGptScript.SendReply();
 
