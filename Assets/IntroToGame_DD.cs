@@ -12,6 +12,7 @@ public class IntroToGame_DD : MonoBehaviour
     public GameObject cameraScreen;
     public GameObject cameraToMove;
     public GameObject startGameText;
+    public GameObject inTheYearText;
 
     private Vector3 camEndPos = new Vector3(0, -10f, 2f);
 
@@ -30,7 +31,7 @@ public class IntroToGame_DD : MonoBehaviour
     {
         //lights flicker on 
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
 
         //main screen turns on showing outside camera view
         cameraScreen.SetActive(true);
@@ -49,17 +50,13 @@ public class IntroToGame_DD : MonoBehaviour
         cameraToMove.transform.position = camEndPos;
         yield return new WaitForSeconds(1);
 
-        //fade to black
+        //fade lights out, including the one over the thruster
         yield return new WaitForSeconds(1);
 
         //black screen with white text appears:
-        //  "in REDACTED city in 208x, the war has let up enough for aid to be provided..."
+        inTheYearText.SetActive(true);
 
-        yield return new WaitForSeconds(1);
-
-        //fade out to black (if faded back in)
-
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
 
         //switch to game scene 
         //sceneManagerScript.BeginGame();
