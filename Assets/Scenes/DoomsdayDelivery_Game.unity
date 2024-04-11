@@ -3408,6 +3408,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8795646800535009098, guid: b07e29f1de1500947ad96857140c9916,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5675,9 +5680,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2790230075937545731}
+        m_TargetAssemblyTypeName: SwitchMaterialChanger, Assembly-CSharp
+        m_MethodName: DelayedChangeMaterialToBlank
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 307007643}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ToEnableAfterDropTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2790230075937545731}
+        m_TargetAssemblyTypeName: SwitchMaterialChanger, Assembly-CSharp
+        m_MethodName: CanNotTurnOnAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 307007643}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ResetScoreColor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5726,9 +5767,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2790230075937545731}
+        m_TargetAssemblyTypeName: SwitchMaterialChanger, Assembly-CSharp
+        m_MethodName: DelayedChangeMaterialToBlank
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 307007643}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ToEnableAfterDropTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2790230075937545731}
+        m_TargetAssemblyTypeName: SwitchMaterialChanger, Assembly-CSharp
+        m_MethodName: CanNotTurnOnAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 307007643}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ResetScoreColor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47579,6 +47656,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2790230075937545731}
+        m_TargetAssemblyTypeName: SwitchMaterialChanger, Assembly-CSharp
+        m_MethodName: CanTurnOnAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -50710,18 +50799,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2790230075937545731}
-        m_TargetAssemblyTypeName: SwitchMaterialChanger, Assembly-CSharp
-        m_MethodName: DelayedChangeMaterialToBlank
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1692017665}
         m_TargetAssemblyTypeName: LeverFunctionController, Assembly-CSharp
         m_MethodName: DoUnlockStation
@@ -51312,7 +51389,9 @@ MonoBehaviour:
   blankMaterial: {fileID: 2100000, guid: 62bc7be8d4f13c5418f8a020e0a7f150, type: 2}
   successMaterial: {fileID: 2100000, guid: 76a4f8c6e0a6b9240b33140d9541d123, type: 2}
   failMaterial: {fileID: 2100000, guid: 40dbb1a8f9ad90945ad5b43e2e659cd6, type: 2}
-  DelayedTime: 3
+  DelayedTime: 5
+  canTurnOnAgain: 0
+  myDroneInput: {fileID: 1215512380}
 --- !u!4 &2808104088016688885
 Transform:
   m_ObjectHideFlags: 0

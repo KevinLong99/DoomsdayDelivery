@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using PA_DronePack;
 
 public class SwitchMaterialChanger : MonoBehaviour
 {
@@ -13,20 +14,43 @@ public class SwitchMaterialChanger : MonoBehaviour
 
     public int DelayedTime; //Delayed time in seconds
     // This function changes the material of the GameObject's MeshRenderer
+    public bool canTurnOnAgain = false;
+
+    //Initiate Drone control, disable it while the screen is dark
+    public PA_DroneAxisInput myDroneInput;
+
+    private void Update()
+    {
+        //Disable drone input while the screen is dark
+        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+         if (meshRenderer.material.shader.name == blankMaterial.shader.name)
+            {
+                myDroneInput.enabled = false;
+            }
+            else
+            {
+                //myDroneInput.enabled = true;
+            //Debug.Log("The GameObject's material is not equal to BlankMaterial.");
+        }
+ 
+    }
     public void ChangeMaterial()
     {
-        // Get the MeshRenderer component attached to this GameObject
-        MeshRenderer renderer = GetComponent<MeshRenderer>();
+        if(canTurnOnAgain == true)
+        {
+            // Get the MeshRenderer component attached to this GameObject
+            MeshRenderer renderer = GetComponent<MeshRenderer>();
 
-        // Check if the MeshRenderer and newMaterial are not null to avoid errors
-        if (renderer != null && newMaterial != null)
-        {
-            // Change the material to the newMaterial
-            renderer.material = newMaterial;
-        }
-        else
-        {
-            Debug.LogError("Missing component: MeshRenderer or newMaterial not assigned.");
+            // Check if the MeshRenderer and newMaterial are not null to avoid errors
+            if (renderer != null && newMaterial != null)
+            {
+                // Change the material to the newMaterial
+                renderer.material = newMaterial;
+            }
+            else
+            {
+                Debug.LogError("Missing component: MeshRenderer or newMaterial not assigned.");
+            }
         }
     }
 
@@ -86,5 +110,15 @@ public class SwitchMaterialChanger : MonoBehaviour
         {
             Debug.LogError("Missing component: MeshRenderer or blankMaterial not assigned.");
         }
+    }
+
+    public void CanTurnOnAgain()
+    {
+        canTurnOnAgain = true;
+    }
+
+    public void CanNotTurnOnAgain()
+    {
+        canTurnOnAgain = false;
     }
 }
