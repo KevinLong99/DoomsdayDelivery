@@ -83,7 +83,12 @@ namespace UnityEngine.XR.Content.Interaction
 
         [SerializeField]
         [Tooltip("Slider that represents the knob's progress")]
-        public Slider progressSlider;
+        public Image progressSlider;
+        public GameObject greenLight;
+        public GameObject redLight;
+        public Material baseMat;
+        public Material greenLitMat;
+        public Material redLitMat;
 
         [Serializable]
         public class MaxValueReachedEvent : UnityEvent { }
@@ -172,7 +177,7 @@ namespace UnityEngine.XR.Content.Interaction
         {
             SetValue(m_Value); // This will set the knob rotation and invoke the value change event
             if (progressSlider != null)
-                progressSlider.value = m_Value / MaxValue; // Ensure the slider reflects the starting value
+                progressSlider.fillAmount = 0; // Ensure the slider reflects the starting value
             SetKnobRotation(ValueToRotation());
         }
 
@@ -181,6 +186,7 @@ namespace UnityEngine.XR.Content.Interaction
             base.OnEnable();
             selectEntered.AddListener(StartGrab);
             selectExited.AddListener(EndGrab);
+            redLight.GetComponent<Renderer>().material = redLitMat;
         }
 
         protected override void OnDisable()
@@ -323,7 +329,7 @@ namespace UnityEngine.XR.Content.Interaction
             m_Value = value;
 
             if (progressSlider != null)
-                progressSlider.value = m_Value / MaxValue;
+                progressSlider.fillAmount = m_Value / MaxValue;
 
             m_OnValueChange.Invoke(m_Value);
 
@@ -331,6 +337,8 @@ namespace UnityEngine.XR.Content.Interaction
             {
                 onMaxValueReached.Invoke();
                 hasReachedMaxValue = true;
+                redLight.GetComponent<Renderer>().material = baseMat;
+                greenLight.GetComponent<Renderer>().material = greenLitMat;
             }
             else if (m_Value < MaxValue && hasReachedMaxValue)
             {
@@ -399,7 +407,7 @@ namespace UnityEngine.XR.Content.Interaction
 
             SetKnobRotation(ValueToRotation());
             if (progressSlider != null)
-                progressSlider.value = m_Value / MaxValue;
+                progressSlider.fillAmount = m_Value / MaxValue;
         }
     }
 }

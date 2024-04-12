@@ -9,6 +9,11 @@ public class HandScanner : MonoBehaviour
     private bool isHandInContact = false;
 
     public Image progressSlider; // Reference to the UI slider
+    public GameObject greenLight;
+    public GameObject redLight;
+    public Material redLightBaseMat;
+    public Material redLightMat;
+    public Material greenLightMat;
 
     // Reference to the GameProgression script
     public Game_Progression myGameProgression;
@@ -24,6 +29,7 @@ public class HandScanner : MonoBehaviour
             return;
         }
 
+        redLight.GetComponent<Renderer>().material = redLightMat;
         //progressSlider.minValue = 0;
         //progressSlider.maxValue = HandTrackTime;
         //progressSlider.value = 0;
@@ -44,6 +50,8 @@ public class HandScanner : MonoBehaviour
                 if (contactTime >= HandTrackTime)
                 {
                     ToExecuteHandScanComplete();
+                    redLight.GetComponent<Renderer>().material = redLightBaseMat;
+                    greenLight.GetComponent<Renderer>().material = greenLightMat;
                 }
             }
         }
