@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro; // Using TextMeshPro for UI elements.
 using System.Collections;
 using Unity.VisualScripting;
+using System;
 
 public class NewObjectCounter : MonoBehaviour
 {
@@ -67,6 +68,9 @@ public class NewObjectCounter : MonoBehaviour
     public ProgressManager myProgressManager;
     public UIManager myUIManager;
     public bool isFirstLoop = false;
+
+    public PlaySounds playSoundScript;
+
     private void Start()    
     {
 
@@ -123,7 +127,16 @@ public class NewObjectCounter : MonoBehaviour
         ovenAnimator = GameObject.Find("oven_door").GetComponent<Animator>();
         switchReturn_Script = GameObject.Find("Drone [Remote]").GetComponent<SwitchReturn>();
         gameProg_Script = GameObject.Find("Game_Manager").GetComponent<Game_Progression>();
-        typewriteScript_NOC = GameObject.Find("Dialogue_Text").GetComponent<Typewriter_UI>();
+        
+        try
+        {
+            typewriteScript_NOC = GameObject.Find("Dialogue_Text").GetComponent<Typewriter_UI>();
+            playSoundScript = GameObject.Find("Game_Manager").GetComponent<PlaySounds>();
+        } catch (Exception e)
+        {
+            Debug.LogWarning(e + " DD: Could not find Typewriter script. Typewriter gameobject is likely disabled.");
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -209,14 +222,20 @@ public class NewObjectCounter : MonoBehaviour
             myUIManager.ToSuccessDelivery();
             if (!gameProg_Script.tent3IsComplete && gameProg_Script.tent2IsComplete)
             {
+                gameProg_Script.SetSurv3Active();
+                playSoundScript.PlayAnaSuccess();
                 typewriteScript_NOC.StartTypewriterView(Tent3YesMsg);
             }
             if (!gameProg_Script.tent2IsComplete && gameProg_Script.tent1IsComplete)
             {
+                gameProg_Script.SetSurv2Active();
+                playSoundScript.PlayJJSuccess();
                 typewriteScript_NOC.StartTypewriterView(Tent2YesMsg);
             } 
             if (!gameProg_Script.tent1IsComplete)
             {
+                gameProg_Script.SetSurv1Active();
+                playSoundScript.PlayRachelSuccess();
                 typewriteScript_NOC.StartTypewriterView(Tent1YesMsg);
             }
         }
@@ -225,14 +244,20 @@ public class NewObjectCounter : MonoBehaviour
             myUIManager.ToFailDelivery();
             if (!gameProg_Script.tent3IsComplete && gameProg_Script.tent2IsComplete)
             {
+                gameProg_Script.SetSurv3Active();
+                playSoundScript.PlayAnaFail();
                 typewriteScript_NOC.StartTypewriterView(Tent3NoMsg);
             }
             if (!gameProg_Script.tent2IsComplete && gameProg_Script.tent1IsComplete)
             {
+                gameProg_Script.SetSurv2Active();
+                playSoundScript.PlayJJFail();
                 typewriteScript_NOC.StartTypewriterView(Tent2NoMsg);
             }
             if (!gameProg_Script.tent1IsComplete)
             {
+                gameProg_Script.SetSurv1Active();
+                playSoundScript.PlayRachelFail();
                 typewriteScript_NOC.StartTypewriterView(Tent1NoMsg);
             }
         }

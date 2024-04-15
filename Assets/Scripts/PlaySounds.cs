@@ -29,6 +29,17 @@ public class PlaySounds : MonoBehaviour
     [SerializeField] private AudioClip timeGasNotification;
     [SerializeField] private AudioClip tutorialNotification;
 
+    [SerializeField] private AudioClip Ana_Fail;
+    [SerializeField] private AudioClip Ana_Success;
+    [SerializeField] private AudioClip JJ_Fail;
+    [SerializeField] private AudioClip JJ_Success;
+    [SerializeField] private AudioClip Nick_Fail;
+    [SerializeField] private AudioClip Nick_Intro;
+    [SerializeField] private AudioClip Nick_OneMinuteWarning;
+    [SerializeField] private AudioClip Nick_Success;
+    [SerializeField] private AudioClip Rachel_Fail;
+    [SerializeField] private AudioClip Rachel_Success;
+
     void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
@@ -48,4 +59,46 @@ public class PlaySounds : MonoBehaviour
     {
         soundPlayer.PlayOneShot(shipErrorBuzzThreeTimes);
     }
+
+    public void PlayAnaFail()
+    {
+        soundPlayer.PlayOneShot(Ana_Fail);
+    }
+    public void PlayAnaSuccess()
+    {
+        soundPlayer.PlayOneShot(Ana_Success);
+    }
+    public void PlayJJFail()
+    {
+        soundPlayer.PlayOneShot(JJ_Fail);
+    }
+    public void PlayJJSuccess()
+    {
+        soundPlayer.PlayOneShot(JJ_Success);
+    }
+    public void PlayNickFail()
+    {
+        soundPlayer.PlayOneShot(Nick_Fail);
+    }
+    public void PlayNickIntro()
+    {
+        soundPlayer.PlayOneShot(Nick_Intro);
+    }
+    public void PlayNickWarning()
+    {
+        soundPlayer.PlayOneShot(Nick_OneMinuteWarning);
+    }
+    public void PlayNickSuccess()
+    {
+        soundPlayer.PlayOneShot(Nick_Success);
+    }
+    public void PlayRachelFail()
+    {
+        soundPlayer.PlayOneShot(Rachel_Fail);
+    }
+    public void PlayRachelSuccess()
+    {
+        soundPlayer.PlayOneShot(Rachel_Success);
+    }
 }
+

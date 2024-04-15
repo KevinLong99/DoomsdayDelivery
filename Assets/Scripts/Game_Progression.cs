@@ -66,6 +66,11 @@ public class Game_Progression : MonoBehaviour
     public UnityEvent MalfunctionTutorial1;
     public UnityEvent MalfunctionTutorial2;
 
+    [SerializeField] private GameObject commissioner;
+    [SerializeField] private GameObject survivor1;
+    [SerializeField] private GameObject survivor2;
+    [SerializeField] private GameObject survivor3;
+
     //Initializations for malfunction tutorials
     public void ToMalfunctionTutorial1()
     {
@@ -108,11 +113,11 @@ public class Game_Progression : MonoBehaviour
             {
                 gameOver_outOfFuel = true;
                 timeRemaining = 0;
-                timerIsRunning= false;
+                timerIsRunning = false;
                 GameOver();
             }
         }
-        
+
     }
 
     private void DisplayTime(float timeToDisplay)
@@ -129,7 +134,7 @@ public class Game_Progression : MonoBehaviour
         {
             gasGauge.fillAmount = timeToDisplay / fullTime;
             startingGasColor = Mathf.Lerp(1, 127, timeToDisplay / fullTime);
-            gasGauge.color = Color.HSVToRGB(startingGasColor/255, 1, 1);
+            gasGauge.color = Color.HSVToRGB(startingGasColor / 255, 1, 1);
         }
         else
             gasGauge.fillAmount = 0;
@@ -147,20 +152,21 @@ public class Game_Progression : MonoBehaviour
             needToFixShip = false;
             fog.SetActive(false);
 
+
             typewriter_Script.StartTypewriterView(errorResolvedMessage);
             //Update Malfunction num
-            if(malfunctionNum == 1)
+            if (malfunctionNum == 1)
             {
                 malfunctionNum = 2;
             }
             else
             {
-                if(malfunctionNum == 2)
+                if (malfunctionNum == 2)
                 {
                     malfunctionNum = 3;
                 }
             }
-        } 
+        }
     }
 
     public void LeverPilotStation()
@@ -171,14 +177,14 @@ public class Game_Progression : MonoBehaviour
             {
 
                 //Trigger different effects for 1st and 2nd malfunctions
-                if(malfunctionNum == 1)
+                if (malfunctionNum == 1)
                 {
 
                 } else if (malfunctionNum == 2)
                 {
 
                 }
-
+                SetComActive();
                 typewriter_Script.StartTypewriterView("LOADING.....");
                 chatGptScript.SendReply();
 
@@ -189,7 +195,7 @@ public class Game_Progression : MonoBehaviour
                 playSounds_Script.PlayErorr();
 
                 //Trigger malfunction tutorials tips
-                if(malfunctionNum == 1)
+                if (malfunctionNum == 1)
                 {
                     ToMalfunctionTutorial1();
                 } else if (malfunctionNum == 2)
@@ -205,7 +211,7 @@ public class Game_Progression : MonoBehaviour
             }
             else
             {
-                if(tent1IsComplete == false)
+                if (tent1IsComplete == false)
                 {
                     //do this only once
                     medtent1.SetActive(true);
@@ -240,11 +246,11 @@ public class Game_Progression : MonoBehaviour
         if (gameOver_win == true)
         {
             Scene_Manager_DD.mainScreenTextOption = 1;
-        } 
+        }
         else if (gameOver_outOfFuel == true)
         {
             Scene_Manager_DD.mainScreenTextOption = 3;
-        } 
+        }
         else if (gameOver_shipMalfunction == true)
         {
             Scene_Manager_DD.mainScreenTextOption = 2;
@@ -277,7 +283,7 @@ public class Game_Progression : MonoBehaviour
 
     private void TentManager()
     {
-        if(!tent3IsComplete && tent2IsComplete)
+        if (!tent3IsComplete && tent2IsComplete)
         {
             gameOver_win = true;
             GameOver();
@@ -301,7 +307,7 @@ public class Game_Progression : MonoBehaviour
             somethingIsBroken = true;
         }
 
-        
+
     }
 
     IEnumerator WaitForRotation()
@@ -311,6 +317,38 @@ public class Game_Progression : MonoBehaviour
         spawnMedbox.GetComponentInChildren<NewObjectCounter>().rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
         spawnMedbox.GetComponentInChildren<NewObjectCounter>().PlayStation2EnterAnimation();
         medboxExists = true;
+    }
+
+    public void SetComActive()
+    {
+        commissioner.SetActive(true);
+        survivor1.SetActive(false);
+        survivor2.SetActive(false);
+        survivor3.SetActive(false);
+    }
+
+    public void SetSurv1Active()
+    {
+        commissioner.SetActive(false);
+        survivor1.SetActive(true);
+        survivor2.SetActive(false);
+        survivor3.SetActive(false);
+    }
+
+    public void SetSurv2Active()
+    {
+        commissioner.SetActive(false);
+        survivor1.SetActive(false);
+        survivor2.SetActive(true);
+        survivor3.SetActive(false);
+    }
+
+    public void SetSurv3Active()
+    {
+        commissioner.SetActive(false);
+        survivor1.SetActive(false);
+        survivor2.SetActive(false);
+        survivor3.SetActive(true);
     }
 
 }
