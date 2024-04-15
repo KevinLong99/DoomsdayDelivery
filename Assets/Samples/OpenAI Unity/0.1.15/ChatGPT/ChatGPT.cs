@@ -18,7 +18,7 @@ namespace OpenAI
         private List<ChatMessage> messages = new List<ChatMessage>();
         //private string prompt = "Give 3 pizza facts in paragraph style. Between each sentences, abruptly insert the phrase '\n~~~ERROR! ERROR! FLIGHT MALFUNCTION! PRESS BIG RED BUTTON!~~~\n'.";
         //private string prompt = "Give instructions in a paragraph, not a list, on how to make a pizza in different styles. End the paragraph abruptly at 300 characters, finishing with one - character.";
-        private string prompt = "Insert the phrase '~~~ERROR! ERROR! FLIGHT MALFUNCTION! PRESS BIG RED BUTTON!~~~' or a phrase similar to that.";
+        private string prompt = "Insert the phrase '~~~ERROR! ERROR! FLIGHT MALFUNCTION! FIX THE SHIP TO CONTINUE!~~~' or a phrase similar to that.";
 
         private void AppendMessage(ChatMessage message)
         {

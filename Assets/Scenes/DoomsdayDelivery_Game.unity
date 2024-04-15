@@ -50571,6 +50571,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button_NeckPress_FixShip
       objectReference: {fileID: 0}
+    - target: {fileID: 1990461886063897401, guid: a232559d271f2e243a1d0e860b1302c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5310739371693766300, guid: a232559d271f2e243a1d0e860b1302c1,
         type: 3}
       propertyPath: m_LocalScale.x
