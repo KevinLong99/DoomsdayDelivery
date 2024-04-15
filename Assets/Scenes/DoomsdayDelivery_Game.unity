@@ -11624,13 +11624,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hey there volunteer! Welcome to Vito Mothership III. Thanks for offering
-    your help in this time of crisis. Now lets get out there and deliver some medical
-    supplies!
+  m_text: 'Hey kid! Welcome to Vito Mothership III. Thanks for your help in this
+    time of crisis. Now get out there and deliver those medical supplies!
 
 
-    Better hurry. You have a limited amount of fuel, and gas isn''t
-    easy to come by nowadays.'
+    You''d
+    better hurry. This ship can only hold a limited amount of fuel, and gas is hard
+    to come by nowadays.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acc52749920cad3459473249a2ae0975, type: 2}
   m_sharedMaterial: {fileID: 3653838672350126629, guid: acc52749920cad3459473249a2ae0975,
@@ -36912,7 +36912,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0c72114e23baab84bbb2bb53735d4b7f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

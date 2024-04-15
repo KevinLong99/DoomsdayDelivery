@@ -44,9 +44,6 @@ public class Game_Progression : MonoBehaviour
 
     public Typewriter_UI typewriter_Script;
     private PlaySounds playSounds_Script;
-    private string errorMessage = "ERROR! ERROR! SHIP MALFUNCTION! \n" +
-        "Press the big red button to fix the malfunction, and push thruster " +
-        "forward to continue flying.";
     private string errorResolvedMessage = "You fixed the ship! Resume flying by pushing" +
         " the thruster forward.";
 
@@ -70,6 +67,8 @@ public class Game_Progression : MonoBehaviour
     [SerializeField] private GameObject survivor1;
     [SerializeField] private GameObject survivor2;
     [SerializeField] private GameObject survivor3;
+
+    private bool hasPlayedWarning = false;
 
     //Initializations for malfunction tutorials
     public void ToMalfunctionTutorial1()
@@ -98,6 +97,7 @@ public class Game_Progression : MonoBehaviour
         medtent3.SetActive(false);
 
         timeRemaining = fullTime;
+
     }
 
     void Update()
@@ -108,12 +108,19 @@ public class Game_Progression : MonoBehaviour
             {
                 timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
+
+                if (hasPlayedWarning == false && timeRemaining < 61)
+                {
+                    playSounds_Script.PlayNickWarning();
+                    hasPlayedWarning = true;
+                }
             }
             else
             {
                 gameOver_outOfFuel = true;
                 timeRemaining = 0;
                 timerIsRunning = false;
+                playSounds_Script.PlayNickFail();
                 GameOver();
             }
         }
@@ -128,6 +135,8 @@ public class Game_Progression : MonoBehaviour
         seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        
 
         // Gas bar
         if (gasGauge.fillAmount > 0)
@@ -286,6 +295,7 @@ public class Game_Progression : MonoBehaviour
         if (!tent3IsComplete && tent2IsComplete)
         {
             gameOver_win = true;
+            playSounds_Script.PlayNickSuccess();
             GameOver();
         }
 

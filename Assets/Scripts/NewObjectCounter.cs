@@ -262,46 +262,6 @@ public class NewObjectCounter : MonoBehaviour
             }
         }
 
-
-
-        /*
-        // Perform actions based on the number of supplies that meet the threshold
-        if (suppliesAtThresholdCount >= 3)
-        {
-            // Code to execute if at least three tags reached the threshold- Success
-            myUIManager.ToSuccessDelivery();
-            if (medtentScript.tentNum == 1)
-            {
-                typewriteScript_NOC.StartTypewriterView(Tent1YesMsg);
-            }
-            else if (medtentScript.tentNum == 2)
-            {
-                typewriteScript_NOC.StartTypewriterView(Tent2YesMsg);
-            }
-            else if (medtentScript.tentNum == 3)
-            {
-                typewriteScript_NOC.StartTypewriterView(Tent3YesMsg);
-            }
-        }
-        else
-        {
-            // Code to execute if fewer than three tags reached the threshold- Failed
-            myUIManager.ToFailDelivery();
-            if (medtentScript.tentNum == 1)
-            {
-                typewriteScript_NOC.StartTypewriterView(Tent1NoMsg);
-            }
-            else if (medtentScript.tentNum == 2)
-            {
-                typewriteScript_NOC.StartTypewriterView(Tent2NoMsg);
-            }
-            else if (medtentScript.tentNum == 3)
-            {
-                typewriteScript_NOC.StartTypewriterView(Tent3NoMsg);
-            }
-        }
-        */
-
         ResetCounts();
         
         StartCoroutine(ReturnScreenToPos());

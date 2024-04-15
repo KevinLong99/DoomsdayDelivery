@@ -82,7 +82,7 @@ public class PlaySounds : MonoBehaviour
     }
     public void PlayNickIntro()
     {
-        soundPlayer.PlayOneShot(Nick_Intro);
+        soundPlayer.clip = null;
     }
     public void PlayNickWarning()
     {
