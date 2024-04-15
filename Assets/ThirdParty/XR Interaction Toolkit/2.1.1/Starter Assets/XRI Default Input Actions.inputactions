@@ -1373,6 +1373,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Recenter",
+            "id": "85098522-21ee-4334-a44a-057862c9b466",
+            "actions": [
+                {
+                    "name": "recenter",
+                    "type": "Button",
+                    "id": "e78a1670-8b47-4b8b-9e11-d8e66be32fb4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "23460001-e12f-4f9a-80e9-e24dc37c9335",
+                    "path": "<Keyboard>/#(R)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "recenter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
