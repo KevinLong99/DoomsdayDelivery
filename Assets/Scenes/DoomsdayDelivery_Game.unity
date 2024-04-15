@@ -2399,8 +2399,8 @@ MonoBehaviour:
     for directions
   - 'Let go of the controller '
   - 'Return to the first station and fly to the next medtent! '
-  - Fix malfunction 1
-  - Fix malfunction 2
+  - Scan your hand here to fix the malfunction
+  - Rotate the wheel here to fix the malfunction
   LeverValue: 0
   TutorialArea: {fileID: 1076933548}
   tutorialPassed: 0
