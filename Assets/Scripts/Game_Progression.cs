@@ -121,7 +121,7 @@ public class Game_Progression : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
                 playSounds_Script.PlayNickFail();
-                GameOver();
+                GameOver(); //FIXME!!!!! Tent3 Response and nickFail play at same time
             }
         }
 
@@ -297,6 +297,7 @@ public class Game_Progression : MonoBehaviour
             gameOver_win = true;
             playSounds_Script.PlayNickSuccess();
             GameOver();
+            //FIXME!!!!! Tent3 Response and nickSuccess play at same time
         }
 
         if (!tent2IsComplete && tent1IsComplete)
