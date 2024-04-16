@@ -40,21 +40,21 @@ public class IntroToGame_DD : MonoBehaviour
 
         //ship takes off, revealing the skyline
         float counter = 0;
-        float timeDur = 5;
+        float timeDur = 7;
 
         Vector3 posStart = cameraToMove.transform.position;
         while (counter < timeDur)
         {
-            
-            cameraToMove.transform.position = Vector3.MoveTowards(posStart, camEndPos, counter / timeDur);
+            cameraToMove.transform.position = Vector3.Lerp(posStart, camEndPos, counter/timeDur);
             counter += Time.deltaTime;
-            Debug.Log(counter);
             yield return null;
         }
         cameraToMove.transform.position = camEndPos;
         yield return new WaitForSeconds(1);
 
         //fade lights out, including the one over the thruster
+        RenderSettings.ambientIntensity = 0.25f;
+        RenderSettings.reflectionIntensity = 0.25f;
         yield return new WaitForSeconds(1);
 
         //black screen with white text appears:
