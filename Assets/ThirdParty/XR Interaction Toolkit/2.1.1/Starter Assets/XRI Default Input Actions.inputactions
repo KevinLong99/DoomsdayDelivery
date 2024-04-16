@@ -1399,6 +1399,17 @@
                     "action": "recenter",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7a556850-2794-43dc-b482-ce810331cf05",
+                    "path": "<XRSimulatedController>{LeftHand}/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "recenter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
