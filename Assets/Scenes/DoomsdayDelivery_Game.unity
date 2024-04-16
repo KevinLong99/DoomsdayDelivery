@@ -12211,6 +12211,7 @@ MonoBehaviour:
   survivor1: {fileID: 1629287326}
   survivor2: {fileID: 1992101995}
   survivor3: {fileID: 1081411341}
+  droneInputScript: {fileID: 1215512380}
 --- !u!82 &1848070715
 AudioSource:
   m_ObjectHideFlags: 0

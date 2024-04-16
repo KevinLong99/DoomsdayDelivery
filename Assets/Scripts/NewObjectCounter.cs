@@ -149,6 +149,7 @@ public class NewObjectCounter : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Medtent"))
         {
+
             if(isFirstLoop == false)
             {
                 myUIManager.ToEnableDropSwitchTip();
@@ -271,6 +272,7 @@ public class NewObjectCounter : MonoBehaviour
 
     IEnumerator ReturnScreenToPos()
     {
+        gameProg_Script.droneInputScript.enabled = false;
         yield return new WaitForSeconds(3);
         switchReturn_Script.TrySetPositionToTarget();
         rotateParentScript.medKitisCompleted = false;

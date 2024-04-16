@@ -1,4 +1,5 @@
 using OpenAI;
+using PA_DronePack;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -69,6 +70,8 @@ public class Game_Progression : MonoBehaviour
     [SerializeField] private GameObject survivor3;
 
     private bool hasPlayedWarning = false;
+
+    public PA_DroneAxisInput droneInputScript;
 
     //Initializations for malfunction tutorials
     public void ToMalfunctionTutorial1()
@@ -282,12 +285,24 @@ public class Game_Progression : MonoBehaviour
     //Function to spawn new drone
     public void SpawnNewDrone()
     {
-        theDrone.transform.position = newDroneLocation.position;
+        //turn off input
+
+        Debug.Log("SpawnNewDrone called");
+
+        StartCoroutine(DroneReturnToPosition());
         screenChanger.ChangeMaterialToBlank();
         //GameObject newDrone = Instantiate(DronePrefab, newDroneLocation);
 
         //set up the next tents or end the game
         TentManager();
+    }
+
+    private IEnumerator DroneReturnToPosition()
+    {
+        yield return new WaitForSeconds(5);
+        theDrone.transform.position = newDroneLocation.position;
+
+
     }
 
     private void TentManager()
