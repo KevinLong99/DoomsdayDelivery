@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using System;
-using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -15,8 +14,6 @@ public class DialogueManager : MonoBehaviour
 
     //To tell if the tutorial is passed
     public bool tutorialPassed = false;
-    private bool isLevelErrorActive = false; // Flag to check if LevelError coroutine is running
-
 
     // Call this function to change the displayed sprite to the specified one in the list
 
@@ -97,41 +94,5 @@ public class DialogueManager : MonoBehaviour
         }
 
         //Dialogues.Clear(); // Clear all items from the Dialogues list
-    }
-
-
-    //Temporarily display lever pull error message
-
-    IEnumerator LevelError()
-    {
-        if (isLevelErrorActive)
-            yield break; // Exit if the coroutine is already running
-
-        isLevelErrorActive = true; // Set the flag to true indicating the coroutine is running
-
-        TextMeshPro textMesh = DisplayDialogue.GetComponent<TextMeshPro>();
-        string originalText = textMesh.text;
-
-        if (Dialogues.Count > 12)
-        {
-            textMesh.text = Dialogues[12];
-        }
-        else
-        {
-            Debug.LogError("DialogueManager: Index 12 out of range.");
-            isLevelErrorActive = false; // Reset the flag as we exit early
-            yield break;
-        }
-
-        yield return new WaitForSeconds(2);
-
-        textMesh.text = originalText;
-        isLevelErrorActive = false; // Reset the flag after the coroutine completes
-    }
-
-
-    public void CallLevelError()
-    {
-        StartCoroutine(LevelError());
     }
 }

@@ -36,18 +36,16 @@ public class TutorialManager : MonoBehaviour
                     switch (LeverValue)
                     {
                         case 0:
-                            LeverValue = 1; // Increment LeverValue to 1, first time the lever is pulled
+                            LeverValue = 1; // Increment LeverValue to 1
                             break;
                         case 1:
                             number = 6; // Treat it as if AddStep(6) is called
-                            LeverValue = 2; // Increment LeverValue to 2, second time the lever is pulled
+                            LeverValue = 2; // Increment LeverValue to 2
                             break;
                         case 2:
                             //DeleteTutorial();
-                            number = 13; // Treat it as if AddStep(13) is called, third time the lever is pulled
-                            //tutorialPassed = true;
-                            break;
-                            //return; // Do nothing
+                            tutorialPassed = true;
+                            return; // Do nothing
                     }
                 }
 
