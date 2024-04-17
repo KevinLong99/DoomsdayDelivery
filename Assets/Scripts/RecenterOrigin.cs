@@ -26,6 +26,7 @@ public class RecenterOrigin : MonoBehaviour
         XROrigin xrOrigin = GetComponent<XROrigin>();
         xrOrigin.MoveCameraToWorldLocation(target.position);
         xrOrigin.MatchOriginUpCameraForward(target.up, target.forward);
+        Debug.Log("test");
     }
 }
 

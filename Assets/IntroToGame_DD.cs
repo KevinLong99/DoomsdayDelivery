@@ -26,6 +26,10 @@ public class IntroToGame_DD : MonoBehaviour
     private float counter, timeDur = 0;
 
     public Light spotLightThruster;
+    public Light spotLight;
+    public Light directionalLight;
+    public GameObject reflectionProbe;
+    public GameObject mainLogo;
     public PlaySounds soundScript;
 
     void Start()
@@ -45,6 +49,7 @@ public class IntroToGame_DD : MonoBehaviour
 
         //lights flicker on 
         
+        reflectionProbe.SetActive(true);
         RenderSettings.ambientIntensity = 0.75f;
         RenderSettings.reflectionIntensity = 0.75f;
         yield return new WaitForSeconds(0.05f);
@@ -54,8 +59,17 @@ public class IntroToGame_DD : MonoBehaviour
         RenderSettings.reflectionIntensity = 0.1f;
         yield return new WaitForSeconds(0.05f);
 
+        RenderSettings.ambientIntensity = 0.5f;
+        RenderSettings.reflectionIntensity = 0.5f;
+        yield return new WaitForSeconds(0.05f);
+
+        spotLight.intensity = 0.7f;
         RenderSettings.ambientIntensity = 0.75f;
         RenderSettings.reflectionIntensity = 0.75f;
+        yield return new WaitForSeconds(0.05f);
+
+        RenderSettings.ambientIntensity = 0.5f;
+        RenderSettings.reflectionIntensity = 0.5f;
         yield return new WaitForSeconds(0.05f);
 
         RenderSettings.ambientIntensity = 0.1f;
@@ -66,14 +80,7 @@ public class IntroToGame_DD : MonoBehaviour
         RenderSettings.reflectionIntensity = 0.75f;
         yield return new WaitForSeconds(0.05f);
 
-        RenderSettings.ambientIntensity = 0.1f;
-        RenderSettings.reflectionIntensity = 0.1f;
-        yield return new WaitForSeconds(0.05f);
-
-        RenderSettings.ambientIntensity = 0.75f;
-        RenderSettings.reflectionIntensity = 0.75f;
-        yield return new WaitForSeconds(0.05f);
-
+        directionalLight.intensity = 1.5f;
         RenderSettings.ambientIntensity = 0.1f;
         RenderSettings.reflectionIntensity = 0.1f;
         yield return new WaitForSeconds(0.05f);
@@ -100,6 +107,8 @@ public class IntroToGame_DD : MonoBehaviour
             cameraToMove.transform.position = Vector3.Lerp(posStart, camEndPos, counter/timeDur);
             counter += Time.deltaTime;
             yield return null;
+            if (counter >= 3f && !mainLogo.activeInHierarchy)
+                mainLogo.SetActive(true);
         }
         cameraToMove.transform.position = camEndPos;
         yield return new WaitForSeconds(1);
@@ -111,8 +120,10 @@ public class IntroToGame_DD : MonoBehaviour
         while (counter < timeDur)
         {
             RenderSettings.ambientIntensity = Mathf.Lerp(0.75f, 0.25f, counter/timeDur);
-            RenderSettings.reflectionIntensity = Mathf.Lerp(0.75f, 0.25f, counter / timeDur);
-            
+            RenderSettings.reflectionIntensity = Mathf.Lerp(0.75f, 0.25f, counter/timeDur);
+            spotLight.intensity = Mathf.Lerp(0.7f, 0f, counter/timeDur);
+            directionalLight.intensity = Mathf.Lerp(1.5f, 0f, counter / timeDur);
+
             counter += Time.deltaTime;
             yield return null;
         }
