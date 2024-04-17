@@ -34,7 +34,7 @@ public class IntroToGame_DD : MonoBehaviour
 
     void Start()
     {
-        //SwitchSceneToGame();
+        SwitchSceneToGame();
     }
 
     public void SwitchSceneToGame()
