@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class Game_Progression : MonoBehaviour
 {
@@ -72,6 +73,9 @@ public class Game_Progression : MonoBehaviour
     private bool hasPlayedWarning = false;
 
     public PA_DroneAxisInput droneInputScript;
+
+    [SerializeField] private Light direcLight;
+    [SerializeField] private Light spotLightEnv;
 
     //Initializations for malfunction tutorials
     public void ToMalfunctionTutorial1()
@@ -170,6 +174,9 @@ public class Game_Progression : MonoBehaviour
             if (malfunctionNum == 1)
             {
                 malfunctionNum = 2;
+                //fix lights
+                StartCoroutine(LightModification());
+                
             }
             else
             {
@@ -192,6 +199,11 @@ public class Game_Progression : MonoBehaviour
                 //Trigger different effects for 1st and 2nd malfunctions
                 if (malfunctionNum == 1 && tent2IsComplete == false)
                 {
+                    //do lighting stuff here
+                    direcLight.enabled = false;
+                    spotLightEnv.enabled = false;
+                    RenderSettings.ambientIntensity = 0;
+
                     SetComActive();
                     typewriter_Script.StartTypewriterView("LOADING.....");
                     chatGptScript.SendReply();
@@ -200,6 +212,7 @@ public class Game_Progression : MonoBehaviour
                     needToFixShip = true;
                     playSounds_Script.PlayErorr();
                     ToMalfunctionTutorial1();
+                    
                 }
                 else if (malfunctionNum == 2 && tent2IsComplete == true)
                 {
@@ -238,6 +251,37 @@ public class Game_Progression : MonoBehaviour
 
             }
         }
+    }
+
+    private IEnumerator LightModification()
+    {
+        direcLight.enabled = true;
+        spotLightEnv.enabled = true;
+        yield return new WaitForSeconds(0.075f);
+
+        direcLight.enabled = false;
+        spotLightEnv.enabled = false;
+        yield return new WaitForSeconds(0.075f);
+
+        direcLight.enabled = true;
+        spotLightEnv.enabled = true;
+        yield return new WaitForSeconds(0.075f);
+
+        direcLight.enabled = false;
+        spotLightEnv.enabled = false;
+        yield return new WaitForSeconds(0.075f);
+
+        direcLight.enabled = true;
+        spotLightEnv.enabled = true;
+        yield return new WaitForSeconds(0.075f);
+
+        direcLight.enabled = false;
+        spotLightEnv.enabled = false;
+        yield return new WaitForSeconds(0.075f);
+
+        direcLight.enabled = true;
+        spotLightEnv.enabled = true;
+        RenderSettings.ambientIntensity = 0.89f;
     }
 
     public void CallMedTent()

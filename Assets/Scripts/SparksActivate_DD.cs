@@ -26,7 +26,7 @@ public class SparksActivate_DD : MonoBehaviour
             }
             else
             {
-                Debug.Log("Sparkles will not play");
+                //Debug.Log("Sparkles will not play");
             }
         }
     }
