@@ -29,23 +29,25 @@ public class TutorialManager : MonoBehaviour
         if (number >= 0 && number < Steps.Count)
         {
             //Tutorial part arrow tips, would not trigger after tutorial is passed
-            if(number < 10 && tutorialPassed == false)
+            if (number < 10 && tutorialPassed == false)
             {
                 if (number == 3)
                 {
                     switch (LeverValue)
                     {
                         case 0:
-                            LeverValue = 1; // Increment LeverValue to 1
+                            LeverValue = 1; // Increment LeverValue to 1, first time the lever is pulled
                             break;
                         case 1:
                             number = 6; // Treat it as if AddStep(6) is called
-                            LeverValue = 2; // Increment LeverValue to 2
+                            LeverValue = 2; // Increment LeverValue to 2, second time the lever is pulled
                             break;
                         case 2:
                             //DeleteTutorial();
+                            number = 13; // Treat it as if AddStep(13) is called, third time the lever is pulled
                             tutorialPassed = true;
-                            return; // Do nothing
+                            break;
+                            //return; // Do nothing
                     }
                 }
 
@@ -64,6 +66,7 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
+    /*
     public void DeleteTutorial()
     {
         foreach (var step in Steps)
@@ -76,4 +79,5 @@ public class TutorialManager : MonoBehaviour
 
         Steps.Clear(); // Clear the list after destroying all GameObjects
     }
+    */
 }
