@@ -175,7 +175,7 @@ public class Game_Progression : MonoBehaviour
             {
                 malfunctionNum = 2;
                 //fix lights
-                StartCoroutine(LightModification());
+                StartCoroutine(LightModification(true));
                 
             }
             else
@@ -200,9 +200,7 @@ public class Game_Progression : MonoBehaviour
                 if (malfunctionNum == 1 && tent2IsComplete == false)
                 {
                     //do lighting stuff here
-                    direcLight.enabled = false;
-                    spotLightEnv.enabled = false;
-                    RenderSettings.ambientIntensity = 0;
+                    StartCoroutine(LightModification(false));
 
                     SetComActive();
                     typewriter_Script.StartTypewriterView("LOADING.....");
@@ -253,7 +251,7 @@ public class Game_Progression : MonoBehaviour
         }
     }
 
-    private IEnumerator LightModification()
+    private IEnumerator LightModification(bool turnOn)
     {
         direcLight.enabled = true;
         spotLightEnv.enabled = true;
@@ -277,11 +275,20 @@ public class Game_Progression : MonoBehaviour
 
         direcLight.enabled = false;
         spotLightEnv.enabled = false;
-        yield return new WaitForSeconds(0.075f);
 
         direcLight.enabled = true;
         spotLightEnv.enabled = true;
         RenderSettings.ambientIntensity = 0.89f;
+
+        if (turnOn == false)
+        {
+            yield return new WaitForSeconds(0.075f);
+            direcLight.enabled = false;
+            spotLightEnv.enabled = false;
+            RenderSettings.ambientIntensity = 0;
+        }
+
+
     }
 
     public void CallMedTent()

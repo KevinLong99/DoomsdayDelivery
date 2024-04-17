@@ -12437,6 +12437,8 @@ MonoBehaviour:
   survivor2: {fileID: 1992101995}
   survivor3: {fileID: 1081411341}
   droneInputScript: {fileID: 1215512380}
+  direcLight: {fileID: 374116585}
+  spotLightEnv: {fileID: 1107756969}
 --- !u!82 &1848070715
 AudioSource:
   m_ObjectHideFlags: 0
@@ -67412,7 +67414,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 07836a24fb92ce0458917efc2aca8f2a, type: 3}
+  - {fileID: 2100000, guid: 1b6bd0ab3bc841e49b3a84243c947a5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84379,13 +84381,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3195308785303635205}
   serializedVersion: 2
-  m_LocalRotation: {x: -6.1232336e-17, y: 1, z: 6.1232336e-17, w: -0.00000004371139}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.000000016763808, y: 0.99297625, z: 0.11831437, w: -0.00000007450579}
+  m_LocalPosition: {x: 0.0000001966922, y: -0.00017364419, z: 0.007635885}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 566951189914408366}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -13.59, y: -180, z: 0}
 --- !u!1 &4640023769804527831
 GameObject:
   m_ObjectHideFlags: 0
@@ -146564,7 +146566,7 @@ Transform:
   m_GameObject: {fileID: 2877701651799416067}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4, y: -8.9, z: 1.6}
+  m_LocalPosition: {x: -0.38, y: -8.9, z: 1.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

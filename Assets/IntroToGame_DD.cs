@@ -41,21 +41,46 @@ public class IntroToGame_DD : MonoBehaviour
     private IEnumerator BeginGameCoroutine()
     {
         startGameText.SetActive(false);
+        yield return new WaitForSeconds(1.0f);
 
         //lights flicker on 
-        counter = 0;
-        timeDur = 3;
+        
+        RenderSettings.ambientIntensity = 0.75f;
+        RenderSettings.reflectionIntensity = 0.75f;
+        yield return new WaitForSeconds(0.05f);
 
-        while (counter < timeDur)
-        {
-            RenderSettings.ambientIntensity = Mathf.Lerp(0.1f, 0.75f, counter / timeDur);
-            RenderSettings.reflectionIntensity = Mathf.Lerp(0.1f, 0.75f, counter / timeDur);
-            spotLightThruster.intensity = Mathf.Lerp(1, 0, counter/timeDur);
-            counter += Time.deltaTime;
-            yield return null;
-        }
+        spotLightThruster.intensity = 0;
+        RenderSettings.ambientIntensity = 0.1f;
+        RenderSettings.reflectionIntensity = 0.1f;
+        yield return new WaitForSeconds(0.05f);
 
-        yield return new WaitForSeconds(1);
+        RenderSettings.ambientIntensity = 0.75f;
+        RenderSettings.reflectionIntensity = 0.75f;
+        yield return new WaitForSeconds(0.05f);
+
+        RenderSettings.ambientIntensity = 0.1f;
+        RenderSettings.reflectionIntensity = 0.1f;
+        yield return new WaitForSeconds(0.05f);
+
+        RenderSettings.ambientIntensity = 0.75f;
+        RenderSettings.reflectionIntensity = 0.75f;
+        yield return new WaitForSeconds(0.05f);
+
+        RenderSettings.ambientIntensity = 0.1f;
+        RenderSettings.reflectionIntensity = 0.1f;
+        yield return new WaitForSeconds(0.05f);
+
+        RenderSettings.ambientIntensity = 0.75f;
+        RenderSettings.reflectionIntensity = 0.75f;
+        yield return new WaitForSeconds(0.05f);
+
+        RenderSettings.ambientIntensity = 0.1f;
+        RenderSettings.reflectionIntensity = 0.1f;
+        yield return new WaitForSeconds(0.05f);
+
+        RenderSettings.ambientIntensity = 0.75f;
+        RenderSettings.reflectionIntensity = 0.75f;
+        yield return new WaitForSeconds(1.5f);
 
         soundScript.PlayErorr();    //NOT AN ERROR NOISE: replace with ship flying audio
 
@@ -105,7 +130,7 @@ public class IntroToGame_DD : MonoBehaviour
 
 
         //switch to game scene 
-        //sceneManagerScript.BeginGame();
+        sceneManagerScript.BeginGame();
         fadeScreenScript.FadeOut();
         //startGameText.SetActive(false);
     }
