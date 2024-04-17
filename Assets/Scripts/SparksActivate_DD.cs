@@ -19,14 +19,10 @@ public class SparksActivate_DD : MonoBehaviour
     {
         if (gameProg_Script.needToFixShip == true)
         {
-            if (playIsReady && gameProg_Script.tent2IsComplete == false)
+            if (playIsReady)
             {
                 playIsReady = false;
                 StartCoroutine(WaitSomeTime());
-            }
-            else
-            {
-                Debug.Log("Sparkles will not play");
             }
         }
     }

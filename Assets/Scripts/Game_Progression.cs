@@ -185,37 +185,35 @@ public class Game_Progression : MonoBehaviour
     {
         if (playerMayFly == true && rotateParent_Script.moveValue == 1)
         {
-            //Trigger malfunction tutorials tips
             if (somethingIsBroken == true)
             {
 
                 //Trigger different effects for 1st and 2nd malfunctions
-                if (malfunctionNum == 1 && tent2IsComplete == false)
+                if (malfunctionNum == 1)
                 {
-                    SetComActive();
-                    typewriter_Script.StartTypewriterView("LOADING.....");
-                    chatGptScript.SendReply();
-                    playerMayFly = false;
-                    hapticChairScript.HardStopTheShip(3);
-                    needToFixShip = true;
-                    playSounds_Script.PlayErorr();
+
+                } else if (malfunctionNum == 2)
+                {
+
+                }
+                SetComActive();
+                typewriter_Script.StartTypewriterView("LOADING.....");
+                chatGptScript.SendReply();
+
+                playerMayFly = false;
+                hapticChairScript.HardStopTheShip(3);
+                needToFixShip = true;
+                fog.SetActive(true);
+                playSounds_Script.PlayErorr();
+
+                //Trigger malfunction tutorials tips
+                if (malfunctionNum == 1)
+                {
                     ToMalfunctionTutorial1();
-                }
-                else if (malfunctionNum == 2 && tent2IsComplete == true)
+                } else if (malfunctionNum == 2)
                 {
-                    SetComActive();
-                    typewriter_Script.StartTypewriterView("LOADING.....");
-                    chatGptScript.SendReply();
-
-                    playerMayFly = false;
-                    hapticChairScript.HardStopTheShip(3);
-                    needToFixShip = true;
-                    fog.SetActive(true);
-                    playSounds_Script.PlayErorr();
                     ToMalfunctionTutorial2();
-
                 }
-
                 //do malfunction here
                 //upon pressing button, it will fix the malfunction
 
