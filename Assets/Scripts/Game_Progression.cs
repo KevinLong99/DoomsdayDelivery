@@ -116,7 +116,7 @@ public class Game_Progression : MonoBehaviour
                 timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
 
-                if (hasPlayedWarning == false && timeRemaining < 61)
+                if (hasPlayedWarning == false && timeRemaining < 121)
                 {
                     playSounds_Script.PlayNickWarning();
                     hasPlayedWarning = true;
@@ -169,6 +169,7 @@ public class Game_Progression : MonoBehaviour
             fog.SetActive(false);
 
             playSounds_Script.PlayNickShipFixed();
+            playSounds_Script.PlayMalfunctionComplete();
 
 
             typewriter_Script.StartTypewriterView(errorResolvedMessage);

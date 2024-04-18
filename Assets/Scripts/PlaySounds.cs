@@ -50,6 +50,11 @@ public class PlaySounds : MonoBehaviour
         soundPlayer = GetComponent<AudioSource>();
     }
 
+    public void PlayMalfunctionComplete()
+    {
+        soundPlayer.PlayOneShot(newOrderNotification);
+    }
+
     public void PlayChosenAudioClip(AudioClip chosenAudioClip)
     {
         soundPlayer.PlayOneShot(chosenAudioClip);
@@ -110,6 +115,7 @@ public class PlaySounds : MonoBehaviour
 
     public void PlayNickTent1()
     {
+        soundPlayer.Stop();
         soundPlayer.PlayOneShot(NickTent1);
     }
     public void PlayNickTent2()
