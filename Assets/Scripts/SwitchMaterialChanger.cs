@@ -21,17 +21,20 @@ public class SwitchMaterialChanger : MonoBehaviour
 
     private void Update()
     {
+        /*
         //Disable drone input while the screen is dark
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
          if (meshRenderer.material.shader.name == blankMaterial.shader.name)
             {
-                myDroneInput.enabled = false;
+                //myDroneInput.enabled = false;
+                //DelayedDroneControlOff();
             }
             else
             {
                 //myDroneInput.enabled = true;
             //Debug.Log("The GameObject's material is not equal to BlankMaterial.");
         }
+        */
  
     }
     public void ChangeMaterial()
@@ -51,6 +54,20 @@ public class SwitchMaterialChanger : MonoBehaviour
             {
                 Debug.LogError("Missing component: MeshRenderer or newMaterial not assigned.");
             }
+        }
+    }
+
+    public void DisableSwitchInput()
+    {
+
+            myDroneInput.enabled = false;
+    }
+
+    public void EnableSwitchInput()
+    {
+        if (canTurnOnAgain == true)
+        {
+            myDroneInput.enabled = true;
         }
     }
 
@@ -112,7 +129,19 @@ public class SwitchMaterialChanger : MonoBehaviour
         }
     }
 
-    public void CanTurnOnAgain()
+        /*
+    //Delayed turn off of drone control input
+    private IEnumerator DelayedDroneControlOff()
+    {
+        yield return new WaitForSeconds(2);
+
+        myDroneInput.enabled = false;
+
+    }
+        */
+
+
+        public void CanTurnOnAgain()
     {
         canTurnOnAgain = true;
     }
