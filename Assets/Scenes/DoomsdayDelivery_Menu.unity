@@ -608,7 +608,7 @@ MonoBehaviour:
   newOrderNotification: {fileID: 0}
   pickUpDroneNavigator: {fileID: 0}
   randomBeepingNoises: {fileID: 8300000, guid: cc9ac6cf16416bf4f86200083bfcb846, type: 3}
-  shipErrorBuzzThreeTimes: {fileID: 8300000, guid: a8133e8c92079fc408dd41b4e2a7fdd6,
+  shipErrorBuzzThreeTimes: {fileID: 8300000, guid: a836157553d0b5c4388330d99d4559c9,
     type: 3}
   spaceshipThruster: {fileID: 0}
   stationChange: {fileID: 0}
@@ -627,6 +627,10 @@ MonoBehaviour:
   Nick_Success: {fileID: 0}
   Rachel_Fail: {fileID: 0}
   Rachel_Success: {fileID: 0}
+  NickTent1: {fileID: 0}
+  NickTent2: {fileID: 0}
+  NickTent3: {fileID: 0}
+  NickShipFixed: {fileID: 0}
 --- !u!82 &749458119
 AudioSource:
   m_ObjectHideFlags: 0
