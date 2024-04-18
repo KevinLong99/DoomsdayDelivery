@@ -59,8 +59,8 @@ public class SwitchMaterialChanger : MonoBehaviour
 
     public void DisableSwitchInput()
     {
-
-            myDroneInput.enabled = false;
+            DelayedDroneControlOff();
+            //myDroneInput.enabled = false;
     }
 
     public void EnableSwitchInput()
@@ -129,16 +129,15 @@ public class SwitchMaterialChanger : MonoBehaviour
         }
     }
 
-        /*
+
     //Delayed turn off of drone control input
     private IEnumerator DelayedDroneControlOff()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(DelayedTime);
 
         myDroneInput.enabled = false;
 
     }
-        */
 
 
         public void CanTurnOnAgain()

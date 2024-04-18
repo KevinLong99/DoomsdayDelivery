@@ -366,7 +366,7 @@ public class Game_Progression : MonoBehaviour
 
     private IEnumerator DroneReturnToPosition()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         theDrone.transform.position = newDroneLocation.position;
 
 
