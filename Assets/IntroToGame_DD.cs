@@ -32,9 +32,14 @@ public class IntroToGame_DD : MonoBehaviour
     public GameObject mainLogo;
     public PlaySounds soundScript;
 
+    public Actuate.ActuateAgent actuateAgent;
+    public GameObject actuateReference;
+    Rigidbody actuateRb;
+
     void Start()
     {
-        //SwitchSceneToGame();
+        actuateRb = actuateReference.GetComponent<Rigidbody>();
+        SwitchSceneToGame();
     }
 
     public void SwitchSceneToGame()
@@ -97,21 +102,48 @@ public class IntroToGame_DD : MonoBehaviour
 
         yield return new WaitForSeconds(0.75f);
 
+//----------------------------------------------------------------------------------
         //ship takes off, revealing the skyline
         counter = 0;
         timeDur = 6;
-
+        Quaternion endRot = Quaternion.Euler(180, 0, 0);
         Vector3 posStart = cameraToMove.transform.position;
+        
         while (counter < timeDur)
         {
             cameraToMove.transform.position = Vector3.Lerp(posStart, camEndPos, counter/timeDur);
+            actuateReference.transform.rotation = Quaternion.Lerp(Quaternion.identity, endRot, counter / timeDur);
+
             counter += Time.deltaTime;
             yield return null;
+
             if (counter >= 3f && !mainLogo.activeInHierarchy)
                 mainLogo.SetActive(true);
         }
         cameraToMove.transform.position = camEndPos;
+
+        float lerpCounter = 0;
+        float lerpDuration = 0.25f;
+        Vector3 startingVel = actuateRb.velocity;
+        Vector3 startingAngVel = actuateRb.angularVelocity;
+        Quaternion startingRot = actuateReference.gameObject.transform.rotation;
+        while (lerpCounter < lerpDuration)
+        {
+            lerpCounter += Time.deltaTime;
+            actuateRb.velocity = Vector3.Lerp(startingVel, Vector3.zero, lerpCounter / lerpDuration);
+            actuateRb.angularVelocity = Vector3.Lerp(startingAngVel, Vector3.zero, lerpCounter / lerpDuration);
+
+            actuateReference.gameObject.transform.rotation = Quaternion.Lerp(startingRot, Quaternion.identity, lerpCounter / lerpDuration);
+            yield return null;
+        }
+
+        actuateRb.velocity = Vector3.zero;
+        actuateRb.angularVelocity = Vector3.zero;
+        actuateReference.gameObject.transform.position = new Vector3(10, 0.5f, 0);    // <--- key factor to a hard stop
+        
         yield return new WaitForSeconds(1);
+
+//---------------------------------------------------------------------------------
 
         //fade lights out, including the one over the thruster
         counter = 0;
