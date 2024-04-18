@@ -168,6 +168,8 @@ public class Game_Progression : MonoBehaviour
             needToFixShip = false;
             fog.SetActive(false);
 
+            playSounds_Script.PlayNickShipFixed();
+
 
             typewriter_Script.StartTypewriterView(errorResolvedMessage);
             //Update Malfunction num
@@ -240,6 +242,17 @@ public class Game_Progression : MonoBehaviour
                 {
                     //do this only once
                     medtent1.SetActive(true);
+                    playSounds_Script.PlayNickTent1();
+                }
+
+                if (!tent3IsComplete && tent2IsComplete)
+                {
+                    playSounds_Script.PlayNickTent3();
+                }
+
+                if (!tent2IsComplete && tent1IsComplete)
+                {
+                    playSounds_Script.PlayNickTent2();
                 }
 
                 //player flies to next tent

@@ -40,6 +40,11 @@ public class PlaySounds : MonoBehaviour
     [SerializeField] private AudioClip Rachel_Fail;
     [SerializeField] private AudioClip Rachel_Success;
 
+    [SerializeField] private AudioClip NickTent1;
+    [SerializeField] private AudioClip NickTent2;
+    [SerializeField] private AudioClip NickTent3;
+    [SerializeField] private AudioClip NickShipFixed;
+
     void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
@@ -99,6 +104,25 @@ public class PlaySounds : MonoBehaviour
     public void PlayRachelSuccess()
     {
         soundPlayer.PlayOneShot(Rachel_Success);
+    }
+
+
+
+    public void PlayNickTent1()
+    {
+        soundPlayer.PlayOneShot(NickTent1);
+    }
+    public void PlayNickTent2()
+    {
+        soundPlayer.PlayOneShot(NickTent2);
+    }
+    public void PlayNickTent3()
+    {
+        soundPlayer.PlayOneShot(NickTent3);
+    }
+    public void PlayNickShipFixed()
+    {
+        soundPlayer.PlayOneShot(NickShipFixed);
     }
 }
 
