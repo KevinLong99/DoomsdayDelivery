@@ -38,6 +38,7 @@ public class IntroToGame_DD : MonoBehaviour
 
     void Start()
     {
+        actuateAgent.SetMotionSource(actuateReference);
         actuateRb = actuateReference.GetComponent<Rigidbody>();
         SwitchSceneToGame();
     }
