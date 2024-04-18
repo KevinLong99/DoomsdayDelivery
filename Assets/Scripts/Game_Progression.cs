@@ -335,7 +335,7 @@ public class Game_Progression : MonoBehaviour
             Scene_Manager_DD.mainScreenTextOption = 2;
         }
 
-        string gameScene = "DoomsdayDelivery_Menu";
+        string gameScene = "Doomsday_Credits";
         SceneManager.LoadScene(gameScene);
     }
 

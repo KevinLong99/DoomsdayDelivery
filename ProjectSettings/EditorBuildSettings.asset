@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DoomsdayDelivery_Game.unity
     guid: d229d0790efa5d240812a20e6cde2487
+  - enabled: 1
+    path: Assets/Scenes/Doomsday_Credits.unity
+    guid: 29b784b8acd2db84098fcb0f451df679
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7949dfdd28d6052478e58974c4364086,
       type: 2}
