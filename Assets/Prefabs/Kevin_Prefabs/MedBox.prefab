@@ -762,6 +762,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Medbox
       objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: 904d737450e02354ebf840496e960c00,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ee894ffbc73f1ca4ea90d56b5f079a6b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
