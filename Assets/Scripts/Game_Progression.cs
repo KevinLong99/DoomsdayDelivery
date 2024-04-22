@@ -72,6 +72,7 @@ public class Game_Progression : MonoBehaviour
     [SerializeField] private GameObject survivor1;
     [SerializeField] private GameObject survivor2;
     [SerializeField] private GameObject survivor3;
+    [SerializeField] private GameObject warningBox;
 
     private bool hasPlayedWarning = false;
 
@@ -166,6 +167,8 @@ public class Game_Progression : MonoBehaviour
     {
         if (somethingIsBroken == true && needToFixShip == true)
         {
+            SetComActive();
+
             playerMayFly = true;
             somethingIsBroken = false;
             needToFixShip = false;
@@ -208,7 +211,7 @@ public class Game_Progression : MonoBehaviour
                     //do lighting stuff here
                     StartCoroutine(LightModification(false));
 
-                    SetComActive();
+                    SetWarningActive();
                     typewriter_Script.StartTypewriterView("LOADING.....");
                     chatGptScript.SendReply();
                     playerMayFly = false;
@@ -220,7 +223,7 @@ public class Game_Progression : MonoBehaviour
                 }
                 else if (malfunctionNum == 2 && tent2IsComplete == true)
                 {
-                    SetComActive();
+                    SetWarningActive();
                     typewriter_Script.StartTypewriterView("LOADING.....");
                     chatGptScript.SendReply();
 
@@ -430,6 +433,7 @@ public class Game_Progression : MonoBehaviour
         survivor1.SetActive(false);
         survivor2.SetActive(false);
         survivor3.SetActive(false);
+        warningBox.SetActive(false);
     }
 
     public void SetSurv1Active()
@@ -438,6 +442,7 @@ public class Game_Progression : MonoBehaviour
         survivor1.SetActive(true);
         survivor2.SetActive(false);
         survivor3.SetActive(false);
+        warningBox.SetActive(false);
     }
 
     public void SetSurv2Active()
@@ -446,6 +451,7 @@ public class Game_Progression : MonoBehaviour
         survivor1.SetActive(false);
         survivor2.SetActive(true);
         survivor3.SetActive(false);
+        warningBox.SetActive(false);
     }
 
     public void SetSurv3Active()
@@ -454,6 +460,16 @@ public class Game_Progression : MonoBehaviour
         survivor1.SetActive(false);
         survivor2.SetActive(false);
         survivor3.SetActive(true);
+        warningBox.SetActive(false);
+    }
+
+    public void SetWarningActive()
+    {
+        commissioner.SetActive(false);
+        survivor1.SetActive(false);
+        survivor2.SetActive(false);
+        survivor3.SetActive(false);
+        warningBox.SetActive(true);
     }
 
 }
