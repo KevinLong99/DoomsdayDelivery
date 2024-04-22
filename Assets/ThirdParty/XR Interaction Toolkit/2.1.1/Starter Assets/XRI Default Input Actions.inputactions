@@ -1412,6 +1412,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "ToMenu",
+            "id": "e7203d1a-7496-46f8-a6c0-ab2e7ff553ae",
+            "actions": [
+                {
+                    "name": "toMenu",
+                    "type": "Button",
+                    "id": "51f8471b-9e2f-4842-ba34-c77e4d9d8182",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d912c68f-75d7-4326-ab4b-15cc7a8a7aca",
+                    "path": "<Keyboard>/#(M)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "toMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71dbe0b8-d3ee-440a-8412-8ddbc1f04c70",
+                    "path": "<XRSimulatedController>{LeftHand}/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "toMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
