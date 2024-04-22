@@ -37,6 +37,9 @@ public class Game_Progression : MonoBehaviour
     public GameObject medBoxToSpawn;
     public Transform medBoxSpawnLoc;
 
+    //ONLY FOR VIDEO RECORDING - DOUGH
+    //public GameObject doughToSpawn;
+
     //Drone Stuff
     public GameObject theDrone;
     public GameObject DronePrefab;
@@ -410,6 +413,15 @@ public class Game_Progression : MonoBehaviour
         spawnMedbox.GetComponentInChildren<NewObjectCounter>().rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
         spawnMedbox.GetComponentInChildren<NewObjectCounter>().PlayStation2EnterAnimation();
         medboxExists = true;
+
+        //ONLY FOR VIDEO RECORDING - DOUGH
+        /*
+        yield return new WaitForSeconds(2f);
+        GameObject spawnDough = Instantiate(medBoxToSpawn, medBoxSpawnLoc);
+        spawnMedbox.GetComponentInChildren<NewObjectCounter>().rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
+        spawnMedbox.GetComponentInChildren<NewObjectCounter>().PlayStation2EnterAnimation();
+        medboxExists = true;
+        */
     }
 
     public void SetComActive()
