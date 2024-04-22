@@ -1183,7 +1183,11 @@ MonoBehaviour:
 
 
     The war has let up
-    enough for aid to be delivered to survivors in desperate need...'
+    enough for aid to be delivered to survivors in desperate need...
+
+
+    In desperate
+    times, only a repurposed pizza delivery drone can make the difficult treck...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acc52749920cad3459473249a2ae0975, type: 2}
   m_sharedMaterial: {fileID: 3653838672350126629, guid: acc52749920cad3459473249a2ae0975,
