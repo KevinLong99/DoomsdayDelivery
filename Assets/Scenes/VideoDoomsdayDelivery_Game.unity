@@ -14584,7 +14584,7 @@ MonoBehaviour:
   MyLeverListener: {fileID: 1455771523497537644}
   LockStation: 0
   delayTime: 0
-  malfunctionFixed: 0
+  malfunctionFixed: 1
 --- !u!4 &1692017666
 Transform:
   m_ObjectHideFlags: 0
@@ -15629,6 +15629,9 @@ MonoBehaviour:
   mechDoor2: {fileID: 0}
   mechDoor3: {fileID: 0}
   thruster: {fileID: 0}
+  door1: {fileID: 0}
+  door2: {fileID: 0}
+  door3: {fileID: 0}
 --- !u!114 &1848070717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17849,7 +17852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2126103437
 Transform:
   m_ObjectHideFlags: 0
