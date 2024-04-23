@@ -34,6 +34,7 @@ public class PlaySounds : MonoBehaviour
     [SerializeField] private AudioClip Nick_Success;
     [SerializeField] private AudioClip Rachel_Fail;
     [SerializeField] private AudioClip Rachel_Success;
+    [SerializeField] private AudioClip Rachel_BootingSystem;
 
     [SerializeField] private AudioClip NickTent1;
     [SerializeField] private AudioClip NickTent2;
@@ -65,6 +66,7 @@ public class PlaySounds : MonoBehaviour
         soundPlayer = GetComponent<AudioSource>();
     }
 
+    public void PlayAmbientMusic() { soundPlayer.PlayOneShot(ambientPizzaMusic1, 0.3f); }
     public void PlayThruster() { soundPlayer.PlayOneShot(thruster); }
     public void PlayMechDoor3() { soundPlayer.PlayOneShot(mechDoor3); }
     public void PlayMechDoor2() { soundPlayer.PlayOneShot(mechDoor2); }
@@ -138,7 +140,10 @@ public class PlaySounds : MonoBehaviour
     {
         soundPlayer.PlayOneShot(Rachel_Success);
     }
-
+    public void PlayRachelBooting()
+    {
+        soundPlayer.PlayOneShot(Rachel_BootingSystem);
+    }
 
 
     public void PlayNickTent1()

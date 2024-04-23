@@ -102,7 +102,7 @@ public class IntroToGame_DD : MonoBehaviour
         RenderSettings.reflectionIntensity = 0.75f;
         yield return new WaitForSeconds(1.5f);
 
-        soundScript.PlayErorr();    //NOT AN ERROR NOISE: replaced with ship flying audio
+        soundScript.PlayAmbientMusic();    //NOT AN ERROR NOISE: replaced with ship flying audio
         soundScript.PlayOpeningLiftOff();
         //main screen turns on showing outside camera view
         cameraScreen.SetActive(true);
@@ -117,6 +117,8 @@ public class IntroToGame_DD : MonoBehaviour
         timeDur = 6;
         Quaternion endRot = Quaternion.Euler(180, 0, 0);
         Vector3 posStart = cameraToMove.transform.position;
+
+        soundScript.PlayRachelBooting();
         
         while (counter < timeDur)
         {
