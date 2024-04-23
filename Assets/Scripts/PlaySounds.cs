@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlaySounds : MonoBehaviour
 {
-    AudioSource soundPlayer;
+    public AudioSource soundPlayer;
 
     [SerializeField] private AudioClip ambientPizzaMusic1;
     [SerializeField] private AudioClip ambientPizzaMusic2;
@@ -59,7 +59,10 @@ public class PlaySounds : MonoBehaviour
         soundPlayer = GetComponent<AudioSource>();
     }
 
-    
+    public void PlayBoxThump() { soundPlayer.PlayOneShot(boxSound); }
+    public void PlayDroneConnect() { soundPlayer.PlayOneShot(droneConnect); }
+    public void PlaySteamHisses() { soundPlayer.PlayOneShot(steamHisses); }
+    public void PlaySparks() { soundPlayer.PlayOneShot(sparks); }
     public void PlayHandScanner() { soundPlayer.PlayOneShot(handScanner); }
     public void PlayWarningMalfunction() { soundPlayer.PlayOneShot(warningMalfunction); }
     public void PlayGameShipAmbiance() { soundPlayer.PlayOneShot(gameShipAmbiance); }
