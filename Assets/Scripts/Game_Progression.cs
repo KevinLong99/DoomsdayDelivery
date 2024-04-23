@@ -205,6 +205,7 @@ public class Game_Progression : MonoBehaviour
         if (playerMayFly == true && rotateParent_Script.moveValue == 1)
         {
             playSounds_Script.soundPlayer.Stop();
+            playSounds_Script.PlayThruster();
             //Trigger malfunction tutorials tips
             if (somethingIsBroken == true)
             {

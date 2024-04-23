@@ -7,6 +7,7 @@ public class MedkitComplete : MonoBehaviour
 {
     public Rotate_Me_Parent rotateParentScript;
     public NewObjectCounter objectCounterMedbox;
+    public PlaySounds soundScript;
     [SerializeField] private Animator pizzaPaddleAnimator;
     [SerializeField] private Animator ovenDoorAnimator;
     [SerializeField] private GameObject[] conveyorColliders;
@@ -25,6 +26,7 @@ public class MedkitComplete : MonoBehaviour
             //play box going into oven animation
             pizzaPaddleAnimator.Play("paddle_launch");
             ovenDoorAnimator.Play("Oven_Door_Open");
+            soundScript.PlayMechDoor1();
 
             //deactivate colliders
             for (int i = 0; i < conveyorColliders.Length; i++)
@@ -46,6 +48,7 @@ public class MedkitComplete : MonoBehaviour
     {
         yield return new WaitForSeconds(1.75f);
         ovenDoorAnimator.Play("Oven_Door_Close");
+        soundScript.PlayMechDoor3();
 
         //activate colliders
         for (int j = 0; j < conveyorColliders.Length; j++)

@@ -368,6 +368,7 @@ public class NewObjectCounter : MonoBehaviour
     {
         StartCoroutine(TranslateLerp(this.gameObject.transform.position, ovenLocation, 1f));
         ovenAnimator.Play("Oven_Door_Open");
+        playSoundScript.PlayMechDoor1();
         yield return new WaitForSeconds(1);
 
         //play animations for box leaving oven 
@@ -389,9 +390,11 @@ public class NewObjectCounter : MonoBehaviour
         
         yield return new WaitForSeconds(0.25f);       
         ovenAnimator.Play("Oven_Door_Close");
+        playSoundScript.PlayMechDoor3();
         droneToBeDropped.GetComponent<Drone_InsideShip>().DroneDeploy();
         yield return new WaitForSeconds(0.5f);
         chuteAnimator.Play("Drone_chute_close");
+        playSoundScript.PlayMechDoor2();
 
         MedBoxDeleteAndSpawn();
     }
