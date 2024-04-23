@@ -699,6 +699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02d99283b2db6c4a9a53c716144f90e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPlayer: {fileID: 0}
   ambientPizzaMusic1: {fileID: 0}
   ambientPizzaMusic2: {fileID: 0}
   boxSound: {fileID: 0}
@@ -731,7 +732,7 @@ MonoBehaviour:
   NickTent2: {fileID: 0}
   NickTent3: {fileID: 0}
   NickShipFixed: {fileID: 0}
-  openingShipAmbiance: {fileID: 8300000, guid: b78f407d53cb4974d8a0f81a3a9c3642, type: 3}
+  openingShipAmbiance: {fileID: 8300000, guid: 470029d0d1126c24caab1cdee0650cf9, type: 3}
   openingLiftOff: {fileID: 8300000, guid: f8a7731644a397b4dbe79832f8d92840, type: 3}
   shipMalfunctionFixed: {fileID: 0}
   gameShipAmbiance: {fileID: 0}
@@ -742,6 +743,9 @@ MonoBehaviour:
   sparks: {fileID: 0}
   steamHisses: {fileID: 0}
   droneConnect: {fileID: 0}
+  mechDoor1: {fileID: 0}
+  mechDoor2: {fileID: 0}
+  mechDoor3: {fileID: 0}
 --- !u!82 &749458119
 AudioSource:
   m_ObjectHideFlags: 0

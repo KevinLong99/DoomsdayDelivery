@@ -54,6 +54,10 @@ public class PlaySounds : MonoBehaviour
     [SerializeField] private AudioClip steamHisses;
     [SerializeField] private AudioClip droneConnect;
 
+    [SerializeField] private AudioClip mechDoor1;
+    [SerializeField] private AudioClip mechDoor2;
+    [SerializeField] private AudioClip mechDoor3;
+
     void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
