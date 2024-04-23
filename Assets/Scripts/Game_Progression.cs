@@ -81,6 +81,8 @@ public class Game_Progression : MonoBehaviour
     [SerializeField] private Light direcLight;
     [SerializeField] private Light spotLightEnv;
 
+    [SerializeField] private GameObject tent1Done, tent2Done, tent3Done;
+
     //Initializations for malfunction tutorials
     public void ToMalfunctionTutorial1()
     {
@@ -394,6 +396,7 @@ public class Game_Progression : MonoBehaviour
         if (!tent3IsComplete && tent2IsComplete)
         {
             gameOver_win = true;
+            tent3Done.SetActive(true);
             
             GameOver();
         }
@@ -405,6 +408,7 @@ public class Game_Progression : MonoBehaviour
             medtent2.SetActive(false);
             playerMayFly = true;
             somethingIsBroken = true;
+            tent2Done.SetActive(true);
         }
 
         if (!tent1IsComplete)
@@ -414,6 +418,8 @@ public class Game_Progression : MonoBehaviour
             medtent1.SetActive(false);
             playerMayFly = true;
             somethingIsBroken = true;
+            tent1Done.SetActive(true);
+
         }
 
 
