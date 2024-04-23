@@ -66,6 +66,17 @@ public class PlaySounds : MonoBehaviour
     [SerializeField] private AudioClip door2;
     [SerializeField] private AudioClip door3;
 
+    //UI SFXs
+    [SerializeField] private AudioClip deliveryFailed;
+    [SerializeField] private AudioClip deliverySuccess;
+    [SerializeField] private AudioClip newOrderNotif;
+    [SerializeField] private AudioClip tentReached;
+    [SerializeField] private AudioClip tutorialOn;
+    [SerializeField] private AudioClip dialogueOn;
+    [SerializeField] private AudioClip avatarSwitch;
+    [SerializeField] private AudioClip pullLeverError;
+    [SerializeField] private AudioClip orderCountUpdate;
+
     void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
@@ -87,6 +98,17 @@ public class PlaySounds : MonoBehaviour
     public void PlayWarningMalfunction() { soundPlayer.PlayOneShot(warningMalfunction); }
     public void PlayGameShipAmbiance() { soundPlayer.PlayOneShot(gameShipAmbiance); }
     public void PlayOpeningLiftOff() { soundPlayer.PlayOneShot(openingLiftOff); }
+
+    //UI SFXs
+    public void PlayDeliveryFailed() { soundPlayer.PlayOneShot(deliveryFailed); }
+    public void PlayDeliverySuccess() { soundPlayer.PlayOneShot(deliverySuccess); }
+    public void PlayNewOrderNotif() { soundPlayer.PlayOneShot(newOrderNotif); }
+    public void PlayTentReached() { soundPlayer.PlayOneShot(tentReached); }
+    public void PlayTutorialOn() { soundPlayer.PlayOneShot(tutorialOn); }
+    public void PlayDialogueOn() { soundPlayer.PlayOneShot(dialogueOn); }
+    public void PlayAvatarSwitch() { soundPlayer.PlayOneShot(avatarSwitch); }
+    public void PlayPullLeverError() { soundPlayer.PlayOneShot(pullLeverError); }
+    public void PlayOrderCountUpdate() { soundPlayer.PlayOneShot(orderCountUpdate); }
 
     public void PlayMalfunctionComplete()
     {
