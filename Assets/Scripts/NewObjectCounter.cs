@@ -303,7 +303,14 @@ public class NewObjectCounter : MonoBehaviour
         if (rotateParentScript.medKitisCompleted == false)
         {
             medBoxAnimator.Play("Box_Fall");
+            StartCoroutine(PlayBoxThump());
         }
+    }
+
+    private IEnumerator PlayBoxThump()
+    {
+        yield return new WaitForSeconds(1.5f);
+        playSoundScript.PlayBoxThump();
     }
 
     public void PlayStation2ExitAnimation()
@@ -371,14 +378,16 @@ public class NewObjectCounter : MonoBehaviour
         StartCoroutine(TranslateLerp(station3Deploy.position, station3DeployLoaded.position, 0.25f));
 
         //and drone falling and attaching on top
+        playSoundScript.PlayDroneConnect();
         droneToBeDropped.GetComponent<Drone_InsideShip>().DropInStation3();
         yield return new WaitForSeconds(1);
 
+        
         //make drone the parent of the box
         this.gameObject.transform.parent.transform.parent = droneToBeDropped.transform;
 
-        //player picks up controller Switch and deploys from there (press trigger to deploy)
-        yield return new WaitForSeconds(0.25f);       //remove this
+        
+        yield return new WaitForSeconds(0.25f);       
         ovenAnimator.Play("Oven_Door_Close");
         droneToBeDropped.GetComponent<Drone_InsideShip>().DroneDeploy();
         yield return new WaitForSeconds(0.5f);

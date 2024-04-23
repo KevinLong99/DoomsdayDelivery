@@ -21,6 +21,9 @@ public class HandScanner : MonoBehaviour
     // Public event
     public UnityEvent ExecuteHandScanComplete;
 
+    private bool isPlayingSound = false;
+    public PlaySounds soundScript;
+
     private void Start()
     {
         if (progressSlider == null)
@@ -29,6 +32,7 @@ public class HandScanner : MonoBehaviour
             return;
         }
 
+        soundScript = GameObject.Find("Game_Manager").GetComponent<PlaySounds>();
         redLight.GetComponent<Renderer>().material = redLightMat;
         //progressSlider.minValue = 0;
         //progressSlider.maxValue = HandTrackTime;
@@ -64,6 +68,11 @@ public class HandScanner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if ( isPlayingSound == false)
+        {
+            soundScript.PlayHandScanner();
+            isPlayingSound = true;
+        }
         if (other.CompareTag("Hands") && myGameProgression.needToFixShip)
         {
             isHandInContact = true;

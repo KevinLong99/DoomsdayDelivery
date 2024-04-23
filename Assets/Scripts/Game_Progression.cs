@@ -173,6 +173,7 @@ public class Game_Progression : MonoBehaviour
             somethingIsBroken = false;
             needToFixShip = false;
             fog.SetActive(false);
+            playSounds_Script.soundPlayer.Stop();
 
             playSounds_Script.PlayNickShipFixed();
             playSounds_Script.PlayMalfunctionComplete();
@@ -201,6 +202,7 @@ public class Game_Progression : MonoBehaviour
     {
         if (playerMayFly == true && rotateParent_Script.moveValue == 1)
         {
+            playSounds_Script.PlayGameShipAmbiance();
             //Trigger malfunction tutorials tips
             if (somethingIsBroken == true)
             {
@@ -208,6 +210,7 @@ public class Game_Progression : MonoBehaviour
                 //Trigger different effects for 1st and 2nd malfunctions
                 if (malfunctionNum == 1 && tent2IsComplete == false)
                 {
+
                     //do lighting stuff here
                     StartCoroutine(LightModification(false));
 
@@ -217,7 +220,8 @@ public class Game_Progression : MonoBehaviour
                     playerMayFly = false;
                     hapticChairScript.HardStopTheShip(3);
                     needToFixShip = true;
-                    playSounds_Script.PlayErorr();
+                    playSounds_Script.PlayWarningMalfunction();
+                    playSounds_Script.PlaySparks();
                     ToMalfunctionTutorial1();
                     
                 }
@@ -231,7 +235,8 @@ public class Game_Progression : MonoBehaviour
                     hapticChairScript.HardStopTheShip(3);
                     needToFixShip = true;
                     fog.SetActive(true);
-                    playSounds_Script.PlayErorr();
+                    playSounds_Script.PlayWarningMalfunction();
+                    playSounds_Script.PlaySteamHisses();
                     ToMalfunctionTutorial2();
 
                 }
