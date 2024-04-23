@@ -47,8 +47,8 @@ public class MedkitComplete : MonoBehaviour
     IEnumerator WaitForBoxToEnterOven()
     {
         yield return new WaitForSeconds(1.75f);
+        soundScript.PlayDoor3();
         ovenDoorAnimator.Play("Oven_Door_Close");
-        soundScript.PlayMechDoor3();
 
         //activate colliders
         for (int j = 0; j < conveyorColliders.Length; j++)
