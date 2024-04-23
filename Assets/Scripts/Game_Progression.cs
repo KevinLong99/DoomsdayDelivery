@@ -12,6 +12,7 @@ using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCou
 
 public class Game_Progression : MonoBehaviour
 {
+    public bool isVideoVersion = false;
     public Haptic_Chair_Controller hapticChairScript;
     public Rotate_Me_Parent rotateParent_Script;
 
@@ -36,9 +37,6 @@ public class Game_Progression : MonoBehaviour
     public bool medboxExists = false;
     public GameObject medBoxToSpawn;
     public Transform medBoxSpawnLoc;
-
-    //ONLY FOR VIDEO RECORDING - DOUGH
-    //public GameObject doughToSpawn;
 
     //Drone Stuff
     public GameObject theDrone;
@@ -432,20 +430,30 @@ public class Game_Progression : MonoBehaviour
 
     IEnumerator WaitForRotation()
     {
-        yield return new WaitForSeconds(1f);
-        GameObject spawnMedbox = Instantiate(medBoxToSpawn, medBoxSpawnLoc);
-        spawnMedbox.GetComponentInChildren<NewObjectCounter>().rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
-        spawnMedbox.GetComponentInChildren<NewObjectCounter>().PlayStation2EnterAnimation();
-        medboxExists = true;
+        if(!isVideoVersion)
+        {
+            yield return new WaitForSeconds(1f);
+            GameObject spawnMedbox = Instantiate(medBoxToSpawn, medBoxSpawnLoc);
+            spawnMedbox.GetComponentInChildren<NewObjectCounter>().rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
+            spawnMedbox.GetComponentInChildren<NewObjectCounter>().PlayStation2EnterAnimation();
+            medboxExists = true;
+        }
 
         //ONLY FOR VIDEO RECORDING - DOUGH
-        /*
-        yield return new WaitForSeconds(2f);
-        GameObject spawnDough = Instantiate(medBoxToSpawn, medBoxSpawnLoc);
-        spawnMedbox.GetComponentInChildren<NewObjectCounter>().rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
-        spawnMedbox.GetComponentInChildren<NewObjectCounter>().PlayStation2EnterAnimation();
-        medboxExists = true;
-        */
+        if(isVideoVersion)
+        {
+            yield return new WaitForSeconds(2f);
+            GameObject spawnDough = Instantiate(medBoxToSpawn, medBoxSpawnLoc);
+            spawnDough.GetComponentInChildren<NewObjectCounter>().rotateParentScript = GameObject.Find("STATIONS_MOVABLE").GetComponent<Rotate_Me_Parent>();
+            spawnDough.GetComponentInChildren<NewObjectCounter>().PlayStation2EnterAnimation();
+            medboxExists = true;
+
+            GameObject dough = spawnDough.transform.GetChild(0).gameObject;;
+            dough.SetActive(false);
+            yield return new WaitForSeconds(1.7f);
+            dough.SetActive(true);
+        }
+        
     }
 
     public void SetComActive()

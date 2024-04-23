@@ -770,6 +770,10 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 904d737450e02354ebf840496e960c00,
         type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 6150913397618038493}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 904d737450e02354ebf840496e960c00,
+        type: 3}
       insertIndex: -1
       addedObject: {fileID: 17156417506391196}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 904d737450e02354ebf840496e960c00,
@@ -792,10 +796,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5270327047188698514}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 904d737450e02354ebf840496e960c00,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6150913397618038493}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 904d737450e02354ebf840496e960c00,
         type: 3}
@@ -866,7 +866,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fc3183c73da928f4ab7f6487d98a1a3e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0561
+      value: 0.0168
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fc3183c73da928f4ab7f6487d98a1a3e,
         type: 3}
@@ -917,6 +917,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pizza_Dough
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc3183c73da928f4ab7f6487d98a1a3e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
