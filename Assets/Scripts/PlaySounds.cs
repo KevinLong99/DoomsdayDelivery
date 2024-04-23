@@ -61,11 +61,18 @@ public class PlaySounds : MonoBehaviour
 
     [SerializeField] private AudioClip thruster;
 
+    [SerializeField] private AudioClip door1;
+    [SerializeField] private AudioClip door2;
+    [SerializeField] private AudioClip door3;
+
     void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
     }
 
+    public void PlayDoor3() { soundPlayer.PlayOneShot(door3); }
+    public void PlayDoor2() { soundPlayer.PlayOneShot(door2); }
+    public void PlayDoor1() { soundPlayer.PlayOneShot(door1); }
     public void PlayAmbientMusic() { soundPlayer.PlayOneShot(ambientPizzaMusic1, 0.3f); }
     public void PlayThruster() { soundPlayer.PlayOneShot(thruster); }
     public void PlayMechDoor3() { soundPlayer.PlayOneShot(mechDoor3); }

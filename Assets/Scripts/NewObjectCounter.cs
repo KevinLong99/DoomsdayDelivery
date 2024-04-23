@@ -387,14 +387,14 @@ public class NewObjectCounter : MonoBehaviour
         //make drone the parent of the box
         this.gameObject.transform.parent.transform.parent = droneToBeDropped.transform;
 
-        
+        playSoundScript.PlayMechDoor3();
         yield return new WaitForSeconds(0.5f);       
         ovenAnimator.Play("Oven_Door_Close");
-        playSoundScript.PlayMechDoor3();
+        playSoundScript.PlayDoor3();
         droneToBeDropped.GetComponent<Drone_InsideShip>().DroneDeploy();
         yield return new WaitForSeconds(1);
         chuteAnimator.Play("Drone_chute_close");
-        playSoundScript.PlayMechDoor2();
+        playSoundScript.PlayDoor2();
 
         MedBoxDeleteAndSpawn();
     }
