@@ -3333,9 +3333,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'UI Artist
+  m_text: 'Tech Artist
 
-    PR Manager'
+    Audio & Music Tech
+
+    Lead UI/UX Designer'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d84777d62d818e644b15142bf24016ce, type: 2}
   m_sharedMaterial: {fileID: 7028658981890685420, guid: d84777d62d818e644b15142bf24016ce,
