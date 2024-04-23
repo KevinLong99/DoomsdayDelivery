@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlaySounds : MonoBehaviour
 {
     public AudioSource soundPlayer;
+    public AudioSource musicPlayer;
 
     [SerializeField] private AudioClip ambientPizzaMusic1;
     [SerializeField] private AudioClip ambientPizzaMusic2;
@@ -73,7 +74,7 @@ public class PlaySounds : MonoBehaviour
     public void PlayDoor3() { soundPlayer.PlayOneShot(door3); }
     public void PlayDoor2() { soundPlayer.PlayOneShot(door2); }
     public void PlayDoor1() { soundPlayer.PlayOneShot(door1); }
-    public void PlayAmbientMusic() { soundPlayer.PlayOneShot(ambientPizzaMusic1, 0.3f); }
+    public void PlayAmbientMusic() { musicPlayer.PlayOneShot(ambientPizzaMusic1, 0.3f); }
     public void PlayThruster() { soundPlayer.PlayOneShot(thruster); }
     public void PlayMechDoor3() { soundPlayer.PlayOneShot(mechDoor3); }
     public void PlayMechDoor2() { soundPlayer.PlayOneShot(mechDoor2); }

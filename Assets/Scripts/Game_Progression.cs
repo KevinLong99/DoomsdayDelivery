@@ -83,6 +83,8 @@ public class Game_Progression : MonoBehaviour
 
     [SerializeField] private GameObject tent1Done, tent2Done, tent3Done;
 
+    public AudioSource musicSource;
+
     //Initializations for malfunction tutorials
     public void ToMalfunctionTutorial1()
     {
@@ -111,6 +113,7 @@ public class Game_Progression : MonoBehaviour
 
         timeRemaining = fullTime;
 
+        playSounds_Script.PlayAmbientMusic();
     }
 
     void Update()
@@ -125,6 +128,7 @@ public class Game_Progression : MonoBehaviour
                 if (hasPlayedWarning == false && timeRemaining < 121)
                 {
                     playSounds_Script.PlayNickWarning();
+                    musicSource.pitch = 1.33f;
                     hasPlayedWarning = true;
                 }
             }
