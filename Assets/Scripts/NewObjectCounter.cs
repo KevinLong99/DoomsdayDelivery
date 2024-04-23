@@ -388,11 +388,11 @@ public class NewObjectCounter : MonoBehaviour
         this.gameObject.transform.parent.transform.parent = droneToBeDropped.transform;
 
         
-        yield return new WaitForSeconds(0.25f);       
+        yield return new WaitForSeconds(0.5f);       
         ovenAnimator.Play("Oven_Door_Close");
         playSoundScript.PlayMechDoor3();
         droneToBeDropped.GetComponent<Drone_InsideShip>().DroneDeploy();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1);
         chuteAnimator.Play("Drone_chute_close");
         playSoundScript.PlayMechDoor2();
 
