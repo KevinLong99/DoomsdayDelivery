@@ -8,7 +8,6 @@ public class PlaySounds : MonoBehaviour
 
     [SerializeField] private AudioClip ambientPizzaMusic1;
     [SerializeField] private AudioClip ambientPizzaMusic2;
-    [SerializeField] private AudioClip boingPoing;
     [SerializeField] private AudioClip boxSound;
     [SerializeField] private AudioClip buttonClick;
     [SerializeField] private AudioClip communicationNoises;
@@ -17,16 +16,12 @@ public class PlaySounds : MonoBehaviour
     [SerializeField] private AudioClip droneDeployment2;
     [SerializeField] private AudioClip droneArriving;
     [SerializeField] private AudioClip medkitPacked;
-    [SerializeField] private AudioClip newOrderNotification;
     [SerializeField] private AudioClip pickUpDroneNavigator;
     [SerializeField] private AudioClip randomBeepingNoises;
     [SerializeField] private AudioClip shipErrorBuzzThreeTimes;
     [SerializeField] private AudioClip spaceshipThruster;
     [SerializeField] private AudioClip stationChange;
     [SerializeField] private AudioClip systemRebootNoises2;
-    [SerializeField] private AudioClip tacoBellGong;
-    [SerializeField] private AudioClip thunder;
-    [SerializeField] private AudioClip timeGasNotification;
     [SerializeField] private AudioClip tutorialNotification;
 
     [SerializeField] private AudioClip Ana_Fail;
@@ -45,14 +40,34 @@ public class PlaySounds : MonoBehaviour
     [SerializeField] private AudioClip NickTent3;
     [SerializeField] private AudioClip NickShipFixed;
 
+    //new zoe sounds
+    [SerializeField] private AudioClip openingShipAmbiance;
+    [SerializeField] private AudioClip openingLiftOff;
+
+    [SerializeField] private AudioClip shipMalfunctionFixed;
+    [SerializeField] private AudioClip gameShipAmbiance;
+    [SerializeField] private AudioClip warningMalfunction;
+    [SerializeField] private AudioClip handScanner;
+    [SerializeField] private AudioClip leverSound1;
+    [SerializeField] private AudioClip leverSound2;
+    [SerializeField] private AudioClip sparks;
+    [SerializeField] private AudioClip steamHisses;
+    [SerializeField] private AudioClip droneConnect;
+
     void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
     }
 
+    
+    public void PlayHandScanner() { soundPlayer.PlayOneShot(handScanner); }
+    public void PlayWarningMalfunction() { soundPlayer.PlayOneShot(warningMalfunction); }
+    public void PlayGameShipAmbiance() { soundPlayer.PlayOneShot(gameShipAmbiance); }
+    public void PlayOpeningLiftOff() { soundPlayer.PlayOneShot(openingLiftOff); }
+
     public void PlayMalfunctionComplete()
     {
-        soundPlayer.PlayOneShot(newOrderNotification);
+        soundPlayer.PlayOneShot(shipMalfunctionFixed);
     }
 
     public void PlayChosenAudioClip(AudioClip chosenAudioClip)

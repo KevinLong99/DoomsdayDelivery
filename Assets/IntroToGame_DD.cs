@@ -36,6 +36,8 @@ public class IntroToGame_DD : MonoBehaviour
     public GameObject actuateReference;
     Rigidbody actuateRb;
 
+    private bool isPulled = false;
+
     void Start()
     {
         actuateAgent.SetMotionSource(actuateReference);
@@ -45,7 +47,12 @@ public class IntroToGame_DD : MonoBehaviour
 
     public void SwitchSceneToGame()
     {
-        StartCoroutine(BeginGameCoroutine());
+        if (isPulled == false)
+        {
+            StartCoroutine(BeginGameCoroutine());
+            isPulled = true;
+        }
+        
     }
 
     private IEnumerator BeginGameCoroutine()
@@ -96,12 +103,13 @@ public class IntroToGame_DD : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         soundScript.PlayErorr();    //NOT AN ERROR NOISE: replaced with ship flying audio
-
+        soundScript.PlayOpeningLiftOff();
         //main screen turns on showing outside camera view
         cameraScreen.SetActive(true);
         cameraScreen2.SetActive(true);
 
         yield return new WaitForSeconds(0.75f);
+        
 
 //----------------------------------------------------------------------------------
         //ship takes off, revealing the skyline
@@ -170,7 +178,7 @@ public class IntroToGame_DD : MonoBehaviour
         typeWriteScript.StartTypewriterView(inTheYearTxt);
         
 
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(10);
 
 
         //switch to game scene 

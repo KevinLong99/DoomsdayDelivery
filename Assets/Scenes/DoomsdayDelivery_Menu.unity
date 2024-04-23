@@ -701,7 +701,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ambientPizzaMusic1: {fileID: 0}
   ambientPizzaMusic2: {fileID: 0}
-  boingPoing: {fileID: 8300000, guid: 8a6605248d7ea8f429ca1024cc617ee0, type: 3}
   boxSound: {fileID: 0}
   buttonClick: {fileID: 0}
   communicationNoises: {fileID: 0}
@@ -710,7 +709,6 @@ MonoBehaviour:
   droneDeployment2: {fileID: 0}
   droneArriving: {fileID: 8300000, guid: b40160a09d73feb4fb6b9386863d3ce2, type: 3}
   medkitPacked: {fileID: 0}
-  newOrderNotification: {fileID: 0}
   pickUpDroneNavigator: {fileID: 0}
   randomBeepingNoises: {fileID: 8300000, guid: cc9ac6cf16416bf4f86200083bfcb846, type: 3}
   shipErrorBuzzThreeTimes: {fileID: 8300000, guid: a836157553d0b5c4388330d99d4559c9,
@@ -718,9 +716,6 @@ MonoBehaviour:
   spaceshipThruster: {fileID: 0}
   stationChange: {fileID: 0}
   systemRebootNoises2: {fileID: 0}
-  tacoBellGong: {fileID: 8300000, guid: 7995415c71a4cc04bb24899a71b6a55d, type: 3}
-  thunder: {fileID: 8300000, guid: 3ee8f988cd1c83d4a85b93b14c916935, type: 3}
-  timeGasNotification: {fileID: 0}
   tutorialNotification: {fileID: 0}
   Ana_Fail: {fileID: 0}
   Ana_Success: {fileID: 0}
@@ -736,6 +731,17 @@ MonoBehaviour:
   NickTent2: {fileID: 0}
   NickTent3: {fileID: 0}
   NickShipFixed: {fileID: 0}
+  openingShipAmbiance: {fileID: 8300000, guid: b78f407d53cb4974d8a0f81a3a9c3642, type: 3}
+  openingLiftOff: {fileID: 8300000, guid: f8a7731644a397b4dbe79832f8d92840, type: 3}
+  shipMalfunctionFixed: {fileID: 0}
+  gameShipAmbiance: {fileID: 0}
+  warningMalfunction: {fileID: 0}
+  handScanner: {fileID: 0}
+  leverSound1: {fileID: 0}
+  leverSound2: {fileID: 0}
+  sparks: {fileID: 0}
+  steamHisses: {fileID: 0}
+  droneConnect: {fileID: 0}
 --- !u!82 &749458119
 AudioSource:
   m_ObjectHideFlags: 0
@@ -746,7 +752,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b78f407d53cb4974d8a0f81a3a9c3642, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1156,7 +1162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.007, y: 183.8}
+  m_AnchoredPosition: {x: 0.007, y: 195.3}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916766336
@@ -1187,7 +1193,7 @@ MonoBehaviour:
 
 
     In desperate
-    times, only a repurposed pizza delivery drone can make the difficult treck...'
+    times, only a repurposed pizza delivery drone can make the difficult trek...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acc52749920cad3459473249a2ae0975, type: 2}
   m_sharedMaterial: {fileID: 3653838672350126629, guid: acc52749920cad3459473249a2ae0975,
@@ -1215,8 +1221,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 7
+  m_fontSizeBase: 7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
