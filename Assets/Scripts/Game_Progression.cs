@@ -18,7 +18,7 @@ public class Game_Progression : MonoBehaviour
     public bool playerMayFly = true;
     public bool somethingIsBroken = false;
 
-    private float fullTime = 420;   //time limit
+    private float fullTime = 360;   //time limit
     private float timeRemaining;
     private bool timerIsRunning = false;
     float minutes, seconds;
@@ -49,7 +49,7 @@ public class Game_Progression : MonoBehaviour
 
     public Typewriter_UI typewriter_Script;
     private PlaySounds playSounds_Script;
-    private string errorResolvedMessage = "You fixed the ship! Resume flying by pushing" +
+    private string errorResolvedMessage = "You fixed the ship! Great job kid. Resume flying by pushing" +
         " the thruster forward.";
 
 
@@ -202,7 +202,7 @@ public class Game_Progression : MonoBehaviour
     {
         if (playerMayFly == true && rotateParent_Script.moveValue == 1)
         {
-            playSounds_Script.PlayGameShipAmbiance();
+            playSounds_Script.soundPlayer.Stop();
             //Trigger malfunction tutorials tips
             if (somethingIsBroken == true)
             {
@@ -325,26 +325,32 @@ public class Game_Progression : MonoBehaviour
     public void GameOver()
     {
         hapticChairScript.HapticGameOver();
-        fadeScreenDD.FadeOut();
         StartCoroutine(GameOverMessage());
     }
 
     IEnumerator GameOverMessage()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(8);
 
         if (gameOver_win == true)
         {
+            playSounds_Script.PlayNickSuccess();
             Scene_Manager_DD.mainScreenTextOption = 1;
         }
         else if (gameOver_outOfFuel == true)
         {
+            playSounds_Script.PlayNickFail();
             Scene_Manager_DD.mainScreenTextOption = 3;
         }
         else if (gameOver_shipMalfunction == true)
         {
             Scene_Manager_DD.mainScreenTextOption = 2;
         }
+
+        yield return new WaitForSeconds(6);
+
+        fadeScreenDD.FadeOut();
+        yield return new WaitForSeconds(3);
 
         string gameScene = "Doomsday_Credits";
         SceneManager.LoadScene(gameScene);
@@ -388,9 +394,8 @@ public class Game_Progression : MonoBehaviour
         if (!tent3IsComplete && tent2IsComplete)
         {
             gameOver_win = true;
-            playSounds_Script.PlayNickSuccess();
+            
             GameOver();
-            //FIXME!!!!! Tent3 Response and nickSuccess play at same time
         }
 
         if (!tent2IsComplete && tent1IsComplete)
