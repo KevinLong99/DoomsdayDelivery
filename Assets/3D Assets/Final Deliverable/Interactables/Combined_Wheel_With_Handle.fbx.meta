@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: c8e619b3179f74e4b99bc6af0b37b2a0
+guid: 3c1fba0bd5a63dc43b78a5123297a594
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ship_malfuntions_mat
+    second: {fileID: 2100000, guid: d8f23f375399396409c09222dffef35d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
