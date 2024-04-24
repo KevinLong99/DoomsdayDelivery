@@ -77,7 +77,7 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator DelayedAreaManagement()
     {
-        yield return new WaitForSeconds(delayedTime);
+        yield return new WaitForSeconds(tutorialBackDelayedTIme);
         TutorialAreaOn();
         SuccessAreaOff();
         FailAreaOff();
