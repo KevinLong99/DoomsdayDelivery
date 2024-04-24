@@ -59,7 +59,8 @@ public class DialogueManager : MonoBehaviour
                                 }
                                 break;
                             case 2:
-                                DeleteTutorial();
+                                //DeleteTutorial();
+                                ChangeTextToBlank();
                                 tutorialPassed = true;
                                 break;
                         }
