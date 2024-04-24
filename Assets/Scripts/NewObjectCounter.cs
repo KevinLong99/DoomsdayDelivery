@@ -221,7 +221,7 @@ public class NewObjectCounter : MonoBehaviour
         myUIManager.ToResetDialogue();
         typewriteScript_NOC = GameObject.Find("Dialogue_Text").GetComponent<Typewriter_UI>();
 
-        if (suppliesAtThresholdCount >= 3)
+        if (suppliesAtThresholdCount >= 4)
         {
             myUIManager.ToSuccessDelivery();
             if (!gameProg_Script.tent3IsComplete && gameProg_Script.tent2IsComplete)
