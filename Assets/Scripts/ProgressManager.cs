@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class ProgressManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class ProgressManager : MonoBehaviour
     public List<TextMeshPro> SupplyRequirementList;
     public List<int> BandageReq, OintmentReq, SyringeReq, InsulinReq;
     public List<GameObject> MedTents;
+
+    public UnityEvent PlayOrderCountUpdateSFX;
 
     public void UpdateMedTent()
     {
@@ -90,16 +93,16 @@ public class ProgressManager : MonoBehaviour
                 switch (i)
                 {
                     case 0:
-                        MyUIManager.ChangeScoreColorBandage(); // This method needs to exist in your MyUIManager script
+                        MyUIManager.ChangeScoreColorBandage(); 
                         break;
                     case 1:
-                        MyUIManager.ChangeScoreColorOintment(); // This method needs to exist in your MyUIManager script
+                        MyUIManager.ChangeScoreColorOintment(); 
                         break;
                     case 2:
-                        MyUIManager.ChangeScoreColorSyringe(); // This method needs to exist in your MyUIManager script
+                        MyUIManager.ChangeScoreColorSyringe();
                         break;
                     case 3:
-                        MyUIManager.ChangeScoreColorInsulin(); // This method needs to exist in your MyUIManager script
+                        MyUIManager.ChangeScoreColorInsulin();
                         break;
                     default:
                         Debug.LogWarning("Index out of range for specific color change functions");
@@ -133,6 +136,11 @@ public class ProgressManager : MonoBehaviour
         {
             Debug.LogError("CallRequestDialogue: CurrentMedtent is out of range.");
         }
+    }
+
+    public void ToPlayOrderCountUpdateSFX()
+    {
+        PlayOrderCountUpdateSFX.Invoke();
     }
 
 }

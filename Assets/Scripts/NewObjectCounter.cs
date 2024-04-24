@@ -71,6 +71,8 @@ public class NewObjectCounter : MonoBehaviour
 
     public PlaySounds playSoundScript;
 
+
+
     private void Start()    
     {
 
@@ -144,6 +146,7 @@ public class NewObjectCounter : MonoBehaviour
         if (tagsToCount.Contains(other.tag)) // Check if the object's tag is in the list of tags to count.
         {
             tagCounts[other.tag]++; // Increment count for the tag.
+            myProgressManager.ToPlayOrderCountUpdateSFX();//Play score count update SFX
             UpdateTagCounts(); // Update public int variables.
             numTotalItems++;
         }

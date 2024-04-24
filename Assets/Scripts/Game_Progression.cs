@@ -65,6 +65,7 @@ public class Game_Progression : MonoBehaviour
     public int malfunctionNum = 1;
     public UnityEvent MalfunctionTutorial1;
     public UnityEvent MalfunctionTutorial2;
+    public UnityEvent PlayAvatarSFX;
 
     [SerializeField] private GameObject commissioner;
     [SerializeField] private GameObject survivor1;
@@ -92,6 +93,11 @@ public class Game_Progression : MonoBehaviour
     public void ToMalfunctionTutorial2()
     {
         MalfunctionTutorial2.Invoke();
+    }
+
+    public void ToPlayAvatarSFX()
+    {
+        PlayAvatarSFX.Invoke();
     }
 
     void Start()
@@ -463,6 +469,7 @@ public class Game_Progression : MonoBehaviour
         survivor2.SetActive(false);
         survivor3.SetActive(false);
         warningBox.SetActive(false);
+        ToPlayAvatarSFX();
     }
 
     public void SetSurv1Active()
@@ -472,6 +479,7 @@ public class Game_Progression : MonoBehaviour
         survivor2.SetActive(false);
         survivor3.SetActive(false);
         warningBox.SetActive(false);
+        ToPlayAvatarSFX();
     }
 
     public void SetSurv2Active()
@@ -481,6 +489,7 @@ public class Game_Progression : MonoBehaviour
         survivor2.SetActive(true);
         survivor3.SetActive(false);
         warningBox.SetActive(false);
+        ToPlayAvatarSFX();
     }
 
     public void SetSurv3Active()
@@ -490,6 +499,7 @@ public class Game_Progression : MonoBehaviour
         survivor2.SetActive(false);
         survivor3.SetActive(true);
         warningBox.SetActive(false);
+        ToPlayAvatarSFX();
     }
 
     public void SetWarningActive()
@@ -499,6 +509,7 @@ public class Game_Progression : MonoBehaviour
         survivor2.SetActive(false);
         survivor3.SetActive(false);
         warningBox.SetActive(true);
+        ToPlayAvatarSFX();
     }
 
 }

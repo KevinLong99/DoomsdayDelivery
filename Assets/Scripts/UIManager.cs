@@ -32,6 +32,8 @@ public class UIManager : MonoBehaviour
     public UnityEvent ResetDialogue;
 
     public UnityEvent ChangeSwitchScreenBack;
+    public UnityEvent PlayTutorialOnSFX;
+    public UnityEvent PlayOrderBoxOnSFX;
 
     public bool isFirstRelease = false;
 
@@ -109,6 +111,7 @@ public class UIManager : MonoBehaviour
         if (currentStationNum == 1)
         {
             OrderBox.SetActive(true);
+            ToPlayOrderBoxOnSFX();
         }
         else
         {
@@ -124,7 +127,11 @@ public class UIManager : MonoBehaviour
     //public void DeliveryResultBoxOff() => DeliveryResultBox.SetActive(false);
 
     // Methods for TutorialArea
-    public void TutorialAreaOn() => TutorialArea.SetActive(true);
+    public void TutorialAreaOn()
+    {
+        TutorialArea.SetActive(true);
+        ToPlayTutorialSFX();
+    }
     public void TutorialAreaOff() => TutorialArea.SetActive(false);
 
     // Methods for SuccessArea
@@ -168,6 +175,15 @@ public class UIManager : MonoBehaviour
     {
         ResetDialogue.Invoke();
     }
+    public void ToPlayTutorialSFX()
+    {
+        PlayTutorialOnSFX.Invoke();
+    }
+
+    public void ToPlayOrderBoxOnSFX()
+    {
+        PlayOrderBoxOnSFX.Invoke();
+    }
 
 
     public void ToChangeSwitchScreenBack()
@@ -210,6 +226,7 @@ public class UIManager : MonoBehaviour
     {
         ChangeScoreColorRange(6, 8); // Change color for the next three GameObjects (6, 7, 8)
     }
+
 
     public void ChangeScoreColorInsulin()
     {

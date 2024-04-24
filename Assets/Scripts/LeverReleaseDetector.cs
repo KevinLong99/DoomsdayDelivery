@@ -37,6 +37,7 @@ public class LeverReleaseDetector : MonoBehaviour
         if (myJointListener != null && !myJointListener.enabled)
         {
             OnLeverPullError();
+            Debug.Log("LeverPullError is called");
         }
     }
 

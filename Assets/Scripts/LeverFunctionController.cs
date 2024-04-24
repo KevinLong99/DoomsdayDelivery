@@ -28,6 +28,11 @@ public class LeverFunctionController : MonoBehaviour
             Debug.LogError("MyLeverListener is not assigned in the inspector.");
         }
     }
+    //Delay Lock Station
+    public void DelayDoLockStation()
+    {
+        StartCoroutine(ToDelayLockStation(1.0f));
+    }
 
     public void DoLockStation()
     {
@@ -70,6 +75,15 @@ public class LeverFunctionController : MonoBehaviour
     public void MalfunctionIsFixedToTrue()
     {
         malfunctionFixed = true;
+    }
+
+    IEnumerator ToDelayLockStation(float delayInSeconds)
+    {
+        // Wait for the specified delay
+        yield return new WaitForSeconds(delayInSeconds);
+
+        // Call the function after the delay
+        DoLockStation();
     }
 
 }
