@@ -9,6 +9,9 @@ public class TutorialManager : MonoBehaviour
     //To tell if the tutorial is passed
     public bool tutorialPassed = false;
 
+    //Ensure that the drone flying arrow is enabled only once
+    public bool droneFlyingTipArrowDone = false;
+
     // Function to remove (delete) the game object at the specified index
     public void RemoveStep(int number)
     {
@@ -28,6 +31,20 @@ public class TutorialManager : MonoBehaviour
     {
         if (number >= 0 && number < Steps.Count)
         {
+            //Ensure that the drone flying arrow is enabled only once
+            if (number == 7)
+            {
+                if (!droneFlyingTipArrowDone)
+                {
+                    Steps[number].SetActive(true);
+                    droneFlyingTipArrowDone = true;  // Set to true after activating the step
+                }
+                else if (droneFlyingTipArrowDone)
+                {
+                    return; // Do nothing if droneFlyingTipArrowDone is true
+                }
+            }
+
             //Tutorial part arrow tips, would not trigger after tutorial is passed
             if (number < 10 && tutorialPassed == false)
             {
