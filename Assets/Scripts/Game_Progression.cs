@@ -117,7 +117,7 @@ public class Game_Progression : MonoBehaviour
 
         timeRemaining = fullTime;
 
-        playSounds_Script.PlayAmbientMusic();
+        //playSounds_Script.PlayAmbientMusic();
     }
 
     void Update()
