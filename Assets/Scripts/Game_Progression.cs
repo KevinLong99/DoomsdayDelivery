@@ -141,8 +141,7 @@ public class Game_Progression : MonoBehaviour
                 gameOver_outOfFuel = true;
                 timeRemaining = 0;
                 timerIsRunning = false;
-                playSounds_Script.PlayNickFail();
-                GameOver(); //FIXME!!!!! Tent3 Response and nickFail play at same time
+                GameOver();
             }
         }
 
@@ -341,10 +340,11 @@ public class Game_Progression : MonoBehaviour
 
     IEnumerator GameOverMessage()
     {
-        yield return new WaitForSeconds(8);
+        
 
         if (gameOver_win == true)
         {
+            yield return new WaitForSeconds(8);
             playSounds_Script.PlayNickSuccess();
             Scene_Manager_DD.mainScreenTextOption = 1;
         }
